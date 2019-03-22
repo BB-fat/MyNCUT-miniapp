@@ -1,2 +1,12 @@
 <!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<view class='mainView' style='z-index:1'>
+  <image class='backgroundimg' src='../../imgs/login/pic1.png'></image>
+  <view style='margin-top: 62rpx;'></view>
+  <input class='input' placeholder-class='placeholder' type='number' placeholder='请输入学号'></input>
+  <input class='input' placeholder-class='placeholder' type='text' password='true' placeholder='请输入密码'></input>
+  <button class='login' hover-class='hoverLogin'>登　　录</button>
+</view>
+<!-- 头像 -->
+<view class='coverView' style='z-index:2'>
+  <open-data class='avatar' type='userAvatarUrl'></open-data>
+</view>

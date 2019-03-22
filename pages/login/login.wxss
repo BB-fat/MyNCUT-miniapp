@@ -1,1 +1,58 @@
 /* pages/login/login.wxss */
+
+.mainView {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.coverView {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backgroundimg {
+  height: 500rpx;
+  width: 100%;
+}
+
+.avatar {
+  margin-top: 176rpx;
+  width: 220rpx;
+  height:220rpx;
+  border-radius:50%;
+  overflow:hidden;
+  border: solid 6rpx #2e76d8;
+}
+
+.input{
+  margin-top: 31rpx;
+  width: 460rpx;
+  height: 79rpx;
+  border: solid 4rpx #d6d5d6;
+  border-radius:10rpx;
+}
+
+.placeholder{
+  margin-left: 25rpx;
+  font-size: 26rpx;
+}
+
+.login{
+  margin-top: 39rpx;
+  width: 460rpx;
+  color: white;
+  background-color: #005bea;
+}
+
+.hoverLogin{
+  margin-top: 39rpx;
+  width: 460rpx;
+  color: white;
+  background-color: #003890;
+}

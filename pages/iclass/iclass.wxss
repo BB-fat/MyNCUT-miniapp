@@ -1,0 +1,12 @@
+/* pages/iclass/iclass.wxss */
+.mainView{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.backgroundimg{
+  height: 548rpx;
+  width: 100%;
+}
