@@ -1,2 +1,2 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<web-view src="https://app.ncut.edu.cn/html/ncut/xsjw.html?v1="></web-view>

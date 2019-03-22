@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  height: 100%
 }
 
 .coverView {
@@ -55,4 +56,39 @@
   width: 460rpx;
   color: white;
   background-color: #003890;
+}
+
+.errorView{
+  z-index: 3;
+  background-color: #003890;
+  height: 100%;
+  opacity: 0.6;
+}
+
+.errorWindow{
+  position: absolute;
+  z-index: 4;
+  background-color: white;
+  height: 375rpx;
+  width: 495rpx;
+  margin-top: 350rpx;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #8a8a8a;
+}
+
+.pic3{
+  height: 28rpx;
+  width: 28rpx;
+  align-self: flex-start;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+}
+
+.pic4{
+  margin-top: 49rpx;
+  height: 92rpx;
+  width: 92rpx;
 }
