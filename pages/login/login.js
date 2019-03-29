@@ -1,5 +1,7 @@
 // pages/login/login.js
 
+import {myURL} from "../../setting.js"
+
 let app = getApp()
 
 Page({
@@ -15,17 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.request({
-      url: 'https://ucpay.ncut.edu.cn/open/user/oauth/index',
-      data:{
-        state:app.globalData.openid,
-        appid: "31b1e992583074382",
-        redirect: "http://myncut.ncut.edu.cn/login/oauth"
-      },
-      success:function(res){
-        console.log(res)
-      }
-    })
+
   },
 
   /**
@@ -39,7 +31,35 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    wx.getStorage({
+      key: 'userInfo',
+      success: function (res) {
+        // console.log(res.data)
+      },
+      fail(){
+        wx.login({
+          success(res){
+            wx.request({
+              url: myURL+'/login/openid',
+              data:{
+                code:res.code
+              },
+              success(res){
+                console.log(res.data)
+                wx.setStorage({
+                  key: 'openid',
+                  data: res.data['openid'],
+                })
+                wx.setStorage({
+                  key: 'userInfo',
+                  data: res.data['userInfo'],
+                })
+              }
+            })
+          }
+        })
+      }
+    })
   },
 
   // 隐藏错误提示

@@ -1,1 +1,1 @@
-export var myURL='http://10.100.1.221'
+export var myURL ='http://myncut.ncut.edu.cn'
