@@ -1,23 +1,4 @@
 <!--pages/login/login.wxml-->
-<view class='mainView'>
-  <view class='mainView' style='z-index:1'>
-    <image class='backgroundimg' src='../../imgs/login/pic1.png'></image>
-    <view style='margin-top: 62rpx;'></view>
-    <input class='input' placeholder-class='placeholder' type='number' placeholder='请输入学号'></input>
-    <input class='input' placeholder-class='placeholder' type='text' password='true' placeholder='请输入密码'></input>
-    <button class='login' hover-class='hoverLogin' bindtap='login'>登　　录</button>
-  </view>
-  <!-- 头像 -->
-  <view class='coverView' style='z-index:2'>
-    <open-data class='avatar' type='userAvatarUrl'></open-data>
-  </view>
-  <view class='mainView errorView' wx:if='{{showError}}'></view>
-  <view class='errorWindow' wx:if='{{showError}}'>
-    <image class='pic3' src='../../imgs/login/pic3.png' bindtap='closeError'></image>
-    <image class='pic4' src='../../imgs/login/pic4.png'></image>
-    <view style='margin-top: 15rpx;'></view>
-    <text style='font-size:36rpx;'>账号或密码错误</text>
-    <text style='font-size:28rpx;'>提示：账号为学籍学号，密码为</text>
-    <text style='font-size:28rpx;'>NCUT+身份证后六位</text>
-  </view>
+<view>
+  <web-view></web-view>
 </view>

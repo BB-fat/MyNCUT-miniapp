@@ -1,4 +1,7 @@
 // pages/login/login.js
+
+let app = getApp()
+
 Page({
 
   /**
@@ -12,7 +15,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    wx.request({
+      url: 'https://ucpay.ncut.edu.cn/open/user/oauth/index',
+      data:{
+        state:app.globalData.openid,
+        appid: "31b1e992583074382",
+        redirect: "http://myncut.ncut.edu.cn/login/oauth"
+      },
+      success:function(res){
+        console.log(res)
+      }
+    })
   },
 
   /**
