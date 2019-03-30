@@ -25,11 +25,6 @@ App({
                 console.log(res.data)
                 // 将openid写入全局变量
                 that.globalData.openid = res.data.openid
-                // 将openid存入缓存
-                wx.setStorage({
-                  key: 'openid',
-                  data: res.data.openid,
-                })
                 // 个人信息为空，跳转至认证网页
                 if(res.data.userInfo==null){
                   wx.navigateTo({
@@ -38,6 +33,10 @@ App({
                 }
                 // 如果传回用户信息，存入缓存
                 else{
+                  wx.setStorage({
+                    key: 'openid',
+                    data: res.data.openid,
+                  })
                   wx.setStorage({
                     key: 'userInfo',
                     data: res.data.userInfo,

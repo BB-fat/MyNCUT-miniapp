@@ -31,8 +31,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // 在缓存中查找userInfo
     wx.getStorage({
       key: 'userInfo',
+      // 没有userInfo向服务器请求用户数据
       fail(){
         wx.request({
           url: myURL +'/login/openid',
@@ -41,10 +43,15 @@ Page({
           },
           success(res){
             console.log(res.data)
+            // 返回值非空时设定缓存
             if(res.data!=null){
               wx.setStorage({
                 key: 'userInfo',
                 data: res.data,
+              })
+              wx.setStorage({
+                key: 'openid',
+                data: app.globalData.openid,
               })
             }
           }
