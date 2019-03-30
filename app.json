@@ -1,7 +1,6 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/login/login",
     "pages/my/my",
     "pages/iclass/iclass",
     "pages/webview/webview"
