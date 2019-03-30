@@ -35,6 +35,10 @@ Page({
     wx.getStorage({
       key: 'userInfo',
       // 没有userInfo向服务器请求用户数据
+      success(res){
+        console.log("success get userInfo")
+        console.log(res.data)
+      },
       fail(){
         wx.request({
           url: myURL +'/login/openid',

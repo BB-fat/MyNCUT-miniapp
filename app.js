@@ -10,6 +10,7 @@ App({
       key: 'openid',
       // 读取成功，写入全局变量备用
       success: function(res) {
+        console.log("success get openid")
         that.globalData.openid=res.data
       },
       // 读取失败，调用登陆函数请求
