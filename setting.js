@@ -1,1 +1,1 @@
-export var myURL ='http://myncut.ncut.edu.cn'
+export const myURL ='http://myncut.ncut.edu.cn'

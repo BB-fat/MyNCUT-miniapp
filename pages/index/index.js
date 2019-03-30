@@ -51,7 +51,7 @@ Page({
             if(res.data!=null){
               wx.setStorage({
                 key: 'userInfo',
-                data: res.data,
+                data: res.data.userInfo,
               })
               wx.setStorage({
                 key: 'openid',
