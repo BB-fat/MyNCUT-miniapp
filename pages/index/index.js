@@ -136,6 +136,14 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  //轮播图点击事件
+  swipclick: function (e) {
+    var url=e.currentTarget.dataSet.url
+    wx.navigateTo({
+      url: '../login/login'
+    })
   }
 
 })
