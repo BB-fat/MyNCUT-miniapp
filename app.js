@@ -16,7 +16,7 @@ App({
         that.globalData.openid = res.data
       },
       // 读取失败，调用登陆函数请求
-      fail() {
+      /*fail() {
         wx.login({
           success(res) {
             wx.request({
@@ -49,7 +49,7 @@ App({
             })
           }
         })
-      }
+      }*/
     })
   },
 

@@ -1,2 +1,40 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<swiper class="picswiper" previous-margin="40rpx" next-margin="40rpx"  indicator-dots="{{indidots}}" indicator-color="{{idcolor}}" current="{{pic_curPage}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" >
+    <block wx:for="{{imgitem}}" >
+        <swiper-item class='pic_item'>
+            <navigator url="{{item.link}}" hover-class="navigator-hover0">  
+                <image src='{{item.imgUrl}}' class="swiper_img" ></image>
+            </navigator>   
+        </swiper-item>
+    </block>
+</swiper>
+
+<view class="notice">   
+    <view >  <image src="{{notice}}" class="notice_img"></image>  </view>
+    <view style="flex:1;"> 
+        <swiper  class="wordswiper"  current="{{word_curPage}}" autoplay="true" circular="true" interval="2000" duration="1000" vertical='true'> 
+            <block wx:for="{{worditem}}" >     
+              <swiper-item class='word_item'>
+                <navigator url="{{item.link}}" hover-class="navigator-hover1">  
+                  <text>{{item.txt}}</text>
+                </navigator>   
+              </swiper-item>  
+            </block>          
+        </swiper>  
+    </view>
+</view>
+
+<view class="shang">    
+       <button class="btn1" hover="true" hover-class="btnhover">
+          <image class='btn1Img' src='../../imgs/index/course.png'></image> 课表 </button> 
+       <button class="btn2" hover="true" hover-class="btnhover">
+          <image class='btn2Img' src='../../imgs/index/average.png'></image> 绩点 </button>
+</view>
+
+<view class="shang">    
+       <button class="btn3" hover="true" hover-class="btnhover">
+          <image class='btn3Img' src='../../imgs/index/grade.png'></image> 成绩 </button> 
+       <button class="btn4" hover="true" hover-class="btnhover">
+          <image class='btn4Img' src='../../imgs/index/graduate.png'></image> 毕业 </button>
+       <button class="btn5" hover="true" hover-class="btnhover">
+          <image class='btn5Img' src='../../imgs/index/room.png'></image> 教室 </button>
+</view>

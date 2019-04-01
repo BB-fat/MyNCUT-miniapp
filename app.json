@@ -1,14 +1,41 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
+    "pages/login/login",
     "pages/my/my",
     "pages/iclass/iclass",
-    "pages/webview/webview"
+    "pages/webview/webview"    
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#297ae8",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6299ff",
     "navigationBarTitleText": "我的北方",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#000000",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "imgs/index/teach_y.png",
+        "iconPath": "imgs/index/teach_n.png",
+        "pagePath": "pages/index/index",
+        "text": "教务"
+      },
+      {
+        "selectedIconPath": "imgs/index/model_y.png",
+        "iconPath": "imgs/index/model_n.png",
+        "pagePath": "pages/login/login",
+        "text": "多模式"
+      },
+      {
+        "selectedIconPath": "imgs/index/my_y.png",
+        "iconPath": "imgs/index/my_n.png",
+        "pagePath": "pages/login/login",
+        "text": "我的"
+      }
+    ]
   }
+
 }
