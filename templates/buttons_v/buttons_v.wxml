@@ -1,0 +1,11 @@
+<template name="myBtn_v">
+  <button class="btn" style="position:{{position}};width:{{btnWidth}}rpx;height:{{btnHeight}}rpx;margin-top:{{mgtopbtn}}rpx; margin-left:{{mgleftbtn}}rpx;font-size:{{fontsize}}rpx" hover="true" hover-class="btnhover" bindtap="{{tapFunc}}">
+    <view class="btn_view">
+      <view class='imgView' style="height:{{imgViewH}}rpx;width:{{imgViewW}}rpx;margin-top:{{mgtopimgView}}rpx">
+        <image class='img' style="width:{{imgWidth}}rpx;height:{{imgHeight}}rpx" src="{{imgUrl}}"></image>
+      </view>
+      <view class='txt' style="margin-top:{{mgtoptxt}}rpx;margin-left:{{mglefttxt}}rpx;width:{{txtWidth}}rpx">{{btnTxt}}
+      </view>
+    </view>
+  </button>
+</template>

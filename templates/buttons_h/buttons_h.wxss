@@ -1,0 +1,22 @@
+.btn{    
+  background-color: #ffffff;
+  color:#6299ff;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  justify-content: center;  
+  font-weight: bold;
+  box-shadow: 0rpx 0rpx 10rpx 0rpx #a7a7a7;
+}
+
+.btn::after {
+  border: 0; 
+}
+
+.btnhover {
+  background-color: #ebe7e7;
+  border-radius: 20rpx;
+  opacity: 0.8;
+  transform: scale(0.9,0.9);
+}

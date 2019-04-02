@@ -1,4 +1,6 @@
 /**app.wxss**/
+@import "templates/buttons_h/buttons_h.wxss";
+@import "templates/buttons_v/buttons_v.wxss";
 .container {
   height: 100%;
   display: flex;
