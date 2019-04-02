@@ -1,6 +1,8 @@
 // pages/index/index.js
 
-import { myURL } from "../../setting.js"
+import {
+  myURL
+} from "../../setting.js"
 
 var app = getApp()
 
@@ -10,15 +12,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    indidots:true,
+    indidots: true,
     idcolor: "#FFFFFF",
-    autoplay:true,
-    circular:true,
-    pic_curPage:0,
-    interval:2600,
+    autoplay: true,
+    circular: true,
+    pic_curPage: 0,
+    interval: 2600,
     duration: 1000,
-    imgitem: [
-      {
+    imgitem: [{
         link: '/pages/login/login',
         imgUrl: '../../imgs/index/1.jpg'
       },
@@ -32,21 +33,20 @@ Page({
       }
     ],
     notice: '../../imgs/index/notice.png',
-    word_curPage:0,
-    worditem: [
-      {
+    word_curPage: 0,
+    worditem: [{
         link: '/pages/login/login',
-        txt:'Hello World'
+        txt: 'Hello World'
       },
       {
         link: '/pages/login/login',
-        txt:'你好 世界'
+        txt: '你好 世界'
       },
       {
         link: '/pages/login/login',
         txt: 'こんにちは、世界'
       }
-     
+
     ]
 
 
@@ -55,21 +55,21 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     // 在缓存中查找userInfo
     wx.getStorage({
       key: 'userInfo',
@@ -106,44 +106,79 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
 
   //轮播图点击事件
-  swipclick: function (e) {
-    var url=e.currentTarget.dataSet.url
+  swipclick: function(e) {
+    var url = e.currentTarget.dataSet.url
     wx.navigateTo({
       url: '../login/login'
     })
-  }
+  },
+
+  // 跳转至课表
+  toClassTable: function() {
+    wx.navigateTo({
+      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng',
+    })
+  },
+
+  // 跳转至绩点
+  toGradePoint: function() {
+    wx.navigateTo({
+      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/grade/list',
+    })
+  },
+
+  // 跳转至成绩
+  toGrade: function() {
+    wx.navigateTo({
+      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_score',
+    })
+  },
+
+  // 跳转至毕业要求
+  toGraduate: function() {
+    wx.navigateTo({
+      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate',
+    })
+  },
+
+  // 跳转至教室
+  toClassroom: function() {
+    wx.navigateTo({
+      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_room/emroom/index',
+    })
+  },
 
 })
