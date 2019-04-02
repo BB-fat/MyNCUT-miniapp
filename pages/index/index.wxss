@@ -67,7 +67,8 @@
 }
 
 .navigator-hover{
-  border-radius: 250rpx;  
-  background-color: #5ab2dd;
-  opacity: 1000;
+  border-radius: 200rpx;  
+  background-color: #71ddf0;
+  opacity: 0.9;
+  transform: scale(1.04,1.04);
 }

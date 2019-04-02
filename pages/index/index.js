@@ -90,13 +90,6 @@ Page({
       mgtoptxt:2,
       btnTxt: "教室"
     },
-    indidots: true,
-    idcolor: "#FFFFFF",
-    autoplay: true,
-    circular: true,    
-    interval: 2600,
-    duration: 1000,
-    notice: '../../imgs/index/notice.png',
     
   },
 
@@ -106,7 +99,6 @@ Page({
   onLoad: function(options) {
     var that=this
     wx.request({
-
       url: myURL+'/publicinfo',
       success(res){        
         that.setData({
@@ -197,13 +189,15 @@ Page({
 
   },
 
-  //轮播图点击事件
-  swipclick: function(e) {    
-    var url = '../webview/webview?mode=normal&url='+this.data.indexBanner
-    wx.navigateTo({
-      url: url
-    })
-  },
+   
+    //轮播图点击事件
+  swipclick: function(e) {
+      console.log(e)
+      wx.navigateTo({
+        url: '../webview/webview?mode=normal&url=' + this.data.indexBanner[e.currentTarget.dataset.index]['msgUrl']
+      })
+    },
+
 
   // 跳转至课表
   toClassTable: function() {

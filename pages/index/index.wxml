@@ -1,7 +1,7 @@
 <import src="../../templates/buttons_h/buttons_h.wxml" />
 <import src="../../templates/buttons_v/buttons_v.wxml" />
 
-<swiper class="picswiper" previous-margin="40rpx" next-margin="40rpx" indicator-dots="{{indidots}}" indicator-color="{{idcolor}}"  autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}">
+<swiper class="picswiper" previous-margin="40rpx" next-margin="40rpx"  autoplay="true" circular="true" interval="2600" duration="1000">
   <block wx:for="{{indexBanner}}">
     <swiper-item class='pic_item'>      
       <view hover-class="navigator-hover">
@@ -13,7 +13,7 @@
 
 <view class="notice">
   <view>
-    <image src="{{notice}}" class="notice_img"></image>
+    <image src="../../imgs/index/notice.png" class="notice_img"></image>
   </view>
   <view style="flex:1;">
     <swiper class="wordswiper"  autoplay="true" circular="true" interval="2000" duration="1000" vertical='true'>
