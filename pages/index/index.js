@@ -15,7 +15,7 @@ Page({
     autoplay:true,
     circular:true,
     pic_curPage:0,
-    interval:2000,
+    interval:2600,
     duration: 1000,
     imgitem: [
       {

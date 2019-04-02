@@ -1,23 +1,26 @@
 .picswiper {
-  padding:11rpx 0rpx 17rpx 0rpx;  /*上  右  下  左;*/
+  padding:0rpx 0rpx 0rpx 0rpx;  /*上  右  下  左;*/
   width: 100%;
-  height: 386rpx;
-  /* margin: 30rpx 0rpx; #6299ff; */
+  height: 395rpx;  
   background-color: #6299ff;
 }
 
-.pic_item {
-  height: 386rpx;
+.pic_item {  
+  padding-top: 5rpx;  
+  background-color: #6299ff;
+  height: 395rpx;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.swiper_img {
+.swiper_img {  
+  background-color: #6299ff;
   width: 640rpx;
   height: 386rpx;
   border-radius:20px;
-  box-shadow: 0rpx 0rpx 10rpx 0rpx #0d2f5d;
+  /* -webkit-filter: blur(0.5px); */
+  box-shadow: 0rpx 0rpx 20rpx 6rpx #88b4d1;
 }
 
 .notice{
@@ -175,6 +178,7 @@
   box-shadow: 0rpx 0rpx 10rpx 0rpx #a7a7a7;
 }
 .btn4_view{
+  
   display: flex;
   flex-direction: column;
   vertical-align: center;
@@ -182,11 +186,12 @@
   justify-content: center;
 }
 .btn4Img {
+  
   width: 77rpx;
   height: 57rpx;
 }
 .img4 {    
-  /* background-color: #e7dddd; */
+ background-color: #ffffff;
   height: 50rpx;
   width: 120rpx;
   margin-top: 19rpx;  
