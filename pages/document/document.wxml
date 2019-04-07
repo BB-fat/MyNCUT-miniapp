@@ -1,4 +1,7 @@
 <!--pages/document/document.wxml-->
 <view class='contain' wx:for="{{courseList}}">
   <view class='item' bindtap='saveFile' data-index='{{index}}'>{{item.file_name}}</view>
+  <!-- 下面这个东西是收藏图标,status表示状态,这块有问题，前端如何知道这块到底有没有被收藏 -->
+  <view bindtap='favourites' data-index='{{index}}'>收藏</view>
+  <view bindtap='unfavourites' data-index='{{index}}'>取消收藏</view>
 </view>

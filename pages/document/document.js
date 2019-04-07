@@ -8,7 +8,8 @@ Page({
    */
   data: {
     courseList:'',
-    course_code:''
+    course_code:'',
+    status:''
   },
 
   /**
@@ -122,5 +123,37 @@ Page({
         }
       })
     }
+  },
+  favourites:function(e){
+    var index = e.currentTarget.dataset.index
+    var that = this
+    wx.request({
+      url: myURL + '/favourites/courseware',
+      data: {
+        openid: app.globalData.openid,
+        course: JSON.stringify(that.data.courseList[index]),
+        mode: 'del'
+      },
+      success: function (res) {
+        //收藏课件成功
+        console.log("收藏课件成功")
+      }
+    })
+  },
+  unfavourites:function(e){
+    var index = e.currentTarget.dataset.index
+    var that = this
+    wx.request({
+      url: myURL +'/favourites/courseware',
+      data:{
+        openid: app.globalData.openid,
+        course: JSON.stringify(that.data.courseList[index]),
+        mode:'del'
+      },
+      success:function(res){
+        //取消收藏成功
+        console.log("取消收藏课件成功")
+      }
+    })
   }
 })
