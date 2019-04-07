@@ -1,2 +1,5 @@
 <!--pages/iclass/iclass.wxml-->
-<text>pages/iclass/iclass.wxml</text>
+<block class='courseList' wx:for='{{courseList}}'>
+  <view class='course_name' bindtap='getDocument' data-course_code='{{item.course_code}}'>{{item['course_name']}}</view>
+  <view class='course_teacher'>{{item['teacher_name']}}</view>
+</block>

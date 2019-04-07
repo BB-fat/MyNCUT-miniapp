@@ -1,0 +1,4 @@
+<!--pages/document/document.wxml-->
+<view class='contain' wx:for="{{courseList}}">
+  <view class='item' bindtap='saveFile' data-index='{{index}}'>{{item.file_name}}</view>
+</view>

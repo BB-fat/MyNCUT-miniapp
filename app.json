@@ -4,7 +4,8 @@
     "pages/login/login",
     "pages/my/my",
     "pages/iclass/iclass",
-    "pages/webview/webview"    
+    "pages/webview/webview",
+    "pages/document/document"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,7 +27,7 @@
       {
         "selectedIconPath": "imgs/index/model_y.png",
         "iconPath": "imgs/index/model_n.png",
-        "pagePath": "pages/login/login",
+        "pagePath": "pages/iclass/iclass",
         "text": "多模式"
       },
       {
@@ -36,6 +37,6 @@
         "text": "我的"
       }
     ]
-  }
-
+  },
+  "sitemapLocation": "sitemap.json"
 }
