@@ -1,11 +1,15 @@
 {
   "pages": [
+    "pages/feedback/feedback",
     "pages/index/index",
+    
     "pages/login/login",
     "pages/my/my",
     "pages/iclass/iclass",
     "pages/webview/webview",
-    "pages/document/document"
+    "pages/document/document",
+    "pages/feedbackSuc/feedbackSuc",
+    "pages/aboutus/aboutus"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,7 +37,7 @@
       {
         "selectedIconPath": "imgs/index/my_y.png",
         "iconPath": "imgs/index/my_n.png",
-        "pagePath": "pages/login/login",
+        "pagePath": "pages/aboutus/aboutus",
         "text": "我的"
       }
     ]

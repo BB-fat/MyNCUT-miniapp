@@ -126,7 +126,7 @@ Page({
   },
   favourites:function(e){
     var index = e.currentTarget.dataset.index
-    var that = this
+    let that = this
     wx.request({
       url: myURL + '/favourites/courseware',
       data: {
@@ -137,6 +137,9 @@ Page({
       success: function (res) {
         //收藏课件成功
         console.log("收藏课件成功")
+      },
+      fail: function(res){
+        console.log('收藏课件失败')
       }
     })
   },

@@ -1,0 +1,27 @@
+.container{ 
+  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+  vertical-align: text-top; 
+  align-items: center; 
+  justify-content: center;
+  padding-top: 52rpx;
+  padding-bottom: 20rpx; 
+  height: 1120rpx;
+  color: #6299ff;  
+  /* background-color: #ffffff; */
+  /* background-image: url(../../imgs/aboutus/back.jpg); */
+}
+
+.img{
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.name{
+  display: flex;
+  flex-direction: row;
+  vertical-align: center;
+  align-items: center; 
+  justify-content: center;  
+}
