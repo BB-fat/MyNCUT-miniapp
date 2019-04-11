@@ -7,12 +7,12 @@
   <text class="cardItem card-text">电子名片</text>
   <open-data type='userNickName' class="cardItem card-nickName"></open-data>
   <open-data type='userAvatarUrl' class="cardItem card-avata"></open-data>
-  <text class="cardItem card-name">李圣坤</text>
+  <text class="cardItem card-name">{{userInfo.name}}</text>
   <image src='../../imgs/my/insert.png' class="cardItem card-pic"></image>
-  <image src='../../imgs/my/male.png' class="cardItem card-male"></image>
-  <!-- <image src='../../imgs/my/female.png' class="cardItem card-male"></image> -->
-  <text class="cardItem card-userid">17152010921</text>
-  <text class="cardItem card-class">计科17-3</text>
+  <image wx:if='{{userInfo.sex==1}}' src='../../imgs/my/male.png' class="cardItem card-male"></image>
+  <image wx:else src='../../imgs/my/female.png' class="cardItem card-male"></image>
+  <text class="cardItem card-userid">{{userInfo.userid}}</text>
+  <text class="cardItem card-class">{{userInfo.class}}</text>
 </view>
 <view class="button-area">
   <view class='column'>

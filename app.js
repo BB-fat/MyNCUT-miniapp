@@ -42,7 +42,7 @@ App({
                   })
                   wx.setStorage({
                     key: 'userInfo',
-                    data: res.data.userInfo,
+                    data: res.data.userInfo.userInfo,
                   })
                 }
               }
