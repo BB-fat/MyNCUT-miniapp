@@ -1,2 +1,31 @@
-<!--pages/my/my.wxml-->
-<web-view src="https://app.ncut.edu.cn/html/ncut/xsjw.html?v1="></web-view>
+<import src="../../templates/myButton/myButton.wxml" />
+
+<view class="background-blue"></view>
+
+<view class="card">
+  <image src='../../imgs/my/bfgy.png' class="cardItem card-schoolIcon"></image>
+  <text class="cardItem card-text">电子名片</text>
+  <open-data type='userNickName' class="cardItem card-nickName"></open-data>
+  <open-data type='userAvatarUrl' class="cardItem card-avata"></open-data>
+  <text class="cardItem card-name">李圣坤</text>
+  <image src='../../imgs/my/insert.png' class="cardItem card-pic"></image>
+  <image src='../../imgs/my/male.png' class="cardItem card-male"></image>
+  <!-- <image src='../../imgs/my/female.png' class="cardItem card-male"></image> -->
+  <text class="cardItem card-userid">17152010921</text>
+  <text class="cardItem card-class">计科17-3</text>
+</view>
+<view class="button-area">
+  <view class='column'>
+    <template is="myButton" data="{{...btn1}}" />
+    <template is="myButton" data="{{...btn2}}" />
+    <template is="myButton" data="{{...btn3}}" />
+  </view>
+  <view class='column'>
+    <template is="myButton" data="{{...btn4}}" />
+    <template is="myButton" data="{{...btn5}}" />
+    <template is="myButton" data="{{...btn6}}" />
+  </view>
+</view>
+<view class="footerView">
+  <view>All Rights Reserved</view>
+</view>

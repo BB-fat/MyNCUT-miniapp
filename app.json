@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/feedback/feedback",
-    "pages/index/index",
     
+    "pages/index/index",
+    "pages/feedback/feedback",
     "pages/login/login",
     "pages/my/my",
     "pages/iclass/iclass",
@@ -37,7 +37,7 @@
       {
         "selectedIconPath": "imgs/index/my_y.png",
         "iconPath": "imgs/index/my_n.png",
-        "pagePath": "pages/aboutus/aboutus",
+        "pagePath": "pages/my/my",
         "text": "我的"
       }
     ]
