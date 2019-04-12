@@ -7,7 +7,6 @@
     "pages/iclass/iclass",
     "pages/webview/webview",
     "pages/document/document",
-    "pages/feedbackSuc/feedbackSuc",
     "pages/aboutus/aboutus"
   ],
   "window": {

@@ -1,20 +1,28 @@
-<view class='txtareaStyle'>
-   <textarea class='mytxtarea' placeholder='请写下您的意见' placeholder-class='myplaceholder' value='{{nowTxt}}' bindinput="getNum" maxlength='50'></textarea>
-   <view class='numStyle'>{{nowTxtlen}}/50</view>
+<view class='topView'>
+  <view class='txtareaStyle'>
+    <textarea class='mytxtarea' placeholder='请写下您的意见' placeholder-class='myplaceholder' value='{{nowTxt}}' bindinput="getNum" maxlength='50'></textarea>
+    <view class='numStyle'>{{nowTxtlen}}/50</view>
+  </view>
+
+  <text class='typeTitle'>选择反馈类型</text>
+  <view class='pickerView'>
+    <picker-view class="picker" indicator-class="indicator" value="{{value}}" bindchange="bindChange">
+      <picker-view-column class="column">
+        <view wx:for="{{types}}">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+    <!-- <view class="result">{{myChoice}}</view> -->
+  </view>
+
+
+  <view class="btns">
+    <button class='btn' hover="true" hover-class="btnhover" hover-start-time="1" bindtap="toNoname">匿名提交</button>
+    <button class='btn' style='background-color: rgb(254,166,0);' hover="true" hover-class="btnhover" hover-start-time="1" bindtap="toYesname">直接提交</button>
+  </view>
 </view>
 
-<text class='typeTitle'>选择反馈类型</text>
-<view class='pickerView'>
-  <picker-view class="picker" indicator-class="indicator" value="{{value}}" bindchange="bindChange">
-    <picker-view-column class="column">
-      <view wx:for="{{types}}">{{item}}</view>
-    </picker-view-column>    
-  </picker-view>
-  <!-- <view class="result">{{myChoice}}</view> -->
-</view>
-
-
-<view class="btns"> 
-  <button class='btn'  hover="true" hover-class="btnhover" hover-start-time="1" bindtap="toNoname">匿名提交</button>
-  <button class='btn'  style='background-color: rgb(254,166,0);' hover="true" hover-class="btnhover" hover-start-time="1" bindtap="toYesname">直接提交</button>
+<view wx:if='{{showUp}}' class='words'>
+  <text>感谢您的意见和建议</text>
+  <text style='margin-top:44rpx'>工程师正在加紧修改</text>
+  <image class='img' style='margin-top:138rpx' src='../../imgs/feedback/fix.png'></image>
 </view>

@@ -1,5 +1,0 @@
-<view class='words'>
-  <text>感谢您的意见和建议</text>
-  <text style='margin-top:44rpx'>工程师正在加紧修改</text>   
-  <image class='img' style='margin-top:138rpx' src='../../imgs/feedback/fix.png'></image>   
-</view>

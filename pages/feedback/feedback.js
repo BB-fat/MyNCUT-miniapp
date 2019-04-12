@@ -10,7 +10,8 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: { 
+  data: {
+    showUp:false, 
     nowTxtlen: 0,  // 当前文本长度
     nowTxt: "",   // 文本内容
     // types:["BUG提交","优化建议","其他"],
@@ -58,9 +59,9 @@ Page({
         console.log("匿名提交失败")
       },     
     })
-    wx.navigateTo({
-      url: '../feedbackSuc/feedbackSuc',
-    })   
+    that.setData({
+      showUp:true
+    })
   },
 
   toYesname: function (e) {  //直接提交文本和类型
@@ -83,9 +84,9 @@ Page({
         console.log("直接提交失败")
       },
     })
-    wx.navigateTo({
-      url: '../feedbackSuc/feedbackSuc',
-    }) 
+    that.setData({
+      showUp: true
+    })
   },
 
 
