@@ -2,17 +2,27 @@
 
 <view class="background-blue"></view>
 
-<view class="card">
-  <image src='../../imgs/my/bfgy.png' class="cardItem card-schoolIcon"></image>
-  <text class="cardItem card-text">电子名片</text>
-  <open-data type='userNickName' class="cardItem card-nickName"></open-data>
-  <open-data type='userAvatarUrl' class="cardItem card-avata"></open-data>
-  <text class="cardItem card-name">{{userInfo.name}}</text>
-  <image src='../../imgs/my/insert.png' class="cardItem card-pic"></image>
-  <image wx:if='{{userInfo.sex==1}}' src='../../imgs/my/male.png' class="cardItem card-male"></image>
-  <image wx:else src='../../imgs/my/female.png' class="cardItem card-male"></image>
-  <text class="cardItem card-userid">{{userInfo.userid}}</text>
-  <text class="cardItem card-class">{{userInfo.class}}</text>
+<view class="cardView">
+  <view class="card">
+    <view class="card-topView">
+      <image src='../../imgs/my/bfgy.png' class="card-schoolIcon"></image>
+      <text class="card-text">电子名片</text>
+    </view>
+    <view class="card-bottomView">
+      <view class="card-bottomViewLeft">
+        <open-data type='userAvatarUrl' class="card-avata"></open-data>
+        <open-data type='userNickName' class="card-nickName"></open-data>
+      </view>
+      <view class="card-bottomViewMid">
+        <text class="card-name">{{userInfo.name}}</text>
+        <image wx:if='{{userInfo.sex==1}}' src='../../imgs/my/male.png' class="card-male"></image>
+        <image wx:else src='../../imgs/my/female.png' class="card-male"></image>
+        <text class="card-userid">{{userInfo.userid}}</text>
+        <text class="card-class">{{userInfo.class}}</text>
+      </view>
+      <image src='../../imgs/my/insert.png' class="card-pic"></image>
+    </view>
+  </view>
 </view>
 <view class="button-area">
   <view class='column'>

@@ -7,17 +7,50 @@
     height: 272rpx;
 }
 
+.cardView{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .card{
+    display: flex;
+    flex-direction: column;
     border-radius: 20rpx 20rpx 20rpx 20rpx;
     box-shadow:0px 0px 10px 5px rgba(152, 166, 180, 0.5);
-    position: absolute;
-    top: 17rpx;
-    
-    left: 25rpx;
     width: 700rpx;
     height: 400rpx;
     background-color: #fff;
     color: rgb(97,154,254);
+}
+
+.card-topView{
+    margin-top: 20rpx;
+    margin-left: 20rpx;
+}
+
+.card-bottomView{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50rpx;
+}
+
+.card-bottomViewLeft{
+    margin-left: 30rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-bottomViewMid{
+    margin-left: 30rpx;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .button-area {
@@ -38,10 +71,6 @@
     margin-top: 50rpx;
 }
 
-.cardItem{
-    position: absolute;
-}
-
 .card-schoolIcon{
     height: 40rpx;
     width: 200rpx;
@@ -50,23 +79,20 @@
 }
 
 .card-text{
-    left: 255rpx;
-    top: 58rpx;
+    margin-left: 10rpx;
+    margin-bottom: 5rpx;
     font-size: 20rpx;
 }
 
 .card-nickName{
+    margin-top: 20rpx;
     font-size: 30rpx;
-    left: 232rpx;
-    top: 164rpx;
     font-weight: 600;
 }
 
 .card-avata{
     height: 144rpx;
     width: 144rpx;
-    left: 59rpx;
-    top: 135rpx;
     border-radius: 50%;
     overflow: hidden;
     border: 7rpx solid;
@@ -74,45 +100,38 @@
 }
 
 .card-name{
+    margin-top: 15rpx;
     font-size: 35rpx;
-    left:80rpx;
-    top: 307rpx;
     font-weight: 500
-    
- 
 }
 
 .card-pic{
+    margin-left: 30rpx;
+    margin-top: 30rpx;
     height: 214rpx;
     width: 280rpx;
-    bottom: 24rpx;
-    right: 22rpx;
 }
 
 .card-male{
+    margin-top: 15rpx;
     height: 25rpx;
     width: 26rpx;
-    left: 232rpx;
-    top: 225rpx;
 }
 
 .card-female{
+    margin-top: 15rpx;
     height: 26rpx;
     width: 17rpx;
-    left: 232rpx;
-    top: 230rpx;
 }
 
 .card-userid{
+    margin-top: 15rpx;
     font-size: 25rpx;
-    top: 270rpx;
-    left: 232rpx;
 }
 
 .card-class{
+    margin-top: 15rpx;
     font-size: 25rpx;
-    left: 232rpx;
-    top: 313rpx;
 }
 
 .footerView{
