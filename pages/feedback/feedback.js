@@ -75,10 +75,10 @@ Page({
         text: that.data.nowTxt
       },
       success: function (res) {
-        console.log("直接提交成功")
+        console.log("实名提交成功")
       },
       fail: function (res) {
-        console.log("直接提交失败")
+        console.log("实名提交失败")
       },
     })
   },
