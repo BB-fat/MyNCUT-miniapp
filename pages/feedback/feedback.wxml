@@ -21,7 +21,7 @@
 
   <view class="btns">
     <button class='btn' hover="true" hover-class="btnhover" hover-start-time="1" bindtap="toNoname">匿名提交</button>
-    <button class='btn' style='background-color: rgb(254,166,0);' hover="true" hover-class="btnhover" hover-start-time="1" bindtap="toYesname">直接提交</button>
+    <button class='btn' style='background-color: rgb(254,166,0);' hover="true" hover-class="btnhover" hover-start-time="1" bindtap="toYesname">实名提交</button>
   </view>
 </view>
 

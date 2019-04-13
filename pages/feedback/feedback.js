@@ -13,7 +13,7 @@ Page({
     nowTxtlen: 0,  // 当前文本长度
     nowTxt: "",   // 文本内容
     types: [0, 1, 2],
-    myChoice: types[0]
+    myChoice: 0
   },
 
   getNum(e) {   //意见框数字更新
