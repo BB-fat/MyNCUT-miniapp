@@ -1,4 +1,4 @@
-<view class='topView'>
+<view  wx:if='{{showUp1}}' class='topView'>
   <view class='txtareaStyle'>
     <textarea class='mytxtarea' placeholder='请写下您的意见' placeholder-class='myplaceholder' value='{{nowTxt}}' bindinput="getNum" maxlength='50'></textarea>
     <view class='numStyle'>{{nowTxtlen}}/50</view>
@@ -8,7 +8,11 @@
   <view class='pickerView'>
     <picker-view class="picker" indicator-class="indicator" value="{{value}}" bindchange="bindChange">
       <picker-view-column class="column">
-        <view wx:for="{{types}}">{{item}}</view>
+        <!-- <view wx:for="{{types}}">{{item}}</view> -->
+         <!-- <view wx:for="{{types}}">{{item}}</view> -->
+        <view>BUG提交</view>
+        <view>优化建议</view>
+        <view>其他</view>
       </picker-view-column>
     </picker-view>
     <!-- <view class="result">{{myChoice}}</view> -->

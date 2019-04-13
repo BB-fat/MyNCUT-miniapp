@@ -2,90 +2,84 @@ var util = require('../../utils/util.js');
 import { myURL } from "../../setting.js"
 const app = getApp()
 const types = []
-types.push("BUG提交")
-types.push("优化建议")
-types.push("其他")
 
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    showUp:false, 
+    showUp: false,
+    showUp1: true,
     nowTxtlen: 0,  // 当前文本长度
     nowTxt: "",   // 文本内容
-    // types:["BUG提交","优化建议","其他"],
-    // myChoice:types[0],
-    types: types,
-    myChoice: types[0],
+    types: [0, 1, 2],
+    myChoice: types[0]
   },
 
   getNum(e) {   //意见框数字更新
-    let that = this   
+    let that = this
     that.setData({
       nowTxtlen: e.detail.value.length,
       nowTxt: e.detail.value
     })
-    console.log(that.data.nowTxtlen) 
-    console.log(that.data.nowTxt) 
+    console.log(that.data.nowTxtlen)
+    console.log(that.data.nowTxt)
   },
 
   bindChange: function (e) {  //反馈类型切换
-    let that=this
-    var val= e.detail.value
+    let that = this
+    var val = e.detail.value
     that.setData({
       myChoice: this.data.types[val]
     })
     console.log(that.data.myChoice)
   },
 
-  toNoname: function(e){  //匿名提交文本和类型
-    let that =this  
+  toNoname: function (e) {  //匿名提交
+    let that = this
     that.setData({
-      time: util.formatTime(new Date())
-    })    
+      time: util.formatTime(new Date()),
+      showUp: true,
+      showUp1: false
+    })
     wx.request({
-      url: myURL +'/feedback',
-      data:{
-        type: that.data.myChoice,       
+      url: myURL + '/feedback',
+      data: {
+        type: that.data.myChoice,
         openid: "None",
-        time:that.data.time,
-        text:that.data.nowTxt
+        time: that.data.time,
+        text: that.data.nowTxt
       },
-      success: function(res){        
+      success: function (res) {
         console.log("匿名提交成功")
       },
-      fail: function (res) {       
+      fail: function (res) {
         console.log("匿名提交失败")
-      },     
-    })
-    that.setData({
-      showUp:true
+      },
     })
   },
 
   toYesname: function (e) {  //直接提交文本和类型
     let that = this
     that.setData({
-      time: util.formatTime(new Date())
+      time: util.formatTime(new Date()),
+      showUp: true,
+      showUp1: false
     })
     wx.request({
       url: myURL + '/feedback',
       data: {
         type: that.data.myChoice,
-        openid:app.globalData.openid,        
+        openid: app.globalData.openid,
         time: that.data.time,
         text: that.data.nowTxt
       },
-      success: function (res) {       
+      success: function (res) {
         console.log("直接提交成功")
       },
-      fail: function (res) {        
+      fail: function (res) {
         console.log("直接提交失败")
       },
-    })
-    that.setData({
-      showUp: true
     })
   },
 
