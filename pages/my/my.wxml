@@ -35,7 +35,5 @@
     <template is="myButton" data="{{...btn5}}" />
     <template is="myButton" data="{{...btn6}}" />
   </view>
-</view>
-<view class="footerView">
-  <view>All Rights Reserved</view>
+  <view class='bottom-text'>All Rights Reserved</view>
 </view>
