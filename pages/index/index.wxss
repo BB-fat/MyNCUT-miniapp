@@ -1,13 +1,15 @@
+@import "../../templates/buttons_h/buttons_h.wxss";
+
 .picswiper {
   padding:0rpx 0rpx 0rpx 0rpx;  /*上  右  下  左;*/
   width: 100%;
   height: 430rpx;  
-  background-color:  #6299ff;
+  background-color:  #ffffff;
 }
 
 .pic_item {  
   padding-top: 10rpx;    
-  background-color:#6299ff;
+  background-color:#ffffff;
   height: 430rpx;
   display: flex;
   justify-content: center;
@@ -15,7 +17,7 @@
 }
 
 .swiper_img {  
-  background-color: #6299ff;
+  background-color: #ffffff;
   width: 640rpx;
   height: 386rpx;
   border-radius:20px;
@@ -27,7 +29,7 @@
   height: 50rpx;
   padding: 0rpx 120rpx 0rpx 120rpx;
   /* margin-top: 40rpx; */
-  background-color:#6299ff;
+  background-color:#ffffff;
   display: flex;
   /*row 横向  column 列表  */
   flex-direction: row;
@@ -35,17 +37,17 @@
 .notice image{  
   width:26rpx;
   height: 23rpx;
-  background-color:#6299ff;
+  background-color:#70c4f5;
 }
 .notice .wordswiper { 
   width: 100%;
   height: 50rpx;  
   padding: 0 0 0 30rpx; 
-  background-color:  #6299ff;
+  background-color:  #ffffff;
 }
 .notice .wordswiper text{
   font-size: 30rpx;  
-  color: #ffffff;
+  color: #000000;
 }
 
 .shang{

@@ -17,35 +17,49 @@ Page({
       iconHeight: 63,
       iconWidth: 66,
       iconSrc: "../../imgs/my/My_award_active_icon.png",
-      text: "我的奖项"
+      text: "荣誉奖项"
     },
     btn3: {
       tapFun: "tapBtn3",
       iconHeight: 63,
       iconWidth: 66,
       iconSrc: "../../imgs/my/My_collection_active_icon.png",
-      text: "我的收藏"
+      text: "问题反馈"
     },
     btn4: {
       tapFun: "tapBtn4",
       iconHeight: 60,
       iconWidth: 60,
       iconSrc: "../../imgs/my/My_message_active_icon.png",
-      text: "我的消息"
+      text: "关于我们"
     },
     btn5: {
-      tapFun: "tapBtn5",
-      iconHeight: 59,
-      iconWidth: 59,
-      iconSrc: "../../imgs/my/Feedback_active_icon.png",
-      text: "问题反馈"
+      btnWidth: 280,
+      btnHeight: 120,
+      mgtopbtn: 6,
+      fontsize: 35,
+      tapFunc: "tapBtn5",
+      mgtopimg: 25,
+      imgWidth: 60,
+      imgHeight: 60,
+      imgUrl: "../../imgs/index/course.png",
+      pdtoptxt: 0,
+      mglefttxt: 22,
+      btnTxt: "我的消息"
     },
     btn6: {
-      tapFun: "tapBtn6",
-      iconHeight: 60,
-      iconWidth: 60,
-      iconSrc: "../../imgs/my/About_us_active_icon.png",
-      text: "关于我们"
+      btnWidth: 280,
+      btnHeight: 120,
+      mgtopbtn: 6,
+      fontsize: 35,
+      tapFunc: "tapBtn6",
+      mgtopimg: 25,
+      imgWidth: 60,
+      imgHeight: 60,
+      imgUrl: "../../imgs/index/course.png",
+      pdtoptxt: 0,
+      mglefttxt: 22,
+      btnTxt: "我的收藏"
     },
   },
 
@@ -53,20 +67,21 @@ Page({
   },
   tapBtn2: function() {
   },
-  tapBtn3: function() {
-  },
-  tapBtn4: function () {
-  },
-  tapBtn5: function () {
+  tapBtn3: function () {
     wx.navigateTo({
       url: '../feedback/feedback',
     })
   },
-  tapBtn6: function () {
+  tapBtn4: function () {
     wx.navigateTo({
       url: '../aboutus/aboutus',
     })
   },
+  tapBtn5: function () {
+  },
+  tapBtn6: function () {
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */

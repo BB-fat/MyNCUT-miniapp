@@ -7,11 +7,12 @@
   align-items: center; 
   justify-content: center;  
   font-weight: bold;
-  box-shadow: 0rpx 0rpx 10rpx 0rpx #a7a7a7;
+  box-shadow: 0rpx 0rpx 20rpx 0rpx #e4e3e3;
 }
 
 .btn::after {
-  border: 0; 
+  /* border: 100px;  */
+  border-color: #ebe7e7;
 }
 
 .btnhover {

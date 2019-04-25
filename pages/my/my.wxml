@@ -1,4 +1,5 @@
 <import src="../../templates/myButton/myButton.wxml" />
+<import src="../../templates/buttons_h/buttons_h.wxml" />
 
 <view class="background-blue"></view>
 
@@ -6,7 +7,7 @@
   <view class="card">
     <view class="card-topView">
       <image src='../../imgs/my/bfgy.png' class="card-schoolIcon"></image>
-      <text class="card-text">电子名片</text>
+      <!-- <text class="card-text">电子名片</text> -->
     </view>
     <view class="card-bottomView">
       <view class="card-bottomViewLeft">
@@ -25,15 +26,15 @@
   </view>
 </view>
 <view class="button-area">
-  <view class='column'>
+  <view class='row1'>
     <template is="myButton" data="{{...btn1}}" />
     <template is="myButton" data="{{...btn2}}" />
     <template is="myButton" data="{{...btn3}}" />
-  </view>
-  <view class='column'>
     <template is="myButton" data="{{...btn4}}" />
-    <template is="myButton" data="{{...btn5}}" />
-    <template is="myButton" data="{{...btn6}}" />
+  </view>
+  <view class='row2'>    
+    <template is="buttons_h" data="{{...btn5}}" />
+    <template is="buttons_h" data="{{...btn6}}" />
   </view>
   <view class='bottom-text'>All Rights Reserved</view>
 </view>

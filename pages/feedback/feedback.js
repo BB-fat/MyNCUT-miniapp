@@ -17,9 +17,10 @@ Page({
   },
 
   getNum(e) {   //意见框数字更新
+  // console.log(e)
     let that = this
     that.setData({
-      nowTxtlen: e.detail.value.length,
+      nowTxtlen: e.detail.cursor,
       nowTxt: e.detail.value
     })
     console.log(that.data.nowTxtlen)

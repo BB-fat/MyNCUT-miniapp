@@ -27,12 +27,12 @@
 </view>
 
 <view class="shang"> 
-  <template is="myBtn_h" data="{{...btn1}}" />
-  <template is="myBtn_h" data="{{...btn2}}" />
+  <template is="buttons_h" data="{{...btn1}}" />
+  <template is="buttons_h" data="{{...btn2}}" />
 </view>
 
 <view class="xia"> 
-  <template is="myBtn_h" data="{{...btn3}}" />
-  <template is="myBtn_v" data="{{...btn4}}" />
-  <template is="myBtn_v" data="{{...btn5}}" />  
+  <template is="buttons_h" data="{{...btn3}}" />
+  <template is="buttons_v" data="{{...btn4}}" />
+  <template is="buttons_v" data="{{...btn5}}" />  
 </view>
