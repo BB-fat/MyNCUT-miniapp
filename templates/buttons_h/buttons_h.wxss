@@ -1,6 +1,6 @@
 .btn{    
   background-color: #ffffff;
-  color:#6299ff;
+  color:#000000;
   border-radius: 20rpx;
   display: flex;
   flex-direction: row;

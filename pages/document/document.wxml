@@ -1,7 +1,38 @@
-<!--pages/document/document.wxml-->
-<view class='contain' wx:for="{{courseList}}">
-  <view class='item' bindtap='saveFile' data-index='{{index}}'>{{item.file_name}}</view>
-  <!-- 下面这个东西是收藏图标,status表示状态,这块有问题，前端如何知道这块到底有没有被收藏 -->
-  <view bindtap='favourites' data-index='{{index}}'>收藏</view>
-  <view bindtap='unfavourites' data-index='{{index}}'>取消收藏</view>
+<view class='inform'>
+  <text>我们不生产课件,</text>
+  <text>我们只是知识的搬运工</text>
+  <view class='informIMGview'>
+    <image class='informIMG' src='../../imgs/document/waiting.gif'></image>
+  </view>
+</view>
+
+<view style='height:15rpx;'></view>
+<view class='main'>
+  <block class='coursewareList' wx:for='{{courseList}}'>
+    <view class='coursewareBlock'>
+      <view class='name_favor'>
+        <view class='courseware_name'>{{item.file_name}}</view>
+        <view class='favorView'>
+          <image wx:if='{{!item.favourite}}' bindtap='favourites' data-index='{{index}}' class='unfavor_img' src='../../imgs/document/unfavourate.png'></image>
+          <image wx:else class='favor_img' bindtap='unfavourites' data-index='{{index}}' src='../../imgs/document/favourate.png'></image>
+        </view>
+      </view>
+      <image class='line' src='../../imgs/document/line.jpg'></image>
+      <view class='doWare'>
+        <image class='img' bindtap='lookFile' data-index='{{index}}' src='../../imgs/document/look.jpg'></image>
+        <image class='img' bindtap='downFile' data-index='{{index}}' src='../../imgs/document/download.jpg'></image>
+        <image class='img' src='../../imgs/document/send.jpg'></image>
+      </view>
+    </view>
+  </block>
+</view>
+
+
+<view wx:if='{{windowShow}}' class='windowView'>
+  <view class='window'>
+    <view class='win_title'>复制以下链接到浏览器下载</view>
+    <view class='win_url'>{{wareURL}}</view>
+    <view class='win_info'>（5分钟内有效）</view>
+    <button class='win_btn' bindtap='copyURL'> 复制链接</button>
+  </view>
 </view>

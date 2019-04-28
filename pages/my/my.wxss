@@ -121,10 +121,11 @@
 }
 
 .card-pic {
-  margin-left: 30rpx;
+  margin-left: 10rpx;
   margin-top: 30rpx;
   height: 214rpx;
   width: 280rpx;
+  opacity: 0.6;
 }
 
 .card-male {
@@ -151,7 +152,7 @@
 
 .bottom-text {
   margin-top: 200rpx;
-  color: #346cd1;
+  color: #000000;
   font-size: 20rpx;
   display: flex;
   flex-direction: column;

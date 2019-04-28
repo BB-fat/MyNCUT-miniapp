@@ -7,7 +7,7 @@ Page({
   data: {
     btn1: {
       tapFun: "tapBtn1",
-      iconHeight: 57,
+      iconHeight: 63,
       iconWidth: 74,
       iconSrc: "../../imgs/my/Graduation_qualification_active_icon.png",
       text: "毕业资格"
@@ -23,14 +23,14 @@ Page({
       tapFun: "tapBtn3",
       iconHeight: 63,
       iconWidth: 66,
-      iconSrc: "../../imgs/my/My_collection_active_icon.png",
+      iconSrc: "../../imgs/my/Feedback_active_icon.png",
       text: "问题反馈"
     },
     btn4: {
       tapFun: "tapBtn4",
       iconHeight: 60,
       iconWidth: 60,
-      iconSrc: "../../imgs/my/My_message_active_icon.png",
+      iconSrc: "../../imgs/my/About_us_active_icon.png",
       text: "关于我们"
     },
     btn5: {
@@ -42,7 +42,7 @@ Page({
       mgtopimg: 25,
       imgWidth: 60,
       imgHeight: 60,
-      imgUrl: "../../imgs/index/course.png",
+      imgUrl: "../../imgs/my/message.png",
       pdtoptxt: 0,
       mglefttxt: 22,
       btnTxt: "我的消息"
@@ -55,8 +55,8 @@ Page({
       tapFunc: "tapBtn6",
       mgtopimg: 25,
       imgWidth: 60,
-      imgHeight: 60,
-      imgUrl: "../../imgs/index/course.png",
+      imgHeight: 50,
+      imgUrl: "../../imgs/my/collection.png",
       pdtoptxt: 0,
       mglefttxt: 22,
       btnTxt: "我的收藏"

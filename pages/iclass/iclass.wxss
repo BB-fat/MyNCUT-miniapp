@@ -1,12 +1,124 @@
-/* pages/iclass/iclass.wxss */
-.mainView{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.top{
+  position: absolute;
+  z-index: 1;
   width: 100%;
+  margin: 0 auto;
+  box-shadow: 0px 4px 30px 4px #fff;
+}
+.blackBG {  
+  width: 275rpx;
+  height: 70rpx;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  /* margin-bottom: 30rpx; */
+  border-radius: 100px;
 }
 
-.backgroundimg{
-  height: 548rpx;
+.title {
+  color: #fff;
+}
+.topView{
+  position: absolute;
+  z-index: 0;
   width: 100%;
+  height: 93%;
+  bottom: 0;
+  /* background:  #eeeeee; */
+}
+.courseBlock {
+  /* left: 22rpx; *//* top: 337rpx; */
+  width: 704rpx;
+  /* height: 280rpx; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  margin-top: 10rpx;
+  border-radius: 20px;
+  box-shadow: 0px 4px 30px 4px rgb(225, 229, 236);
+  /* background-color: rgb(29, 92, 238); */
+}
+
+.course_name {
+  margin-left: 30rpx;
+  margin-top: 23rpx;
+  color: rgba(0, 0, 0, 1);
+  font-size: 35rpx;
+  font-weight: bold;
+}
+
+.row_tct{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+}
+
+.imgView{
+  height: 60rpx;
+  width: 60rpx;
+  margin-left: auto;
+  margin-right: 88rpx;
+  margin-top: 10rpx;
+  /* background-color: #FF85AA; */
+}
+.img_top {
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.course_teacher {
+  margin-left: 38rpx; 
+  color: rgba(188, 188, 188, 1);
+  font-size: 25rpx;
+  font-weight: bold;
+}
+
+.course_class {
+  margin-left: 38rpx;
+  margin-top: 9rpx;
+  color: rgba(188, 188, 188, 1);
+  font-size: 25rpx;
+  font-weight: bold;
+}
+.line{
+  /* color: rgba(188, 188, 188, 1); */
+  margin-top: 30rpx;
+  height: 3rpx;
+  width: 100%;
+}
+.ware_work {
+  /* margin-bottom: 25rpx; */
+  height:75rpx;
+  display: flex;
+  flex-direction: row;
+  align-items:center; 
+  justify-content: space-around;
+  font-size: 35rpx;
+  /* font-weight: bold; */
+}
+
+.courseware {
+  color: rgba(119, 168, 255, 1);
+}
+
+.homework {
+  color: #FF85AA ;
+}
+
+.wordhover {
+  /* background-color: #ebe7e7; */
+  border-radius: 20rpx;
+  /* opacity: 0.8; */
+  transform: scale(0.9,0.9);
+}
+.imghover {
+  /* background-color: #ebe7e7; */
+  border-radius: 20rpx;
+  /* opacity: 0.6; */
+  transform: translate(0px,-3px) ;
+  /* transform: rotate(180deg); */
 }

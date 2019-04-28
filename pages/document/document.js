@@ -1,161 +1,242 @@
 // pages/document/document.js
-import { myURL} from "../../setting.js"
-const app=getApp()
+import {
+  myURL
+} from "../../setting.js"
+const app = getApp()
+const array = []
+for (var i = 0; i < 100; i++) {
+  array.push(0);
+}
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    courseList:'',
-    course_code:'',
-    status:''
+    windowShow: 0,
+    array: array, //存课件标号，给收藏判断
+    courseList: '',
+    course_code: '',
+    course_name: '',
+    status: ''
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
-    let that=this
+  onLoad: function(options) {
+    wx.setNavigationBarTitle({
+      title: options.course_name,
+    })
+    let that = this
+    console.log(app.globalData.openid)
     that.setData({
-      course_code:options.course_code
+      course_code: options.course_code,
+      course_name: options.course_name
     })
     wx.request({
-      url: myURL +'/coursewarelist',
+      url: myURL + '/coursewarelist',
       // url: "http://v.ncut.edu.cn/document?code=2019_S_7002501_2019S510015",
-      data:{
+      data: {
         openid: app.globalData.openid,
-        coursecode:that.data.course_code
+        coursecode: that.data.course_code,
+        mode: 'all'
       },
-      success:function(res){
-        var courseTemp=[]
-        Object.keys(res.data.data).forEach(function(key){
-          courseTemp.push(Object.assign({"file_name":key.slice(1)},res.data.data[key]))
-        })
+      success: function(res) {
+        console.log('warelist success')
+        // console.log(res.data)
         that.setData({
-          courseList:courseTemp
+          courseList: res.data,
         })
-        console.log(courseTemp)
+        console.log(that.data.courseList)
+        // console.log(that.data.courseList[2].favourite)
+        console.log(that.data.array)
+        for (var i = 0; i < that.data.courseList.length; i++) {
+          if (that.data.courseList[i].favourite == true) {
+            var item = 'array[' + i + ']'
+            that.setData({
+              [item]: 101,
+            })
+          }
+        }
+        console.log(that.data.array)
       }
     })
+
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
-  onReady: function () {
-
-  },
+  onReady: function() {},
 
   /**
    * Lifecycle function--Called when page show
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * Lifecycle function--Called when page hide
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * Lifecycle function--Called when page unload
    */
-  onUnload: function () {
+  onUnload: function() {
+
 
   },
 
   /**
    * Page event handler function--Called when user drop down
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * Called when page reach bottom
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * Called when user click on the top right corner to share
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  saveFile:function(e){
+
+  lookFile: function(e) { //预览
+    wx.showLoading({
+      title: '打开中',
+    })
+    setTimeout(function() {
+      wx.hideLoading()
+    }, 3000)
+
     var index = e.currentTarget.dataset.index
-    var that=this
-    var file_type = that.data.courseList[index].file_name.match(/[^.]*(\.*)$/g)
-    console.log(file_type[0])
+    let that = this
+    console.log('saveFile called')
+    console.log('array :' + that.data.array)
+    console.log(that.data.courseList[index])
+    // console.log('testnow:'+JSON.stringify(that.data.courseList))
     //
-    console.log('testnow:'+JSON.stringify(that.data.courseList[index]))
-    //
-    if(that.data.courseList[index].type==='dir'){
+    if (that.data.courseList[index].type === 'dir') {
       wx.navigateTo({
         url: '/pages/document/document?code=' + course_code + 'item' + that.data.courseList[index].sign
       })
-    }else{
+    } else {
       wx.downloadFile({
-        // 示例 url，并非真实存在
-        // url: that.data.courseList[index].url,
-        url: myURL + '/courseware?openid=' + app.globalData.openid + '&course=' + JSON.stringify(that.data.courseList[index]),
-        // data:{
-        //   openid:app.globalData.openid,
-        //   // course: that.data.courseList[index]
-        //   course: JSON.stringify(that.data.courseList[index])
-        // },
+
+        url: myURL + '/courseware?openid=' + app.globalData.openid + '&courseware=' + JSON.stringify(that.data.courseList[index]),
+
         success(res) {
-          console.log("success")
           const filePath = res.tempFilePath
+          var fileType = that.data.courseList[index].type
+
           wx.openDocument({
             filePath,
-            fileType: 'ppt',
+            // fileType:'pdf',
+            fileType: fileType,
             success(res) {
+              // console.log(fileType)
               console.log('打开文档成功')
             }
           })
+        },
+        fail: function(res) {
+          wx.showToast({
+            title: '打开文件失败',
+            icon: none
+          })
+          console.log('download fail')
         }
       })
     }
   },
-  favourites:function(e){
-    var index = e.currentTarget.dataset.index
+
+  downFile: function(e) { //下载
     let that = this
+    var index = e.currentTarget.dataset.index
     wx.request({
-      url: myURL + '/favourites/courseware',
+      url: myURL + '/reqdownload',
       data: {
         openid: app.globalData.openid,
-        course: JSON.stringify(that.data.courseList[index]),
-        mode: 'del'
+        courseware: JSON.stringify(that.data.courseList[index]),
       },
-      success: function (res) {
+      success(res) {
+        that.setData({
+          windowShow: 1,
+          wareURL: myURL + '/download?id=' + res.data
+        })
+      }
+    })
+
+  },
+
+  copyURL: function() {
+    wx.setClipboardData({
+      data: this.data.wareURL,
+      success() {
+        wx.showToast({
+          title: '复制成功',
+          icon: 'success'
+        })
+      }
+    })
+    this.setData({
+      windowShow:0
+    })
+  },
+
+  favourites: function(e) {
+    var index = e.currentTarget.dataset.index
+    console.log(e.currentTarget.dataset.index)
+    var that = this
+    that.data.courseList[index].favourite = true
+    that.setData({
+      courseList: that.data.courseList
+    })
+    wx.request({
+      url: myURL + '/favourite/courseware',
+      data: {
+        openid: app.globalData.openid,
+        courseware: JSON.stringify(that.data.courseList[index]),
+        mode: 'add'
+      },
+      success: function(res) {
         //收藏课件成功
         console.log("收藏课件成功")
-      },
-      fail: function(res){
-        console.log('收藏课件失败')
+        console.log(res)
       }
     })
   },
-  unfavourites:function(e){
+  unfavourites: function(e) {
     var index = e.currentTarget.dataset.index
     var that = this
+    that.data.courseList[index].favourite = false
+    that.setData({
+      courseList: that.data.courseList
+    })
     wx.request({
-      url: myURL +'/favourites/courseware',
-      data:{
+      url: myURL + '/favourite/courseware',
+      data: {
         openid: app.globalData.openid,
-        course: JSON.stringify(that.data.courseList[index]),
-        mode:'del'
+        courseware: JSON.stringify(that.data.courseList[index]),
+        mode: 'del',
       },
-      success:function(res){
+      success: function(res) {
         //取消收藏成功
         console.log("取消收藏课件成功")
+        console.log(res)
       }
     })
   }

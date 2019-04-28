@@ -1,19 +1,21 @@
 {
-  "pages": [    
+  "pages": [
     "pages/index/index",
+    "pages/iclass/iclass",
+    "pages/document/document",    
+    "pages/my/my",
     "pages/feedback/feedback",
     "pages/login/login",
-    "pages/my/my",
-    "pages/iclass/iclass",
+    
     "pages/webview/webview",
-    "pages/document/document",
+    
     "pages/aboutus/aboutus"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#6299ff",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "我的北方",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#a9b7b7",

@@ -1,6 +1,6 @@
 .btn{    
   background-color: #ffffff;
-  color:#6299ff;
+  color:#000000;
   border-radius: 20rpx;
   font-weight: bold;
   box-shadow: 0rpx 0rpx 10rpx 0rpx #a7a7a7;

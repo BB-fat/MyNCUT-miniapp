@@ -5,6 +5,7 @@
   width: 100%;
   height: 430rpx;  
   background-color:  #ffffff;
+  /* box-shadow: 0px 4px 30px 4px rgb(225, 229, 236); */
 }
 
 .pic_item {  
@@ -14,6 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* box-shadow: 0px 4px 30px 4px rgb(225, 229, 236); */
 }
 
 .swiper_img {  
@@ -22,7 +24,7 @@
   height: 386rpx;
   border-radius:20px;
   /* -webkit-filter: blur(0.5px); */
-  box-shadow: 0px 0px 10px 0px rgb(148, 193, 223) ;
+  box-shadow: 0px 0px 30px 0px rgb(225, 229, 236);
 }
 
 .notice{
@@ -37,7 +39,7 @@
 .notice image{  
   width:26rpx;
   height: 23rpx;
-  background-color:#70c4f5;
+  /* background-color:#70c4f5; */
 }
 .notice .wordswiper { 
   width: 100%;

@@ -3,6 +3,7 @@ import { myURL } from "../../setting.js"
 const app = getApp()
 const types = []
 
+
 Page({
   /**
    * 页面的初始数据
