@@ -98,6 +98,11 @@
   width: 41rpx;
 }
 
+.end_time{
+  font-size: 28rpx;
+  
+}
+
 .imghover {
   /* background-color: #ebe7e7; */
   border-radius: 20rpx;

@@ -1,4 +1,4 @@
-<view wx:if='{{favorList!=[]}}' class='inform'>
+<view wx:if='{{favorList.length==0}}'  class='inform'>
   <view class='informIMGview'>
     <text class='txtInfo'>---无收藏内容---</text>
   </view>

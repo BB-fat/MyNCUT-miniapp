@@ -1,8 +1,7 @@
-var util = require('../../utils/util.js');
+const util = require('../../utils/util.js')
 import { myURL } from "../../setting.js"
 const app = getApp()
 const types = []
-
 
 Page({
   /**
@@ -40,7 +39,7 @@ Page({
   toNoname: function (e) {  //匿名提交
     let that = this
     that.setData({
-      time: util.formatTime(new Date()),
+      time: new Date().toString(),
       showUp: true,
       showUp1: false
     })
@@ -62,12 +61,13 @@ Page({
   },
 
   toYesname: function (e) {  //直接提交文本和类型
-    let that = this
+    let that = this    
     that.setData({
-      time: util.formatTime(new Date()),
+      time: new Date().toString(),
       showUp: true,
       showUp1: false
     })
+    console.log(that.data.time)
     wx.request({
       url: myURL + '/feedback',
       data: {
@@ -78,6 +78,10 @@ Page({
       },
       success: function (res) {
         console.log("实名提交成功")
+        wx.showToast({
+          title: '提交成功',
+          icon:'success'
+        })
       },
       fail: function (res) {
         console.log("实名提交失败")
@@ -93,6 +97,7 @@ Page({
     wx.setNavigationBarTitle({
       title: "问题反馈",
     })
+    // console.log(util.formatTime(new Date()))
   },
 
   /**

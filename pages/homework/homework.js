@@ -39,7 +39,8 @@ Page({
       console.log(key)
       if (that.data.course_name == key) {       
         that.setData({
-          homeList: that.data.homeList_all[key]
+          homeList: that.data.homeList_all[key],
+          // end_date: that.data.homeList_all[key].end_date
         })
         break
       }

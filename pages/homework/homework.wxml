@@ -20,7 +20,7 @@
       </view>
       <image class='line' src='../../imgs/document/line.jpg'></image>
       <view class='doHome'>
-        <view class='imgView' hover="true" hover-class="imghover">
+        <!-- <view class='imgView' hover="true" hover-class="imghover">
           <image class='img' bindtap='lookFile' data-index='{{index}}'  src='../../imgs/document/look.jpg'></image>
         </view>
         <view class='imgView' hover="true" hover-class="imghover">
@@ -28,6 +28,9 @@
         </view>
         <view class='imgView' hover="true" hover-class="imghover">
           <image class='img' src='../../imgs/document/send.jpg'></image>
+        </view> -->
+        <view class='timeView' >
+          <text class='end_time' >截止时间:{{item.end_date}}</text>
         </view>
       </view>
     </view>

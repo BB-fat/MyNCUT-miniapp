@@ -86,7 +86,8 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin-top: 180rpx;
+  margin-top: 100rpx;
+  /* background-color: #346cd1; */
 }
 
 
@@ -155,7 +156,7 @@
 }
 
 .bottom-text {
-  margin-top: 200rpx;
+  margin-top: 230rpx;
   color: #000000;
   font-size: 20rpx;
   display: flex;
