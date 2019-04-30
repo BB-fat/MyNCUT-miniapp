@@ -21,7 +21,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function(options) {
+  onLoad: function(options) {    
     wx.setNavigationBarTitle({
       title: options.course_name,
     })
@@ -135,7 +135,7 @@ Page({
 
     var index = e.currentTarget.dataset.index
     let that = this
-    console.log('saveFile called')
+    // console.log('saveFile called')
     console.log(that.data.courseList[index])
     // console.log('testnow:'+JSON.stringify(that.data.courseList))
     //
@@ -149,8 +149,17 @@ Page({
         url: myURL + '/courseware?openid=' + app.globalData.openid + '&courseware=' + JSON.stringify(that.data.courseList[index]),
 
         success(res) {
+          console.log(res)
           console.log(res.statusCode)
           const filePath = res.tempFilePath
+          console.log(filePath)
+          wx.saveFile({
+            tempFilePath: filePath,
+            success(res){
+              const savedFilePath = res.savedFilePath
+              console.log(savedFilePath)
+            }
+          })
           var fileType = that.data.courseList[index].type
 
           wx.openDocument({

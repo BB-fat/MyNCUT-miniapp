@@ -1,10 +1,3 @@
-<view class='inform'>
-  <!-- <text>我们不生产作业,</text>
-  <text>我们只是知识的搬运工</text> -->
-  <view class='informIMGview'>
-    <image class='informIMG' src='../../imgs/document/waiting.gif'></image>
-  </view>
-</view>
 
 <view style='height:15rpx;'></view>
 <view class='main'>

@@ -1,4 +1,4 @@
-const util = require('../../utils/util.js')
+
 import { myURL } from "../../setting.js"
 const app = getApp()
 const types = []
@@ -39,7 +39,7 @@ Page({
   toNoname: function (e) {  //匿名提交
     let that = this
     that.setData({
-      time: new Date().toString(),
+      time: new Date().toLocaleString(),
       showUp: true,
       showUp1: false
     })
@@ -63,7 +63,7 @@ Page({
   toYesname: function (e) {  //直接提交文本和类型
     let that = this    
     that.setData({
-      time: new Date().toString(),
+      time: new Date().toLocaleString(),
       showUp: true,
       showUp1: false
     })
@@ -97,7 +97,7 @@ Page({
     wx.setNavigationBarTitle({
       title: "问题反馈",
     })
-    // console.log(util.formatTime(new Date()))
+    
   },
 
   /**

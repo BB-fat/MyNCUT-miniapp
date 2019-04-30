@@ -19,17 +19,11 @@ Page({
     homeList_all: '',
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onLoad: function() {
     let that = this
     //todo：要获取openid
     wx.getStorage({
@@ -66,11 +60,16 @@ Page({
     })
   },
 
+  onReady:function(){
+    login(this)
+    console.log("do login()")
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    login(this)
+    // login(this)
+    // console.log("do login()")
     let that = this
     wx.request({
       url: myURL + '/homework',
