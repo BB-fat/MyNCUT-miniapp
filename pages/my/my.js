@@ -1,4 +1,11 @@
 // pages/my/my.js
+const app = getApp()
+var util = require('../../utils/util.js')
+import {
+  login
+} from '../../utils/login.js'
+
+
 Page({
 
   /**
@@ -64,8 +71,12 @@ Page({
   },
 
   tapBtn1: function() {
+    wx.navigateTo({
+      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_graduation/graduate/list',
+    })
   },
   tapBtn2: function() {
+    util.windowInfo()
   },
   tapBtn3: function () {
     wx.navigateTo({
@@ -78,22 +89,18 @@ Page({
     })
   },
   tapBtn5: function () {
+    util.windowInfo()
   },
-  tapBtn6: function () {
+  tapBtn6: function (e) {
+    wx.navigateTo({
+      url: '../myFavor/myFavor',
+    })
   },
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var that=this
-    wx.getStorage({
-      key: 'userInfo',
-      success: function(res) {
-        that.setData({
-          userInfo:res.data
-        })
-      },
-    })
+   login(this)
   },
 })

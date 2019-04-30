@@ -2,14 +2,14 @@
   "pages": [
     "pages/index/index",
     "pages/iclass/iclass",
-    "pages/document/document",    
+    "pages/document/document",
     "pages/my/my",
     "pages/feedback/feedback",
     "pages/login/login",
-    
     "pages/webview/webview",
-    
-    "pages/aboutus/aboutus"
+    "pages/aboutus/aboutus",
+    "pages/homework/homework", 
+    "pages/myFavor/myFavor"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -42,5 +42,6 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "resizable": true
 }

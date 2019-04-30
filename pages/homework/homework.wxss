@@ -7,8 +7,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size:30rpx;
-  color:#707070;
+}
+
+.informIMGview {
+  height: 500rpx;
+  background-color: rgb(172, 16, 16);
+  display: flex;
+  margin: 0 auto;
+}
+
+.informIMG {
+  height: 500rpx;
 }
 
 .main {
@@ -18,7 +27,7 @@
   background-color: #fff;
 }
 
-.coursewareBlock {
+.homeBlock {
   height: 180rpx;
   width: 704rpx;
   display: flex;
@@ -43,7 +52,7 @@
   /* justify-content: space-around; */
 }
 
-.courseware_name {
+.home_name {
   font-size: 28rpx;
   margin-left: 78rpx;
 }
@@ -73,7 +82,7 @@
   width: 100%;
 }
 
-.doWare {
+.doHome {
   /* margin-top: 18rpx; */
   display: flex;
   flex-direction: row;
@@ -83,15 +92,6 @@
 .imgView{
   height: 38rpx;
   width: 41rpx;
-}
-.imgBTN{
-  height: 38rpx;
-  width: 41rpx;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  /* background-color: #fff; */
 }
 .img {
   height: 38rpx;
@@ -104,6 +104,4 @@
   opacity: 0.8;
   transform: scale(1.2,1.2);
 }
-
-
 

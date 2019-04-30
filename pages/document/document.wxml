@@ -1,10 +1,11 @@
 <view class='inform'>
-  <text>我们不生产课件,</text>
-  <text>我们只是知识的搬运工</text>
-  <view class='informIMGview'>
-    <image class='informIMG' src='../../imgs/document/waiting.gif'></image>
-  </view>
+
+<image class='informIMG' src='../../imgs/document/waiting.gif' mode="widthFix"></image>
+<text>我们不生产课件</text>
+<text>我们只是知识的搬运工</text>
+<text>loading...</text>
 </view>
+
 
 <view style='height:15rpx;'></view>
 <view class='main'>
@@ -19,20 +20,18 @@
       </view>
       <image class='line' src='../../imgs/document/line.jpg'></image>
       <view class='doWare'>
-        <image class='img' bindtap='lookFile' data-index='{{index}}' src='../../imgs/document/look.jpg'></image>
-        <image class='img' bindtap='downFile' data-index='{{index}}' src='../../imgs/document/download.jpg'></image>
-        <image class='img' src='../../imgs/document/send.jpg'></image>
+        <view class='imgView' hover="true" hover-class="imghover">
+          <image class='img' bindtap='lookFile' data-index='{{index}}' src='../../imgs/document/look.jpg'></image>
+        </view>
+        <view class='imgView' hover="true" hover-class="imghover">
+          <image class='img' bindtap='downFile' data-index='{{index}}' src='../../imgs/document/download.jpg'></image>
+        </view>
+        <view class='imgView' hover="true" hover-class="imghover">
+          <!-- <button  class='imgBTN' id='sendBTN' hover="true" hover-class="imghover" open-type="share"> -->
+            <image class='img' bindtap='sendFile' src='../../imgs/document/send.jpg'></image>
+          <!-- </button> -->
+        </view>
       </view>
     </view>
   </block>
-</view>
-
-
-<view wx:if='{{windowShow}}' class='windowView'>
-  <view class='window'>
-    <view class='win_title'>复制以下链接到浏览器下载</view>
-    <view class='win_url'>{{wareURL}}</view>
-    <view class='win_info'>（5分钟内有效）</view>
-    <button class='win_btn' bindtap='copyURL'> 复制链接</button>
-  </view>
 </view>

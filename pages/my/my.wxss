@@ -33,6 +33,9 @@
   background-color: #fff;
   color: rgb(97, 154, 254);
 }
+.card-nickName{
+  text-align: center;
+}
 
 .card-topView {
   margin-top: 20rpx;
@@ -52,6 +55,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 
 .card-bottomViewMid {
   margin-left: 30rpx;
@@ -124,7 +128,7 @@
   margin-left: 10rpx;
   margin-top: 30rpx;
   height: 214rpx;
-  width: 280rpx;
+  width: 230rpx;
   opacity: 0.6;
 }
 

@@ -1,12 +1,9 @@
 // pages/document/document.js
+var util = require('../../utils/util.js')
 import {
   myURL
 } from "../../setting.js"
 const app = getApp()
-const array = []
-for (var i = 0; i < 100; i++) {
-  array.push(0);
-}
 
 Page({
 
@@ -14,13 +11,12 @@ Page({
    * Page initial data
    */
   data: {
-    windowShow: 0,
-    array: array, //存课件标号，给收藏判断
     courseList: '',
     course_code: '',
     course_name: '',
     status: ''
   },
+
 
   /**
    * Lifecycle function--Called when page load
@@ -44,26 +40,27 @@ Page({
         mode: 'all'
       },
       success: function(res) {
-        console.log('warelist success')
-        // console.log(res.data)
-        that.setData({
-          courseList: res.data,
-        })
-        console.log(that.data.courseList)
-        // console.log(that.data.courseList[2].favourite)
-        console.log(that.data.array)
-        for (var i = 0; i < that.data.courseList.length; i++) {
-          if (that.data.courseList[i].favourite == true) {
-            var item = 'array[' + i + ']'
-            that.setData({
-              [item]: 101,
-            })
-          }
+        if(res.data==null)
+        {
+          wx.showToast({
+            title: '该课程无课件',
+            icon:'none',
+          })
+          setTimeout(function(){
+            wx.navigateBack()
+          },1500)    
         }
-        console.log(that.data.array)
+        else{
+          console.log('warelist success')
+          // console.log(res.data)
+          that.setData({
+            courseList: res.data,
+          })
+          console.log(that.data.courseList)
+        // console.log(that.data.courseList[2].favourite)
+        }        
       }
     })
-
   },
 
   /**
@@ -110,22 +107,35 @@ Page({
   /**
    * Called when user click on the top right corner to share
    */
-  onShareAppMessage: function() {
-
+  onShareAppMessage: function(res) {     //转发课件
+    if (res.from === 'button') {
+      console.log(res.target)
+      console.log(this.data.id)
+    }
+    return {
+      title: '我的课件',
+      path: '/pages/document/document?id=' + this.data.id, 
+      success: function(res) {      
+        console.log(res);
+        console.log("转发成功:" + JSON.stringify(res));
+      },
+      fail: function(res) {
+        // 转发失败
+        console.log("转发失败:" + JSON.stringify(res));
+      }
+    }
   },
 
-  lookFile: function(e) { //预览
-    wx.showLoading({
-      title: '打开中',
+  lookFile: function(e) { //预览课件
+    wx.showToast({
+      icon: 'loading',
+      title: '请稍等',
+      duration: 2000
     })
-    setTimeout(function() {
-      wx.hideLoading()
-    }, 3000)
 
     var index = e.currentTarget.dataset.index
     let that = this
     console.log('saveFile called')
-    console.log('array :' + that.data.array)
     console.log(that.data.courseList[index])
     // console.log('testnow:'+JSON.stringify(that.data.courseList))
     //
@@ -139,31 +149,33 @@ Page({
         url: myURL + '/courseware?openid=' + app.globalData.openid + '&courseware=' + JSON.stringify(that.data.courseList[index]),
 
         success(res) {
+          console.log(res.statusCode)
           const filePath = res.tempFilePath
           var fileType = that.data.courseList[index].type
 
           wx.openDocument({
             filePath,
-            // fileType:'pdf',
             fileType: fileType,
             success(res) {
-              // console.log(fileType)
+              console.log(res)
               console.log('打开文档成功')
+            },
+            fail(res) {
+              console.log(res)
+              wx.showToast({
+                title: '该文件类型不支持预览，请下载',
+                icon: 'none',
+                duratin: 2500
+              })
+              console.log('打开文档失败')
             }
           })
         },
-        fail: function(res) {
-          wx.showToast({
-            title: '打开文件失败',
-            icon: none
-          })
-          console.log('download fail')
-        }
       })
     }
   },
 
-  downFile: function(e) { //下载
+  downFile: function(e) { //下载课件
     let that = this
     var index = e.currentTarget.dataset.index
     wx.request({
@@ -174,28 +186,44 @@ Page({
       },
       success(res) {
         that.setData({
-          windowShow: 1,
-          wareURL: myURL + '/download?id=' + res.data
-        })
-      }
-    })
-
-  },
-
-  copyURL: function() {
-    wx.setClipboardData({
-      data: this.data.wareURL,
-      success() {
+            wareURL: myURL + '/download?id=' + res.data
+          }),
+          wx.showModal({
+            title: '复制以下链接到浏览器下载',
+            content: that.data.wareURL,
+            confirmText: '复制',
+            success(res) {
+              if (res.confirm) {
+                console.log('用户点击复制')
+                wx.setClipboardData({
+                  data: that.data.wareURL,
+                  success() {
+                    wx.showToast({
+                      title: '复制成功',
+                      icon: 'success'
+                    })
+                  }
+                })
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+      },
+      fail(res) {
         wx.showToast({
-          title: '复制成功',
-          icon: 'success'
+          title: '下载链接消失了',
+          icon: 'none',
+          duration: 2000
         })
       }
     })
-    this.setData({
-      windowShow:0
-    })
   },
+
+  sendFile:function(e){   //转发课件
+    util.windowInfo()
+  },
+
 
   favourites: function(e) {
     var index = e.currentTarget.dataset.index

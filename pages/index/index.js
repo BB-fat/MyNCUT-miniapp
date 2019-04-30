@@ -1,10 +1,15 @@
 // pages/index/index.js
 
+var util = require('../../utils/util.js')
 import {
   myURL
 } from "../../setting.js"
+import {
+  login
+} from '../../utils/login.js'
 
 var app = getApp()
+
 
 Page({
 
@@ -15,14 +20,14 @@ Page({
     btn1:{
       btnWidth:299,
       btnHeight:192,
-      mgtopbtn:6,
+      // mgtopbtn:6,
       fontsize:35,
       tapFunc:"toClassTable",
       mgtopimg:10,
-      imgWidth:95,
-      imgHeight:106,
+      imgWidth:100,
+      imgHeight:90,
       imgUrl:"../../imgs/index/course.png",
-      pdtoptxt:40,
+      pdtoptxt:20,
       mglefttxt:22,          
       btnTxt:"课表"
     },
@@ -31,14 +36,14 @@ Page({
       btnHeight: 152,
       mgleftbtn: 44,
       fontsize: 30,
-      tapFunc: "toGradePoint",
-      imgWidth: 69,
-      imgHeight: 69,
+      tapFunc: "toClassroom",
+      imgWidth: 75,
+      imgHeight: 75,
       mgtopimg: 15,     
-      imgUrl: "../../imgs/index/average.png",      
+      imgUrl: "../../imgs/index/room.png",      
       mglefttxt: 22,
       pdtoptxt: 10,
-      btnTxt: "绩点"
+      btnTxt: "教室"
     },
     btn3: {
       position:"absolute",
@@ -62,15 +67,15 @@ Page({
       mgtopbtn: 7,
       mgleftbtn:345,
       fontsize: 25,
-      tapFunc: "toGraduate",
-      imgWidth: 77,
-      imgHeight: 57,
+      tapFunc: "toGradePoint",
+      imgWidth: 64,
+      imgHeight: 56,
       imgViewW:120,
       imgViewH:50,
       mgtopimgView: 19,
-      imgUrl: "../../imgs/index/graduate.png",
+      imgUrl: "../../imgs/index/average.png",
       txtWidth:120,
-      btnTxt: "毕业要求"
+      btnTxt: "绩点"
     },
     btn5: {
       position: "absolute",
@@ -79,16 +84,16 @@ Page({
       mgtopbtn: 7,
       mgleftbtn: 518,
       fontsize: 25,
-      tapFunc: "toClassroom",
+      tapFunc: "toGraduate",
       imgWidth: 64,
       imgHeight: 56,
       imgViewW: 120,
       imgViewH: 50,
       mgtopimgView: 19,
-      imgUrl: "../../imgs/index/room.png",
+      imgUrl: "../../imgs/index/graduate.png",
       txtWidth: 120,
       mgtoptxt:2,
-      btnTxt: "教室"
+      btnTxt: "学分"
     },
     
   },
@@ -105,6 +110,9 @@ Page({
           indexBanner:res.data.indexBanner,
           indexNotice:res.data.indexNotice
         })
+      },
+      fail(res){
+        console.log('banner&notice fail')
       }
     })
 
@@ -114,47 +122,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    // 在缓存中查找userInfo
-    wx.getStorage({
-      key: 'userInfo',
-      // 没有userInfo向服务器请求用户数据
-      success(res) {
-        console.log("success get userInfo")
-        console.log(res.data)
-      },
-      fail() {
-        wx.request({
-          url: myURL + '/login/openid',
-          data: {
-            openid: app.globalData.openid
-          },
-          success(res) {
-            console.log(res.data)
-            // 返回值非空时设定缓存
-            if (res.data != null) {
-              wx.setStorage({
-                key: 'userInfo',
-                data: res.data.userInfo,
-              })
-              wx.setStorage({
-                key: 'openid',
-                data: app.globalData.openid,
-              })
-            }
-          }
-        })
-      }
-    })
+    login(this)  
   },
 
    
     //轮播图点击事件
-  swipclick: function(e) {
-      console.log(e)
-      wx.navigateTo({
-        url: '../webview/webview?mode=normal&url=' + this.data.indexBanner[e.currentTarget.dataset.index]['msgUrl']
-      })
-    },
+  // swipclick: function(e) {
+  //     console.log(e)
+  //     wx.navigateTo({
+  //       url: '../webview/webview?mode=normal&url=' + this.data.indexBanner[e.currentTarget.dataset.index]['msgUrl']
+  //     })
+  //   },
+  swipclick: function (e) {
+    util.windowInfo()
+  },
 
 
   // 跳转至课表
@@ -178,7 +159,7 @@ Page({
     })
   },
 
-  // 跳转至毕业要求
+  // 跳转至我的学分
   toGraduate: function() {
     wx.navigateTo({
       url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate',

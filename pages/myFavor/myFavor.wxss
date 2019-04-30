@@ -7,8 +7,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size:30rpx;
-  color:#707070;
+}
+
+.informIMGview {
+  height: 500rpx;
+  /* background-color: rgb(172, 16, 16);  */
+  display: flex;
+  margin: 0 auto;
+}
+
+.txtInfo{
+  color: rgb(163, 159, 159);
+  font-size: 32rpx;
 }
 
 .main {

@@ -19,6 +19,9 @@
 
 .title {
   color: #fff;
+  display: inline-block;
+  height: 80%;
+  font-size: 40rpx;
 }
 .topView{
   position: absolute;

@@ -14,6 +14,17 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function windowInfo(){
+  wx.showToast({
+    title: '该功能尚未开发',
+    icon:'none'
+  })
+}
+
 module.exports = {
   formatTime: formatTime
+}
+
+module.exports = {
+  windowInfo: windowInfo
 }

@@ -1,11 +1,14 @@
 // pages/webview/webview.js
+import{
+  myURL
+}from '../../setting.js'
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    oauthUrl: "https://ucpay.ncut.edu.cn/open/user/oauth/index?redirect=http://myncut.ncut.edu.cn/login/oauth&appid=31b1e992583074382&state="
+    oauthUrl: 'https://ucpay.ncut.edu.cn/open/user/oauth/index?redirect='+myURL+'/login/oauth&appid=31b1e992583074382&state='
   },
 
   /**
