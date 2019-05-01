@@ -5,7 +5,8 @@ import {
   myURL
 } from "../../setting.js"
 import {
-  login
+  checkAuth,
+  goAuth
 } from '../../utils/login.js'
 
 var app = getApp()
@@ -13,9 +14,6 @@ var app = getApp()
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     btn1:{
       btnWidth:299,
@@ -122,9 +120,12 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onReady: function () {
-    login(this)
-    console.log("do login()")    
+  onShow:function(){
+    checkAuth(this)
+  },
+
+  toAuth:function(){
+    goAuth()
   },
 
    

@@ -1,13 +1,16 @@
-import { myURL } from "../setting.js"
+import {
+  myURL
+} from "../setting.js"
 
 var app = getApp()
-export function login(that) {
+
+export function checkAuth(that) {
   // 尝试从缓存中读取openid
   if (app.globalData.openid == undefined) {
     wx.getStorage({
       key: 'openid',
       // 读取成功，写入全局变量备用
-      success: function (res) {
+      success: function(res) {
         console.log("success get openid")
         app.globalData.openid = res.data
         getUserInfo(that)
@@ -31,14 +34,15 @@ export function login(that) {
                 })
                 // 个人信息为空，跳转至认证网页
                 if (res.data.userInfo == null) {
-                  wx.navigateTo({
-                    url: '../webview/webview?mode=oauth&openid=' + res.data.openid,
-                  })
-                }
-                else {
+                  //数据库中没有认证数据
                   that.setData({
-                    userInfo: res.data.userInfo
+                    authed: false
                   })
+                } else {
+                  that.setData({
+                    authed: true,
+                  })
+                  app.globalData.userInfo = res.data.userInfo
                 }
               }
             })
@@ -52,23 +56,32 @@ export function login(that) {
 }
 
 function getUserInfo(that) {
-  wx.request({
-    url: myURL + '/login/openid',
-    data: {
-      openid: app.globalData.openid
-    },
-    success(res) {
-      console.log(res.data)
-      if (res.data.userInfo == null) {
-        wx.navigateTo({
-          url: '../webview/webview?mode=oauth&openid=' + res.data.openid,
-        })
+  if (that.data.userInfo == null) {
+    wx.request({
+      url: myURL + '/login/openid',
+      data: {
+        openid: app.globalData.openid
+      },
+      success(res) {
+        console.log(res.data)
+        if (res.data.userInfo == null) {
+          //数据库中没有认证数据
+          that.setData({
+            authed: false
+          })
+        } else {
+          that.setData({
+            authed: true,
+          })
+          app.globalData.userInfo = res.data.userInfo
+        }
       }
-      else {
-        that.setData({
-          userInfo: res.data.userInfo
-        })
-      }
-    }
+    })
+  }
+}
+
+export function goAuth() {
+  wx.navigateTo({
+    url: '../webview/webview?mode=oauth&openid=' + app.globalData.openid,
   })
 }

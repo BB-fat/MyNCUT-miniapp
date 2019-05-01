@@ -35,4 +35,5 @@
   <template is="buttons_h" data="{{...btn3}}" />
   <template is="buttons_v" data="{{...btn4}}" />
   <template is="buttons_v" data="{{...btn5}}" />  
+  <button wx:if='{{!authed}}' bindtap='toAuth'>test</button>
 </view>
