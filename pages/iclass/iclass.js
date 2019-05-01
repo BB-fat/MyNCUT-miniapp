@@ -23,7 +23,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onLoad: function() {
+  onLoad: function() { 
     let that = this
     //todo：要获取openid
     wx.getStorage({
@@ -108,6 +108,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
+    // wx.showNavigationBarLoading();
     let that = this
     wx.request({
       url: myURL + '/courselist',
@@ -134,7 +135,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+    
   },
 
   /**

@@ -26,5 +26,5 @@
       </view>
     </view>
   </block>
-  <view style='height:50rpx'></view>
+  <view style='height:50rpx'></view> 
 </scroll-view>

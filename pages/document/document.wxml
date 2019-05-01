@@ -1,13 +1,12 @@
 <view class='inform'>
-
-<image class='informIMG' src='../../imgs/document/waiting.gif' mode="widthFix"></image>
-<text>我们不生产课件</text>
-<text>我们只是知识的搬运工</text>
-<text>loading...</text>
+  <image class='informIMG' src='../../imgs/document/waiting.gif' mode="widthFix"></image>
+  <text>我们不生产课件</text>
+  <text>我们只是知识的搬运工</text>
+  <text>loading...</text>
 </view>
 
 
-<view style='height:15rpx;'></view>
+<view style='height:20rpx;'></view>
 <view class='main'>
   <block class='coursewareList' wx:for='{{courseList}}'>
     <view class='coursewareBlock'>
@@ -28,10 +27,11 @@
         </view>
         <view class='imgView' hover="true" hover-class="imghover">
           <!-- <button  class='imgBTN' id='sendBTN' hover="true" hover-class="imghover" open-type="share"> -->
-            <image class='img' bindtap='sendFile' src='../../imgs/document/send.jpg'></image>
+          <image class='img' bindtap='sendFile' src='../../imgs/document/send.jpg'></image>
           <!-- </button> -->
         </view>
       </view>
     </view>
   </block>
+  <view style='height:40rpx'></view>
 </view>

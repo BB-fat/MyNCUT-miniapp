@@ -153,13 +153,13 @@ Page({
           console.log(res.statusCode)
           const filePath = res.tempFilePath
           console.log(filePath)
-          wx.saveFile({
-            tempFilePath: filePath,
-            success(res){
-              const savedFilePath = res.savedFilePath
-              console.log(savedFilePath)
-            }
-          })
+          // wx.saveFile({
+          //   tempFilePath: filePath,
+          //   success(res){
+          //     const savedFilePath = res.savedFilePath
+          //     console.log(savedFilePath)
+          //   }
+          // })
           var fileType = that.data.courseList[index].type
 
           wx.openDocument({

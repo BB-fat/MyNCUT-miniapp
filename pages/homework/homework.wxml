@@ -1,5 +1,4 @@
-
-<view style='height:15rpx;'></view>
+<view style='height:20rpx;'></view>
 <view class='main'>
   <block class='homeList' wx:for='{{homeList}}'>
     <view class='homeBlock'>
@@ -28,4 +27,5 @@
       </view>
     </view>
   </block>
+  <view style='height:40rpx'></view>
 </view>

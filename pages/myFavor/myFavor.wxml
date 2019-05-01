@@ -5,7 +5,7 @@
 </view>
 
 <view wx:else >
-  <view style='height:15rpx;'></view>
+  <view style='height:20rpx;'></view>
   <view class='main'>
     <block class='coursewareList' wx:for='{{favorList}}'>
       <view class='coursewareBlock'>
@@ -32,5 +32,6 @@
         </view>
       </view>
     </block>
+    <view style='height:40rpx'></view>
   </view>
 </view>
