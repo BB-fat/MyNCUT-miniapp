@@ -33,19 +33,7 @@ export function checkAuth(that) {
                   data: res.data.openid,
                 })
                 // 个人信息为空，跳转至认证网页
-                if (res.data.userInfo == null) {
-                  //数据库中没有认证数据
-                  that.setData({
-                    authed: false
-                  })
-                  app.globalData.authed=false
-                } else {
-                  that.setData({
-                    authed: true
-                  })
-                  app.globalData.authed=true
-                  app.globalData.userInfo = res.data.userInfo
-                }
+                checkUserInfo(res,that)
               }
             })
           }
@@ -66,19 +54,7 @@ function getUserInfo(that) {
       },
       success(res) {
         console.log(res.data)
-        if (res.data.userInfo == null) {
-          //数据库中没有认证数据
-          that.setData({
-            authed:false
-          })
-          app.globalData.authed=false
-        } else {
-          that.setData({
-            authed: true
-          })
-          app.globalData.authed=true
-          app.globalData.userInfo = res.data.userInfo
-        }
+        checkUserInfo(res,that)
       }
     })
   }
@@ -87,6 +63,22 @@ function getUserInfo(that) {
       authed:true
     })
     app.globalData.authed=true
+  }
+}
+
+function checkUserInfo(res,that){
+  if (res.data.userInfo == null) {
+    //数据库中没有认证数据
+    that.setData({
+      authed: false
+    })
+    app.globalData.authed=false
+  } else {
+    that.setData({
+      authed: true
+    })
+    app.globalData.authed=true
+    app.globalData.userInfo = res.data.userInfo
   }
 }
 

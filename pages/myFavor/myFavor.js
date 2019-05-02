@@ -5,7 +5,10 @@ import {
 } from "../../setting.js"
 
 import {
-  lookFile
+  lookFile,
+  downloadFile,
+  onFavor,
+  offFavor
 } from "../../utils/document.js"
 
 const app = getApp()
@@ -22,7 +25,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: "我的收藏",
     })
@@ -41,7 +44,7 @@ Page({
     })
   },
 
-  onShareAppMessage: function(res) {
+  onShareAppMessage: function (res) {
     var courseware = this.data.favorList[res.target.dataset.index]
     if (res.from === 'button') {
       return {
@@ -52,10 +55,9 @@ Page({
     }
   },
 
-  lookFile: function(e) {
+  lookFile: function (e) {
     var that = this
     var index = e.currentTarget.dataset.index
-    console.log(that.data.favorList[index])
     if (that.data.favorList[index].type === 'dir') {
       wx.navigateTo({
         url: '/pages/document/document?code=' + course_code + 'item' + that.data.favorList[index].sign
@@ -65,93 +67,29 @@ Page({
     }
   },
 
-  downFile: function(e) { //下载课件
+  downFile: function (e) { //下载课件
     let that = this
     var index = e.currentTarget.dataset.index
-    wx.request({
-      url: myURL + '/reqdownload',
-      data: {
-        openid: app.globalData.openid,
-        courseware: JSON.stringify(that.data.favorList[index]),
-      },
-      success(res) {
-        console.log(res.data)
-        that.setData({
-            wareURL: myURL + '/download?id=' + res.data
-          }),
-          wx.showModal({
-            title: '复制以下链接到浏览器下载',
-            content: that.data.wareURL,
-            confirmText: '复制',
-            success(res) {
-              if (res.confirm) {
-                console.log('用户点击复制')
-                wx.setClipboardData({
-                  data: that.data.wareURL,
-                  success() {
-                    wx.showToast({
-                      title: '复制成功',
-                      icon: 'success'
-                    })
-                  }
-                })
-              } else if (res.cancel) {
-                console.log('用户点击取消')
-              }
-            }
-          })
-      },
-      fail(res) {
-        wx.showToast({
-          title: '下载链接消失了',
-          icon: 'none',
-          duration: 2000
-        })
-      }
-    })
+    downloadFile(that.data.favorList[index])
   },
 
-  favourites: function(e) {
+  favourites: function (e) {
     var index = e.currentTarget.dataset.index
-    console.log(e.currentTarget.dataset.index)
     var that = this
     that.data.favorList[index].favourite = true
     that.setData({
       favorList: that.data.favorList
     })
-    wx.request({
-      url: myURL + '/favourite/courseware',
-      data: {
-        openid: app.globalData.openid,
-        courseware: JSON.stringify(that.data.favorList[index]),
-        mode: 'add'
-      },
-      success: function(res) {
-        //收藏课件成功
-        console.log("收藏课件成功")
-        console.log(res)
-      }
-    })
+    onFavor(that.data.favorList[index])
   },
-  unfavourites: function(e) {
+  
+  unfavourites: function (e) {
     var index = e.currentTarget.dataset.index
     var that = this
     that.data.favorList[index].favourite = false
     that.setData({
       favorList: that.data.favorList
     })
-    wx.request({
-      url: myURL + '/favourite/courseware',
-      data: {
-        openid: app.globalData.openid,
-        courseware: JSON.stringify(that.data.favorList[index]),
-        mode: 'del',
-      },
-      success: function(res) {
-        //取消收藏成功
-        console.log("取消收藏课件成功")
-        console.log(res)
-      }
-    })
+    offFavor(that.data.favorList[index])
   },
 })

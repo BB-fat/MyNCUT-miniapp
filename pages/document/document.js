@@ -5,7 +5,10 @@ import {
 } from "../../setting.js"
 
 import {
-  lookFile
+  lookFile,
+  downloadFile,
+  onFavor,
+  offFavor
 } from "../../utils/document.js"
 
 const app = getApp()
@@ -31,7 +34,6 @@ Page({
       title: options.course_name,
     })
     let that = this
-    console.log(app.globalData.openid)
     that.setData({
       course_code: options.course_code,
       course_name: options.course_name
@@ -55,11 +57,9 @@ Page({
           },1500)    
         }
         else{
-          console.log('warelist success')
           that.setData({
             courseList: res.data,
           })
-          console.log(that.data.courseList)
         }        
       }
     })
@@ -82,7 +82,6 @@ Page({
   lookFile:function(e){
     var that=this
     var index = e.currentTarget.dataset.index
-    console.log(that.data.courseList[index])
     if (that.data.courseList[index].type === 'dir') {
       wx.navigateTo({
         url: '/pages/document/document?code=' + course_code + 'item' + that.data.courseList[index].sign
@@ -95,75 +94,19 @@ Page({
   downFile: function(e) { //下载课件
     let that = this
     var index = e.currentTarget.dataset.index
-    wx.request({
-      url: myURL + '/reqdownload',
-      data: {
-        openid: app.globalData.openid,
-        courseware: JSON.stringify(that.data.courseList[index]),
-      },
-      success(res) {
-        that.setData({
-            wareURL: myURL + '/download?id=' + res.data
-          }),
-          wx.showModal({
-            title: '复制以下链接到浏览器下载',
-            content: that.data.wareURL,
-            confirmText: '复制',
-            success(res) {
-              if (res.confirm) {
-                console.log('用户点击复制')
-                wx.setClipboardData({
-                  data: that.data.wareURL,
-                  success() {
-                    wx.showToast({
-                      title: '复制成功',
-                      icon: 'success'
-                    })
-                  }
-                })
-              } else if (res.cancel) {
-                console.log('用户点击取消')
-              }
-            }
-          })
-      },
-      fail(res) {
-        wx.showToast({
-          title: '下载链接消失了',
-          icon: 'none',
-          duration: 2000
-        })
-      }
-    })
+    downloadFile(that.data.courseList[index])
   },
 
-  // sendFile:function(e){   //转发课件
-  //   util.windowInfo()
-  // },
-
-
   favourites: function(e) {
-    var index = e.currentTarget.dataset.index
-    console.log(e.currentTarget.dataset.index)
     var that = this
+    var index = e.currentTarget.dataset.index
     that.data.courseList[index].favourite = true
     that.setData({
       courseList: that.data.courseList
     })
-    wx.request({
-      url: myURL + '/favourite/courseware',
-      data: {
-        openid: app.globalData.openid,
-        courseware: JSON.stringify(that.data.courseList[index]),
-        mode: 'add'
-      },
-      success: function(res) {
-        //收藏课件成功
-        console.log("收藏课件成功")
-        console.log(res)
-      }
-    })
+    onFavor(that.data.courseList[index])
   },
+
   unfavourites: function(e) {
     var index = e.currentTarget.dataset.index
     var that = this
@@ -171,18 +114,6 @@ Page({
     that.setData({
       courseList: that.data.courseList
     })
-    wx.request({
-      url: myURL + '/favourite/courseware',
-      data: {
-        openid: app.globalData.openid,
-        courseware: JSON.stringify(that.data.courseList[index]),
-        mode: 'del',
-      },
-      success: function(res) {
-        //取消收藏成功
-        console.log("取消收藏课件成功")
-        console.log(res)
-      }
-    })
+    offFavor(that.data.courseList[index])  
   }
 })

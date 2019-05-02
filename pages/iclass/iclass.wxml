@@ -1,19 +1,7 @@
-<view class='checkOath' wx:if='{{!authed}}'>
-  <view class='word'>
-    <view class='row1'>
-      <text>亲爱的</text>
-      <open-data type='userNickName' class="card-nickName"></open-data>
-    </view>
-    <text class='row1'>欢迎来到“我的北方”</text>
-    <view class='row3'>
-      <text>您需要</text>
-      <text class='renzheng'>认证</text>
-      <text>方可正常使用此小程序</text>
-    </view>
-  </view>
-  <image class='img_renzheng' src='../../imgs/index/welcome.png'></image>
-  <view class='btn_ren' hover="true" hover-class="btnhover" bindtap='toAuth'>点击前往认证</view>
-</view>
+<import src="../../templates/authView/authView.wxml" />
+
+<template wx:if="{{!authed}}" is="authView"></template>
+
 
 <view wx:else>
   <view class='top'>

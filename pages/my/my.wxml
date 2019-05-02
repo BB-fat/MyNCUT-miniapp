@@ -1,22 +1,8 @@
 <import src="../../templates/myButton/myButton.wxml" />
 <import src="../../templates/buttons_h/buttons_h.wxml" />
+<import src="../../templates/authView/authView.wxml" />
 
-<view class='checkOath' wx:if='{{!authed}}'>
-  <view class='word'>
-    <view class='row_name'>
-      <text>亲爱的</text>
-      <open-data type='userNickName' class="card-nickName2"></open-data>
-    </view>
-    <text class='row_name'>欢迎来到“我的北方”</text>
-    <view class='row3'>
-      <text>您需要</text>
-      <text class='renzheng'>认证</text>
-      <text>方可正常使用此小程序</text>
-    </view>
-  </view>
-  <image class='img_renzheng' src='../../imgs/index/welcome.png'></image>
-  <view class='btn_ren' hover="true" hover-class="btnhover" bindtap='toAuth'>点击前往认证</view>
-</view>
+<template wx:if="{{!authed}}" is="authView"></template>
 
 <view wx:else>
   <view class="background-blue"></view>
@@ -24,7 +10,6 @@
     <view class="card">
       <view class="card-topView">
         <image src='../../imgs/my/bfgy.png' class="card-schoolIcon"></image>
-        <!-- <text class="card-text">电子名片</text> -->
       </view>
       <view class="card-bottomView">
         <view class="card-bottomViewLeft">

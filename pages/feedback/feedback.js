@@ -23,8 +23,6 @@ Page({
       nowTxtlen: e.detail.cursor,
       nowTxt: e.detail.value
     })
-    console.log(that.data.nowTxtlen)
-    console.log(that.data.nowTxt)
   },
 
   bindChange: function (e) {  //反馈类型切换
@@ -33,7 +31,6 @@ Page({
     that.setData({
       myChoice: this.data.types[val]
     })
-    console.log(that.data.myChoice)
   },
 
   toNoname: function (e) {  //匿名提交
@@ -97,55 +94,5 @@ Page({
     wx.setNavigationBarTitle({
       title: "问题反馈",
     })
-    
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

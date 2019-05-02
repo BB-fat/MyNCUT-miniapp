@@ -1,0 +1,18 @@
+<template name="authView">
+    <view class='authView'>
+        <view class='authView-word'>
+            <view class='authView-line'>
+                <text>亲爱的</text>
+                <open-data type='userNickName'></open-data>
+            </view>
+            <text class='authView-line'>欢迎来到“我的北方”</text>
+            <view class='authView-line2'>
+                <text>您需要</text>
+                <text class='authView-renzheng'>认证</text>
+                <text>方可正常使用此小程序</text>
+            </view>
+        </view>
+        <image class='authView-img' src='../../imgs/index/welcome.png'></image>
+        <view class='authView-btn' hover="true" hover-class="authView-btnhover" bindtap='toAuth'>点击前往认证</view>
+    </view>
+</template>
