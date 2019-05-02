@@ -15,6 +15,7 @@ var app = getApp()
 Page({
 
   data: {
+    authed:true,
     btn1:{
       btnWidth:299,
       btnHeight:192,

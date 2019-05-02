@@ -1,30 +1,47 @@
-<view class='top'>
-  <view class='blackBG'>
-    <text class='title'>课程列表</text>
+<view class='checkOath' wx:if='{{!authed}}'>
+  <view class='word'>
+    <view class='row1'>
+      <text>亲爱的</text>
+      <open-data type='userNickName' class="card-nickName"></open-data>
+    </view>
+    <text class='row1'>欢迎来到“我的北方”</text>
+    <view class='row3'>
+      <text>您需要</text>
+      <text class='renzheng'>认证</text>
+      <text>方可正常使用此小程序</text>
+    </view>
   </view>
+  <image class='img_renzheng' src='../../imgs/index/welcome.png'></image>
+  <view class='btn_ren' hover="true" hover-class="btnhover" bindtap='toAuth'>点击前往认证</view>
 </view>
 
-
-<scroll-view class='topView' scroll-y>
-  <view style='height:10rpx;'></view>
-  <block class='courseList' wx:for='{{courseList}}'>
-    <view class='courseBlock'>
-      <view class='course_name'>{{item.course_name}}</view>
-      <view class='row_tct'>
+<view wx:else>
+  <view class='top'>
+    <view class='blackBG'>
+      <text class='title'>课程列表</text>
+    </view>
+  </view>
+  <scroll-view class='topView' scroll-y>
+    <view style='height:10rpx;'></view>
+    <block class='courseList' wx:for='{{courseList}}'>
+      <view class='courseBlock'>
+        <view class='name_top'>
+          <view class='course_name'>{{item.course_name}}</view>
+          <view class='imgView' hover="true" hover-class="imghover">
+            <image class='img_top' src='../../imgs/iclass/top.png' data-index="{{index}}" bindtap='toTop'></image>
+          </view>
+        </view>
         <view class='column_tc'>
           <view class='course_teacher'>{{item.teacher_name}}</view>
           <view class='course_class'>{{item.course_class}}</view>
         </view>
-        <view class='imgView' hover="true" hover-class="imghover">
-          <image class='img_top' src='../../imgs/iclass/top.png' data-index="{{index}}" bindtap='toTop'></image>
+        <image class='line' src='../../imgs/iclass/line.jpg'></image>
+        <view class='ware_work'>
+          <view class='courseware' hover="true" hover-class="wordhover" bindtap='getDocument' data-course_code='{{item.course_code}}' data-course_name='{{item.course_name}}'>课件资料</view>
+          <view class='homework' hover="true" hover-class="wordhover" bindtap='getHomework' data-course_class='{{item.course_class}}' data-course_name='{{item.course_name}}'>课程作业</view>
         </view>
       </view>
-      <image class='line' src='../../imgs/iclass/line.jpg'></image>
-      <view class='ware_work'>
-        <view class='courseware' hover="true" hover-class="wordhover" bindtap='getDocument' data-course_code='{{item.course_code}}' data-course_name='{{item.course_name}}'>课件资料</view>
-        <view class='homework' hover="true" hover-class="wordhover" bindtap='getHomework' data-course_class='{{item.course_class}}' data-course_name='{{item.course_name}}'>课程作业</view>
-      </view>
-    </view>
-  </block>
-  <view style='height:50rpx'></view> 
-</scroll-view>
+    </block>
+    <view style='height:50rpx'></view>
+  </scroll-view>
+</view>

@@ -26,9 +26,8 @@
           <image class='img' bindtap='downFile' data-index='{{index}}' src='../../imgs/document/download.jpg'></image>
         </view>
         <view class='imgView' hover="true" hover-class="imghover">
-          <!-- <button  class='imgBTN' id='sendBTN' hover="true" hover-class="imghover" open-type="share"> -->
-          <image class='img' bindtap='sendFile' src='../../imgs/document/send.jpg'></image>
-          <!-- </button> -->
+          <button class='imgBTN' id='sendBTN' hover="true" open-type="share" data-index='{{index}}'></button>
+          <image class='sendimg' src='../../imgs/document/send.jpg'></image>
         </view>
       </view>
     </view>

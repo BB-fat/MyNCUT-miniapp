@@ -38,10 +38,12 @@ export function checkAuth(that) {
                   that.setData({
                     authed: false
                   })
+                  app.globalData.authed=false
                 } else {
                   that.setData({
-                    authed: true,
+                    authed: true
                   })
+                  app.globalData.authed=true
                   app.globalData.userInfo = res.data.userInfo
                 }
               }
@@ -56,7 +58,7 @@ export function checkAuth(that) {
 }
 
 function getUserInfo(that) {
-  if (that.data.userInfo == null) {
+  if (app.globalData.userInfo == null) {
     wx.request({
       url: myURL + '/login/openid',
       data: {
@@ -67,16 +69,24 @@ function getUserInfo(that) {
         if (res.data.userInfo == null) {
           //数据库中没有认证数据
           that.setData({
-            authed: false
+            authed:false
           })
+          app.globalData.authed=false
         } else {
           that.setData({
-            authed: true,
+            authed: true
           })
+          app.globalData.authed=true
           app.globalData.userInfo = res.data.userInfo
         }
       }
     })
+  }
+  else{
+    that.setData({
+      authed:true
+    })
+    app.globalData.authed=true
   }
 }
 

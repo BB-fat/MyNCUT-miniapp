@@ -3,6 +3,11 @@ var util = require('../../utils/util.js')
 import {
   myURL
 } from "../../setting.js"
+
+import {
+  lookFile
+} from "../../utils/document.js"
+
 const app = getApp()
 
 Page({
@@ -36,52 +41,27 @@ Page({
     })
   },
 
-  lookFile: function(e) { //预览课件
-    wx.showToast({
-      icon: 'loading',
-      title: '请稍等',
-      duration: 2000
-    })
+  onShareAppMessage: function(res) {
+    var courseware = this.data.favorList[res.target.dataset.index]
+    if (res.from === 'button') {
+      return {
+        title: courseware.file_name,
+        path: '/pages/iclass/iclass?courseware=' + JSON.stringify(courseware),
+        imageUrl: "../../imgs/share.png"
+      }
+    }
+  },
 
+  lookFile: function(e) {
+    var that = this
     var index = e.currentTarget.dataset.index
-    let that = this
-    console.log('saveFile called')
     console.log(that.data.favorList[index])
-    // console.log('testnow:'+JSON.stringify(that.data.favorList))
-    //
     if (that.data.favorList[index].type === 'dir') {
       wx.navigateTo({
         url: '/pages/document/document?code=' + course_code + 'item' + that.data.favorList[index].sign
       })
     } else {
-      wx.downloadFile({
-
-        url: myURL + '/courseware?openid=' + app.globalData.openid + '&courseware=' + JSON.stringify(that.data.favorList[index]),
-
-        success(res) {
-          console.log(res.statusCode)
-          const filePath = res.tempFilePath
-          var fileType = that.data.favorList[index].type
-
-          wx.openDocument({
-            filePath,
-            fileType: fileType,
-            success(res) {
-              console.log(res)
-              console.log('打开文档成功')
-            },
-            fail(res) {
-              console.log(res)
-              wx.showToast({
-                title: '该文件类型不支持预览，请下载',
-                icon: 'none',
-                duratin: 2500
-              })
-              console.log('打开文档失败')
-            }
-          })
-        },
-      })
+      lookFile(that.data.favorList[index])
     }
   },
 
@@ -131,11 +111,6 @@ Page({
     })
   },
 
-  sendFile: function(e) { //转发课件
-    util.windowInfo()
-  },
-
-
   favourites: function(e) {
     var index = e.currentTarget.dataset.index
     console.log(e.currentTarget.dataset.index)
@@ -179,53 +154,4 @@ Page({
       }
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  }
 })

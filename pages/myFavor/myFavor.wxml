@@ -1,10 +1,10 @@
-<view wx:if='{{favorList.length==0}}'  class='inform'>
+<view wx:if='{{favorList.length==0}}' class='inform'>
   <view class='informIMGview'>
     <text class='txtInfo'>---无收藏内容---</text>
   </view>
 </view>
 
-<view wx:else >
+<view wx:else>
   <view style='height:20rpx;'></view>
   <view class='main'>
     <block class='coursewareList' wx:for='{{favorList}}'>
@@ -25,9 +25,8 @@
             <image class='img' bindtap='downFile' data-index='{{index}}' src='../../imgs/document/download.jpg'></image>
           </view>
           <view class='imgView' hover="true" hover-class="imghover">
-            <!-- <button  class='imgBTN' id='sendBTN' hover="true" hover-class="imghover" open-type="share"> -->
-            <image class='img' bindtap='sendFile' src='../../imgs/document/send.jpg'></image>
-            <!-- </button> -->
+            <button class='imgBTN' id='sendBTN' hover="true" open-type="share" data-index='{{index}}'></button>
+            <image class='sendimg' src='../../imgs/document/send.jpg'></image>
           </view>
         </view>
       </view>

@@ -2,7 +2,8 @@
 const app = getApp()
 var util = require('../../utils/util.js')
 import {
-  login
+  checkAuth,
+  goAuth
 } from '../../utils/login.js'
 
 
@@ -12,6 +13,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    authed:true,
     btn1: {
       tapFun: "tapBtn1",
       iconHeight: 63,
@@ -47,8 +49,8 @@ Page({
       fontsize: 35,
       tapFunc: "tapBtn5",
       mgtopimg: 30,
-      imgWidth: 70,
-      imgHeight: 60,
+      imgWidth: 80,
+      imgHeight: 75,
       imgUrl: "../../imgs/my/message.png",
       pdtoptxt: 0,
       mglefttxt: 0,
@@ -61,8 +63,8 @@ Page({
       fontsize: 35,
       tapFunc: "tapBtn6",
       mgtopimg: 25,
-      imgWidth: 70,
-      imgHeight: 50,
+      imgWidth: 80,
+      imgHeight: 65,
       imgUrl: "../../imgs/my/collection.png",
       pdtoptxt: 0,
       mglefttxt: 0,
@@ -96,11 +98,17 @@ Page({
       url: '../myFavor/myFavor',
     })
   },
-  
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onReady: function(options) {
-   login(this)
+
+  onShow:function(){
+    checkAuth(this)
+    if (this.data.userInfo == null && app.globalData.authed){
+      this.setData({
+        userInfo:app.globalData.userInfo
+      })
+    }
+  },
+
+  toAuth:function(){
+    goAuth()
   },
 })

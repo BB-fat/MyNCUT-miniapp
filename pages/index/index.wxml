@@ -1,39 +1,57 @@
 <import src="../../templates/buttons_h/buttons_h.wxml" />
 <import src="../../templates/buttons_v/buttons_v.wxml" />
 
-<swiper class="picswiper" previous-margin="40rpx" next-margin="40rpx"  autoplay="true" circular="true" interval="2600" duration="1000">
-  <block wx:for="{{indexBanner}}">
-    <swiper-item class='pic_item'>       
-      <view hover-class="navigator-hover">
-        <image src='{{item.imgUrl}}' class="swiper_img" mode='scaleToFill' data-index='{{index}}' bindtap='swipclick' ></image>
-      </view>     
-    </swiper-item>
-  </block>
-</swiper>
-
-<view class="notice">
-  <view>
-    <image src="../../imgs/index/notice.png" class="notice_img"></image>
+<view class='checkOath' wx:if='{{!authed}}'>
+  <view class='word'>
+    <view class='row1'>
+      <text>亲爱的</text>
+      <open-data type='userNickName' class="card-nickName"></open-data>
+    </view>
+    <text class='row1'>欢迎来到“我的北方”</text>
+    <view class='row3'>
+      <text>您需要</text>
+      <text class='renzheng'>认证</text>
+      <text>方可正常使用此小程序</text>
+    </view>
   </view>
-  <view style="flex:1;">
-    <swiper class="wordswiper"  autoplay="true" circular="true" interval="2000" duration="1000" vertical='true'>
-      <block wx:for="{{indexNotice}}">
-        <swiper-item class='word_item'>
-          <text>{{item.text}}</text>
-        </swiper-item>
-      </block>
-    </swiper>
-  </view>
+  <image class='img_renzheng' src='../../imgs/index/welcome.png'></image>
+  <view class='btn_ren' hover="true" hover-class="btnhover" bindtap='toAuth'>点击前往认证</view>
 </view>
 
-<view class="shang"> 
-  <template is="buttons_h" data="{{...btn1}}" />
-  <template is="buttons_h" data="{{...btn2}}" />
-</view>
+<view wx:else>
+  <swiper class="picswiper" previous-margin="40rpx" next-margin="40rpx" autoplay="true" circular="true" interval="4000">
+    <block wx:for="{{indexBanner}}">
+      <swiper-item class='pic_item'>
+        <view hover-class="navigator-hover">
+          <image src='{{item.imgUrl}}' class="swiper_img" mode='scaleToFill' data-index='{{index}}' bindtap='swipclick'></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
 
-<view class="xia"> 
-  <template is="buttons_h" data="{{...btn3}}" />
-  <template is="buttons_v" data="{{...btn4}}" />
-  <template is="buttons_v" data="{{...btn5}}" />  
-  <button wx:if='{{!authed}}' bindtap='toAuth'>test</button>
+  <view class="notice">
+    <view>
+      <image src="../../imgs/index/notice.png" class="notice_img"></image>
+    </view>
+    <view style="flex:1;">
+      <swiper class="wordswiper" autoplay="true" circular="true" interval="4000"  vertical='true'>
+        <block wx:for="{{indexNotice}}">
+          <swiper-item class='word_item'>
+            <text>{{item.text}}</text>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+
+  <view class="shang">
+    <template is="buttons_h" data="{{...btn1}}" />
+    <template is="buttons_h" data="{{...btn2}}" />
+  </view>
+
+  <view class="xia">
+    <template is="buttons_h" data="{{...btn3}}" />
+    <template is="buttons_v" data="{{...btn4}}" />
+    <template is="buttons_v" data="{{...btn5}}" />
+  </view>
 </view>

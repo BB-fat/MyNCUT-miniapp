@@ -5,7 +5,6 @@
     "pages/document/document",
     "pages/my/my",
     "pages/feedback/feedback",
-    "pages/login/login",
     "pages/webview/webview",
     "pages/aboutus/aboutus",
     "pages/homework/homework", 
