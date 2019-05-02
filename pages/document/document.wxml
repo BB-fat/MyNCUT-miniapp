@@ -1,4 +1,4 @@
-<view class='inform'>
+<view wx:if='{{inform_loading}}' class='inform'>
   <image class='informIMG' src='../../imgs/document/waiting.gif' mode="widthFix"></image>
   <text>我们不生产课件</text>
   <text>我们只是知识的搬运工</text>
@@ -6,31 +6,39 @@
 </view>
 
 
-<view style='height:20rpx;'></view>
-<view class='main'>
-  <block class='coursewareList' wx:for='{{courseList}}'>
-    <view class='coursewareBlock'>
-      <view class='name_favor'>
-        <view class='courseware_name'>{{item.file_name}}</view>
-        <view class='favorView'>
-          <image wx:if='{{!item.favourite}}' bindtap='favourites' data-index='{{index}}' class='unfavor_img' src='../../imgs/document/unfavourate.png'></image>
-          <image wx:else class='favor_img' bindtap='unfavourites' data-index='{{index}}' src='../../imgs/document/favourate.png'></image>
+<view wx:else class='main'>
+  <view class='mySearch'>
+    <input placeholder="请输入关键字" placeholder-class="place-holder" confirm-type='search' value="{{inputValue}}" bindinput='search'></input>
+  </view>
+  <view wx:if='{{searchInfo}}' class='search_inform'>
+    <text class='txtInfo'>---无相关内容---</text>
+  </view>
+  <view wx:else>
+    <view style='height:20rpx;'></view>
+    <block class='coursewareList' wx:for='{{courseList}}'>
+      <view class='coursewareBlock'>
+        <view class='name_favor'>
+          <view class='courseware_name'>{{item.file_name}}</view>
+          <view class='favorView'>
+            <image wx:if='{{!item.favourite}}' bindtap='favourites' data-index='{{index}}' class='unfavor_img' src='../../imgs/document/unfavourate.png'></image>
+            <image wx:else class='favor_img' bindtap='unfavourites' data-index='{{index}}' src='../../imgs/document/favourate.png'></image>
+          </view>
+        </view>
+        <image class='line' src='../../imgs/document/line.jpg'></image>
+        <view class='doWare'>
+          <view class='imgView' hover="true" hover-class="imghover">
+            <image class='img' bindtap='lookFile' data-index='{{index}}' src='../../imgs/document/look.jpg'></image>
+          </view>
+          <view class='imgView' hover="true" hover-class="imghover">
+            <image class='img' bindtap='downFile' data-index='{{index}}' src='../../imgs/document/download.jpg'></image>
+          </view>
+          <view class='imgView' hover="true" hover-class="imghover">
+            <button class='imgBTN' id='sendBTN' hover="true" open-type="share" data-index='{{index}}'></button>
+            <image class='sendimg' src='../../imgs/document/send.jpg'></image>
+          </view>
         </view>
       </view>
-      <image class='line' src='../../imgs/document/line.jpg'></image>
-      <view class='doWare'>
-        <view class='imgView' hover="true" hover-class="imghover">
-          <image class='img' bindtap='lookFile' data-index='{{index}}' src='../../imgs/document/look.jpg'></image>
-        </view>
-        <view class='imgView' hover="true" hover-class="imghover">
-          <image class='img' bindtap='downFile' data-index='{{index}}' src='../../imgs/document/download.jpg'></image>
-        </view>
-        <view class='imgView' hover="true" hover-class="imghover">
-          <button class='imgBTN' id='sendBTN' hover="true" open-type="share" data-index='{{index}}'></button>
-          <image class='sendimg' src='../../imgs/document/send.jpg'></image>
-        </view>
-      </view>
-    </view>
-  </block>
-  <view style='height:40rpx'></view>
+    </block>
+    <view style='height:40rpx'></view>
+  </view>
 </view>

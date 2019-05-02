@@ -19,7 +19,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    authed:true,
+    authed: true,
     courseList: null,
   },
 
@@ -88,23 +88,22 @@ Page({
           console.log('没作业')
         }
       })
-    }//end if
+    } //end if
   },
 
-toAuth:function(){
-  goAuth()
-},
+  toAuth: function() {
+    goAuth()
+  },
 
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
-    // wx.showNavigationBarLoading();
+  doRefresh: function() {
+    wx.startPullDownRefresh()
     let that = this
     wx.request({
       url: myURL + '/courselist',
-      // url:"http://v.ncut.edu.cn/course?sno=17152010120",
       data: {
         openid: app.globalData.openid
       },

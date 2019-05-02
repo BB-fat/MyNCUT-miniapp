@@ -11,6 +11,10 @@ import {
   offFavor
 } from "../../utils/document.js"
 
+import {
+  mySearch,
+} from "../../utils/search.js"
+
 const app = getApp()
 
 Page({
@@ -22,7 +26,9 @@ Page({
     courseList: '',
     course_code: '',
     course_name: '',
-    status: ''
+    inform_loading:true,
+    // searchBan: false,
+    searchInfo:false,
   },
 
 
@@ -59,6 +65,12 @@ Page({
         else{
           that.setData({
             courseList: res.data,
+            inform_loading:false,
+            // searchBan:true
+          })
+          wx.setStorage({
+            key: 'courseList',
+            data: that.data.courseList,
           })
         }        
       }
@@ -115,5 +127,9 @@ Page({
       courseList: that.data.courseList
     })
     offFavor(that.data.courseList[index])  
-  }
+  },
+
+  search: function (e) {     //搜索
+    mySearch(this, e)
+  },
 })

@@ -11,6 +11,10 @@ import {
   offFavor
 } from "../../utils/document.js"
 
+import {
+  mySearch,
+} from "../../utils/search.js"
+
 const app = getApp()
 
 Page({
@@ -19,16 +23,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    favorList: [],
+    courseList: [],
+    searchInfo: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     wx.setNavigationBarTitle({
       title: "我的收藏",
     })
+  },
+
+  onShow: function(res) {
     let that = this
     wx.request({
       url: myURL + '/favourite/get',
@@ -38,14 +46,18 @@ Page({
       success(res) {
         console.log(res.data)
         that.setData({
-          favorList: res.data
+          courseList: res.data
+        })
+        wx.setStorage({
+          key: 'courseList',
+          data: that.data.courseList,
         })
       }
     })
   },
 
-  onShareAppMessage: function (res) {
-    var courseware = this.data.favorList[res.target.dataset.index]
+  onShareAppMessage: function(res) {
+    var courseware = this.data.courseList[res.target.dataset.index]
     if (res.from === 'button') {
       return {
         title: courseware.file_name,
@@ -55,41 +67,47 @@ Page({
     }
   },
 
-  lookFile: function (e) {
+  lookFile: function(e) {
     var that = this
     var index = e.currentTarget.dataset.index
-    if (that.data.favorList[index].type === 'dir') {
+    if (that.data.courseList[index].type === 'dir') {
       wx.navigateTo({
-        url: '/pages/document/document?code=' + course_code + 'item' + that.data.favorList[index].sign
+        url: '/pages/document/document?code=' + course_code + 'item' + that.data.courseList[index].sign
       })
     } else {
-      lookFile(that.data.favorList[index])
+      lookFile(that.data.courseList[index])
     }
   },
 
-  downFile: function (e) { //下载课件
+  downFile: function(e) { //下载课件
     let that = this
     var index = e.currentTarget.dataset.index
-    downloadFile(that.data.favorList[index])
+    downloadFile(that.data.courseList[index])
   },
 
-  favourites: function (e) {
+  favourites: function(e) {
     var index = e.currentTarget.dataset.index
     var that = this
-    that.data.favorList[index].favourite = true
+    that.data.courseList[index].favourite = true
     that.setData({
-      favorList: that.data.favorList
+      courseList: that.data.courseList
     })
-    onFavor(that.data.favorList[index])
+    onFavor(that.data.courseList[index])
   },
-  
-  unfavourites: function (e) {
+
+  unfavourites: function(e) {
     var index = e.currentTarget.dataset.index
     var that = this
-    that.data.favorList[index].favourite = false
+    that.data.courseList[index].favourite = false
     that.setData({
-      favorList: that.data.favorList
+      courseList: that.data.courseList
     })
-    offFavor(that.data.favorList[index])
+    offFavor(that.data.courseList[index])
   },
+
+
+  search: function(e) {     //搜索
+    mySearch(this,e)   
+  },
+
 })
