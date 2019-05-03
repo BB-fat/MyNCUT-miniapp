@@ -11,12 +11,7 @@ import {
   offFavor
 } from "../../utils/document.js"
 
-import {
-  mySearch,
-} from "../../utils/search.js"
-
 const app = getApp()
-var cousewareList_tmp = []
 
 Page({
 
@@ -106,23 +101,35 @@ Page({
 
   favourites: function(e) {
     var that = this
+    var filename = e.currentTarget.dataset.filename
     var index = e.currentTarget.dataset.index
     that.data.coursewareList[index].favourite = true
     that.setData({
-      coursewareList: that.data.coursewareList,
-      coursewareList_tmp: that.data.coursewareList
+      coursewareList: that.data.coursewareList,      
     })
+    for (var i in that.data.coursewareList_tmp) {
+      if (that.data.coursewareList_tmp[i].file_name == filename) {
+        that.data.coursewareList_tmp[i].favourite = true
+        break
+      }
+    }
     onFavor(that.data.coursewareList[index])
   },
 
   unfavourites: function(e) {
-    var index = e.currentTarget.dataset.index
     var that = this
+    var filename = e.currentTarget.dataset.filename
+    var index = e.currentTarget.dataset.index
     that.data.coursewareList[index].favourite = false
     that.setData({
       coursewareList: that.data.coursewareList,
-      coursewareList_tmp: that.data.coursewareList
     })
+    for (var i in that.data.coursewareList_tmp) {
+      if (that.data.coursewareList_tmp[i].file_name == filename) {
+        that.data.coursewareList_tmp[i].favourite = false
+        break
+      }
+    }
     offFavor(that.data.coursewareList[index])
   },
 
