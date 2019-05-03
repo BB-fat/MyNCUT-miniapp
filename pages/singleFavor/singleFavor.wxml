@@ -14,8 +14,8 @@
         <view class='name_favor'>
           <view class='courseware_name'>{{item.file_name}}</view>
           <view class='favorView'>
-            <image wx:if='{{!item.favourite}}' bindtap='favourites' data-index='{{index}}' class='unfavor_img' src='../../imgs/document/unfavourate.png'></image>
-            <image wx:else class='favor_img' bindtap='unfavourites' data-index='{{index}}' src='../../imgs/document/favourate.png'></image>
+            <image wx:if='{{!item.favourite}}' bindtap='favourites' data-index='{{index}}' data-filename='{{item.file_name}}' class='unfavor_img' src='../../imgs/document/unfavourate.png'></image>
+            <image wx:else class='favor_img' bindtap='unfavourites' data-index='{{index}}' data-filename='{{item.file_name}}' src='../../imgs/document/favourate.png'></image>
           </view>
         </view>
         <image class='line' src='../../imgs/document/line.jpg'></image>

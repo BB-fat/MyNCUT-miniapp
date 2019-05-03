@@ -9,7 +9,7 @@ import {
   downloadFile,
   onFavor,
   offFavor
-} from "../../utils/document.js"
+} from "../../utils/document.js" 
 
 const app = getApp()
 
@@ -68,25 +68,38 @@ Page({
   },
 
   favourites: function(e) {
+    var filename = e.currentTarget.dataset.filename
     var index = e.currentTarget.dataset.index
     var that = this
-    that.data.favorList[index].favourite = true
+    that.data.favorList[index].favourite = true    
     that.setData({
-      favorList: that.data.favorList,
-      favorList_tmp: that.data.favorList
+      favorList: that.data.favorList,     
     })
+    for (var i in that.data.favorList_tmp) {
+      if (that.data.favorList_tmp[i].file_name == filename) {
+        that.data.favorList_tmp[i].favourite = true
+        break
+      }
+    }
     onFavor(that.data.favorList[index])
   },
 
   unfavourites: function(e) {
-    // console.log(e.currentTarget)
+    var filename = e.currentTarget.dataset.filename
     var index = e.currentTarget.dataset.index
     var that = this
-    that.data.favorList[index].favourite = false
+    that.data.favorList[index].favourite = false    
     that.setData({
       favorList: that.data.favorList,
-      favorList_tmp: that.data.favorList
     })
+    for(var i in that.data.favorList_tmp)
+    {
+      if(that.data.favorList_tmp[i].file_name==filename)
+      {
+        that.data.favorList_tmp[i].favourite = false    
+        break
+      }
+    }
     offFavor(that.data.favorList[index])
   },
 
