@@ -63,8 +63,8 @@
   /* align-items: center; */
   margin: 0 auto;
   margin-bottom: 25rpx;
-  border-radius: 20px;
-  box-shadow: 0px 4px 30px 4px rgb(225, 229, 236);
+  border-radius: 12px;
+  box-shadow: 0px 0px 30px 4px rgb(247, 249, 255);
   /* background-color: rgb(201, 112, 112) ; */
 }
 
@@ -81,14 +81,14 @@
 
 .courseware_name {
   font-size: 28rpx;
-  margin-left: 78rpx;
+  margin-left: 50rpx;
 }
 
 .favorView {
   height: 45rpx;
   width: 55rpx;
   margin-left: auto;
-  margin-right: 88rpx;
+  margin-right: 30rpx;
 }
 
 .unfavor_img {
@@ -98,9 +98,7 @@
 
 .favor_img {
   height: 45rpx;
-  width: 55rpx;
-  margin-left: auto;
-  margin-right: 88rpx;
+  width: 55rpx;  
 }
 
 .line {

@@ -1,3 +1,37 @@
+.inform {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.txtInfo {
+  color: rgb(163, 159, 159);
+  font-size: 32rpx;
+}
+
+.mySearch {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 40rpx;
+  background-color: whitesmoke;
+  /* margin-top: 5%; */
+  border: 10rpx solid whitesmoke;
+  border-radius: 35px;
+  /* font-size: 15rpx; */
+}
+
+.place-holder {
+  font-size: 12px; 
+}
 
 .main {
   position: absolute;
@@ -6,7 +40,7 @@
   background-color: #fff;
 }
 
-.homeBlock {
+.coursewareBlock {
   height: 180rpx;
   width: 704rpx;
   display: flex;
@@ -31,16 +65,24 @@
   /* justify-content: space-around; */
 }
 
-.home_name {
+.courseware_name {
   font-size: 28rpx;
-  margin-left: 78rpx;
+  margin-left: 50rpx;
+}
+.next{
+  height: 60rpx;
+  width:60rpx;
+}
+.next_img{
+  height: 60rpx;
+  width:60rpx;
 }
 
 .favorView {
   height: 45rpx;
   width: 55rpx;
   margin-left: auto;
-  margin-right: 88rpx;
+  margin-right: 30rpx;
 }
 
 .unfavor_img {
@@ -50,9 +92,7 @@
 
 .favor_img {
   height: 45rpx;
-  width: 55rpx;
-  margin-left: auto;
-  margin-right: 88rpx;
+  width: 55rpx;  
 }
 
 .line {
@@ -61,31 +101,41 @@
   width: 100%;
 }
 
-.doHome {
+.doWare {
   /* margin-top: 18rpx; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.imgView{
-  height: 38rpx;
-  width: 41rpx;
-}
-.img {
+.imgView {
   height: 38rpx;
   width: 41rpx;
 }
 
-.end_time{
-  font-size: 28rpx;
-  
+.imgBTN {
+  height: 38rpx;
+  width: 41rpx;
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.img {
+  height: 38rpx;
+  width: 41rpx;
 }
 
 .imghover {
   /* background-color: #ebe7e7; */
   border-radius: 20rpx;
   opacity: 0.8;
-  transform: scale(1.2,1.2);
+  transform: scale(1.2, 1.2);
 }
 
+.sendimg {
+  position: absolute;
+  z-index: 0;
+  height: 38rpx;
+  width: 41rpx;
+}

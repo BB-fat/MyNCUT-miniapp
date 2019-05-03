@@ -15,7 +15,7 @@
   </view>
   <view wx:else>
     <view style='height:20rpx;'></view>
-    <block class='coursewareList' wx:for='{{courseList}}'>
+    <block class='coursewareList' wx:for='{{coursewareList}}'>
       <view class='coursewareBlock'>
         <view class='name_favor'>
           <view class='courseware_name'>{{item.file_name}}</view>

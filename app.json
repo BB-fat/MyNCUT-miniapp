@@ -1,14 +1,16 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/myFavor/myFavor",
+    
     "pages/iclass/iclass",
     "pages/document/document",
     "pages/my/my",
     "pages/feedback/feedback",
     "pages/webview/webview",
     "pages/aboutus/aboutus",
-    "pages/homework/homework", 
-    "pages/myFavor/myFavor"
+    "pages/homework/homework",
+    "pages/singleFavor/singleFavor"
   ],
   "window": {
     "backgroundTextStyle": "light",

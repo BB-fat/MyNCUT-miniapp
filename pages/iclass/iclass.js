@@ -43,12 +43,11 @@ Page({
     if (this.data.courseList == null && app.globalData.authed) {
       wx.getStorage({
         key: 'courseList',
-        success: function(res) {
-          console.log(res.data)
+        success: function(res) {          
           that.setData({
             courseList: res.data
           })
-          console.log('getstorage success')
+          console.log('getStorage success of courselist')
         },
         fail: function(res) {
           wx.request({
@@ -56,40 +55,42 @@ Page({
             data: {
               openid: app.globalData.openid
             },
-            success: function(res) {
-              // console.log(res.data[0])
+            success: function(res) {              
               that.setData({
                 courseList: res.data
-              })
-              console.log('request success')
+              })             
               console.log(that.data.courseList)
               wx.setStorage({
                 key: "courseList",
                 data: that.data.courseList
               })
-              console.log('setstorage success')
+              console.log('setstorage success of courselist')
             }
           })
         }
       }) //end getstorge
-      wx.request({
-        url: myURL + '/homework',
-        data: {
-          openid: app.globalData.openid,
-        },
-        success(res) {
-          console.log(res.data)
-          that.setData({
-            homeList_all: res.data
-          })
-          console.log(that.data.homeList_all)
-        },
-        fail(res) {
-          console.log('没作业')
-        }
-      })
+      
     } //end if
   },
+
+  onReady:function(){
+    let that=this
+    wx.request({
+      url: myURL + '/homework',
+      data: {
+        openid: app.globalData.openid,
+      },
+      success(res) {        
+        that.setData({
+          homeList_all: res.data
+        })
+        console.log(that.data.homeList_all)
+      },
+      fail(res) {
+        console.log('没作业')
+      }
+    })
+  } ,
 
   toAuth: function() {
     goAuth()
@@ -131,11 +132,8 @@ Page({
   },
 
   getHomework: function(e) { //课程作业
-    let that = this
-    // var course_code = e.currentTarget.dataset.course_code
-    var course_name = e.currentTarget.dataset.course_name
-    // var course_class = e.currentTarget.dataset.course_class
-    // var joint = course_name + '：' + course_class
+    let that = this    
+    var course_name = e.currentTarget.dataset.course_name   
     console.log(course_name)
     var flag = false
     for (var key in that.data.homeList_all) {
@@ -151,10 +149,8 @@ Page({
         duration: 2000
       })
     } else {
-      console.log(that.data.homeList_all)
-      // var temp = that.data.homeList_all
-      var temp = JSON.stringify(that.data.homeList_all)
-      console.log(temp)
+      console.log(that.data.homeList_all)   
+      var temp = JSON.stringify(that.data.homeList_all)      
       wx.navigateTo({
         url: '../homework/homework?course_name=' + course_name + '&homeList_all=' + temp,
       })
@@ -163,10 +159,10 @@ Page({
   },
 
   toTop: function(e) { //置顶
-    console.log(e)
+    // console.log(e)
     var index = e.currentTarget.dataset.index
     var tmp = this.data.courseList.splice(index, 1)
-    console.log(tmp)
+    // console.log(tmp)
     this.data.courseList.unshift(tmp[0])
     this.setData({
       courseList: this.data.courseList

@@ -19,7 +19,7 @@
         <view class='name_top'>
           <view class='course_name'>{{item.course_name}}</view>
           <view class='imgView' hover="true" hover-class="imghover">
-            <image class='img_top' src='../../imgs/iclass/top.png' data-index="{{index}}" bindtap='toTop'></image>
+            <image class='img_top' src='../../imgs/iclass/top.jpg' data-index="{{index}}" bindtap='toTop'></image>
           </view>
         </view>
         <view class='column_tc'>

@@ -5,17 +5,11 @@ import {
 } from "../../setting.js"
 
 import {
-  lookFile,
-  downloadFile,
-  onFavor,
-  offFavor
-} from "../../utils/document.js"
-
-import {
-  mySearch,
-} from "../../utils/search.js"
+  myMap
+} from "../../utils/myMap.js"
 
 const app = getApp()
+const numArray = new Array()
 
 Page({
 
@@ -23,8 +17,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    courseList: [],
-    searchInfo: false
+    showInfo:false,
   },
 
   /**
@@ -38,76 +31,46 @@ Page({
 
   onShow: function(res) {
     let that = this
-    wx.request({
-      url: myURL + '/favourite/get',
-      data: {
-        openid: app.globalData.openid
-      },
-      success(res) {
-        console.log(res.data)
+    // var courseArray = []
+    // var favorArray = []
+    wx.getStorage({
+      key: 'courseList',
+      success: function(res) {
         that.setData({
           courseList: res.data
-        })
-        wx.setStorage({
-          key: 'courseList',
-          data: that.data.courseList,
+        })        
+        myMap(that)
+      },
+      fail: function(res) {
+        wx.request({
+          url: myURL + '/courselist',
+          data: {
+            openid: app.globalData.openid
+          },
+          success: function(res) {            
+            that.setData({
+              courseList: res.data
+            })
+            myMap(that)
+            wx.setStorage({
+              key: "courseList",
+              data: that.data.courseList
+            })
+          }
         })
       }
-    })
+    }) //end getstorge of courselist 
   },
 
-  onShareAppMessage: function(res) {
-    var courseware = this.data.courseList[res.target.dataset.index]
-    if (res.from === 'button') {
-      return {
-        title: courseware.file_name,
-        path: '/pages/iclass/iclass?courseware=' + JSON.stringify(courseware),
-        imageUrl: "../../imgs/share.png"
-      }
-    }
-  },
-
-  lookFile: function(e) {
-    var that = this
-    var index = e.currentTarget.dataset.index
-    if (that.data.courseList[index].type === 'dir') {
-      wx.navigateTo({
-        url: '/pages/document/document?code=' + course_code + 'item' + that.data.courseList[index].sign
-      })
-    } else {
-      lookFile(that.data.courseList[index])
-    }
-  },
-
-  downFile: function(e) { //下载课件
+  goNext: function(e) {
     let that = this
-    var index = e.currentTarget.dataset.index
-    downloadFile(that.data.courseList[index])
-  },
-
-  favourites: function(e) {
-    var index = e.currentTarget.dataset.index
-    var that = this
-    that.data.courseList[index].favourite = true
-    that.setData({
-      courseList: that.data.courseList
+    var course_code = e.currentTarget.dataset.course_code
+    var course_name = e.currentTarget.dataset.course_name
+    var temp = JSON.stringify(that.data.favorList)
+    // console.log(course_code)
+    wx.navigateTo({
+      url: '../singleFavor/singleFavor?course_code=' + course_code + '&course_name=' + course_name + '&favorList=' + temp,
     })
-    onFavor(that.data.courseList[index])
-  },
-
-  unfavourites: function(e) {
-    var index = e.currentTarget.dataset.index
-    var that = this
-    that.data.courseList[index].favourite = false
-    that.setData({
-      courseList: that.data.courseList
-    })
-    offFavor(that.data.courseList[index])
-  },
-
-
-  search: function(e) {     //搜索
-    mySearch(this,e)   
   },
 
 })

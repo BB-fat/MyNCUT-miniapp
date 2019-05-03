@@ -16,6 +16,7 @@ import {
 } from "../../utils/search.js"
 
 const app = getApp()
+var cousewareList_tmp = []
 
 Page({
 
@@ -23,19 +24,18 @@ Page({
    * Page initial data
    */
   data: {
-    courseList: '',
+    coursewareList: '',
     course_code: '',
     course_name: '',
-    inform_loading:true,
-    // searchBan: false,
-    searchInfo:false,
+    inform_loading: true,
+    searchInfo: false,
   },
 
 
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function(options) {    
+  onLoad: function(options) {
     wx.setNavigationBarTitle({
       title: options.course_name,
     })
@@ -52,27 +52,22 @@ Page({
         mode: 'all'
       },
       success: function(res) {
-        if(res.data==null)
-        {
+        if (res.data == null) {
           wx.showToast({
             title: '该课程无课件',
-            icon:'none',
+            icon: 'none',
           })
-          setTimeout(function(){
+          setTimeout(function() {
             wx.navigateBack()
-          },1500)    
-        }
-        else{
+          }, 1500)
+        } else {
           that.setData({
-            courseList: res.data,
-            inform_loading:false,
+            coursewareList: res.data,
+            coursewareList_tmp : res.data, //为搜索做准备            
+            inform_loading: false,
             // searchBan:true
           })
-          wx.setStorage({
-            key: 'courseList',
-            data: that.data.courseList,
-          })
-        }        
+        }
       }
     })
   },
@@ -81,55 +76,86 @@ Page({
    * Called when user click on the top right corner to share
    */
   onShareAppMessage: function(res) {
-    var courseware=this.data.courseList[res.target.dataset.index]
-    if (res.from === 'button'){
+    var courseware = this.data.coursewareList[res.target.dataset.index]
+    if (res.from === 'button') {
       return {
         title: courseware.file_name,
-        path: '/pages/iclass/iclass?courseware='+JSON.stringify(courseware),
-        imageUrl:"../../imgs/share.png"
+        path: '/pages/iclass/iclass?courseware=' + JSON.stringify(courseware),
+        imageUrl: "../../imgs/share.png"
       }
     }
   },
 
-  lookFile:function(e){
-    var that=this
+  lookFile: function(e) {
+    var that = this
     var index = e.currentTarget.dataset.index
-    if (that.data.courseList[index].type === 'dir') {
+    if (that.data.coursewareList[index].type === 'dir') {
       wx.navigateTo({
-        url: '/pages/document/document?code=' + course_code + 'item' + that.data.courseList[index].sign
+        url: '/pages/document/document?code=' + course_code + 'item' + that.data.coursewareList[index].sign
       })
     } else {
-      lookFile(that.data.courseList[index])
+      lookFile(that.data.coursewareList[index])
     }
   },
 
   downFile: function(e) { //下载课件
     let that = this
     var index = e.currentTarget.dataset.index
-    downloadFile(that.data.courseList[index])
+    downloadFile(that.data.coursewareList[index])
   },
 
   favourites: function(e) {
     var that = this
     var index = e.currentTarget.dataset.index
-    that.data.courseList[index].favourite = true
+    that.data.coursewareList[index].favourite = true
     that.setData({
-      courseList: that.data.courseList
+      coursewareList: that.data.coursewareList,
+      coursewareList_tmp: that.data.coursewareList
     })
-    onFavor(that.data.courseList[index])
+    onFavor(that.data.coursewareList[index])
   },
 
   unfavourites: function(e) {
     var index = e.currentTarget.dataset.index
     var that = this
-    that.data.courseList[index].favourite = false
+    that.data.coursewareList[index].favourite = false
     that.setData({
-      courseList: that.data.courseList
+      coursewareList: that.data.coursewareList,
+      coursewareList_tmp: that.data.coursewareList
     })
-    offFavor(that.data.courseList[index])  
+    offFavor(that.data.coursewareList[index])
   },
 
-  search: function (e) {     //搜索
-    mySearch(this, e)
+  search: function(e) { //搜索   
+    let that = this
+    var myStore = that.data.coursewareList_tmp    
+    if (e.detail.value.length == 0) {
+      that.setData({
+        searchInfo: false,
+        coursewareList: myStore,
+      })
+    } else {
+      var queryList = []
+      var inputValue = e.detail.value
+      for (var i = 0; i < myStore.length; i++) {
+        var name = myStore[i].file_name
+        for (var j = 0; j <= name.length - inputValue.length; j++) {
+          if (name.substr(j, inputValue.length) == inputValue) {
+            queryList.push(myStore[i])
+            break
+          }
+        }
+      }
+      if (queryList.length == 0) {
+        that.setData({
+          searchInfo: true
+        })
+      } else {
+        that.setData({
+          searchInfo: false,
+          coursewareList: queryList,
+        })
+      }
+    }
   },
 })

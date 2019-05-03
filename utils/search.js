@@ -1,16 +1,16 @@
 const app = getApp()
  
-export function mySearch(that, e) {      //搜索
+export function mySearch(that, e) {      //搜索 
   var courseList_tmp = []
   wx.getStorage({
-    key: 'courseList',
+    key: 'coursewareList',
     success: function(res) {
       courseList_tmp = res.data
       if (courseList_tmp.length != 0) {
         if (e.detail.value.length == 0) {
           that.setData({
             searchInfo: false,
-            courseList: courseList_tmp,
+            coursewareList: courseList_tmp,
           })
         } else {
           var queryList = []
@@ -31,7 +31,7 @@ export function mySearch(that, e) {      //搜索
           } else {
             that.setData({
               searchInfo: false,
-              courseList: queryList,
+              coursewareList: queryList,
             })
           }
         }
