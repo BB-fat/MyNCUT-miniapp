@@ -31,7 +31,8 @@ export function myMap(that) {
       })
       that.setData({
         favorArray: favorArray,
-        favorList: res.data
+        favorList: res.data,
+        favorList_tmp:res.data,
       })
     }
   })

@@ -18,6 +18,7 @@ Page({
    */
   data: {
     showInfo:false,
+    isCourse:true,
   },
 
   /**
@@ -71,6 +72,47 @@ Page({
     wx.navigateTo({
       url: '../singleFavor/singleFavor?course_code=' + course_code + '&course_name=' + course_name + '&favorList=' + temp,
     })
+  },
+
+  search:function(e){
+    let that =this
+    that.setData({
+      isCourse:false
+    })
+    var myStore = that.data.favorList_tmp
+    if (e.detail.value.length == 0) {
+      that.setData({
+        isCourse: true,
+        searchInfo: false,
+        favorList: myStore,
+      })
+    } else {
+      var queryList = []
+      var inputValue = e.detail.value
+      for (var i = 0; i < myStore.length; i++) {
+        // if (myStore[i].coursecode == that.data.course_code) {
+          var name = myStore[i].file_name
+          for (var j = 0; j <= name.length - inputValue.length; j++) {
+            if (name.substr(j, inputValue.length) == inputValue) {
+              queryList.push(myStore[i])
+              break
+            }
+          }
+        // }
+      }
+      // console.log(queryList)
+      if (queryList.length == 0) {
+        that.setData({
+          searchInfo: true
+        })
+      } else {
+        that.setData({
+          searchInfo: false,
+          favorList: queryList,
+        })
+      }
+    }
+
   },
 
 })
