@@ -1,4 +1,4 @@
-<template name='myButton'>
+<template name='myButton'> 
   <view class="myButton-view" bindtap='{{tapFun}}'>
     <view hover-class='myButton-hover'>
       <image src='{{iconSrc}}' style="height:{{iconHeight}}rpx;width:{{iconWidth}}rpx;"></image>

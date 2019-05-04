@@ -1,3 +1,5 @@
+@import "../../templates/cwareBlock/cwareBlock.wxss";
+
 .inform {
   margin: 0 auto;
   width: 100%;
@@ -29,7 +31,7 @@
 }
 
 .place-holder {
-  font-size: 12px; 
+  font-size: 12px;
 }
 
 .search_inform {
@@ -75,108 +77,13 @@
   margin-right: 7rpx;
 }
 
+.next {
+  height: 60rpx;
+  width: 60rpx;
+}
+
 .next_img {
   margin-top: 7rpx;
   height: 40rpx;
   width: 40rpx;
-}
-
-.coursewareBlock {
-  height: 180rpx;
-  width: 704rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  /* align-items: center; */
-  margin: 0 auto;
-  margin-bottom: 25rpx;
-  border-radius: 12px;
-  box-shadow: 0px 0px 30px 4px rgb(247, 249, 255);
-  /* background-color: rgb(201, 112, 112) ; */
-}
-
-.name_favor {
-  margin-top: 10rpx;
-  height: 70rpx;
-  /* background-color: rgb(17, 77, 218); */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  /* justify-content: space-around; */
-}
-
-.courseware_name {
-  font-size: 28rpx;
-  margin-left: 50rpx;
-}
-.next{
-  height: 60rpx;
-  width:60rpx;
-}
-.next_img{
-  height: 60rpx;
-  width:60rpx;
-}
-
-.favorView {
-  height: 45rpx;
-  width: 55rpx;
-  margin-left: auto;
-  margin-right: 30rpx;
-}
-
-.unfavor_img {
-  height: 45rpx;
-  width: 55rpx;
-}
-
-.favor_img {
-  height: 45rpx;
-  width: 55rpx;  
-}
-
-.line {
-  /* color: rgba(188, 188, 188, 1); *//* margin-top: 5rpx; */
-  height: 3rpx;
-  width: 100%;
-}
-
-.doWare {
-  /* margin-top: 18rpx; */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.imgView {
-  height: 38rpx;
-  width: 41rpx;
-}
-
-.imgBTN {
-  height: 38rpx;
-  width: 41rpx;
-  opacity: 0;
-  position: absolute;
-  z-index: 1;
-}
-
-.img {
-  height: 38rpx;
-  width: 41rpx;
-}
-
-.imghover {
-  /* background-color: #ebe7e7; */
-  border-radius: 20rpx;
-  opacity: 0.8;
-  transform: scale(1.2, 1.2);
-}
-
-.sendimg {
-  position: absolute;
-  z-index: 0;
-  height: 38rpx;
-  width: 41rpx;
 }

@@ -23,8 +23,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showInfo:false,
-    isCourse:true,
+    showInfo: false,
+    isCourse: true,
   },
 
   /**
@@ -38,38 +38,38 @@ Page({
 
   onShow: function(res) {
     let that = this
-    // var courseArray = []
-    // var favorArray = []
-    wx.getStorage({
-      key: 'courseList',
-      success: function(res) {
-        that.setData({
-          courseList: res.data
-        })        
-        myMap(that)
-      },
-      fail: function(res) {
-        wx.request({
-          url: myURL + '/courselist',
-          data: {
-            openid: app.globalData.openid
-          },
-          success: function(res) {            
-            that.setData({
-              courseList: res.data
-            })
-            myMap(that)
-            wx.setStorage({
-              key: "courseList",
-              data: that.data.courseList
-            })
-          }
-        })
-      }
-    }) //end getstorge of courselist 
+    if (that.data.isCourse == true) {
+      wx.getStorage({
+        key: 'courseList',
+        success: function(res) {
+          that.setData({
+            courseList: res.data
+          })
+          myMap(that)
+        },
+        fail: function(res) {
+          wx.request({
+            url: myURL + '/courselist',
+            data: {
+              openid: app.globalData.openid
+            },
+            success: function(res) {
+              that.setData({
+                courseList: res.data
+              })
+              myMap(that)
+              wx.setStorage({
+                key: "courseList",
+                data: that.data.courseList
+              })
+            }
+          })
+        }
+      }) //end getstorge of courselist 
+    }
   },
 
-  onShareAppMessage: function (res) {
+  onShareAppMessage: function(res) {
     var courseware = this.data.favorList[res.target.dataset.index]
     if (res.from === 'button') {
       return {
@@ -91,10 +91,10 @@ Page({
     })
   },
 
-  search:function(e){
-    let that =this
+  search: function(e) {
+    let that = this
     that.setData({
-      isCourse:false
+      isCourse: false
     })
     var myStore = that.data.favorList_tmp
     if (e.detail.value.length == 0) {
@@ -102,20 +102,20 @@ Page({
       that.setData({
         isCourse: true,
         searchInfo: false,
-        favorList: myStore,        
+        favorList: myStore,
       })
     } else {
       var queryList = []
       var inputValue = e.detail.value
       for (var i = 0; i < myStore.length; i++) {
         // if (myStore[i].coursecode == that.data.course_code) {
-          var name = myStore[i].file_name
-          for (var j = 0; j <= name.length - inputValue.length; j++) {
-            if (name.substr(j, inputValue.length) == inputValue) {
-              queryList.push(myStore[i])
-              break
-            }
+        var name = myStore[i].file_name
+        for (var j = 0; j <= name.length - inputValue.length; j++) {
+          if (name.substr(j, inputValue.length) == inputValue) {
+            queryList.push(myStore[i])
+            break
           }
+        }
         // }
       }
       // console.log(queryList)
@@ -132,7 +132,7 @@ Page({
     }
   },
 
-  lookFile: function (e) {
+  lookFile: function(e) {
     var that = this
     var index = e.currentTarget.dataset.index
     if (that.data.favorList[index].type === 'dir') {
@@ -140,17 +140,32 @@ Page({
         url: '/pages/document/document?code=' + course_code + 'item' + that.data.favorList[index].sign
       })
     } else {
-      lookFile(that.data.favorList[index])
+      var flag = false
+      for (var i in app.globalData.supportList) {
+        if (that.data.favorList[index].type == app.globalData.supportList[i]) {
+          flag = true
+          break
+        }
+      }
+      if (flag == true)
+        lookFile(that.data.favorList[index])
+      else {
+        wx.showToast({
+          title: '该文件类型不支持预览，请下载',
+          icon: 'none',
+        })
+        console.log('打开文档失败')
+      }
     }
   },
 
-  downFile: function (e) { //下载课件
+  downFile: function(e) { //下载课件
     let that = this
     var index = e.currentTarget.dataset.index
     downloadFile(that.data.favorList[index])
   },
 
-  favourites: function (e) {
+  favourites: function(e) {
     var filename = e.currentTarget.dataset.filename
     var index = e.currentTarget.dataset.index
     var that = this
@@ -167,7 +182,7 @@ Page({
     onFavor(that.data.favorList[index])
   },
 
-  unfavourites: function (e) {
+  unfavourites: function(e) {
     var filename = e.currentTarget.dataset.filename
     var index = e.currentTarget.dataset.index
     var that = this

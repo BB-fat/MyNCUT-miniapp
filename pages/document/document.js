@@ -58,7 +58,7 @@ Page({
         } else {
           that.setData({
             coursewareList: res.data,
-            coursewareList_tmp : res.data, //为搜索做准备            
+            coursewareList_tmp: res.data, //为搜索做准备            
             inform_loading: false,
             // searchBan:true
           })
@@ -89,7 +89,22 @@ Page({
         url: '/pages/document/document?code=' + course_code + 'item' + that.data.coursewareList[index].sign
       })
     } else {
-      lookFile(that.data.coursewareList[index])
+      var flag = false
+      for (var i in app.globalData.supportList) {
+        if (that.data.coursewareList[index].type == app.globalData.supportList[i]) {
+          flag = true
+          break
+        }
+      }
+      if (flag == true)
+        lookFile(that.data.coursewareList[index])
+      else {
+        wx.showToast({
+          title: '该文件类型不支持预览，请下载',
+          icon: 'none',
+        })
+        console.log('打开文档失败')
+      }
     }
   },
 
@@ -100,12 +115,14 @@ Page({
   },
 
   favourites: function(e) {
+    console.log(e.currentTarget.dataset)
     var that = this
     var filename = e.currentTarget.dataset.filename
+    console.log(filename)
     var index = e.currentTarget.dataset.index
     that.data.coursewareList[index].favourite = true
     that.setData({
-      coursewareList: that.data.coursewareList,      
+      coursewareList: that.data.coursewareList,
     })
     for (var i in that.data.coursewareList_tmp) {
       if (that.data.coursewareList_tmp[i].file_name == filename) {
@@ -126,6 +143,7 @@ Page({
     })
     for (var i in that.data.coursewareList_tmp) {
       if (that.data.coursewareList_tmp[i].file_name == filename) {
+        5
         that.data.coursewareList_tmp[i].favourite = false
         break
       }
@@ -135,7 +153,7 @@ Page({
 
   search: function(e) { //搜索   
     let that = this
-    var myStore = that.data.coursewareList_tmp    
+    var myStore = that.data.coursewareList_tmp
     if (e.detail.value.length == 0) {
       that.setData({
         searchInfo: false,

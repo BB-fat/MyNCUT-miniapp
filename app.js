@@ -5,5 +5,8 @@ import {
 } from "setting.js"
 
 App({
-  globalData:{}
+  
+  globalData:{
+    supportList:['doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'pdf', 'txt']
+  }
 })
