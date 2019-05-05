@@ -43,7 +43,7 @@ Page({
     if (this.data.courseList == null && app.globalData.authed) {
       wx.getStorage({
         key: 'courseList',
-        success: function(res) {          
+        success: function(res) {
           that.setData({
             courseList: res.data
           })
@@ -55,10 +55,10 @@ Page({
             data: {
               openid: app.globalData.openid
             },
-            success: function(res) {              
+            success: function(res) {
               that.setData({
                 courseList: res.data
-              })             
+              })
               console.log(that.data.courseList)
               wx.setStorage({
                 key: "courseList",
@@ -69,28 +69,24 @@ Page({
           })
         }
       }) //end getstorge
-      
+      // 请求作业
+      wx.request({
+        url: myURL + '/homework',
+        data: {
+          openid: app.globalData.openid,
+        },
+        success(res) {
+          that.setData({
+            homeList_all: res.data
+          })
+          console.log(that.data.homeList_all)
+        },
+        fail(res) {
+          console.log('没作业')
+        }
+      })
     } //end if
   },
-
-  onReady:function(){
-    let that=this
-    wx.request({
-      url: myURL + '/homework',
-      data: {
-        openid: app.globalData.openid,
-      },
-      success(res) {        
-        that.setData({
-          homeList_all: res.data
-        })
-        console.log(that.data.homeList_all)
-      },
-      fail(res) {
-        console.log('没作业')
-      }
-    })
-  } ,
 
   toAuth: function() {
     goAuth()
@@ -132,8 +128,8 @@ Page({
   },
 
   getHomework: function(e) { //课程作业
-    let that = this    
-    var course_name = e.currentTarget.dataset.course_name   
+    let that = this
+    var course_name = e.currentTarget.dataset.course_name
     console.log(course_name)
     var flag = false
     for (var key in that.data.homeList_all) {
@@ -149,8 +145,8 @@ Page({
         duration: 2000
       })
     } else {
-      console.log(that.data.homeList_all)   
-      var temp = JSON.stringify(that.data.homeList_all)      
+      console.log(that.data.homeList_all)
+      var temp = JSON.stringify(that.data.homeList_all)
       wx.navigateTo({
         url: '../homework/homework?course_name=' + course_name + '&homeList_all=' + temp,
       })
