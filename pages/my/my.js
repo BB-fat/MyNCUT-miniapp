@@ -2,7 +2,13 @@
 const app = getApp()
 var util = require('../../utils/util.js')
 
-import {myURL} from "../../setting.js"
+import {
+  myURL
+} from "../../setting.js"
+
+import {
+  checkAuthState
+} from "../../utils/login.js"
 
 Page({
 
@@ -102,20 +108,22 @@ Page({
     })
   },
 
-  onShow:function(){
-    var that=this
+  onShow: function() {
+    checkAuthState()
+    var that = this
     // 让进度条每一次切换到这个页面都能加载动画
     this.setData({
-      wifiProgress:0
+      wifiProgress: 0,
     })
-    wx.request({
-      url: myURL+'/wifi',
-      data:{
-        openid:app.globalData.openid
+    wx.request({ 
+      url: myURL + '/wifi',
+      data: {
+        openid: app.globalData.openid
       },
-      success(res){
+      success(res) {
         that.setData({
-          wifiProgress:parseInt(parseFloat(res.data)/(30*1024)*100)
+          wifiProgress: parseInt(parseFloat(res.data) / (30 * 1024) * 100),
+          wifiLeft: (30 - parseFloat(res.data) / 1024).toFixed(2)
         })
       }
     })

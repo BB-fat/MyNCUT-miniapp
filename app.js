@@ -7,6 +7,5 @@ import {
 App({
   
   globalData:{
-    supportList:['doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'pdf', 'txt']
   }
 })

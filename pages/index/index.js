@@ -9,11 +9,14 @@ import {
   goAuth
 } from '../../utils/login.js'
 
+import {
+  lookFile,
+} from "../../utils/document.js"
+
 var app = getApp()
 
 
 Page({
-
   data: {
     authed:true,
     btn1:{
@@ -102,6 +105,9 @@ Page({
    */
   onLoad: function(options) {
     var that=this
+    if (options.courseware != null) {
+      lookFile(JSON.parse(options.courseware))
+    }
     wx.request({
       url: myURL+'/publicinfo',
       success(res){        
@@ -172,5 +178,4 @@ Page({
       url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_room/emroom/index',
     })
   },
-
 })

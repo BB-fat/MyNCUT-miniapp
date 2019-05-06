@@ -74,7 +74,7 @@ Page({
     if (res.from === 'button') {
       return {
         title: courseware.file_name,
-        path: '/pages/iclass/iclass?courseware=' + JSON.stringify(courseware),
+        path: '/pages/index/index?courseware=' + JSON.stringify(courseware),
         imageUrl: "../../imgs/share.png"
       }
     }
@@ -109,7 +109,7 @@ Page({
       var inputValue = e.detail.value
       for (var i = 0; i < myStore.length; i++) {
         var name = myStore[i].file_name
-        if (name.search(inputValue) != -1 ){
+        if (name.search(inputValue) != -1) {
           queryList.push(myStore[i])
         }
       }
@@ -134,22 +134,7 @@ Page({
         url: '/pages/document/document?code=' + course_code + 'item' + that.data.favorList[index].sign
       })
     } else {
-      var flag = false
-      for (var i in app.globalData.supportList) {
-        if (that.data.favorList[index].type == app.globalData.supportList[i]) {
-          flag = true
-          break
-        }
-      }
-      if (flag == true)
-        lookFile(that.data.favorList[index])
-      else {
-        wx.showToast({
-          title: '该文件类型不支持预览，请下载',
-          icon: 'none',
-        })
-        console.log('打开文档失败')
-      }
+      lookFile(that.data.favorList[index])
     }
   },
 

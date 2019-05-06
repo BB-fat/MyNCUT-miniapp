@@ -6,9 +6,9 @@
   height: 500rpx;
   display: flex;
   margin: 0 auto;
-  justify-content: center;  
-  background-color: #ffffff; 
-} 
+  justify-content: center;
+  background-color: #fff;
+}
 
 .card {
   margin-top: 30rpx;
@@ -19,10 +19,21 @@
   width: 650rpx;
   height: 400rpx;
   background-color: #fff;
-  color: rgb(97, 154, 254);
+  color: rgb(0, 0, 0);
 }
-.card-nickName{
+
+.card-nickName {
   text-align: center;
+}
+
+.bottomIMG {
+  position: absolute;
+  z-index: 0;
+  left: 330rpx;
+  top: 50rpx;
+  width: 334rpx;
+  height: 287rpx;
+  opacity: 0.6;
 }
 
 .card-topView {
@@ -31,6 +42,8 @@
 }
 
 .card-bottomView {
+  position: absolute;
+  z-index: 1;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -38,19 +51,26 @@
 }
 
 .card-bottomViewLeft {
-  margin-left: 30rpx;
+  margin-left: 40rpx;
+  margin-top: 50rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
 .card-bottomViewMid {
-  margin-left: 30rpx;
+  margin-left: 80rpx;
+  margin-top: 40rpx;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: flex-start;
+  font-weight: bold;
 }
+
+/* .wifiProgress{
+  
+} */
 
 .button-area {
   position: absolute;
@@ -69,6 +89,7 @@
   width: 75%;
   margin-top: 50rpx;
 }
+
 .row2 {
   display: flex;
   flex-direction: row;
@@ -77,7 +98,6 @@
   margin-top: 100rpx;
 }
 
-
 .card-schoolIcon {
   height: 40rpx;
   width: 200rpx;
@@ -85,16 +105,10 @@
   top: 40rpx;
 }
 
-.card-text {
-  margin-left: 10rpx;
-  margin-bottom: 5rpx;
-  font-size: 20rpx;
-}
-
 .card-nickName {
   margin-top: 20rpx;
   font-size: 30rpx;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .card-avata {
@@ -109,15 +123,7 @@
 .card-name {
   margin-top: 15rpx;
   font-size: 35rpx;
-  font-weight: 500;
-}
-
-.card-pic {
-  margin-left: 10rpx;
-  margin-top: 30rpx;
-  height: 214rpx;
-  width: 230rpx;
-  opacity: 0.6;
+  font-weight: bold;
 }
 
 .card-male {
@@ -144,7 +150,7 @@
 
 .bottom-text {
   margin-top: 230rpx;
-  color: #000000;
+  color: #000;
   font-size: 20rpx;
   display: flex;
   flex-direction: column;
@@ -153,7 +159,32 @@
   width: 100%;
 }
 
-.wifiProgress{
-  height: 20rpx;
-  width: 80%
+.wifiView {
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 335rpx;
+  margin-left: 30rpx;
+  width: 580rpx;
+}
+
+.leftWifi {
+  position: absolute;
+  z-index: 1;
+  left: 425rpx;
+  font-size: 18rpx;
+  color: rgba(115, 115, 115, 1);
+}
+
+.wifiView image {
+  width: 120rpx;
+  height: 43rpx;
+  margin-right: 25rpx;
+}
+
+.wifiProgress {
+  width: 65%;
 }

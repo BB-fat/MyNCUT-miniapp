@@ -8,6 +8,10 @@ import {
   lookFile
 } from "../../utils/document.js"
 
+import {
+  checkAuthState
+} from "../../utils/login.js"
+
 Page({
 
   /**
@@ -23,9 +27,6 @@ Page({
    */
   onLoad: function(options) {
     var that=this
-    if (options.courseware != null) {
-      lookFile(JSON.parse(options.courseware))
-    }
     wx.getStorage({
       key: 'courseList',
       success: function(res) {
@@ -68,6 +69,10 @@ Page({
         console.log('没作业')
       }
     })
+  },
+
+  onShow:function(){
+    checkAuthState()
   },
 
   toAuth: function() {

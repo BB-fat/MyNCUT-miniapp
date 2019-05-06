@@ -6,6 +6,14 @@ export function lookFile(courseware) {
     title: '加载中',
     mask: true
   })
+  var supportList=['doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'pdf', 'txt']
+  if(supportList.indexOf(courseware.type)==-1){
+    wx.showToast({
+      title: '该文件类型不支持预览',
+      icon:"none"
+    })
+    return
+  }
   wx.downloadFile({
     url: myURL + '/courseware?openid=' + app.globalData.openid + '&courseware=' + JSON.stringify(courseware),
     success(res) {

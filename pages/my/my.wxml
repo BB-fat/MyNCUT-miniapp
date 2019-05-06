@@ -2,12 +2,12 @@
 <import src="../../templates/buttons_h/buttons_h.wxml" />
 
 <view>
-  <view class="background-blue"></view>
   <view class="cardView">
     <view class="card">
       <view class="card-topView">
         <image src='../../imgs/my/bfgy.png' class="card-schoolIcon"></image>
       </view>
+      <image class='bottomIMG' src='../../imgs/my/insert.png'></image>
       <view class="card-bottomView">
         <view class="card-bottomViewLeft">
           <open-data type='userAvatarUrl' class="card-avata"></open-data>
@@ -20,12 +20,15 @@
           <text class="card-userid">{{userInfo.userid}}</text>
           <text class="card-class">{{userInfo.class}}</text>
         </view>
-        <image src='../../imgs/my/insert.png' class="card-pic"></image>
+      </view>
+      <view class='wifiView'>
+        <image src='../../imgs/my/wifi.jpg'></image>
+        <text class='leftWifi'>剩余{{wifiLeft}}GB</text>
+        <progress class='wifiProgress' percent="{{wifiProgress}}" active active-mode="backwards" activeColor="#FD9A8C" border-radius='8' stroke-width='12' font-size='10'></progress>
       </view>
     </view>
   </view>
   <view class="button-area">
-  <progress class='wifiProgress' percent="{{wifiProgress}}" show-info active active-mode="backwards"></progress>
     <view class='row1'>
       <template is="myButton" data="{{...btn1}}" />
       <template is="myButton" data="{{...btn2}}" />
