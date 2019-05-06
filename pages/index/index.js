@@ -131,15 +131,15 @@ Page({
 
    
     //轮播图点击事件
-  // swipclick: function(e) {
-  //     console.log(e)
-  //     wx.navigateTo({
-  //       url: '../webview/webview?mode=normal&url=' + this.data.indexBanner[e.currentTarget.dataset.index]['msgUrl']
-  //     })
-  //   },
-  swipclick: function (e) {
-    util.windowInfo()
-  },
+  swipclick: function(e) {
+      console.log(e)
+      wx.navigateTo({
+        url: '../webview/webview?mode=normal&url=' + this.data.indexBanner[e.currentTarget.dataset.index]['msgUrl']
+      })
+    },
+  // swipclick: function (e) {
+  //   util.windowInfo()
+  // },
 
 
   // 跳转至课表
