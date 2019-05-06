@@ -1,31 +1,29 @@
 <import src="../../templates/myButton/myButton.wxml" />
 <import src="../../templates/buttons_h/buttons_h.wxml" />
 
-<view>
-  <view class="cardView">
-    <view class="card">
-      <view class="card-topView">
-        <image src='../../imgs/my/bfgy.png' class="card-schoolIcon"></image>
+<view class='mainView'>
+  <view class="card">
+    <image src='../../imgs/my/bfgy.png' class="card-schoolIcon"></image>
+    <view class='card-bgView'>
+      <image class='bgImg' src='../../imgs/my/insert.png'></image>
+    </view>
+    <view class="card-bottomView">
+      <view class="card-bottomViewLeft">
+        <open-data type='userAvatarUrl' class="card-avata"></open-data>
+        <open-data type='userNickName' class="card-nickName"></open-data>
       </view>
-      <image class='bottomIMG' src='../../imgs/my/insert.png'></image>
-      <view class="card-bottomView">
-        <view class="card-bottomViewLeft">
-          <open-data type='userAvatarUrl' class="card-avata"></open-data>
-          <open-data type='userNickName' class="card-nickName"></open-data>
-        </view>
-        <view class="card-bottomViewMid">
-          <text class="card-name">{{userInfo.name}}</text>
-          <image wx:if='{{userInfo.sex==1}}' src='../../imgs/my/male.png' class="card-male"></image>
-          <image wx:else src='../../imgs/my/female.png' class="card-male"></image>
-          <text class="card-userid">{{userInfo.userid}}</text>
-          <text class="card-class">{{userInfo.class}}</text>
-        </view>
+      <view class="card-bottomViewMid">
+        <text class="card-name">{{userInfo.name}}</text>
+        <image wx:if='{{userInfo.sex==1}}' src='../../imgs/my/male.png' class="card-male"></image>
+        <image wx:else src='../../imgs/my/female.png' class="card-male"></image>
+        <text class="card-userid">{{userInfo.userid}}</text>
+        <text class="card-class">{{userInfo.class}}</text>
       </view>
-      <view class='wifiView'>
-        <image src='../../imgs/my/wifi.jpg'></image>
-        <text class='leftWifi'>剩余{{wifiLeft}}GB</text>
-        <progress class='wifiProgress' percent="{{wifiProgress}}" active active-mode="backwards" activeColor="#FD9A8C" border-radius='8' stroke-width='12' font-size='10'></progress>
-      </view>
+    </view>
+    <view class='wifiView'>
+      <image src='../../imgs/my/wifi.jpg'></image>
+      <text class='leftWifi'>剩余{{wifiLeft}}GB</text>
+      <progress class='wifiProgress' percent="{{wifiProgress}}" active active-mode="backwards" activeColor="#FD9A8C" border-radius='8' stroke-width='12' font-size='10'></progress>
     </view>
   </view>
   <view class="button-area">
@@ -39,6 +37,6 @@
       <template is="buttons_h" data="{{...btn5}}" />
       <template is="buttons_h" data="{{...btn6}}" />
     </view>
-    <view class='bottom-text'>All Rights Reserved</view>
   </view>
+  <view class='bottom-text'>All Rights Reserved</view>
 </view>

@@ -1,13 +1,11 @@
 @import "../../templates/myButton/myButton.wxss";
 @import "../../templates/buttons_h/buttons_h.wxss";
 
-.cardView {
+.mainView {
   width: 100%;
-  height: 500rpx;
   display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  background-color: #fff;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card {
@@ -26,25 +24,23 @@
   text-align: center;
 }
 
-.bottomIMG {
+.card-bgView {
   position: absolute;
   z-index: 0;
-  left: 330rpx;
-  top: 50rpx;
+}
+
+.bgImg {
+  margin-left: 300rpx;
+  margin-top: 50rpx;
   width: 334rpx;
   height: 287rpx;
   opacity: 0.6;
 }
 
-.card-topView {
-  margin-top: 20rpx;
-  margin-left: 20rpx;
-}
-
 .card-bottomView {
   position: absolute;
   z-index: 1;
-  width: 100%;
+  width: 650rpx;
   display: flex;
   flex-direction: row;
   margin-top: 50rpx;
@@ -68,13 +64,7 @@
   font-weight: bold;
 }
 
-/* .wifiProgress{
-  
-} */
-
 .button-area {
-  position: absolute;
-  top: 483rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,10 +89,10 @@
 }
 
 .card-schoolIcon {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
   height: 40rpx;
   width: 200rpx;
-  left: 44rpx;
-  top: 40rpx;
 }
 
 .card-nickName {
