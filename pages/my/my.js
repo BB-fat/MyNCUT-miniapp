@@ -1,10 +1,6 @@
 // pages/my/my.js
 const app = getApp()
 var util = require('../../utils/util.js')
-import {
-  checkAuth,
-  goAuth
-} from '../../utils/login.js'
 
 
 Page({
@@ -13,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    authed:true,
+    authed: true,
     btn1: {
       tapFun: "tapBtn1",
       iconHeight: 63,
@@ -80,35 +76,28 @@ Page({
   tapBtn2: function() {
     util.windowInfo()
   },
-  tapBtn3: function () {
+  tapBtn3: function() {
     wx.navigateTo({
       url: '../feedback/feedback',
     })
   },
-  tapBtn4: function () {
+  tapBtn4: function() {
     wx.navigateTo({
       url: '../aboutus/aboutus',
     })
   },
-  tapBtn5: function () {
+  tapBtn5: function() {
     util.windowInfo()
   },
-  tapBtn6: function (e) {
+  tapBtn6: function(e) {
     wx.navigateTo({
       url: '../myFavor/myFavor',
     })
   },
 
-  onShow:function(){
-    checkAuth(this)
-    if (this.data.userInfo == null && app.globalData.authed){
-      this.setData({
-        userInfo:app.globalData.userInfo
-      })
-    }
-  },
-
-  toAuth:function(){
-    goAuth()
+  onLoad: function() {
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
   },
 })

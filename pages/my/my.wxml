@@ -1,10 +1,7 @@
 <import src="../../templates/myButton/myButton.wxml" />
 <import src="../../templates/buttons_h/buttons_h.wxml" />
-<import src="../../templates/authView/authView.wxml" />
 
-<template wx:if="{{!authed}}" is="authView"></template>
-
-<view wx:else>
+<view>
   <view class="background-blue"></view>
   <view class="cardView">
     <view class="card">

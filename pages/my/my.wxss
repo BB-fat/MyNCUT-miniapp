@@ -1,6 +1,5 @@
 @import "../../templates/myButton/myButton.wxss";
 @import "../../templates/buttons_h/buttons_h.wxss";
-@import "../../templates/authView/authView.wxss";
 
 .cardView {
   width: 100%;

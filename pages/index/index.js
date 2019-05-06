@@ -101,7 +101,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // console.log("do onload()")
     var that=this
     wx.request({
       url: myURL+'/publicinfo',
@@ -137,9 +136,6 @@ Page({
         url: '../webview/webview?mode=normal&url=' + this.data.indexBanner[e.currentTarget.dataset.index]['msgUrl']
       })
     },
-  // swipclick: function (e) {
-  //   util.windowInfo()
-  // },
 
 
   // 跳转至课表

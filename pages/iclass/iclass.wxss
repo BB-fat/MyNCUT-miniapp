@@ -1,6 +1,3 @@
-@import "../../templates/authView/authView.wxss";
-
-
 .top{
   position: absolute;
   z-index: 1;

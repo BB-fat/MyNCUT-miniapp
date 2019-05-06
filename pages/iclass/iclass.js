@@ -5,11 +5,6 @@ import {
 } from "../../setting.js"
 
 import {
-  checkAuth,
-  goAuth
-} from '../../utils/login.js'
-
-import {
   lookFile
 } from "../../utils/document.js"
 
@@ -19,7 +14,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    authed: true,
     courseList: null,
   },
 
@@ -31,61 +25,50 @@ Page({
     if (options.courseware != null) {
       lookFile(JSON.parse(options.courseware))
     }
-  },
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-    console.log(app.globalData.authed)
-    checkAuth(this)
-    let that = this
-    //todo：要获取openid
-    if (this.data.courseList == null && app.globalData.authed) {
-      wx.getStorage({
-        key: 'courseList',
-        success: function(res) {
-          that.setData({
-            courseList: res.data
-          })
-          console.log('getStorage success of courselist')
-        },
-        fail: function(res) {
-          wx.request({
-            url: myURL + '/courselist',
-            data: {
-              openid: app.globalData.openid
-            },
-            success: function(res) {
-              that.setData({
-                courseList: res.data
-              })
-              console.log(that.data.courseList)
-              wx.setStorage({
-                key: "courseList",
-                data: that.data.courseList
-              })
-              console.log('setstorage success of courselist')
-            }
-          })
-        }
-      }) //end getstorge
-      // 请求作业
-      wx.request({
-        url: myURL + '/homework',
-        data: {
-          openid: app.globalData.openid,
-        },
-        success(res) {
-          that.setData({
-            homeList_all: res.data
-          })
-          console.log(that.data.homeList_all)
-        },
-        fail(res) {
-          console.log('没作业')
-        }
-      })
-    } //end if
+    wx.getStorage({
+      key: 'courseList',
+      success: function(res) {
+        that.setData({
+          courseList: res.data
+        })
+        console.log('getStorage success of courselist')
+      },
+      fail: function(res) {
+        wx.request({
+          url: myURL + '/courselist',
+          data: {
+            openid: app.globalData.openid
+          },
+          success: function(res) {
+            that.setData({
+              courseList: res.data
+            })
+            console.log(that.data.courseList)
+            wx.setStorage({
+              key: "courseList",
+              data: that.data.courseList
+            })
+            console.log('setstorage success of courselist')
+          }
+        })
+      }
+    }) //end getstorge
+    // 请求作业
+    wx.request({
+      url: myURL + '/homework',
+      data: {
+        openid: app.globalData.openid,
+      },
+      success(res) {
+        that.setData({
+          homeList_all: res.data
+        })
+        console.log(that.data.homeList_all)
+      },
+      fail(res) {
+        console.log('没作业')
+      }
+    })
   },
 
   toAuth: function() {

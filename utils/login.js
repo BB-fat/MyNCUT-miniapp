@@ -59,6 +59,7 @@ function getUserInfo(that) {
     })
   }
   else{
+    wx.showTabBar()
     that.setData({
       authed:true
     })
@@ -69,11 +70,13 @@ function getUserInfo(that) {
 function checkUserInfo(res,that){
   if (res.data.userInfo == null) {
     //数据库中没有认证数据
+    wx.hideTabBar()
     that.setData({
       authed: false
     })
     app.globalData.authed=false
   } else {
+    wx.showTabBar()
     that.setData({
       authed: true
     })

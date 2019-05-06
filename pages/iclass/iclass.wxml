@@ -1,16 +1,9 @@
-<import src="../../templates/authView/authView.wxml" />
-
-<template wx:if="{{!authed}}" is="authView"></template>
-
-
-<view wx:else>
+<view>
   <view class='top'>
     <view class='blackBG'>
       <text class='title'>课程列表</text>
       <image class='fresh_img' bindtap='doRefresh' src='../../imgs/iclass/refresh.png'></image>
     </view>
-    <!-- <view class='freshView'> -->
-    <!-- </view> -->
   </view>
   <scroll-view class='topView' scroll-y>
     <view style='height:10rpx;'></view>
