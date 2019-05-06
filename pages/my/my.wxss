@@ -152,3 +152,8 @@
   align-items: center;
   width: 100%;
 }
+
+.wifiProgress{
+  height: 20rpx;
+  width: 80%
+}

@@ -22,6 +22,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onLoad: function(options) {
+    var that=this
     if (options.courseware != null) {
       lookFile(JSON.parse(options.courseware))
     }
@@ -31,7 +32,6 @@ Page({
         that.setData({
           courseList: res.data
         })
-        console.log('getStorage success of courselist')
       },
       fail: function(res) {
         wx.request({
@@ -48,7 +48,6 @@ Page({
               key: "courseList",
               data: that.data.courseList
             })
-            console.log('setstorage success of courselist')
           }
         })
       }

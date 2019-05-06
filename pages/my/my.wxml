@@ -25,6 +25,7 @@
     </view>
   </view>
   <view class="button-area">
+  <progress class='wifiProgress' percent="{{wifiProgress}}" show-info active active-mode="backwards"></progress>
     <view class='row1'>
       <template is="myButton" data="{{...btn1}}" />
       <template is="myButton" data="{{...btn2}}" />

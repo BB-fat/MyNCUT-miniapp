@@ -2,6 +2,7 @@
 const app = getApp()
 var util = require('../../utils/util.js')
 
+import {myURL} from "../../setting.js"
 
 Page({
 
@@ -98,6 +99,25 @@ Page({
   onLoad: function() {
     this.setData({
       userInfo: app.globalData.userInfo
+    })
+  },
+
+  onShow:function(){
+    var that=this
+    // 让进度条每一次切换到这个页面都能加载动画
+    this.setData({
+      wifiProgress:0
+    })
+    wx.request({
+      url: myURL+'/wifi',
+      data:{
+        openid:app.globalData.openid
+      },
+      success(res){
+        that.setData({
+          wifiProgress:parseInt(parseFloat(res.data)/(30*1024)*100)
+        })
+      }
     })
   },
 })
