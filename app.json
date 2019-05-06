@@ -1,8 +1,8 @@
 {
+  "debug": false,
   "pages": [
     "pages/index/index",
     "pages/myFavor/myFavor",
-    
     "pages/iclass/iclass",
     "pages/document/document",
     "pages/my/my",

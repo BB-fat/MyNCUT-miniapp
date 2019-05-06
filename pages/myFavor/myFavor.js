@@ -108,17 +108,11 @@ Page({
       var queryList = []
       var inputValue = e.detail.value
       for (var i = 0; i < myStore.length; i++) {
-        // if (myStore[i].coursecode == that.data.course_code) {
         var name = myStore[i].file_name
-        for (var j = 0; j <= name.length - inputValue.length; j++) {
-          if (name.substr(j, inputValue.length) == inputValue) {
-            queryList.push(myStore[i])
-            break
-          }
+        if (name.search(inputValue) != -1 ){
+          queryList.push(myStore[i])
         }
-        // }
       }
-      // console.log(queryList)
       if (queryList.length == 0) {
         that.setData({
           searchInfo: true
