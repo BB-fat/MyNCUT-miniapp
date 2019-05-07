@@ -21,7 +21,7 @@
         </view>
         <image class='line' src='../../imgs/iclass/line.jpg'></image>
         <view class='ware_work'>
-          <view class='courseware' hover="true" hover-class="wordhover" bindtap='getDocument' data-course_code='{{item.course_code}}' data-course_name='{{item.course_name}}'>课件资料</view>
+          <view class='courseware' hover="true" hover-class="wordhover" bindtap='getDocument' data-index="{{index}}">课件资料</view>
           <view class='homework' hover="true" hover-class="wordhover" bindtap='getHomework' data-course_class='{{item.course_class}}' data-course_name='{{item.course_name}}'>课程作业</view>
         </view>
       </view>

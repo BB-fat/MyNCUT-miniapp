@@ -103,7 +103,7 @@ Page({
   },
 
   onLoad: function() {
-    var that=this
+    var that = this
     this.setData({
       userInfo: app.globalData.userInfo
     })
@@ -125,12 +125,14 @@ Page({
     checkAuthState()
     var that = this
     // 让进度条每一次切换到这个页面都能加载动画
-    var wifiProgress=this.data.wifiProgress
+    var wifiProgress = this.data.wifiProgress
     this.setData({
       wifiProgress: 0,
     })
-    this.setData({
-      wifiProgress:wifiProgress
-    })
+    if (wifiProgress != undefined) {
+      this.setData({
+        wifiProgress: wifiProgress
+      })
+    }
   },
 })

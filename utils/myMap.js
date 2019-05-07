@@ -24,7 +24,7 @@ export function myMap(that) {
       favorArray = courseArray.map(function(item, index) {
         var num = 0
         for (var i in res.data) {
-          if (item == res.data[i].coursecode)
+          if (item == res.data[i].course_code)
             num++
         }
         return num

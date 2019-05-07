@@ -107,10 +107,9 @@ Page({
   },
 
   getDocument: function(e) { //课件资料
-    var course_code = e.currentTarget.dataset.course_code
-    var course_name = e.currentTarget.dataset.course_name
+    var that=this
     wx.navigateTo({
-      url: '../document/document?course_code=' + course_code + '&course_name=' + course_name,
+      url: '../document/document?type=all&nowData=' + JSON.stringify(that.data.courseList[e.currentTarget.dataset.index]),
     })
   },
 

@@ -19,9 +19,6 @@ Page({
    * Page initial data
    */
   data: {
-    coursewareList: '',
-    course_code: '',
-    course_name: '',
     inform_loading: true,
     searchInfo: false,
   },
@@ -31,21 +28,30 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function(options) {
-    wx.setNavigationBarTitle({
-      title: options.course_name,
-    })
     let that = this
-    that.setData({
-      course_code: options.course_code,
-      course_name: options.course_name
-    })
+    that.data.nowData = JSON.parse(options.nowData)
+    // 设定标题显示课程名，如果是文件夹显示文件夹名
+    if (that.data.nowData.course_name!=undefined){
+      wx.setNavigationBarTitle({
+        title: that.data.nowData.course_name,
+      })
+    }else{
+      wx.setNavigationBarTitle({
+        title: that.data.nowData.file_name,
+      })
+    }
+    var reqData = {
+      openid: app.globalData.openid,
+      mode: options.type
+    }
+    if (options.type == 'all') {
+      reqData['course_code'] = that.data.nowData.course_code
+    } else if (options.type == 'dir') {
+      reqData['courseware'] = options.nowData
+    }
     wx.request({
       url: myURL + '/coursewarelist',
-      data: {
-        openid: app.globalData.openid,
-        coursecode: that.data.course_code,
-        mode: 'all'
-      },
+      data: reqData,
       success: function(res) {
         if (res.data == null) {
           wx.showToast({
@@ -81,15 +87,8 @@ Page({
   },
 
   lookFile: function(e) {
-    var that = this
     var index = e.currentTarget.dataset.index
-    if (that.data.coursewareList[index].type === 'dir') {
-      wx.navigateTo({
-        url: '/pages/document/document?code=' + course_code + 'item' + that.data.coursewareList[index].sign
-      })
-    } else {
-      lookFile(that.data.coursewareList[index])
-    }
+    lookFile(this.data.coursewareList[index])
   },
 
   downFile: function(e) { //下载课件

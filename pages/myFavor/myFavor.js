@@ -127,18 +127,11 @@ Page({
   },
 
   lookFile: function(e) {
-    var that = this
     var index = e.currentTarget.dataset.index
-    if (that.data.favorList[index].type === 'dir') {
-      wx.navigateTo({
-        url: '/pages/document/document?code=' + course_code + 'item' + that.data.favorList[index].sign
-      })
-    } else {
-      lookFile(that.data.favorList[index])
-    }
+    lookFile(this.data.favorList[index])
   },
 
-  downFile: function(e) { //下载课件
+  downFile: function(e) {
     let that = this
     var index = e.currentTarget.dataset.index
     downloadFile(that.data.favorList[index])
@@ -177,5 +170,4 @@ Page({
     }
     offFavor(that.data.favorList[index])
   },
-
 })

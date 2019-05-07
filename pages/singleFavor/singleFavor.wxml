@@ -12,7 +12,7 @@
   <view style='height:20rpx;'></view>
   <view class='main'>
     <block class='favorList' wx:for='{{favorList}}'>
-      <template is="myCwareBlock" data="{{item,index:index}}" wx:if='{{item.coursecode==course_code}}' />
+      <template is="myCwareBlock" data="{{item,index:index}}" wx:if='{{item.course_code==course_code}}' />
     </block>
     <view style='height:40rpx'></view>
   </view>
