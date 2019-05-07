@@ -1,27 +1,22 @@
-.container{ 
-  /* position: absolute; */
+.mainView{
   display: flex;
   flex-direction: column;
-  vertical-align: text-top; 
-  align-items: center; 
-  justify-content: center;
-  padding-top: 52rpx;
-  padding-bottom: 20rpx; 
-  height: 1120rpx;
-  color: #6299ff;  
-  /* background-color: #ffffff; */
-  /* background-image: url(../../imgs/aboutus/back.jpg); */
+  align-items: center;
 }
 
-.img{
-  height: 50rpx;
-  width: 50rpx;
+.title{
+  font-size: 34rpx;
+  font-weight:bold;
+  margin-top: 61rpx;
 }
 
-.name{
+.line{
+  margin-top: 11rpx;
   display: flex;
   flex-direction: row;
-  vertical-align: center;
-  align-items: center; 
-  justify-content: center;  
+  justify-content: space-between;
+}
+
+.item{
+  font-size: 28rpx;
 }

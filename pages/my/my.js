@@ -103,19 +103,11 @@ Page({
   },
 
   onLoad: function() {
+    var that=this
     this.setData({
       userInfo: app.globalData.userInfo
     })
-  },
-
-  onShow: function() {
-    checkAuthState()
-    var that = this
-    // 让进度条每一次切换到这个页面都能加载动画
-    this.setData({
-      wifiProgress: 0,
-    })
-    wx.request({ 
+    wx.request({
       url: myURL + '/wifi',
       data: {
         openid: app.globalData.openid
@@ -126,6 +118,19 @@ Page({
           wifiLeft: (30 - parseFloat(res.data) / 1024).toFixed(2)
         })
       }
+    })
+  },
+
+  onShow: function() {
+    checkAuthState()
+    var that = this
+    // 让进度条每一次切换到这个页面都能加载动画
+    var wifiProgress=this.data.wifiProgress
+    this.setData({
+      wifiProgress: 0,
+    })
+    this.setData({
+      wifiProgress:wifiProgress
     })
   },
 })

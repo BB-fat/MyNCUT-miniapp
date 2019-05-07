@@ -139,7 +139,8 @@
 }
 
 .bottom-text {
-  margin-top: 230rpx;
+  position: absolute;
+  bottom: 20rpx;
   color: #000;
   font-size: 20rpx;
   display: flex;

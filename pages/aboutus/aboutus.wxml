@@ -1,58 +1,30 @@
-<view class='container'>
-  <text  style='font-size:42rpx'>NCUT-UED工作室</text>
-
-  <view class='title' style='margin-top: 42rpx;'> 
-    <image class='img' style='margin-right: 20rpx;' src='../../imgs/aboutus/person.png'></image>
-    <text class='post' style='font-size:36rpx'>产品经理</text>
+<view class="mainView">
+  <text class='title'>产品经理</text>
+  <view class='line' style='width:35%'>
+    <text class='item'>许馨月</text>
+    <text class='item'>谢文正</text>
   </view>
-
-  <view class='name' style='margin-top:44rpx'>
-    <text style='font-size:28rpx;font-weight:bold;margin-right:30rpx'>许馨月</text>
-    <text style='font-size:28rpx;font-weight:bold;margin-left:30rpx'>谢文正</text>
+  <text class='title'>工程师团队</text>
+  <text class='item' style='margin-top: 11rpx;'>鞠欣诚</text>
+  <view class='line' style='width:80%'>
+    <text class='item'>张世烨</text>
+    <text class='item'>庞 宇</text>
+    <text class='item'>王文徽</text>
+    <text class='item'>韩孟男</text>
+    <text class='item'>洪诗雯</text>
   </view>
-
-  <view class='title' style='margin-top: 55rpx;'>
-    <image class='img' style='margin-right: 27rpx;' src='../../imgs/aboutus/person.png'></image>
-    <text class='post' style='font-size:36rpx'>工程师团队</text>
+  <text class='title'>设计师团队</text>
+  <text class='item' style='margin-top: 11rpx;'>李胜坤</text>
+  <view class='line' style='width:40%'>
+    <text class='item'>黄鹏嘉</text>
+    <text class='item'>艾 卓</text>
+    <text class='item'>刘 潼</text>
   </view>
-
-  <text style='font-size:28rpx;font-weight:bold;margin-top:44rpx;'>鞠欣诚</text>
-
-  <view class='name' style='margin-top:28rpx'>
-    <text style='font-size:28rpx;font-weight:bold;margin-right:67rpx'>张世烨</text>
-    <text style='font-size:28rpx;font-weight:bold;margin-right:67rpx'>庞  宇</text>
-    <text style='font-size:28rpx;font-weight:bold;margin-right:59rpx'>王文徽</text>
-    <text style='font-size:28rpx;font-weight:bold;margin-right:59rpx'>韩孟男</text>
-    <text style='font-size:28rpx;font-weight:bold;'>洪诗雯</text>
+  <text class='title'>法律顾问</text>
+  <text class='item' style='margin-top: 11rpx;'>林洪艺</text>
+  <text class='title'>特别鸣谢</text>
+  <view class='line' style='width:35%'>
+    <text class='item'>肖 彬</text>
+    <text class='item'>马时来</text>
   </view>
-
-  <view class='title' style='margin-top: 56rpx;'>
-    <image class='img' style='margin-right: 27rpx;' src='../../imgs/aboutus/person.png'></image>
-    <text class='post' style='font-size:36rpx'>设计师团队</text>
-  </view>
-
-  <text style='font-size:28rpx;font-weight:bold;margin-top:44rpx;'>李圣坤</text>
-
-  <view class='name' style='margin-top:28rpx'>
-    <text style='font-size:28rpx;font-weight:bold;margin-right:24rpx'>艾  卓</text>
-    <text style='font-size:28rpx;font-weight:bold;margin-left:24rpx'>刘  潼</text>
-  </view>
-
-  <view class='title' style='margin-top: 58rpx;'>
-    <image class='img' style='margin-right: 21rpx;' src='../../imgs/aboutus/person.png'></image>
-    <text class='post' style='font-size:36rpx'>法律顾问</text>
-  </view>
-
-  <text style='font-size:28rpx;font-weight:bold;margin-top:44rpx;'>林洪艺</text>
-
-  <view class='title' style='margin-top: 74rpx;'>
-    <image class='img' style='margin-right: 17rpx;' src='../../imgs/aboutus/thank.png'></image>
-    <text class='post' style='font-size:36rpx'>特别鸣谢</text>
-  </view>
-
-  <view class='name' style='margin-top:44rpx'>
-    <text style='font-size:28rpx;font-weight:bold;margin-right:38rpx'>肖  斌</text>
-    <text style='font-size:28rpx;font-weight:bold;margin-left:38rpx'>马时来</text>
-  </view>
-
 </view>
