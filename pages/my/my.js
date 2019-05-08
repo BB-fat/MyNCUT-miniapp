@@ -6,10 +6,6 @@ import {
   myURL
 } from "../../setting.js"
 
-import {
-  checkAuthState
-} from "../../utils/login.js"
-
 Page({
 
   /**
@@ -104,32 +100,41 @@ Page({
 
   onLoad: function() {
     var that = this
-    this.setData({
-      userInfo: app.globalData.userInfo
-    })
-    wx.request({
-      url: myURL + '/wifi',
-      data: {
-        openid: app.globalData.openid
-      },
-      success(res) {
-        that.setData({
-          wifiProgress: parseInt(parseFloat(res.data) / (30 * 1024) * 100),
-          wifiLeft: (30 - parseFloat(res.data) / 1024).toFixed(2)
-        })
-      }
-    })
+
+
   },
 
   onShow: function() {
-    checkAuthState()
     var that = this
-    // 让进度条每一次切换到这个页面都能加载动画
-    var wifiProgress = this.data.wifiProgress
-    this.setData({
-      wifiProgress: 0,
-    })
-    if (wifiProgress != undefined) {
+    // 没有认证
+    if (app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '../index/index',
+      })
+    } 
+    // 首次加载流量条
+    else if (this.data.wifiProgress == undefined) {
+      this.setData({
+        userInfo: app.globalData.userInfo
+      })
+      wx.request({
+        url: myURL + '/wifi',
+        data: {
+          openid: app.globalData.openid
+        },
+        success(res) {
+          that.setData({
+            wifiProgress: parseInt(parseFloat(res.data) / (30 * 1024) * 100),
+            wifiLeft: (30 - parseFloat(res.data) / 1024).toFixed(2)
+          })
+        }
+      })
+    } else {
+      // 让进度条每一次切换到这个页面都能加载动画
+      var wifiProgress = this.data.wifiProgress
+      this.setData({
+        wifiProgress: 0,
+      })
       this.setData({
         wifiProgress: wifiProgress
       })

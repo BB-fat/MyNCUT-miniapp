@@ -90,11 +90,3 @@ export function goAuth() {
     url: '../webview/webview?mode=oauth&openid=' + app.globalData.openid,
   })
 }
-
-export function checkAuthState(){
-  if (app.globalData.userInfo == null){
-    wx.switchTab({
-      url: '../index/index',
-    })
-  }
-}

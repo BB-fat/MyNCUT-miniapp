@@ -8,10 +8,6 @@ import {
   lookFile
 } from "../../utils/document.js"
 
-import {
-  checkAuthState
-} from "../../utils/login.js"
-
 Page({
 
   /**
@@ -21,58 +17,56 @@ Page({
     courseList: null,
   },
 
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onLoad: function(options) {
-    var that=this
-    wx.getStorage({
-      key: 'courseList',
-      success: function(res) {
-        that.setData({
-          courseList: res.data
-        })
-      },
-      fail: function(res) {
-        wx.request({
-          url: myURL + '/courselist',
-          data: {
-            openid: app.globalData.openid
-          },
-          success: function(res) {
-            that.setData({
-              courseList: res.data
-            })
-            console.log(that.data.courseList)
-            wx.setStorage({
-              key: "courseList",
-              data: that.data.courseList
-            })
-          }
-        })
-      }
-    }) //end getstorge
-    // 请求作业
-    wx.request({
-      url: myURL + '/homework',
-      data: {
-        openid: app.globalData.openid,
-      },
-      success(res) {
-        that.setData({
-          homeList_all: res.data
-        })
-        console.log(that.data.homeList_all)
-      },
-      fail(res) {
-        console.log('没作业')
-      }
-    })
-  },
-
   onShow:function(){
-    checkAuthState()
+    var that=this
+    if (app.globalData.userInfo == null) {
+      wx.switchTab({
+        url: '../index/index',
+      })
+    }else if(this.data.courseList==undefined){
+      wx.getStorage({
+        key: 'courseList',
+        success: function (res) {
+          that.setData({
+            courseList: res.data
+          })
+        },
+        fail: function (res) {
+          wx.request({
+            url: myURL + '/courselist',
+            data: {
+              openid: app.globalData.openid
+            },
+            success: function (res) {
+              that.setData({
+                courseList: res.data
+              })
+              console.log(that.data.courseList)
+              wx.setStorage({
+                key: "courseList",
+                data: that.data.courseList
+              })
+            }
+          })
+        }
+      }) //end getstorge
+      // 请求作业
+      wx.request({
+        url: myURL + '/homework',
+        data: {
+          openid: app.globalData.openid,
+        },
+        success(res) {
+          that.setData({
+            homeList_all: res.data
+          })
+          console.log(that.data.homeList_all)
+        },
+        fail(res) {
+          console.log('没作业')
+        }
+      })
+    }
   },
 
   toAuth: function() {
