@@ -28,15 +28,15 @@
   </view>
   <view class="button-area">
     <view class='row1'>
-      <template is="myButton" data="{{...btn1}}" />
       <template is="myButton" data="{{...btn2}}" />
+      <template is="myButton" data="{{...btn1}}" />
       <template is="myButton" data="{{...btn3}}" />
       <template is="myButton" data="{{...btn4}}" />
     </view>
-    <view class='row2'>
+    <!-- <view class='row2'>
       <template is="buttons_h" data="{{...btn5}}" />
       <template is="buttons_h" data="{{...btn6}}" />
-    </view>
+    </view> -->
   </view>
   <view class='bottom-text'>All Rights Reserved</view>
 </view>

@@ -13,20 +13,20 @@ Page({
    */
   data: {
     authed: true,
+    btn2: {
+      tapFun: "tapBtn6",
+      iconHeight: 63,
+      iconWidth: 66,
+      iconSrc: "../../imgs/my/myFavor.png",
+      text: "我的收藏"
+    },
     btn1: {
       tapFun: "tapBtn1",
       iconHeight: 63,
       iconWidth: 74,
       iconSrc: "../../imgs/my/Graduation_qualification_active_icon.png",
       text: "毕业资格"
-    },
-    btn2: {
-      tapFun: "tapBtn2",
-      iconHeight: 63,
-      iconWidth: 66,
-      iconSrc: "../../imgs/my/My_award_active_icon.png",
-      text: "荣誉奖项"
-    },
+    },    
     btn3: {
       tapFun: "tapBtn3",
       iconHeight: 63,
@@ -107,6 +107,7 @@ Page({
   onShow: function() {
     var that = this
     // 没有认证
+    // app.globalData.userInfo=["me","you"]
     if (app.globalData.userInfo == null) {
       wx.switchTab({
         url: '../index/index',
