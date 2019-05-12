@@ -1,5 +1,5 @@
 {
   "enablePullDownRefresh": true,
-  "backgroundTextStyle": "dark"
-  
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "课程列表"
 }

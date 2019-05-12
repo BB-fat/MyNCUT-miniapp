@@ -18,20 +18,20 @@ var app = getApp()
 
 Page({
   data: {
-    authed:true,
-    btn1:{
-      btnWidth:299,
-      btnHeight:192,
+    authed: true,
+    btn1: {
+      btnWidth: 299,
+      btnHeight: 192,
       // mgtopbtn:6,
-      fontsize:35,
-      tapFunc:"toClassTable",
-      mgtopimg:10,
-      imgWidth:100,
-      imgHeight:90,
-      imgUrl:"../../imgs/index/course.png",
-      pdtoptxt:20,
-      mglefttxt:22,          
-      btnTxt:"课表"
+      fontsize: 35,
+      tapFunc: "toClassTable",
+      mgtopimg: 10,
+      imgWidth: 100,
+      imgHeight: 90,
+      imgUrl: "../../imgs/index/course.png",
+      pdtoptxt: 20,
+      mglefttxt: 22,
+      btnTxt: "课表"
     },
     btn2: {
       btnWidth: 302,
@@ -41,14 +41,14 @@ Page({
       tapFunc: "toClassroom",
       imgWidth: 75,
       imgHeight: 75,
-      mgtopimg: 15,     
-      imgUrl: "../../imgs/index/room.png",      
+      mgtopimg: 15,
+      imgUrl: "../../imgs/index/room.png",
       mglefttxt: 22,
       pdtoptxt: 10,
       btnTxt: "教室"
     },
     btn3: {
-      position:"absolute",
+      position: "absolute",
       btnWidth: 299,
       btnHeight: 105,
       mgtopbtn: 36,
@@ -67,16 +67,16 @@ Page({
       btnWidth: 129,
       btnHeight: 135,
       mgtopbtn: 7,
-      mgleftbtn:345,
+      mgleftbtn: 345,
       fontsize: 25,
       tapFunc: "toGradePoint",
       imgWidth: 64,
       imgHeight: 56,
-      imgViewW:120,
-      imgViewH:50,
+      imgViewW: 120,
+      imgViewH: 50,
       mgtopimgView: 19,
       imgUrl: "../../imgs/index/average.png",
-      txtWidth:120,
+      txtWidth: 120,
       btnTxt: "绩点"
     },
     btn5: {
@@ -94,29 +94,42 @@ Page({
       mgtopimgView: 19,
       imgUrl: "../../imgs/index/graduate.png",
       txtWidth: 120,
-      mgtoptxt:2,
+      mgtoptxt: 2,
       btnTxt: "学分"
     },
-    
+
+  },
+
+  // 查看使用许可
+  seeLicense: function() {
+    wx.downloadFile({
+      url: myURL + "/license",
+      success(res) {
+        wx.openDocument({
+          filePath: res.tempFilePath,
+          fileType: "pdf"
+        })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var that=this
+    var that = this
     if (options.courseware != null) {
       lookFile(JSON.parse(options.courseware))
     }
     wx.request({
-      url: myURL+'/publicinfo',
-      success(res){        
+      url: myURL + '/publicinfo',
+      success(res) {
         that.setData({
-          indexBanner:res.data.indexBanner,
-          indexNotice:res.data.indexNotice
+          indexBanner: res.data.indexBanner,
+          indexNotice: res.data.indexNotice
         })
       },
-      fail(res){
+      fail(res) {
         console.log('banner&notice fail')
       }
     })
@@ -126,22 +139,22 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow:function(){
+  onShow: function() {
     checkAuth(this)
   },
 
-  toAuth:function(){
+  toAuth: function() {
     goAuth()
   },
 
-   
-    //轮播图点击事件
+
+  //轮播图点击事件
   swipclick: function(e) {
-      console.log(e)
-      wx.navigateTo({
-        url: '../webview/webview?mode=normal&url=' + this.data.indexBanner[e.currentTarget.dataset.index]['msgUrl']
-      })
-    },
+    console.log(e)
+    wx.navigateTo({
+      url: '../webview/webview?mode=normal&url=' + this.data.indexBanner[e.currentTarget.dataset.index]['msgUrl']
+    })
+  },
 
 
   // 跳转至课表

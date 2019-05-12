@@ -8,7 +8,7 @@
 
 .myButton-text{
     font-size: 22rpx;
-    margin-top: 25rpx;
+    margin-top: 15rpx;
 }
 
 .myButton-hover{

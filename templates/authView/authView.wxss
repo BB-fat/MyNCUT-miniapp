@@ -54,3 +54,9 @@
     opacity: 0.8;
     transform: scale(0.9, 0.9);
 }
+
+.authView-license{
+  margin-top: 30rpx;
+  font-size: 20rpx;
+  color: #3c39ff
+}

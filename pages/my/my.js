@@ -12,32 +12,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    authed: true,
     btn2: {
       tapFun: "tapBtn6",
-      iconHeight: 63,
-      iconWidth: 66,
+      iconHeight: 72,
+      iconWidth: 72,
       iconSrc: "../../imgs/my/myFavor.png",
       text: "我的收藏"
     },
     btn1: {
       tapFun: "tapBtn1",
-      iconHeight: 63,
-      iconWidth: 74,
+      iconHeight: 72,
+      iconWidth: 72,
       iconSrc: "../../imgs/my/Graduation_qualification_active_icon.png",
       text: "毕业资格"
     },    
     btn3: {
       tapFun: "tapBtn3",
-      iconHeight: 63,
-      iconWidth: 66,
+      iconHeight: 72,
+      iconWidth: 72,
       iconSrc: "../../imgs/my/Feedback_active_icon.png",
       text: "问题反馈"
     },
     btn4: {
       tapFun: "tapBtn4",
-      iconHeight: 60,
-      iconWidth: 60,
+      iconHeight: 72,
+      iconWidth: 72,
       iconSrc: "../../imgs/my/About_us_active_icon.png",
       text: "关于我们"
     },

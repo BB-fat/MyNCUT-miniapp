@@ -13,6 +13,7 @@
             </view>
         </view>
         <image class='authView-img' src='../../imgs/index/welcome.png'></image>
-        <view class='authView-btn' hover="true" hover-class="authView-btnhover" bindtap='toAuth'>点击前往认证</view>
+        <text class='authView-license' bindtap='seeLicense'>《“我的北方”小程序许可及服务协议》</text>
+        <view class='authView-btn' hover="true" hover-class="authView-btnhover" bindtap='toAuth'>同意并前往认证</view>
     </view>
 </template>

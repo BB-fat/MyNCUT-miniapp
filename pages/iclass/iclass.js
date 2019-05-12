@@ -17,27 +17,27 @@ Page({
     courseList: null,
   },
 
-  onShow:function(){
-    var that=this
+  onShow: function() {
+    var that = this
     if (app.globalData.userInfo == null) {
       wx.switchTab({
         url: '../index/index',
       })
-    }else if(this.data.courseList==undefined){
+    } else if (this.data.courseList == undefined) {
       wx.getStorage({
         key: 'courseList',
-        success: function (res) {
+        success: function(res) {
           that.setData({
             courseList: res.data
           })
         },
-        fail: function (res) {
+        fail: function(res) {
           wx.request({
             url: myURL + '/courselist',
             data: {
               openid: app.globalData.openid
             },
-            success: function (res) {
+            success: function(res) {
               that.setData({
                 courseList: res.data
               })
@@ -73,35 +73,8 @@ Page({
     goAuth()
   },
 
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  doRefresh: function() {
-    wx.startPullDownRefresh()
-    let that = this
-    wx.request({
-      url: myURL + '/courselist',
-      data: {
-        openid: app.globalData.openid
-      },
-      success: function(res) {
-        // console.log(res.data[0])
-        that.setData({
-          courseList: res.data
-        })
-        console.log(that.data.courseList)
-        wx.setStorage({
-          key: "courseList",
-          data: that.data.courseList
-        })
-        wx.stopPullDownRefresh()
-      }
-    })
-  },
-
   getDocument: function(e) { //课件资料
-    var that=this
+    var that = this
     wx.navigateTo({
       url: '../document/document?type=all&nowData=' + JSON.stringify(that.data.courseList[e.currentTarget.dataset.index]),
     })
@@ -130,15 +103,13 @@ Page({
       wx.navigateTo({
         url: '../homework/homework?course_name=' + course_name + '&homeList_all=' + temp,
       })
-      // console.log()
     }
   },
 
-  toTop: function(e) { //置顶
-    // console.log(e)
+  //置顶
+  toTop: function(e) {
     var index = e.currentTarget.dataset.index
     var tmp = this.data.courseList.splice(index, 1)
-    // console.log(tmp)
     this.data.courseList.unshift(tmp[0])
     this.setData({
       courseList: this.data.courseList
@@ -146,6 +117,27 @@ Page({
     wx.setStorage({
       key: "courseList",
       data: this.data.courseList
+    })
+  },
+
+  onPullDownRefresh:function(){
+    let that = this
+    wx.request({
+      url: myURL + '/courselist',
+      data: {
+        openid: app.globalData.openid
+      },
+      success: function (res) {
+        that.setData({
+          courseList: res.data
+        })
+        console.log(that.data.courseList)
+        wx.setStorage({
+          key: "courseList",
+          data: that.data.courseList
+        })
+        wx.stopPullDownRefresh()
+      }
     })
   },
 })
