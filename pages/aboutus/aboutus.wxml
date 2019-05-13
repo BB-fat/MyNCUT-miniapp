@@ -1,4 +1,5 @@
 <view class="mainView">
+  <text class='mainTitle'>OneTech 团队</text>
   <text class='title'>产品经理</text>
   <view class='line' style='width:35%'>
     <text class='item'>许馨月</text>

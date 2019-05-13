@@ -1,22 +1,28 @@
-.mainView{
+.mainView {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.title{
-  font-size: 34rpx;
-  font-weight:bold;
+.mainTitle {
+  font-size: 40rpx;
+  font-weight: bold;
   margin-top: 61rpx;
 }
 
-.line{
+.title {
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-top: 61rpx;
+}
+
+.line {
   margin-top: 11rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.item{
+.item {
   font-size: 28rpx;
 }
