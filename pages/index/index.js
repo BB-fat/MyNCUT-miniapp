@@ -103,7 +103,7 @@ Page({
   // 查看使用许可
   seeLicense: function() {
     wx.downloadFile({
-      url: myURL + "/license",
+      url: myURL + "/static/license",
       success(res) {
         wx.openDocument({
           filePath: res.tempFilePath,
