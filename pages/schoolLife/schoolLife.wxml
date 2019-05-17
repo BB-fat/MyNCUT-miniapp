@@ -4,5 +4,5 @@
     <view hover-class="btn-hover">
         <image class="button" src="../../imgs/schoolLife/button.png"></image>
     </view>
-    <text class="license">《“我的北方”小程序使用条款》</text>
+    <text class="license" bindtap="seeLicense">《“我的北方”小程序使用条款》</text>
 </view>

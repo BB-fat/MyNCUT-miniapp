@@ -22,7 +22,6 @@ Page({
     btn1: {
       btnWidth: 299,
       btnHeight: 192,
-      // mgtopbtn:6,
       fontsize: 35,
       tapFunc: "toClassTable",
       mgtopimg: 10,
@@ -103,7 +102,7 @@ Page({
   // 查看使用许可
   seeLicense: function() {
     wx.downloadFile({
-      url: myURL + "/static/license",
+      url: myURL + "/static/license.pdf",
       success(res) {
         wx.openDocument({
           filePath: res.tempFilePath,
