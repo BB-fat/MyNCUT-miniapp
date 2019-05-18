@@ -1,7 +1,7 @@
 <image class="bgPic" src="../../imgs/schoolLife/bgpic.png"></image>
 <view class="mainView">
     <image class="pic" src="../../imgs/schoolLife/pic.png"></image>
-    <view hover-class="btn-hover">
+    <view hover-class="btn-hover" bindtap="toSchoolLifeAuth">
         <image class="button" src="../../imgs/schoolLife/button.png"></image>
     </view>
     <text class="license" bindtap="seeLicense">《“我的北方”小程序使用条款》</text>
