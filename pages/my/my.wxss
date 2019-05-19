@@ -179,3 +179,16 @@
 .wifiProgress {
   width: 65%;
 }
+
+.picture{
+  margin-top: 50rpx;
+  width: 408rpx;
+  height: 288rpx;
+  opacity: 0.6
+}
+
+.sign{
+  font-size: 20rpx;
+  margin-top: 30rpx;
+  opacity: 0.6
+}

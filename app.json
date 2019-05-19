@@ -1,8 +1,8 @@
 {
   "debug": false,
   "pages": [
-    "pages/schoolLife/schoolLife",
     "pages/index/index",
+    "pages/schoolLife/schoolLife",
     "pages/myFavor/myFavor",
     "pages/iclass/iclass",
     "pages/document/document",
