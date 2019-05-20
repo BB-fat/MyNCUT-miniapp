@@ -43,16 +43,26 @@ Page({
             app.globalData.openid = res.data.openid
             // 个人信息为空，跳转至认证网页
             if (res.data.userInfo == null) {
-              app.globalData.authed=false
+              app.globalData.authed = false
             } else {
-              app.globalData.authed=true
-              //
+              app.globalData.authed = true
+              that.data.showTwice = true
               //跳转点滴校园
-              //
-            }         
+              wx.navigateTo({
+                url: '../webview/webview?mode=2019&openid=' + app.globalData.openid
+              })
+            }
           }
         })
       }
+    })
+  },
+
+  toSchoolLifeAuth: function () {
+    //跳转点滴校园
+    this.data.showTwice = true
+    wx.navigateTo({
+      url: '../webview/webview?mode=2019Auth&openid=' + app.globalData.openid
     })
   },
 
@@ -60,7 +70,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (this.showTwice) {
+    if (this.data.showTwice) {
       wx.switchTab({
         url: '../index/index'
       })
