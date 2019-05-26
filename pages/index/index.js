@@ -190,4 +190,11 @@ Page({
       url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_room/emroom/index',
     })
   },
+
+  toSL:function(){
+    //跳转点滴校园
+    wx.navigateTo({
+      url: '../webview/webview?mode=2019&openid=' + app.globalData.openid
+    })
+  }
 })

@@ -2,6 +2,7 @@
   "debug": false,
   "pages": [
     "pages/index/index",
+    "pages/uploadPic/uploadPic",
     "pages/schoolLife/schoolLife",
     "pages/myFavor/myFavor",
     "pages/iclass/iclass",
@@ -44,5 +45,6 @@
       }
     ]
   },
-  "resizable": true
+  "resizable": true,
+  "sitemapLocation": "sitemap.json"
 }
