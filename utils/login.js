@@ -33,7 +33,7 @@ export function checkAuth(that) {
                   data: res.data.openid,
                 })
                 // 个人信息为空，跳转至认证网页
-                checkUserInfo(res,that)
+                checkUserInfo(res, that)
               }
             })
           }
@@ -54,33 +54,39 @@ function getUserInfo(that) {
       },
       success(res) {
         console.log(res.data)
-        checkUserInfo(res,that)
+        if (res.data.disable == true) {
+          wx.hideTabBar({})
+          that.setData({
+            disable: true
+          })
+        } else {
+          checkUserInfo(res, that)
+        }
       }
     })
-  }
-  else{
+  } else {
     wx.showTabBar()
     that.setData({
-      authed:true
+      authed: true
     })
-    app.globalData.authed=true
+    app.globalData.authed = true
   }
 }
 
-function checkUserInfo(res,that){
+function checkUserInfo(res, that) {
   if (res.data.userInfo == null) {
     //数据库中没有认证数据
     wx.hideTabBar()
     that.setData({
       authed: false
     })
-    app.globalData.authed=false
+    app.globalData.authed = false
   } else {
     wx.showTabBar()
     that.setData({
       authed: true
     })
-    app.globalData.authed=true
+    app.globalData.authed = true
     app.globalData.userInfo = res.data.userInfo
   }
 }

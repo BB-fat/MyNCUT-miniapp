@@ -5,7 +5,6 @@ import {
 } from "setting.js"
 
 App({
-  
   globalData:{
   }
 })
