@@ -97,16 +97,15 @@ Page({
     })
   },
 
-  onLoad: function() {
-    var that = this
-
-
+  // 浏览插画
+  seePic:function(){
+    wx.previewImage({
+      urls: [myURL+"/static/picture.jpeg"],
+    });
   },
 
   onShow: function() {
     var that = this
-    // 没有认证
-    // app.globalData.userInfo=["me","you"]
     if (app.globalData.userInfo == null) {
       wx.switchTab({
         url: '../index/index',

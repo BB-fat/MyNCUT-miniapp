@@ -33,7 +33,7 @@
       <template is="myButton" data="{{...btn3}}" />
       <template is="myButton" data="{{...btn4}}" />
     </view>
-    <image class='picture' src="../../imgs/my/picture.jpeg"></image>
+    <image class='picture' bindtap="seePic" src="../../imgs/my/picture.jpeg"></image>
     <text class='sign'>《北方工大喵喵喵》  孟露  设计18-1</text>
     <!-- <view class='row2'>
       <template is="buttons_h" data="{{...btn5}}" />
