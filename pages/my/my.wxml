@@ -22,7 +22,8 @@
     </view>
     <view class='wifiView'>
       <image src='../../imgs/my/wifi.jpg'></image>
-      <text class='leftWifi'>剩余{{wifiLeft}}GB</text>
+      <text wx:if="{{wifiLeft>0}}" class='leftWifi'>剩余{{wifiLeft}}GB</text>
+      <text wx:else class='leftWifi'>已使用超过30G</text>
       <progress class='wifiProgress' percent="{{wifiProgress}}" active active-mode="backwards" activeColor="#FD9A8C" border-radius='8' stroke-width='12' font-size='10'></progress>
     </view>
   </view>
