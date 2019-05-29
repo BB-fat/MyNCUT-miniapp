@@ -85,7 +85,6 @@ Page({
     var course_code = e.currentTarget.dataset.course_code
     var course_name = e.currentTarget.dataset.course_name
     var temp = JSON.stringify(that.data.favorList)
-    // console.log(course_code)
     wx.navigateTo({
       url: '../singleFavor/singleFavor?course_code=' + course_code + '&course_name=' + course_name + '&favorList=' + temp,
     })

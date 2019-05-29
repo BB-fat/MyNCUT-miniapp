@@ -11,7 +11,6 @@ export function checkAuth(that) {
       key: 'openid',
       // 读取成功，写入全局变量备用
       success: function(res) {
-        console.log("success get openid")
         app.globalData.openid = res.data
         getUserInfo(that)
       },
@@ -53,7 +52,6 @@ function getUserInfo(that) {
         openid: app.globalData.openid
       },
       success(res) {
-        console.log(res.data)
         if (res.data.disable == true) {
           wx.hideTabBar({})
           that.setData({

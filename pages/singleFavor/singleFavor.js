@@ -42,7 +42,7 @@ onShareAppMessage: function(res) {
   if (res.from === 'button') {
     return {
       title: courseware.file_name,
-      path: '/pages/iclass/iclass?courseware=' + JSON.stringify(courseware),
+      path: '/pages/index/index?courseware=' + JSON.stringify(courseware),
       imageUrl: "../../imgs/share.png"
     }
   }
