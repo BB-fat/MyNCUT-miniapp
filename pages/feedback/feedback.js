@@ -22,6 +22,7 @@ Page({
   },
 
   submit: function(e) { //直接提交文本和类型
+    console.log(e)
     let that = this
     wx.showLoading({
       title: "发送中",
@@ -31,6 +32,7 @@ Page({
     wx.request({
       url: myURL + '/feedback',
       data: {
+        formId:e.detail.formId,
         openid: app.globalData.openid,
         time: time,
         text: that.data.nowTxt
