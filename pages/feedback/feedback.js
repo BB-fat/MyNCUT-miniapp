@@ -22,7 +22,6 @@ Page({
   },
 
   submit: function(e) { //直接提交文本和类型
-    console.log(e)
     let that = this
     wx.showLoading({
       title: "发送中",
