@@ -72,7 +72,8 @@ Page({
   // 浏览插画
   seePic:function(){
     wx.previewImage({
-      urls: [myURL+"/static/picture.jpeg"],
+      // urls: [myURL+"/static/picture.jpeg"],
+      urls: ["cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/picture.jpeg"],
     });
   },
 

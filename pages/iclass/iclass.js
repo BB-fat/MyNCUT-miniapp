@@ -17,7 +17,7 @@ Page({
     courseList: null,
   },
 
-  onShow: function() {
+  onShow: function () {
     var that = this
     if (app.globalData.userInfo == null) {
       wx.switchTab({
@@ -26,18 +26,18 @@ Page({
     } else if (this.data.courseList == undefined) {
       wx.getStorage({
         key: 'courseList',
-        success: function(res) {
+        success: function (res) {
           that.setData({
             courseList: res.data
           })
         },
-        fail: function(res) {
+        fail: function (res) {
           wx.request({
             url: myURL + '/courselist',
             data: {
               openid: app.globalData.openid
             },
-            success: function(res) {
+            success: function (res) {
               that.setData({
                 courseList: res.data
               })
@@ -69,18 +69,18 @@ Page({
     }
   },
 
-  toAuth: function() {
+  toAuth: function () {
     goAuth()
   },
 
-  getDocument: function(e) { //课件资料
+  getDocument: function (e) { //课件资料
     var that = this
     wx.navigateTo({
       url: '../document/document?type=all&nowData=' + JSON.stringify(that.data.courseList[e.currentTarget.dataset.index]),
     })
   },
 
-  getHomework: function(e) { //课程作业
+  getHomework: function (e) { //课程作业
     let that = this
     var course_name = e.currentTarget.dataset.course_name
     console.log(course_name)
@@ -107,20 +107,23 @@ Page({
   },
 
   //置顶
-  toTop: function(e) {
-    var index = e.currentTarget.dataset.index
-    var tmp = this.data.courseList.splice(index, 1)
-    this.data.courseList.unshift(tmp[0])
-    this.setData({
-      courseList: this.data.courseList
-    })
-    wx.setStorage({
-      key: "courseList",
-      data: this.data.courseList
-    })
+  toTop: function (e) {
+    var that = this
+    setTimeout(function () {
+      var index = e.currentTarget.dataset.index
+      var tmp = that.data.courseList.splice(index, 1)
+      that.data.courseList.unshift(tmp[0])
+      that.setData({
+        courseList: that.data.courseList
+      })
+      wx.setStorage({
+        key: "courseList",
+        data: that.data.courseList
+      })
+    }, 300)
   },
 
-  onPullDownRefresh:function(){
+  onPullDownRefresh: function () {
     let that = this
     wx.request({
       url: myURL + '/courselist',
