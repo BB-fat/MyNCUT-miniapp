@@ -22,7 +22,7 @@
 
   <view class="notice">
     <view>
-      <image src="../../imgs/index/notice.png" class="notice_img"></image>
+      <image src="cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/notice.png" class="notice_img"></image>
     </view>
     <view style="flex:1;">
       <swiper class="wordswiper" autoplay="true" circular="true" interval="4000" vertical='true'>
@@ -45,5 +45,5 @@
     <template is="buttons_v" data="{{...btn4}}" />
     <template is="buttons_v" data="{{...btn5}}" />
   </view>
-  <image class='SL2019' src='../../imgs/index/SL2019.png' bindtap='toSL'></image>
+  <image class='SL2019' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/SL2019.png' bindtap='toSL'></image>
 </view>

@@ -16,58 +16,30 @@ Page({
       tapFun: "tapBtn6",
       iconHeight: 72,
       iconWidth: 72,
-      iconSrc: "../../imgs/my/myFavor.png",
+      iconSrc: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/myfavor.png",
       text: "我的收藏"
     },
     btn1: {
       tapFun: "tapBtn1",
       iconHeight: 72,
       iconWidth: 72,
-      iconSrc: "../../imgs/my/Graduation_qualification_active_icon.png",
+      iconSrc: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/graduation.png",
       text: "毕业资格"
     },    
     btn3: {
       tapFun: "tapBtn3",
       iconHeight: 72,
       iconWidth: 72,
-      iconSrc: "../../imgs/my/Feedback_active_icon.png",
+      iconSrc: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/feedback.png",
       text: "问题反馈"
     },
     btn4: {
       tapFun: "tapBtn4",
       iconHeight: 72,
       iconWidth: 72,
-      iconSrc: "../../imgs/my/About_us_active_icon.png",
+      iconSrc: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/about.png",
       text: "关于我们"
-    },
-    btn5: {
-      btnWidth: 280,
-      btnHeight: 120,
-      mgtopbtn: 6,
-      fontsize: 35,
-      tapFunc: "tapBtn5",
-      mgtopimg: 30,
-      imgWidth: 80,
-      imgHeight: 75,
-      imgUrl: "../../imgs/my/message.png",
-      pdtoptxt: 0,
-      mglefttxt: 0,
-      btnTxt: "我的消息"
-    },
-    btn6: {
-      btnWidth: 280,
-      btnHeight: 120,
-      mgtopbtn: 6,
-      fontsize: 35,
-      tapFunc: "tapBtn6",
-      mgtopimg: 25,
-      imgWidth: 80,
-      imgHeight: 65,
-      imgUrl: "../../imgs/my/collection.png",
-      pdtoptxt: 0,
-      mglefttxt: 0,
-      btnTxt: "我的收藏"
-    },
+    }
   },
 
   tapBtn1: function() {

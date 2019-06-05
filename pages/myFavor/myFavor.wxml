@@ -19,7 +19,7 @@
           <view class='num_next'>
             <view class='num'>{{favorArray[index]}}</view>
             <view calss='next'>
-              <image class='next_img' src='../../imgs/my/next.png'></image>
+              <image class='next_img' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/favor/next.png'></image>
             </view>
           </view>
         </view>

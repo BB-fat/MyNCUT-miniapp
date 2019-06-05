@@ -81,7 +81,7 @@ Page({
       return {
         title: courseware.file_name,
         path: '/pages/index/index?courseware=' + JSON.stringify(courseware),
-        imageUrl: "../../imgs/share.png"
+        imageUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/share.png"
       }
     }
   },

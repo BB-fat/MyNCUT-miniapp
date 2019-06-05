@@ -1,6 +1,6 @@
 <import src="../../templates/cwareBlock/cwareBlock.wxml" />
 <view wx:if='{{inform_loading}}' class='inform'>
-  <image class='informIMG' src='../../imgs/document/waiting.gif' mode="widthFix"></image>
+  <image class='informIMG' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/document/waiting.gif' mode="widthFix"></image>
   <text>我们不生产课件</text>
   <text>我们只是知识的搬运工</text>
   <text>loading...</text>

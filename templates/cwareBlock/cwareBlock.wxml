@@ -6,23 +6,23 @@
         <text class='size'>大小：{{item.size}}</text>
       </view>
       <view class='favorView'>
-        <image wx:if='{{!item.favourite}}' bindtap='favourites' data-index='{{index}}' data-filename='{{item.file_name}}' class='unfavor_img' src='../../imgs/document/unfavourate.png'></image>
-        <image wx:else class='favor_img' bindtap='unfavourites' data-index='{{index}}' data-filename='{{item.file_name}}' src='../../imgs/document/favourate.png'></image>
+        <image wx:if='{{!item.favourite}}' bindtap='favourites' data-index='{{index}}' data-filename='{{item.file_name}}' class='unfavor_img' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/document/unfavourate.png'></image>
+        <image wx:else class='favor_img' bindtap='unfavourites' data-index='{{index}}' data-filename='{{item.file_name}}' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/document/favourate.png'></image>
       </view>
     </view>
-    <image class='line' src='../../imgs/document/line.jpg'></image>
+    <image class='line' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/document/line.jpg'></image>
     <view class='date_do'>
       <text class='upDate'>上传时间：{{item.date}}</text>
       <view class='doWare'>
         <view class='imgView' hover="true" hover-class="imghover">
-          <image class='img' bindtap='lookFile' data-index='{{index}}' src='../../imgs/document/look.jpg'></image>
+          <image class='img' bindtap='lookFile' data-index='{{index}}' src='	cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/document/look.jpg'></image>
         </view>
         <view class='imgView' hover="true" hover-class="imghover">
-          <image class='img' bindtap='downFile' data-index='{{index}}' src='../../imgs/document/download.jpg'></image>
+          <image class='img' bindtap='downFile' data-index='{{index}}' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/document/download.jpg'></image>
         </view>
         <view class='imgView' hover="true" hover-class="imghover">
           <button class='imgBTN' id='sendBTN' hover="true" open-type="share" data-index='{{index}}'></button>
-          <image class='sendimg' src='../../imgs/document/send.jpg'></image>
+          <image class='sendimg' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/document/send.jpg'></image>
         </view>
       </view>
     </view>
