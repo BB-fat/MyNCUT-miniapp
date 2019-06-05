@@ -15,7 +15,7 @@
       <text class='upDate'>上传时间：{{item.date}}</text>
       <view class='doWare'>
         <view class='imgView' hover="true" hover-class="imghover">
-          <image class='img' bindtap='lookFile' data-index='{{index}}' src='	cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/document/look.jpg'></image>
+          <image class='img' bindtap='lookFile' data-index='{{index}}' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/document/look.jpg'></image>
         </view>
         <view class='imgView' hover="true" hover-class="imghover">
           <image class='img' bindtap='downFile' data-index='{{index}}' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/document/download.jpg'></image>
