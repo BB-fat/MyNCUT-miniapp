@@ -86,6 +86,7 @@ export function downloadFile(courseware) {
 }
 
 export function onFavor(courseware) {
+  wx.vibrateShort()
   wx.request({
     url: myURL + '/favourite/courseware',
     data: {
@@ -100,6 +101,7 @@ export function onFavor(courseware) {
 }
 
 export function offFavor(courseware) {
+  wx.vibrateShort()
   wx.request({
     url: myURL + '/favourite/courseware',
     data: {

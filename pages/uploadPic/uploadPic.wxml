@@ -1,5 +1,0 @@
-<!--pages/uploadPic/uploadPic.wxml-->
-<image class='bg' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/upload_pic/bg.png'></image>
-<view class='btnView'>
-  <image  class='btn' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/upload_pic/btn.png' bindtap='upload' ></image>
-</view>

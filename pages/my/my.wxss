@@ -171,13 +171,13 @@
 }
 
 .wifiView image {
-  width: 120rpx;
-  height: 43rpx;
+  width: 36rpx;
+  height: 40rpx;
   margin-right: 25rpx;
 }
 
 .wifiProgress {
-  width: 65%;
+  width: 72%;
 }
 
 .picture{

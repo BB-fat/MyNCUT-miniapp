@@ -91,7 +91,7 @@ Page({
       imgViewW: 120,
       imgViewH: 50,
       mgtopimgView: 19,
-      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/graduate.png",
+      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/credit.png",
       txtWidth: 120,
       mgtoptxt: 2,
       btnTxt: "学分"
