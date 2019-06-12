@@ -16,28 +16,28 @@ Page({
       tapFun: "tapBtn6",
       iconHeight: 72,
       iconWidth: 72,
-      iconSrc: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/myfavor.png",
+      iconSrc: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/myfavor.svg",
       text: "我的收藏"
     },
     btn1: {
       tapFun: "tapBtn1",
       iconHeight: 72,
       iconWidth: 72,
-      iconSrc: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/graduation.png",
+      iconSrc: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/graduation.svg",
       text: "毕业资格"
     },    
     btn3: {
       tapFun: "tapBtn3",
       iconHeight: 72,
       iconWidth: 72,
-      iconSrc: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/feedback.png",
+      iconSrc: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/feedback.svg",
       text: "问题反馈"
     },
     btn4: {
       tapFun: "tapBtn4",
       iconHeight: 72,
       iconWidth: 72,
-      iconSrc: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/about.png",
+      iconSrc: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/about.svg",
       text: "关于我们"
     }
   },

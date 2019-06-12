@@ -27,7 +27,7 @@ Page({
       mgtopimg: 10,
       imgWidth: 100,
       imgHeight: 90,
-      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/course.png",
+      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/course.svg",
       pdtoptxt: 20,
       mglefttxt: 22,
       btnTxt: "课表"
@@ -41,7 +41,7 @@ Page({
       imgWidth: 75,
       imgHeight: 75,
       mgtopimg: 15,
-      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/room.png",
+      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/room.svg",
       mglefttxt: 22,
       pdtoptxt: 10,
       btnTxt: "教室"
@@ -56,7 +56,7 @@ Page({
       imgWidth: 51,
       imgHeight: 51,
       mgtopimg: 22,
-      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/grade.png",
+      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/grade.svg",
       mglefttxt: 11,
       pdtoptxt: 5,
       btnTxt: "成绩"
@@ -74,7 +74,7 @@ Page({
       imgViewW: 120,
       imgViewH: 50,
       mgtopimgView: 19,
-      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/average.png",
+      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/average.svg",
       txtWidth: 120,
       btnTxt: "绩点"
     },
@@ -91,7 +91,7 @@ Page({
       imgViewW: 120,
       imgViewH: 50,
       mgtopimgView: 19,
-      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/credit.png",
+      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/credit.svg",
       txtWidth: 120,
       mgtoptxt: 2,
       btnTxt: "学分"
