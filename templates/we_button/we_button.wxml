@@ -1,0 +1,6 @@
+<template name="we_button">
+  <view class='we_btn-view'>
+    <image class='we_btn-img' src="{{img}}"></image>
+    <text class='we_btn-text'>{{text}}</text>
+  </view>
+</template>

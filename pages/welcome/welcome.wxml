@@ -1,2 +1,65 @@
-<!--pages/welcome/welcome.wxml-->
-<text>pages/welcome/welcome.wxml</text>
+<import src="../../templates/we_button/we_button.wxml" />
+
+<view class='banner-bd'>
+  <swiper circular='true' autoplay='true' duration='1000' indicator-active-color='white' interval='5000' style='height:300rpx;'>
+    <swiper-item wx:for="{{banner}}">
+      <image src='{{item.image}}' mode='widthFix' class='swiper-image' bindtap='find{{item.url}}'></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class='b'>
+  <!-- <view> -->
+    <view class='big'>新生必备</view>
+    <view class='a' style="width:80%">
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/证件.jpg',text:'证件'}}" />
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/入住.jpg',text:'入住'}}" />
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/学习.jpg',text:'学习'}}" />
+    </view>
+  <!-- </view> -->
+
+  <!-- <view> -->
+    <view class='big'>学校概况</view>
+    <view class='a' style='width:50%'>
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/概况.jpg',text:'概况'}}" />
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/地图.jpg',text:'地图'}}" />
+    </view>
+  <!-- </view> -->
+
+  <!-- <view> -->
+    <view class='big'>校园生活</view>
+    <view class='a' style='width:80%'>
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/食堂.jpg',text:'食堂'}}" />
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/公寓.jpg',text:'公寓'}}" />
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/服务.jpg',text:'服务'}}" />
+    </view>
+    <view class='a' style='width:80%'>
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/交通.jpg',text:'交通'}}" />
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/图书馆.jpg',text:'图书馆'}}" />
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/体育馆.jpg',text:'体育馆'}}" />
+    </view>
+  <!-- </view> -->
+
+  <!-- <view> -->
+    <view class='big'>学生组织</view>
+    <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/学生组织.jpg',text:'学生组织'}}" />
+  <!-- </view> -->
+
+  <!-- <view> -->
+    <view class='big'>校园周边</view>
+    <view class='a' style='width:50%'>
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/吃喝.jpg',text:'吃喝'}}" />
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/玩乐.jpg',text:'玩乐'}}" />
+    </view>
+    <view class='a' style='width:50%'>
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/健身.jpg',text:'健身'}}" />
+      <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/医疗.jpg',text:'医疗'}}" />
+    </view>
+  <!-- </view> -->
+
+
+  <!-- <view> -->
+    <view class='big'>精品活动</view>
+    <template is="we_button" data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/精品活动.jpg',text:'精品活动'}}" />
+  <!-- </view> -->
+</view>

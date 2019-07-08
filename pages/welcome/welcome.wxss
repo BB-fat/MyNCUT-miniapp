@@ -1,1 +1,29 @@
-/* pages/welcome/welcome.wxss */
+@import "../../templates/we_button/we_button.wxss";
+
+.banner-bd {
+  border-bottom: 10px solid rgb(236, 236, 236);
+}
+
+.swiper-image {
+  width: 100%;
+}
+
+.a{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.b{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.big{
+  align-self: flex-start;
+}
+/* {
+  box-shadow:
+} */
