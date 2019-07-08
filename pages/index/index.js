@@ -100,7 +100,7 @@ Page({
   },
 
   // 查看使用许可
-  seeLicense: function() {
+  seeLicense: function () {
     wx.downloadFile({
       url: myURL + "/static/license.pdf",
       success(res) {
@@ -115,7 +115,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var that = this
     if (options.courseware != null) {
       lookFile(JSON.parse(options.courseware))
@@ -138,17 +138,17 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
     checkAuth(this)
   },
 
-  toAuth: function() {
+  toAuth: function () {
     goAuth()
   },
 
 
   //轮播图点击事件
-  swipclick: function(e) {
+  swipclick: function (e) {
     console.log(e)
     wx.navigateTo({
       url: '../webview/webview?mode=normal&url=' + this.data.indexBanner[e.currentTarget.dataset.index]['msgUrl']
@@ -157,44 +157,45 @@ Page({
 
 
   // 跳转至课表
-  toClassTable: function() {
+  toClassTable: function () {
     wx.navigateTo({
       url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng',
     })
   },
 
   // 跳转至绩点
-  toGradePoint: function() {
+  toGradePoint: function () {
     wx.navigateTo({
       url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/grade/list',
     })
   },
 
   // 跳转至成绩
-  toGrade: function() {
+  toGrade: function () {
     wx.navigateTo({
       url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_score',
     })
   },
 
   // 跳转至我的学分
-  toGraduate: function() {
+  toGraduate: function () {
     wx.navigateTo({
       url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate',
     })
   },
 
   // 跳转至教室
-  toClassroom: function() {
+  toClassroom: function () {
     wx.navigateTo({
       url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_room/emroom/index',
     })
   },
 
-  toSL:function(){
+  //跳转到迎新页面
+  toWelcome: function () {
     //跳转点滴校园
     wx.navigateTo({
-      url: '../webview/webview?mode=2019&openid=' + app.globalData.openid
+      url: '../welcome/welcome'
     })
   }
 })

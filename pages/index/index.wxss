@@ -87,9 +87,3 @@
   opacity: 0.9;
   transform: scale(1.04, 1.04);
 }
-
-.SL2019{
-  width: 150rpx;
-  height: 150rpx;
-  margin-left: 75%;
-}

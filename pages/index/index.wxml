@@ -45,5 +45,4 @@
     <template is="buttons_v" data="{{...btn4}}" />
     <template is="buttons_v" data="{{...btn5}}" />
   </view>
-  <image class='SL2019' src='cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/SL2019.png' bindtap='toSL'></image>
 </view>

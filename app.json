@@ -2,6 +2,7 @@
   "debug": false,
   "pages": [
     "pages/index/index",
+    "pages/welcome/welcome",
     "pages/myFavor/myFavor",
     "pages/iclass/iclass",
     "pages/document/document",
