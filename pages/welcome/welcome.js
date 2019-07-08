@@ -1,19 +1,25 @@
+import {
+  myURL
+} from "../../setting.js"
+
 Page({
   data: {
-    btn1: [{
-      img: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/证件.svg",
-      text: "证件"
-    }, {
-      img: "",
-      text: ""
-    }, {
-      img: "",
-      text: ""
-    }],
     banner: [{
-      image: "",
-      url: ""
-    }],
-    grids: [1, 2, 3, 4]
+      image:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/b1.png",
+      url:myURL+"/static/html/test.html"
+    }, {
+      image:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/b2.jpg",
+      url:myURL+"/static/html/test.html"
+    }, {
+      image:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/b3.png",
+      url:myURL+"/static/html/test.html"
+    }
+  ]
+  },
+
+  jump:function(e){
+    wx.navigateTo({
+      url: '../webview/webview?mode=normal&url=' + e.currentTarget.dataset.url,
+    })
   }
 })

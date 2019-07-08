@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 48rpx;
 }
 
 .b{
@@ -23,7 +24,13 @@
 
 .big{
   align-self: flex-start;
+  margin-left: 10%;
+  font-size: 36rpx;
+  margin-top: 100rpx;
 }
-/* {
-  box-shadow:
-} */
+
+.we_btn-hover{
+  border-radius: 20rpx;
+  opacity: 0.8;
+  transform: scale(0.9,0.9);
+}

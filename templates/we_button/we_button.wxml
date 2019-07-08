@@ -1,6 +1,16 @@
 <template name="we_button">
-  <view class='we_btn-view'>
+  <view class='we_btn-view' hover-class="we_btn-hover"
+    style="width:{{width}}rpx;" bindtap="jump" data-url="{{url}}">
     <image class='we_btn-img' src="{{img}}"></image>
     <text class='we_btn-text'>{{text}}</text>
+  </view>
+</template>
+
+<template name="we_button2">
+  <view class='we_btn-view2' hover-class="we_btn-hover">
+    <view class="we_btn-view3">
+      <image class='we_btn-img' src="{{img}}"></image>
+      <text class='we_btn-text'>{{text}}</text>
+    </view>
   </view>
 </template>
