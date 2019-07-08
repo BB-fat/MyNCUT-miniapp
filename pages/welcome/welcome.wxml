@@ -69,7 +69,7 @@
 
 
   <view class='big'>精品活动</view>
-  <view class='a'>
+  <view class='a' style="width:80%">
     <template is="we_button2"
       data="{{img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/精品活动.jpg',text:'精品活动'}}" />
   </view>
