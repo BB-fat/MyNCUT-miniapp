@@ -1,0 +1,5 @@
+<view class='bg'>
+  <block wx:for="{{system}}">
+    <image src='{{item.img}}' class='img' mode='aspectFit' bindtap='find~{{item.url}}'></image>
+  </block>
+</view>
