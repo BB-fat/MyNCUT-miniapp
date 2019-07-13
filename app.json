@@ -2,8 +2,8 @@
   "debug": false,
   "pages": [
     "pages/welcome/welcome",
+    "pages/huodong/huodong",
     "pages/zuzhi/zuzhi",
-    
     "pages/index/index",
     "pages/myFavor/myFavor",
     "pages/iclass/iclass",

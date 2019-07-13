@@ -94,7 +94,8 @@ Page({
     },
     huodong:{
       img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/精品活动.jpg',
-      text:'精品活动'
+      text:'精品活动',
+      url:"../huodong/huodong"
     }
   },
 
