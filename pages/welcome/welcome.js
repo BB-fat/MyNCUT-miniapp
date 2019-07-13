@@ -41,7 +41,8 @@ Page({
     },
     zuzhi:{
       img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/学生组织.jpg',
-      text:'学生组织'
+      text:'学生组织',
+      url:"../zuzhi/zuzhi"
     },
     shitang:{
       img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/食堂.jpg',
@@ -70,22 +71,26 @@ Page({
     chihe:{
       img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/吃喝.jpg',
       text:'吃喝',
-      width:276
+      width:276,
+      url:myURL+"/static/html/zhoubian/chihe.html"
     },
     wanle:{
       img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/玩乐.jpg',
       text:'玩乐',
-      width:276
+      width:276,
+      url:myURL+"/static/html/zhoubian/wanle.html"
     },
     jianshen:{
       img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/健身.jpg',
       text:'健身',
-      width:276
+      width:276,
+      url:myURL+"/static/html/zhoubian/jianshen.html"
     },
     yiliao:{
       img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/医疗.jpg',
       text:'医疗',
-      width:276
+      width:276,
+      url:myURL+"/static/html/zhoubian/yiliao.html"
     },
     huodong:{
       img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/精品活动.jpg',
@@ -96,6 +101,11 @@ Page({
   jump: function (e) {
     wx.navigateTo({
       url: '../webview/webview?mode=normal&url=' + e.currentTarget.dataset.url,
+    })
+  },
+  jump2page:function(e){
+    wx.navigateTo({
+      url:e.currentTarget.dataset.url
     })
   }
 })

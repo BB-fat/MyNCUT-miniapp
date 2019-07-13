@@ -7,7 +7,7 @@
 </template>
 
 <template name="we_button2">
-  <view class='we_btn-view2' hover-class="we_btn-hover">
+  <view class='we_btn-view2' hover-class="we_btn-hover" bindtap="jump2page"data-url="{{url}}">
     <view class="we_btn-view3">
       <image class='we_btn-img' src="{{img}}"></image>
       <text class='we_btn-text'>{{text}}</text>

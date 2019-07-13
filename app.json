@@ -1,8 +1,9 @@
 {
   "debug": false,
   "pages": [
-    "pages/zuzhi/zuzhi",
     "pages/welcome/welcome",
+    "pages/zuzhi/zuzhi",
+    
     "pages/index/index",
     "pages/myFavor/myFavor",
     "pages/iclass/iclass",
