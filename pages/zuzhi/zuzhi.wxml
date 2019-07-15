@@ -1,5 +1,11 @@
 <view class='bg'>
-  <block wx:for="{{item}}">
+  <block wx:for="{{xiaoji}}">
+    <view class="imgView" bindtap='jump' data-url="{{item.url}}">
+      <image src='{{item.img}}' class='img' mode='aspectFit'></image>
+    </view>
+  </block>
+  <view class="midView"></view>
+  <block wx:for="{{yuanji}}">
     <view class="imgView" bindtap='jump' data-url="{{item.url}}">
       <image src='{{item.img}}' class='img' mode='aspectFit'></image>
     </view>

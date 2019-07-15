@@ -22,9 +22,6 @@ Page({
       }, {
         img: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/system/国旗班_icon.jpg",
         url: myURL + "/static/html/zuzhi/guoqiban.html"
-      },{
-        img: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/system/国旗班_icon.jpg",
-        url:"toYuan"
       },
     ],
     yuanji: [
@@ -55,29 +52,10 @@ Page({
       }
     ]
   },
-  onLoad: function (options) {
-    if (options.item == "yuan") {
-      wx.setNavigationBarTitle({
-        title: '学院团学',
-      })
-      this.setData({
-        item: this.data.yuanji
-      })
-    } else {
-      this.setData({
-        item: this.data.xiaoji
-      })
-    }
-  },
+  
   jump: function (e) {
-    if(e.currentTarget.dataset.url=="toYuan"){
-      wx.navigateTo({
-        url:"zuzhi?item=yuan"
-      })
-    }else{
       wx.navigateTo({
         url: '../webview/webview?mode=normal&url=' + e.currentTarget.dataset.url,
       })
-    }
   },
 })

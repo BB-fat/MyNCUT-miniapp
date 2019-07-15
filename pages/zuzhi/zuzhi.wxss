@@ -9,11 +9,15 @@
 }
 
 .bg{
-  height: 128rpx;
-  border-top: 15px solid rgb(240, 240, 240);
+  border-top: 80rpx solid rgb(240, 240, 240);
 }
 
 .img{
   width: 80%;
   height: 80%
+}
+
+.midView{
+  height: 80rpx;
+  background-color: rgb(240, 240, 240);
 }
