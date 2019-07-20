@@ -1,10 +1,17 @@
-<view class='bg'>
+<image class="logo" bindtap="showPoster" src="cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/logo.png"></image>
+<image class="poster" bindtap="hidePoster" animation="{{ani}}" src="cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/poster.jpg"></image>
+<view class="topView">
+  <text style="line-height: 80rpx;font-size:40rpx;">校级团学组织</text>
+</view>
+<view>
   <block wx:for="{{xiaoji}}">
     <view class="imgView" bindtap='jump' data-url="{{item.url}}">
       <image src='{{item.img}}' class='img' mode='aspectFit'></image>
     </view>
   </block>
-  <view class="midView"></view>
+  <view class="midView">
+    <text style="line-height: 80rpx;font-size:40rpx;">院级团学组织</text>
+  </view>
   <block wx:for="{{yuanji}}">
     <view class="imgView" bindtap='jump' data-url="{{item.url}}">
       <image src='{{item.img}}' class='img' mode='aspectFit'></image>

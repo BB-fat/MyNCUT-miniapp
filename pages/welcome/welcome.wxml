@@ -4,7 +4,7 @@
   <swiper circular='true' autoplay='true' duration='1000' indicator-active-color='white' interval='5000'
     style='height:400rpx;'>
     <swiper-item wx:for="{{banner}}">
-      <image src='{{item.image}}' mode='widthFix' class='swiper-image' data-url="{{item.url}}" bindtap='jump'></image>
+      <image src='{{item.image}}' mode='widthFix' class='swiper-image' data-url="{{item.url}}" bindtap='jump2page'></image>
     </swiper-item>
   </swiper>
 </view>
@@ -14,13 +14,13 @@
   <view class='a' style="width:80%">
     <template is="we_button" data="{{...zhengjian}}" />
     <template is="we_button" data="{{...ruzhu}}" />
-    <template is="we_button" data="{{...xuexi}}" />
+    <!-- <template is="we_button" data="{{...xuexi}}" /> -->
   </view>
 
   <view class='big'>学校概况</view>
   <view class='a' style='width:80%'>
-    <template is="we_button" data="{{...gaikuang}}" />
-    <template is="we_button" data="{{...ditu}}" />
+    <template is="we_button2" data="{{...gaikuang}}" />
+    <!-- <template is="we_button" data="{{...ditu}}" /> -->
   </view>
 
   <view class='big'>学生组织</view>

@@ -62,9 +62,6 @@ Page({
           })
           console.log(that.data.homeList_all)
         },
-        fail(res) {
-          console.log('没作业')
-        }
       })
     }
   },

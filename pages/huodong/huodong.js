@@ -51,36 +51,6 @@ Page({
         ]
       },
       {
-        text: "国际文化节",
-        js: "文化交流是大学生活中浓墨重彩的一笔。随着国际交流的日益深入，我校顺应时代潮流开展了国际文化节，邀请来自各个国家的同学们展示家乡之美，在国际文化与中国文化的交织碰撞中求同存异，品异域特色，建长久友谊。",
-        bg: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/card_bg/国际文化节背景.png",
-        imgs: [
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/国际文化节/IMG_0831.JPG',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/国际文化节/IMG_0907.JPG',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/国际文化节/_MG_1617.jpg',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/国际文化节/_MG_1620.jpg',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/国际文化节/_MG_1678.jpg',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/国际文化节/_MG_1931.jpg',
-        ]
-      },
-      {
-        text: "庆祝改革开放40周年文艺晚会",
-        js: "新时代的青年人应该坚持党的领导，培养爱国、科学、民主的精神。我校通过举行“庆祝改革开放40周年文艺晚会”，把优秀文化和先进精神通过艺术形式星火相传，在品味艺术的过程中深入领会以爱国主义为核心的民族精神和以改革创新为核心的时代精神，立青年志，圆中国梦。",
-        bg: 'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/card_bg/改革开放文艺晚会背景.png',
-        imgs: [
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/庆祝改革开放40周年文艺晚会/DSC_0688.JPG',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/庆祝改革开放40周年文艺晚会/DSC_0725.JPG',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/庆祝改革开放40周年文艺晚会/DSC_0799.JPG',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/庆祝改革开放40周年文艺晚会/DSC_0826.JPG',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/庆祝改革开放40周年文艺晚会/DSC_0847.JPG',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/庆祝改革开放40周年文艺晚会/DSC_0860.JPG',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/庆祝改革开放40周年文艺晚会/IMG_4340.jpg',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/庆祝改革开放40周年文艺晚会/IMG_4351.jpg',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/庆祝改革开放40周年文艺晚会/IMG_4400.jpg',
-          'https://myncut.oss-cn-beijing.aliyuncs.com/迎新/精品活动/庆祝改革开放40周年文艺晚会/IMG_4427.jpg',
-        ]
-      },
-      {
         text: "校园篮球行",
         js: "火热的夏天，哪能缺少篮球的陪伴！北方工业大学校园篮球行面向全校大一至大四的所有篮球爱好者，可通过组队报名和个人报名两种渠道进行参与，是学生们公平对决，展示球技的良好平台。只要你拥有足够的实力，便可冲入决赛，争取最高的荣誉。众星云集，蓄势待发！",
         bg: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/card_bg/校园篮球行背景.png",
