@@ -87,3 +87,12 @@
   opacity: 0.9;
   transform: scale(1.04, 1.04);
 }
+
+.yingxin{
+  position: fixed;
+  z-index: 4;
+  bottom: 46rpx;
+  right: 63rpx;
+  width: 256rpx;
+  height: 170rpx;
+}

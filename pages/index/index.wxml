@@ -2,7 +2,7 @@
 <import src="../../templates/buttons_v/buttons_v.wxml" />
 <import src="../../templates/authView/authView.wxml" />
 
-
+<image bindtap="toWelcome" class="yingxin" src="cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/迎新入口.png"></image>
 
 <view wx:if="{{disable}}" class='disableView'>
   <text class='disableText'>你已被禁用</text>

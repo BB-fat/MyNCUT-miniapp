@@ -193,7 +193,6 @@ Page({
 
   //跳转到迎新页面
   toWelcome: function () {
-    //跳转点滴校园
     wx.navigateTo({
       url: '../welcome/welcome'
     })
