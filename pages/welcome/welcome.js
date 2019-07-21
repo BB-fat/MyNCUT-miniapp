@@ -27,10 +27,6 @@ Page({
       width: 276,
       url: myURL + "/static/html/xinshengbibei/ruzhu.html"
     },
-    // xuexi:{
-    //   img:'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/学习.jpg',
-    //   text:'学习'
-    // },
     gaikuang: {
       img: 'cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/welcome/概况.jpg',
       text: '学校概况',

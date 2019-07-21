@@ -18,6 +18,10 @@ Page({
         url: myURL + "/static/html/zuzhi/shelian.html"
       },
       {
+        img:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/system/艺术团_icon.png",
+        url: myURL + "/static/html/zuzhi/yishutuan.html"
+      },
+      {
         img: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/system/国旗班_icon.jpg",
         url: myURL + "/static/html/zuzhi/guoqiban.html"
       },

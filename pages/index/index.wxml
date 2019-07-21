@@ -14,7 +14,7 @@
     <block wx:for="{{indexBanner}}">
       <swiper-item class='pic_item'>
         <view hover-class="navigator-hover">
-          <image src='{{item.imgUrl}}' class="swiper_img" mode='scaleToFill' data-index='{{index}}' bindtap='swipclick'></image>
+          <image src='{{item.imgurl}}' class="swiper_img" mode='scaleToFill' data-index='{{index}}' bindtap='swipclick'></image>
         </view>
       </swiper-item>
     </block>
