@@ -27,6 +27,7 @@
   margin-left: 10%;
   font-size: 36rpx;
   margin-top: 100rpx;
+  font-weight:bold;
 }
 
 .we_btn-hover{
