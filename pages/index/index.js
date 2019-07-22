@@ -19,84 +19,36 @@ var app = getApp()
 Page({
   data: {
     authed: true,
-    btn1: {
-      btnWidth: 299,
-      btnHeight: 192,
-      fontsize: 35,
-      tapFunc: "toClassTable",
-      mgtopimg: 10,
-      imgWidth: 100,
-      imgHeight: 90,
-      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/course.svg",
-      pdtoptxt: 20,
-      mglefttxt: 22,
-      btnTxt: "课表"
+    btn_kebiao:{
+      icon:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/课表.svg",
+      text:"课表",
+      url:"../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng"
     },
-    btn2: {
-      btnWidth: 302,
-      btnHeight: 152,
-      mgleftbtn: 44,
-      fontsize: 30,
-      tapFunc: "toClassroom",
-      imgWidth: 75,
-      imgHeight: 75,
-      mgtopimg: 15,
-      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/room.svg",
-      mglefttxt: 22,
-      pdtoptxt: 10,
-      btnTxt: "教室"
+    btn_jiaoshi:{
+      icon:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/教室.svg",
+      text:"教室",
+      url:"../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_room/emroom/index"
     },
-    btn3: {
-      position: "absolute",
-      btnWidth: 299,
-      btnHeight: 105,
-      mgtopbtn: 36,
-      fontsize: 30,
-      tapFunc: "toGrade",
-      imgWidth: 51,
-      imgHeight: 51,
-      mgtopimg: 22,
-      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/grade.svg",
-      mglefttxt: 11,
-      pdtoptxt: 5,
-      btnTxt: "成绩"
+    btn_chengji:{
+      icon:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/成绩.svg",
+      text:"成绩",
+      url:"../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_score"
     },
-    btn4: {
-      position: "absolute",
-      btnWidth: 129,
-      btnHeight: 135,
-      mgtopbtn: 7,
-      mgleftbtn: 345,
-      fontsize: 25,
-      tapFunc: "toGradePoint",
-      imgWidth: 64,
-      imgHeight: 56,
-      imgViewW: 120,
-      imgViewH: 50,
-      mgtopimgView: 19,
-      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/average.svg",
-      txtWidth: 120,
-      btnTxt: "绩点"
+    btn_jidian:{
+      icon:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/绩点.svg",
+      text:"绩点",
+      url:"../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/grade/list"
     },
-    btn5: {
-      position: "absolute",
-      btnWidth: 129,
-      btnHeight: 135,
-      mgtopbtn: 7,
-      mgleftbtn: 518,
-      fontsize: 25,
-      tapFunc: "toGraduate",
-      imgWidth: 64,
-      imgHeight: 56,
-      imgViewW: 120,
-      imgViewH: 50,
-      mgtopimgView: 19,
-      imgUrl: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/credit.svg",
-      txtWidth: 120,
-      mgtoptxt: 2,
-      btnTxt: "学分"
+    btn_xuefen:{
+      icon:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/学分.svg",
+      text:"学分",
+      url:"../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate"
     },
-
+    btn_gengduo:{
+      icon:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/更多.svg",
+      text:"更多",
+      url:""
+    },
   },
 
   // 查看使用许可
@@ -149,45 +101,8 @@ Page({
 
   //轮播图点击事件
   swipclick: function (e) {
-    console.log(e)
     wx.navigateTo({
       url: '../webview/webview?mode=normal&url=' + this.data.indexBanner[e.currentTarget.dataset.index]['msgUrl']
-    })
-  },
-
-
-  // 跳转至课表
-  toClassTable: function () {
-    wx.navigateTo({
-      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng',
-    })
-  },
-
-  // 跳转至绩点
-  toGradePoint: function () {
-    wx.navigateTo({
-      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/grade/list',
-    })
-  },
-
-  // 跳转至成绩
-  toGrade: function () {
-    wx.navigateTo({
-      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_score',
-    })
-  },
-
-  // 跳转至我的学分
-  toGraduate: function () {
-    wx.navigateTo({
-      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate',
-    })
-  },
-
-  // 跳转至教室
-  toClassroom: function () {
-    wx.navigateTo({
-      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_room/emroom/index',
     })
   },
 

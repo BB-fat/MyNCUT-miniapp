@@ -6,3 +6,10 @@
     <text class="myButton-text">{{text}}</text>
   </view>
 </template>
+
+<template name="indexBtn">
+    <navigator class="indexBtn-view" url="{{url}}" hover-class="indexBtn-hover">
+      <image class="indexBtn-icon" src="{{icon}}"></image>
+      <text class="indexBtn-text">{{text}}</text>
+    </navigator>
+</template>

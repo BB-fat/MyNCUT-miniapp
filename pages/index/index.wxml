@@ -1,6 +1,7 @@
 <import src="../../templates/buttons_h/buttons_h.wxml" />
 <import src="../../templates/buttons_v/buttons_v.wxml" />
 <import src="../../templates/authView/authView.wxml" />
+<import src="../../templates/myButton/myButton.wxml" />
 
 <image bindtap="toWelcome" class="yingxin" src="cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/迎新入口.png"></image>
 
@@ -13,7 +14,7 @@
   <swiper class="picswiper" previous-margin="40rpx" next-margin="40rpx" autoplay="true" circular="true" interval="4000">
     <block wx:for="{{indexBanner}}">
       <swiper-item class='pic_item'>
-        <view hover-class="navigator-hover">
+        <view hover-class="banner-hover">
           <image src='{{item.imgurl}}' class="swiper_img" mode='scaleToFill' data-index='{{index}}' bindtap='swipclick'></image>
         </view>
       </swiper-item>
@@ -35,14 +36,14 @@
     </view>
   </view>
 
-  <view class="shang">
-    <template is="buttons_h" data="{{...btn1}}" />
-    <template is="buttons_h" data="{{...btn2}}" />
+  <view class="button-view">
+    <template is="indexBtn" data="{{...btn_kebiao}}" />
+    <template is="indexBtn" data="{{...btn_jiaoshi}}" />
+    <template is="indexBtn" data="{{...btn_chengji}}" />
   </view>
-
-  <view class="xia">
-    <template is="buttons_h" data="{{...btn3}}" />
-    <template is="buttons_v" data="{{...btn4}}" />
-    <template is="buttons_v" data="{{...btn5}}" />
+  <view class="button-view">
+    <template is="indexBtn" data="{{...btn_jidian}}" />
+    <template is="indexBtn" data="{{...btn_xuefen}}" />
+    <template is="indexBtn" data="{{...btn_gengduo}}" />
   </view>
 </view>

@@ -14,3 +14,31 @@
 .myButton-hover{
     opacity: 0.6;
 }
+
+.indexBtn-view{
+    height: 215rpx;
+    width: 162rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0rpx 0rpx 20rpx 0rpx #e4e3e3;
+    border-radius: 20rpx;
+    margin-top: 40rpx;
+}
+
+.indexBtn-icon{
+    width: 86rpx;
+    height: 94rpx;
+    margin-top: 30rpx;
+}
+
+.indexBtn-text{
+    font-size: 36rpx;
+    margin-top: 18rpx;
+}
+
+.indexBtn-hover{
+    opacity: 0.8;
+    transform: scale(0.9,0.9);
+}
