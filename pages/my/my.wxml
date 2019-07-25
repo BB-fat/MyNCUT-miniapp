@@ -1,5 +1,4 @@
 <import src="../../templates/myButton/myButton.wxml" />
-<import src="../../templates/buttons_h/buttons_h.wxml" />
 
 <view class='mainView'>
   <view class="card">

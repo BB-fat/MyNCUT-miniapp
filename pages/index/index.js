@@ -98,14 +98,6 @@ Page({
     goAuth()
   },
 
-
-  //轮播图点击事件
-  swipclick: function (e) {
-    wx.navigateTo({
-      url: '../webview/webview?mode=normal&url=' + this.data.indexBanner[e.currentTarget.dataset.index]['msgUrl']
-    })
-  },
-
   //跳转到迎新页面
   toWelcome: function () {
     wx.navigateTo({

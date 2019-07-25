@@ -27,20 +27,20 @@
     "borderStyle": "black",
     "list": [
       {
-        "selectedIconPath": "img/tabbar/teach_y.png",
-        "iconPath": "img/tabbar/teach_n.png",
+        "selectedIconPath": "img/tabbar/index_active.png",
+        "iconPath": "img/tabbar/index.png",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
-        "selectedIconPath": "img/tabbar/model_y.png",
-        "iconPath": "img/tabbar/model_n.png",
+        "selectedIconPath": "img/tabbar/iclass_active.png",
+        "iconPath": "img/tabbar/iclass.png",
         "pagePath": "pages/iclass/iclass",
         "text": "多模式"
       },
       {
-        "selectedIconPath": "img/tabbar/my_y.png",
-        "iconPath": "img/tabbar/my_n.png",
+        "selectedIconPath": "img/tabbar/my_active.png",
+        "iconPath": "img/tabbar/my.png",
         "pagePath": "pages/my/my",
         "text": "我的"
       }

@@ -1,5 +1,3 @@
-<import src="../../templates/buttons_h/buttons_h.wxml" />
-<import src="../../templates/buttons_v/buttons_v.wxml" />
 <import src="../../templates/authView/authView.wxml" />
 <import src="../../templates/myButton/myButton.wxml" />
 
@@ -14,16 +12,16 @@
   <swiper class="picswiper" previous-margin="40rpx" next-margin="40rpx" autoplay="true" circular="true" interval="4000">
     <block wx:for="{{indexBanner}}">
       <swiper-item class='pic_item'>
-        <view hover-class="banner-hover">
+        <navigator hover-class="banner-hover" url="{{'../webview/webview?mode=normal&url='+item.msgurl}}">
           <image src='{{item.imgurl}}' class="swiper_img" mode='scaleToFill' data-index='{{index}}' bindtap='swipclick'></image>
-        </view>
+        </navigator>
       </swiper-item>
     </block>
   </swiper>
 
   <view class="notice">
     <view>
-      <image src="cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/notice.png" class="notice_img"></image>
+      <image src="cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/notice.svg" class="notice_img"></image>
     </view>
     <view style="flex:1;">
       <swiper class="wordswiper" autoplay="true" circular="true" interval="4000" vertical='true'>

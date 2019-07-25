@@ -1,5 +1,4 @@
 @import "../../templates/myButton/myButton.wxss";
-@import "../../templates/buttons_h/buttons_h.wxss";
 
 .mainView {
   width: 100%;
