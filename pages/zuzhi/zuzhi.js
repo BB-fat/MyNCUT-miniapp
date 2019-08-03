@@ -62,6 +62,12 @@ Page({
         img: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/system/理学院_icon.jpg",
         url: myURL + "/static/html/zuzhi/lixueyuan.html"
       },
+    ],
+    qita:[
+      {
+        img: "cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/system/nrt.jpg",
+        url: myURL + "/static/html/zuzhi/nrt.html"
+      },
     ]
   },
 

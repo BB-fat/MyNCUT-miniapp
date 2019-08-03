@@ -13,7 +13,7 @@
 		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.0",
+	"libVersion": "2.8.0",
 	"appid": "wx12bef97a98001f0b",
 	"projectname": "myNCUT",
 	"debugOptions": {
