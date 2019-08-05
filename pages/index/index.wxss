@@ -78,12 +78,3 @@
   flex-direction: row;
   justify-content: space-around;
 }
-
-.yingxin{
-  position: fixed;
-  z-index: 4;
-  bottom: 46rpx;
-  right: 63rpx;
-  width: 256rpx;
-  height: 170rpx;
-}

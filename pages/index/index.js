@@ -19,35 +19,35 @@ var app = getApp()
 Page({
   data: {
     authed: true,
-    btn_kebiao:{
-      icon:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/课表.svg",
-      text:"课表",
-      url:"../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng"
+    btn_kebiao: {
+      icon: "/img/index/课表.svg",
+      text: "课表",
+      url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng"
     },
-    btn_jiaoshi:{
-      icon:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/教室.svg",
-      text:"教室",
-      url:"../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_room/emroom/index"
+    btn_jiaoshi: {
+      icon: "/img/index/教室.svg",
+      text: "教室",
+      url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_room/emroom/index"
     },
-    btn_chengji:{
-      icon:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/成绩.svg",
-      text:"成绩",
-      url:"../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_score"
+    btn_chengji: {
+      icon: "/img/index/成绩.svg",
+      text: "成绩",
+      url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_score"
     },
-    btn_jidian:{
-      icon:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/绩点.svg",
-      text:"绩点",
-      url:"../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/grade/list"
+    btn_jidian: {
+      icon: "/img/index/绩点.svg",
+      text: "绩点",
+      url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/grade/list"
     },
-    btn_xuefen:{
-      icon:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/学分.svg",
-      text:"学分",
-      url:"../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate"
+    btn_xuefen: {
+      icon: "/img/index/学分.svg",
+      text: "学分",
+      url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate"
     },
-    btn_gengduo:{
-      icon:"cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/index/更多.svg",
-      text:"更多",
-      url:""
+    btn_gengduo: {
+      icon: "/img/index/新生必备.svg",
+      text: "新生必备",
+      url: "../welcome/welcome"
     },
   },
 
