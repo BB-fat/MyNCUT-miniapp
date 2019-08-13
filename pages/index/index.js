@@ -20,32 +20,32 @@ Page({
   data: {
     authed: true,
     btn_kebiao: {
-      icon: "/img/index/课表.svg",
+      icon: "/img/index/kebiao.svg",
       text: "课表",
       url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng"
     },
     btn_jiaoshi: {
-      icon: "/img/index/教室.svg",
+      icon: "/img/index/jiaoshi.svg",
       text: "教室",
       url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_room/emroom/index"
     },
     btn_chengji: {
-      icon: "/img/index/成绩.svg",
+      icon: "/img/index/chengji.svg",
       text: "成绩",
       url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_score"
     },
     btn_jidian: {
-      icon: "/img/index/绩点.svg",
+      icon: "/img/index/jidian.svg",
       text: "绩点",
       url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/grade/list"
     },
     btn_xuefen: {
-      icon: "/img/index/学分.svg",
+      icon: "/img/index/xuefen.svg",
       text: "学分",
       url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate"
     },
     btn_gengduo: {
-      icon: "/img/index/新生必备.svg",
+      icon: "/img/index/xinshengbibei.svg",
       text: "新生必备",
       url: "../welcome/welcome"
     },
