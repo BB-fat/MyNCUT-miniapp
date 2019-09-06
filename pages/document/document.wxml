@@ -17,7 +17,7 @@
   <view wx:else>
     <view style='height:20rpx;'></view>
     <block class='coursewareList' wx:for='{{coursewareList}}'>
-      <template is="myCwareBlock" data="{{item,index:index}}" />
+      <template is="CwareBlock" data="{{item,index:index}}" />
     </block>
     <view style='height:40rpx'></view>
   </view>

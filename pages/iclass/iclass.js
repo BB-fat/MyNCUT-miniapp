@@ -4,10 +4,6 @@ import {
   myURL
 } from "../../setting.js"
 
-import {
-  lookFile
-} from "../../utils/document.js"
-
 Page({
 
   /**
@@ -31,7 +27,7 @@ Page({
             courseList: res.data
           })
         },
-        fail: function (res) {
+        fail: function () {
           wx.request({
             url: myURL + '/courselist',
             data: {
@@ -41,7 +37,6 @@ Page({
               that.setData({
                 courseList: res.data
               })
-              console.log(that.data.courseList)
               wx.setStorage({
                 key: "courseList",
                 data: that.data.courseList
@@ -60,7 +55,6 @@ Page({
           that.setData({
             homeList_all: res.data
           })
-          console.log(that.data.homeList_all)
         },
       })
     }
@@ -80,22 +74,13 @@ Page({
   getHomework: function (e) { //课程作业
     let that = this
     var course_name = e.currentTarget.dataset.course_name
-    console.log(course_name)
-    var flag = false
-    for (var key in that.data.homeList_all) {
-      if (course_name == key) {
-        flag = true
-        break
-      }
-    }
-    if (flag == false) {
+    if (that.data.homeList_all[course_name]==undefined){
       wx.showToast({
         icon: 'none',
         title: '此课程无作业',
         duration: 2000
       })
-    } else {
-      console.log(that.data.homeList_all)
+    }else{
       var temp = JSON.stringify(that.data.homeList_all)
       wx.navigateTo({
         url: '../homework/homework?course_name=' + course_name + '&homeList_all=' + temp,
@@ -138,6 +123,12 @@ Page({
         })
         wx.stopPullDownRefresh()
       }
+    })
+  },
+
+  toFavor:function(){
+    wx.navigateTo({
+      url: '../myFavor/myFavor'
     })
   },
 })

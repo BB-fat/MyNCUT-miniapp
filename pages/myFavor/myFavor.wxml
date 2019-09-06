@@ -27,7 +27,7 @@
     </view>
     <view wx:else>
       <block class='favorList' wx:for='{{favorList}}'>
-        <template is="myCwareBlock" data="{{item,index:index}}" />
+        <template is="CwareBlock" data="{{item,index:index}}" />
       </block>
     </view>
   </view>

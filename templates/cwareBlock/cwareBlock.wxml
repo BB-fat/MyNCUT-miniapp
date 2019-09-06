@@ -1,29 +1,28 @@
-<template name='myCwareBlock'>
-  <view class='coursewareBlock'>
-    <view class='name_favor'>
-      <view class='name_size'>
-        <view class='courseware_name'>{{item.file_name}}</view>
-        <text class='size'>大小：{{item.size}}</text>
-      </view>
-      <view class='favorView'>
-        <image wx:if='{{!item.favourite}}' bindtap='favourites' data-index='{{index}}' data-filename='{{item.file_name}}' class='unfavor_img' src='../../img/document/unfavourate.png'></image>
-        <image wx:else class='favor_img' bindtap='unfavourites' data-index='{{index}}' data-filename='{{item.file_name}}' src='../../img/document/favourate.png'></image>
+<template name='CwareBlock'>
+  <view class="CwareBlock-mainView">
+    <view class='coursewareBlock'>
+      <image class="file-icon" wx:if="{{item.type=='pdf'}}" src="/img/CwareBlock/pdf.png" />
+      <image class="file-icon" wx:elif="{{item.type=='doc'||item.type=='docx'}}" src="/img/CwareBlock/word.png" />
+      <image class="file-icon" wx:elif="{{item.type=='xlsx'||item.type=='xls'}}" src="/img/CwareBlock/excel.png" />
+      <image class="file-icon" wx:elif="{{item.type=='ppt'||item.type=='pptx'}}" src="/img/CwareBlock/ppt.png" />
+      <image class="file-icon" wx:elif="{{item.type=='zip'||item.type=='rar'||item.type=='7z'}}" src="/img/CwareBlock/zip.png" />
+      <image class="file-icon" wx:else src="/img/CwareBlock/other.png" />
+      <view class="CwareBlock-midView">
+        <scroll-view class="CwareBlock-nameView" scroll-x="{{true}}">
+          <text class="CwareBlock-name">{{item.file_name}}</text>
+        </scroll-view>
+        <text class="CwareBlock-size">{{item.size}}</text>
+        <text class="CwareBlock-date">{{item.date}}</text>
       </view>
     </view>
-    <image class='line' src='../../img/document/line.jpg'></image>
-    <view class='date_do'>
-      <text class='upDate'>上传时间：{{item.date}}</text>
-      <view class='doWare'>
-        <view class='imgView' hover="true" hover-class="imghover">
-          <image class='img' bindtap='lookFile' data-index='{{index}}' src='../../img/document/look.jpg'></image>
-        </view>
-        <view class='imgView' hover="true" hover-class="imghover">
-          <image class='img' bindtap='downFile' data-index='{{index}}' src='../../img/document/download.jpg'></image>
-        </view>
-        <view class='imgView' hover="true" hover-class="imghover">
-          <button class='imgBTN' id='sendBTN' hover="true" open-type="share" data-index='{{index}}'></button>
-          <image class='sendimg' src='../../img/document/send.jpg'></image>
-        </view>
+    <view class="CwareBlock-tapView" data-index='{{index}}' bindtap='lookFile'></view>
+    <view class="CwareBlock-button">
+      <image wx:if='{{!item.favourite}}' class='CwareBlock-btnImg' bindtap='favourites' data-index='{{index}}' data-filename='{{item.file_name}}' src='/img/CwareBlock/favor_inactive.svg'></image>
+      <image wx:else class='CwareBlock-btnImg' bindtap='unfavourites' data-index='{{index}}' data-filename='{{item.file_name}}' src='/img/CwareBlock/favor_active.svg'></image>
+      <image class='CwareBlock-btnImg' bindtap='downFile' data-index='{{index}}' src='/img/CwareBlock/download.svg'></image>
+      <view class='CwareBlock-shareImgView' hover-class="CwareBlock-hover">
+        <button class='CwareBlock-shareBtn' open-type="share" data-index='{{index}}'></button>
+        <image class='CwareBlock-shareImg' src='/img/CwareBlock/share.svg'></image>
       </view>
     </view>
   </view>

@@ -1,3 +1,15 @@
+.centerView{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainView{
+  position: absolute;
+  z-index: 1;
+}
+
 .courseBlock {
   width: 704rpx;
   display: flex;
@@ -34,8 +46,8 @@
   margin-top: 10rpx;
 }
 .img_top {
-  height: 50rpx;
-  width: 50rpx;
+  height: 32rpx;
+  width: 38rpx;
 }
 
 .course_teacher {
@@ -70,10 +82,6 @@
   color: rgba(119, 168, 255, 1);
 }
 
-.homework {
-  color: #FF85AA ;
-}
-
 .wordhover {
   border-radius: 20rpx;
   transform: scale(0.95,0.95);
@@ -81,4 +89,13 @@
 .imghover {
   border-radius: 20rpx;
   transform: translate(0px,-3px) ;
+}
+
+.myfavor{
+  position: fixed;
+  z-index: 10;
+  width: 150rpx;
+  height: 150rpx;
+  bottom: 30rpx;
+  right: 30rpx;
 }

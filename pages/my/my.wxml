@@ -33,7 +33,7 @@
       <template is="myButton" data="{{...btn3}}" />
       <template is="myButton" data="{{...btn4}}" />
     </view>
-    <image class='picture' bindtap="seePic" src="cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/picture.jpeg"></image>
+    <image class='picture' bindtap="seePic" src="https://myncut.oss-cn-beijing.aliyuncs.com/%E6%8F%92%E7%94%BB/IMG_0516.JPG"></image>
     <text class='sign'>《欢迎新同学》  孟露  设计18-1</text>
   </view>
   <view class='bottom-text'>All Rights Reserved</view>

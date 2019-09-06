@@ -1,21 +1,33 @@
-<view style='height:10rpx;'></view>
-<block class='courseList' wx:for='{{courseList}}'>
-  <view class='courseBlock'>
-    <view class='name_top'>
-      <view class='course_name'>{{item.course_name}}</view>
-      <view class='imgView' hover="true" hover-class="imghover">
-        <image class='img_top' src='../../img/iclass/top.jpg' data-index="{{index}}" bindtap='toTop'></image>
+<view class="centerView">
+  <view class="mainView">
+    <view style='height:10rpx;'></view>
+    <block class='courseList' wx:for='{{courseList}}'>
+      <view class='courseBlock'>
+        <view class='name_top'>
+          <view class='course_name'>{{item.course_name}}</view>
+          <view class='imgView' hover="true" hover-class="imghover">
+            <image class='img_top' src='../../img/iclass/top.svg' data-index="{{index}}" bindtap='toTop'></image>
+          </view>
+        </view>
+        <view class='column_tc'>
+          <view class='course_teacher'>{{item.teacher_name}}</view>
+          <view class='course_class'>{{item.course_class}}</view>
+        </view>
+        <image class='line' src='../../img/iclass/line.jpg'></image>
+        <view class='ware_work'>
+          <view class='courseware' hover="true" hover-class="wordhover" bindtap='getDocument' data-index="{{index}}">
+            课件资料
+          </view>
+          <view wx:if="{{homeList_all[item.course_name]==undefined}}" style="color:#808080" hover-class="wordhover" bindtap='getHomework' data-course_class='{{item.course_class}}' data-course_name='{{item.course_name}}'>
+            课程作业
+          </view>
+          <view wx:else style="color:red" style="color:#FF88F7" hover-class="wordhover" bindtap='getHomework' data-course_class='{{item.course_class}}' data-course_name='{{item.course_name}}'>
+            课程作业
+          </view>
+        </view>
       </view>
-    </view>
-    <view class='column_tc'>
-      <view class='course_teacher'>{{item.teacher_name}}</view>
-      <view class='course_class'>{{item.course_class}}</view>
-    </view>
-    <image class='line' src='../../img/iclass/line.jpg'></image>
-    <view class='ware_work'>
-      <view class='courseware' hover="true" hover-class="wordhover" bindtap='getDocument' data-index="{{index}}">课件资料</view>
-      <view class='homework' hover="true" hover-class="wordhover" bindtap='getHomework' data-course_class='{{item.course_class}}' data-course_name='{{item.course_name}}'>课程作业</view>
-    </view>
+    </block>
+    <view style='height:50rpx'></view>
   </view>
-</block>
-<view style='height:50rpx'></view>
+</view>
+<image class="myfavor" bindtap="toFavor" src="/img/iclass/myfavor.svg" />
