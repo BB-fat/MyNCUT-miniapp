@@ -1,9 +1,0 @@
-<form report-submit class='topView' bindsubmit="submit">
-  <view class='txtareaStyle'>
-    <textarea class='mytxtarea' placeholder='请写下您的意见' placeholder-class='myplaceholder' value='{{nowTxt}}' bindinput="getNum" maxlength='50'></textarea>
-    <view class='numStyle'>{{nowTxtlen}}/50</view>
-  </view>
-  <view class="btns">
-    <button form-type="submit" class='btn' hover="true" hover-class="btnhover" hover-start-time="1">^_^ 提交</button>
-  </view>
-</form>

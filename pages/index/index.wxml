@@ -43,4 +43,5 @@
     <template is="indexBtn" data="{{...btn_xuefen}}" />
     <template is="indexBtn" data="{{...btn_gengduo}}" />
   </view>
+
 </view>

@@ -15,6 +15,14 @@
     opacity: 0.6;
 }
 
+.myButton-btn{
+    opacity: 0;
+    height: 72rpx;
+    width: 72rpx;
+    position: absolute;
+    z-index: 2;
+}
+
 .indexBtn-view{
     height: 215rpx;
     width: 162rpx;

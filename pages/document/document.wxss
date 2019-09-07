@@ -1,8 +1,6 @@
 @import "../../templates/cwareBlock/cwareBlock.wxss";
 
 .inform {
-  /* position: absolute; 
-  z-index: 0; */
   width: 100%;
   margin-top: 250rpx;
   display: flex;
@@ -14,12 +12,7 @@
 }
 
 .informIMG {
-  /* background-color: #707070; */
   width: 80%;
-}
-
-.main {
-  background-color: #fff;
 }
 
 .mySearch {
@@ -31,10 +24,8 @@
   width: 70%;
   height: 40rpx;
   background-color: whitesmoke;
-  /* margin-top: 30rpx; */
   border: 10rpx solid whitesmoke;
   border-radius: 35px;
-  /* font-size: 15rpx; */
 }
 
 .place-holder {
@@ -54,4 +45,41 @@
 .txtInfo {
   color: rgb(163, 159, 159);
   font-size: 32rpx;
+}
+
+.DownloadGuide-view{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(143, 143, 143, 0.712);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(0);
+}
+
+.DownloadGuideGif{
+  width: 400rpx;
+  height: 522rpx;
+  margin-top: 200rpx;
+}
+
+.FirstVisit-view{
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(129, 129, 129, 0.267);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+}
+
+.FirstVisit-hand{
+  width: 80rpx;
+  height: 100rpx;
+  position: relative;
+  top: 400rpx;
 }

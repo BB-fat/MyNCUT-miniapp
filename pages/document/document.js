@@ -1,5 +1,4 @@
 // pages/document/document.js
-var util = require('../../utils/util.js')
 import {
   myURL
 } from "../../setting.js"
@@ -21,6 +20,7 @@ Page({
   data: {
     inform_loading: true,
     searchInfo: false,
+    showDownloadGuide:false,
   },
 
 
@@ -29,6 +29,27 @@ Page({
    */
   onLoad: function(options) {
     let that = this
+
+    //控制下载指引显示
+    wx.getStorage({
+      key: 'DownloadGuide',
+      fail () {
+        that.setData({
+          DownloadGuide:true
+        })
+      }
+    })
+
+    //检测显示首次访问的引导
+    wx.getStorage({
+      key: 'HaveVisited',
+      fail () {
+        that.setData({
+          FirstVisit:true
+        })
+      }
+    })
+
     that.data.nowData = JSON.parse(options.nowData)
     // 设定标题显示课程名，如果是文件夹显示文件夹名
     if (that.data.nowData.course_name!=undefined){
@@ -67,6 +88,52 @@ Page({
             coursewareList_tmp: res.data, //为搜索做准备            
             inform_loading: false,
           })
+          //检测首次引导，是否启动动画
+          if(that.data.FirstVisit){
+            //控制view渐变出现
+            var ani_FirstVisitView=wx.createAnimation({
+              duration:900,
+              timingFunction:"ease"
+            })
+            ani_FirstVisitView.opacity(1).step()
+            that.setData({
+              ani_FirstVisitView:ani_FirstVisitView.export()
+            })
+            //控制手动作
+            setTimeout(function(){
+              var ani_FirstVisitHand=wx.createAnimation({
+                duration:600,
+                timingFunction:"linear"
+              })
+              ani_FirstVisitHand.top("140rpx").step()
+              ani_FirstVisitHand.scale(0.9).step()
+              ani_FirstVisitHand.scale(1).step()
+              that.setData({
+                ani_FirstVisitHand:ani_FirstVisitHand.export()
+              })
+            },900)
+            //控制view渐变消失
+            setTimeout(function(){
+              var ani_FirstVisitView=wx.createAnimation({
+                duration:900,
+                timingFunction:"ease"
+              })
+              ani_FirstVisitView.opacity(0).step()
+              that.setData({
+                ani_FirstVisitView:ani_FirstVisitView.export()
+              })
+            },2200)
+            // 设定用户不是第一次访问的状态
+            setTimeout(function(){
+              that.setData({
+                FirstVisit:false
+              })
+              wx.setStorage({
+                key:"HaveVisited",
+                data:true
+              })
+            },3100)
+          }
         }
       }
     })
@@ -93,15 +160,27 @@ Page({
 
   downFile: function(e) { //下载课件
     let that = this
-    var index = e.currentTarget.dataset.index
-    downloadFile(that.data.coursewareList[index])
+    if(that.data.DownloadGuide){
+      that.setData({
+        showDownloadGuide:true
+      })
+      var ani_DownloadGuide=wx.createAnimation({
+        duration:500,
+        timingFunction:"ease"
+      })
+      ani_DownloadGuide.scale(1).opacity(1).step()
+      this.setData({
+        ani_DownloadGuide:ani_DownloadGuide.export()
+      })
+    }else{
+      var index = e.currentTarget.dataset.index
+      downloadFile(that.data.coursewareList[index])  
+    }
   },
 
   favourites: function(e) {
-    console.log(e.currentTarget.dataset)
     var that = this
     var filename = e.currentTarget.dataset.filename
-    console.log(filename)
     var index = e.currentTarget.dataset.index
     that.data.coursewareList[index].favourite = true
     that.setData({
@@ -161,5 +240,25 @@ Page({
         })
       }
     }
+  },
+
+  ignorePrompting: function (e) {
+    this.setData({
+        ignore: !!e.detail.value.length
+    });
+  },
+
+  tapGuide:function(){
+    let that=this
+    if(that.data.ignore==true){
+      wx.setStorage({
+        key:"DownloadGuide",
+        data:true
+      })
+    }
+    that.setData({
+      showDownloadGuide:false,
+      DownloadGuide:false
+    })
   },
 })

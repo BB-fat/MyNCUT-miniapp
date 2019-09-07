@@ -14,29 +14,22 @@ Page({
   data: {
     btn2: {
       tapFun: "tapBtn6",
-      iconHeight: 72,
-      iconWidth: 72,
       iconSrc: "/img/my/myfavor.svg",
       text: "我的收藏"
     },
     btn1: {
       tapFun: "tapBtn1",
-      iconHeight: 72,
-      iconWidth: 72,
       iconSrc: "/img/my/graduation.svg",
       text: "毕业资格"
     },    
     btn3: {
       tapFun: "tapBtn3",
-      iconHeight: 72,
-      iconWidth: 72,
       iconSrc: "/img/my/feedback.svg",
-      text: "问题反馈"
+      text: "问题反馈",
+      isContact:true
     },
     btn4: {
       tapFun: "tapBtn4",
-      iconHeight: 72,
-      iconWidth: 72,
       iconSrc: "/img/my/about.svg",
       text: "关于我们"
     }
@@ -60,10 +53,8 @@ Page({
       url: '../aboutus/aboutus',
     })
   },
-  tapBtn5: function() {
-    util.windowInfo()
-  },
-  tapBtn6: function(e) {
+
+  tapBtn6: function() {
     wx.navigateTo({
       url: '../myFavor/myFavor',
     })
@@ -72,8 +63,7 @@ Page({
   // 浏览插画
   seePic:function(){
     wx.previewImage({
-      // urls: [myURL+"/static/picture.jpeg"],
-      urls: ["cloud://incut-dev-hzz83.696e-incut-dev-hzz83/IMG/my/picture.jpeg"],
+      urls: ["https://myncut.oss-cn-beijing.aliyuncs.com/%E6%8F%92%E7%94%BB/IMG_0516.JPG"],
     });
   },
 

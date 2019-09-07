@@ -1,15 +1,16 @@
-<template name='myButton'> 
-  <view class="myButton-view" bindtap='{{tapFun}}'>
-    <view hover-class='myButton-hover'>
-      <image src='{{iconSrc}}' style="height:{{iconHeight}}rpx;width:{{iconWidth}}rpx;"></image>
+<template name='myButton'>
+  <view class="myButton-view" hover-class='myButton-hover'>
+    <button wx:if="{{isContact}}" class="myButton-btn" open-type="contact"></button>
+    <button wx:else class="myButton-btn" bindtap='{{tapFun}}'></button>
+    <view>
+      <image src='{{iconSrc}}' style="height:72rpx;width:72rpx;"></image>
     </view>
     <text class="myButton-text">{{text}}</text>
   </view>
 </template>
-
 <template name="indexBtn">
-    <navigator class="indexBtn-view" url="{{url}}" hover-class="indexBtn-hover">
-      <image class="indexBtn-icon" src="{{icon}}"></image>
-      <text class="indexBtn-text">{{text}}</text>
-    </navigator>
+  <navigator class="indexBtn-view" url="{{url}}" hover-class="indexBtn-hover">
+    <image class="indexBtn-icon" src="{{icon}}"></image>
+    <text class="indexBtn-text">{{text}}</text>
+  </navigator>
 </template>

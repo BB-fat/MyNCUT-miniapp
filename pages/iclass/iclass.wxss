@@ -94,8 +94,8 @@
 .myfavor{
   position: fixed;
   z-index: 10;
-  width: 150rpx;
-  height: 150rpx;
+  width: 180rpx;
+  height: 180rpx;
   bottom: 30rpx;
   right: 30rpx;
 }

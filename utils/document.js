@@ -56,31 +56,16 @@ export function downloadFile(courseware) {
       success(res) {
         console.log(res.data)
         var wareURL = myURL + '/download?id=' + res.data
-        wx.showModal({
-          title: '复制以下链接到浏览器下载',
-          content: wareURL,
-          confirmText: '复制',
-          success(res) {
-            if (res.confirm) {
-              wx.setClipboardData({
-                data: wareURL,
-                success() {
-                  wx.showToast({
-                    title: '复制成功',
-                    icon: 'success'
-                  })
-                }
-              })
-            }
+        wx.setClipboardData({
+          data: wareURL,
+          success() {
+            wx.showToast({
+              title: '复制成功',
+              icon: 'success'
+            })
           }
         })
       },
-      fail(res) {
-        wx.showToast({
-          title: '下载链接消失了',
-          icon: 'none',
-        })
-      }
     })
   }
 }

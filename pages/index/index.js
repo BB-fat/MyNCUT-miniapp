@@ -45,9 +45,9 @@ Page({
       url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate"
     },
     btn_gengduo: {
-      icon: "/img/index/xinshengbibei.svg",
-      text: "新生必备",
-      url: "../welcome/welcome"
+      icon: "/img/index/SchoolCard.svg",
+      text: "一卡通",
+      url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/extensions/wap/campuscard.html"
     },
   },
 
