@@ -1,19 +1,14 @@
 <import src="../../templates/cwareBlock/cwareBlock.wxml" />
-
 <view class='mySearch'>
   <input placeholder="请输入关键字" placeholder-class="place-holder" confirm-type='search' value="{{inputValue}}" bindinput='search'></input>
 </view>
-
 <view wx:if='{{searchInfo}}' class='inform'>
   <text class='txtInfo'>---无相关内容---</text>
 </view>
-
 <view wx:else>
   <view style='height:20rpx;'></view>
-  <view class='main'>
-    <block class='favorList' wx:for='{{favorList}}'>
-      <template is="CwareBlock" data="{{item,index:index}}" wx:if='{{item.course_code==course_code}}' />
-    </block>
-    <view style='height:40rpx'></view>
-  </view>
+  <block wx:for='{{favorList}}'>
+    <template is="CwareBlock" data="{{item,index:index}}" wx:if='{{item.course_code==course_code}}' />
+  </block>
+  <view style='height:40rpx'></view>
 </view>

@@ -1,7 +1,7 @@
 <template name='myButton'>
   <view class="myButton-view" hover-class='myButton-hover'>
     <button wx:if="{{isContact}}" class="myButton-btn" open-type="contact"></button>
-    <button wx:else class="myButton-btn" bindtap='{{tapFun}}'></button>
+    <button wx:else class="myButton-btn" bindtap='{{tapFun}}' bindlongpress="{{longTap}}"></button>
     <view>
       <image src='{{iconSrc}}' style="height:72rpx;width:72rpx;"></image>
     </view>

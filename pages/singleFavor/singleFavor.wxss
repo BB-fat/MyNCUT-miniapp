@@ -34,10 +34,3 @@
 .place-holder {
   font-size: 12px;
 }
-
-.main {
-  position: absolute;
-  z-index: 1;
-  left: 3%;
-  background-color: #fff;
-}

@@ -31,40 +31,9 @@ Page({
     btn4: {
       tapFun: "tapBtn4",
       iconSrc: "/img/my/about.svg",
-      text: "关于我们"
+      text: "关于我们",
+      longTap:"clearStorage"
     }
-  },
-
-  tapBtn1: function() {
-    wx.navigateTo({
-      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_graduation/graduate/list',
-    })
-  },
-  tapBtn2: function() {
-    util.windowInfo()
-  },
-  tapBtn3: function() {
-    wx.navigateTo({
-      url: '../feedback/feedback',
-    })
-  },
-  tapBtn4: function() {
-    wx.navigateTo({
-      url: '../aboutus/aboutus',
-    })
-  },
-
-  tapBtn6: function() {
-    wx.navigateTo({
-      url: '../myFavor/myFavor',
-    })
-  },
-
-  // 浏览插画
-  seePic:function(){
-    wx.previewImage({
-      urls: ["https://myncut.oss-cn-beijing.aliyuncs.com/%E6%8F%92%E7%94%BB/IMG_0516.JPG"],
-    });
   },
 
   onShow: function() {
@@ -101,5 +70,49 @@ Page({
         wifiProgress: wifiProgress
       })
     }
+  },
+
+  tapBtn1: function() {
+    wx.navigateTo({
+      url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_graduation/graduate/list',
+    })
+  },
+  tapBtn2: function() {
+    util.windowInfo()
+  },
+  tapBtn3: function() {
+    wx.navigateTo({
+      url: '../feedback/feedback',
+    })
+  },
+  tapBtn4: function() {
+    wx.navigateTo({
+      url: '../aboutus/aboutus',
+    })
+  },
+
+  tapBtn6: function() {
+    wx.navigateTo({
+      url: '../myFavor/myFavor',
+    })
+  },
+
+  // 浏览插画
+  seePic:function(){
+    wx.previewImage({
+      urls: ["https://myncut.oss-cn-beijing.aliyuncs.com/%E6%8F%92%E7%94%BB/IMG_0516.JPG"],
+    });
+  },
+
+  //清除缓存
+  clearStorage:function(){
+    wx.clearStorage({
+      success(){
+        wx.showToast({
+          icon:"success",
+          title:"成功"
+        })
+      }
+    })
   },
 })
