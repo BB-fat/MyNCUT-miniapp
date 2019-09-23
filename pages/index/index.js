@@ -103,5 +103,17 @@ Page({
     wx.navigateTo({
       url: '../welcome/welcome'
     })
-  }
+  },
+
+  //清除缓存
+  clearStorage: function () {
+    wx.clearStorage({
+      success() {
+        wx.showToast({
+          icon: "success",
+          title: "成功"
+        })
+      }
+    })
+  },
 })

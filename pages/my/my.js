@@ -32,7 +32,6 @@ Page({
       tapFun: "tapBtn4",
       iconSrc: "/img/my/about.svg",
       text: "关于我们",
-      longTap:"clearStorage"
     }
   },
 
@@ -102,17 +101,5 @@ Page({
     wx.previewImage({
       urls: ["https://myncut.oss-cn-beijing.aliyuncs.com/%E6%8F%92%E7%94%BB/IMG_0516.JPG"],
     });
-  },
-
-  //清除缓存
-  clearStorage:function(){
-    wx.clearStorage({
-      success(){
-        wx.showToast({
-          icon:"success",
-          title:"成功"
-        })
-      }
-    })
   },
 })
