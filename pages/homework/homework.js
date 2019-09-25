@@ -21,10 +21,9 @@ Page({
    */
   onLoad: function (options) {
     let that = this
-    // console.log(options.homeList_all)
     that.setData({
       course_name: options.course_name,
-      homeList_all: JSON.parse(options.homeList_all)
+      homeList_all: app.globalData.homeList_all
     })
     wx.setNavigationBarTitle({
       title: that.data.course_name,
@@ -33,7 +32,6 @@ Page({
       if (that.data.course_name == key) {
         that.setData({
           homeList: that.data.homeList_all[key],
-          // end_date: that.data.homeList_all[key].end_date
         })
         break
       }

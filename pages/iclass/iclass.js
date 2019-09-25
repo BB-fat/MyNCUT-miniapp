@@ -74,16 +74,16 @@ Page({
   getHomework: function (e) { //课程作业
     let that = this
     var course_name = e.currentTarget.dataset.course_name
-    if (that.data.homeList_all[course_name]==undefined){
+    if (that.data.homeList_all[course_name] == undefined) {
       wx.showToast({
         icon: 'none',
         title: '此课程无作业',
         duration: 2000
       })
-    }else{
-      var temp = JSON.stringify(that.data.homeList_all)
+    } else {
+      app.globalData.homeList_all = that.data.homeList_all
       wx.navigateTo({
-        url: '../homework/homework?course_name=' + course_name + '&homeList_all=' + temp,
+        url: '../homework/homework?course_name=' + course_name,
       })
     }
   },
@@ -126,7 +126,7 @@ Page({
     })
   },
 
-  toFavor:function(){
+  toFavor: function () {
     wx.navigateTo({
       url: '../myFavor/myFavor'
     })

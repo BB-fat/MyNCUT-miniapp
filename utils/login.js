@@ -72,7 +72,7 @@ function getUserInfo(that) {
 }
 
 function checkUserInfo(res, that) {
-  if (res.data.userInfo == null) {
+  if (res.data.userid == null) {
     //数据库中没有认证数据
     wx.hideTabBar()
     that.setData({
@@ -85,7 +85,7 @@ function checkUserInfo(res, that) {
       authed: true
     })
     app.globalData.authed = true
-    app.globalData.userInfo = res.data.userInfo
+    app.globalData.userInfo = res.data
   }
 }
 
