@@ -11,52 +11,34 @@
   margin-top: 30rpx;
   display: flex;
   flex-direction: column;
-  border-radius: 20rpx 20rpx 20rpx 20rpx;
+  border-radius: 8px;
   box-shadow: 0px 0px 20px 0px rgba(218, 222, 226, 0.5);
-  width: 650rpx;
-  height: 400rpx;
+  width: 686rpx;
+  height: 204rpx;
   background-color: #fff;
   color: rgb(0, 0, 0);
 }
 
-.card-nickName {
-  text-align: center;
-}
-
-.card-bgView {
-  position: absolute;
-  z-index: 0;
-}
-
-.bgImg {
-  margin-left: 300rpx;
-  margin-top: 50rpx;
-  width: 334rpx;
-  height: 287rpx;
-  opacity: 0.6;
-}
-
-.card-bottomView {
+.cardView {
   position: absolute;
   z-index: 1;
   width: 650rpx;
   display: flex;
   flex-direction: row;
-  margin-top: 50rpx;
 }
 
-.card-bottomViewLeft {
-  margin-left: 40rpx;
-  margin-top: 50rpx;
+.cardViewLeft {
+  margin-left: 38rpx;
+  margin-top: 28rpx;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 
-.card-bottomViewMid {
+.cardViewMid {
   margin-left: 80rpx;
-  margin-top: 40rpx;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
@@ -71,12 +53,19 @@
   width: 100%;
 }
 
+.row0 {
+  margin-top: 60rpx;
+}
+
 .row1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 75%;
+  width:686rpx;
   margin-top: 50rpx;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  font-weight: lighter;
 }
 
 .row2 {
@@ -85,19 +74,6 @@
   justify-content: space-between;
   width: 100%;
   margin-top: 100rpx;
-}
-
-.card-schoolIcon {
-  margin-top: 20rpx;
-  margin-left: 20rpx;
-  height: 40rpx;
-  width: 200rpx;
-}
-
-.card-nickName {
-  margin-top: 20rpx;
-  font-size: 30rpx;
-  font-weight: 500;
 }
 
 .card-avata {
@@ -110,9 +86,10 @@
 }
 
 .card-name {
-  margin-top: 15rpx;
-  font-size: 35rpx;
-  font-weight: bold;
+  font-size: 34rpx;
+  line-height: 44rpx;
+  font-weight: normal;
+  margin-right: 20rpx;
 }
 
 .card-male {
@@ -129,7 +106,9 @@
 
 .card-userid {
   margin-top: 15rpx;
-  font-size: 25rpx;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  font-weight: normal;
 }
 
 .card-class {
@@ -137,57 +116,52 @@
   font-size: 25rpx;
 }
 
-.bottom-text {
-  position: absolute;
-  bottom: 20rpx;
-  color: #000;
-  font-size: 20rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 .wifiView {
-  position: absolute;
+  position: relative;
+  margin-top: 15rpx;
   z-index: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 335rpx;
-  margin-left: 30rpx;
-  width: 580rpx;
+  width: 686rpx;
+  height: 80rpx;
+  background-color: #FAFAFA;
+  border-radius: 8px;
 }
 
 .leftWifi {
   position: absolute;
   z-index: 1;
-  left: 425rpx;
-  font-size: 18rpx;
-  color: rgba(115, 115, 115, 1);
+  left: 190rpx;
+  font-size: 14rpx;
+  color: #FAFAFA;
 }
 
 .wifiView image {
-  width: 36rpx;
-  height: 40rpx;
+  width: 30.46rpx;
+  height: 37.12rpx;
   margin-right: 25rpx;
+  margin-left: -20rpx;
+  padding-left: 10rpx;
+}
+
+.wifiView .tips {
+  font-weight: lighter;
+  margin-right: 20rpx;
+  font-size: 22rpx;
+  line-height: 30rpx;
 }
 
 .wifiProgress {
-  width: 72%;
+  width: 70%;
 }
 
 .picture{
+  position: fixed;
   margin-top: 50rpx;
-  width: 408rpx;
-  height: 288rpx;
-  opacity: 0.6
+  width: 100%;
+  height: 500.72rpx;
+  bottom: -50rpx;
 }
 
-.sign{
-  font-size: 20rpx;
-  margin-top: 30rpx;
-  opacity: 0.6
-}

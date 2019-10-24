@@ -18,6 +18,7 @@ var app = getApp()
 
 Page({
   data: {
+    show:true,
     authed: true,
     btn_kebiao: {
       icon: "/img/index/kebiao.svg",
@@ -85,6 +86,13 @@ Page({
       }
     })
 
+  },
+
+  //彩蛋
+  delay:function () {
+    this.setData({
+      show:false
+    })
   },
 
   /**

@@ -6,44 +6,41 @@
     color: #000000
 }
 
-.myButton-text{
-    font-size: 22rpx;
-    margin-top: 15rpx;
-}
-
 .myButton-hover{
     opacity: 0.6;
 }
 
 .myButton-btn{
     opacity: 0;
-    height: 72rpx;
-    width: 72rpx;
+    height: 226rpx;
+    width: 218rpx;
     position: absolute;
     z-index: 2;
+    border-radius: 8px;
 }
 
 .indexBtn-view{
-    height: 215rpx;
-    width: 162rpx;
+    height: 218rpx;
+    width: 220rpx;
+    background-color: #FAFAFA;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0rpx 0rpx 20rpx 0rpx #e4e3e3;
     border-radius: 20rpx;
-    margin-top: 40rpx;
+    margin-top: 10rpx;
 }
 
 .indexBtn-icon{
-    width: 86rpx;
-    height: 94rpx;
-    margin-top: 30rpx;
+    width: 101.42rpx;
+    height: 127.92rpx;
+    margin-top: 16rpx;
 }
 
 .indexBtn-text{
-    font-size: 36rpx;
-    margin-top: 18rpx;
+    font-size: 28rpx;
+    line-height: 38rpx;
 }
 
 .indexBtn-hover{

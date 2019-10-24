@@ -2,39 +2,36 @@
 
 <view class='mainView'>
   <view class="card">
-    <image src='/img/my/bfgy.png' class="card-schoolIcon"></image>
-    <view class='card-bgView'>
-      <image class='bgImg' src='/img/my/insert.png'></image>
-    </view>
-    <view class="card-bottomView">
-      <view class="card-bottomViewLeft">
+    <view class="cardView">
+      <view class="cardViewLeft">
         <open-data type='userAvatarUrl' class="card-avata"></open-data>
-        <open-data type='userNickName' class="card-nickName"></open-data>
       </view>
-      <view class="card-bottomViewMid">
-        <text class="card-name">{{userInfo.name}}</text>
-        <image wx:if='{{userInfo.sex==1}}' src='/img/my/male.png' class="card-male"></image>
-        <image wx:else src='/img/my/female.png' class="card-male"></image>
+      <view class="cardViewMid">
+        <view class='row0'>
+          <text class="card-name">{{userInfo.name}}</text>
+          <image wx:if='{{userInfo.sex==1}}' src='/img/my/male.png' class="card-male"></image>
+          <image wx:else src='/img/my/female.png' class="card-male"></image>
+        </view>
         <text class="card-userid">{{userInfo.userid}}</text>
         <text class="card-class">{{userInfo.class}}</text>
       </view>
     </view>
-    <view class='wifiView'>
-      <image src='/img/my/wifi.png'></image>
+  </view>
+  <view class='wifiView' bindtap='flowTap'>
+      <image src='/img/my/wifi.svg'></image>
+      <text class='tips'>校网流量</text>
       <text wx:if="{{wifiLeft>0}}" class='leftWifi'>剩余{{wifiLeft}}GB</text>
       <text wx:else class='leftWifi'>已使用超过30G</text>
-      <progress class='wifiProgress' percent="{{wifiProgress}}" active active-mode="backwards" activeColor="#FD9A8C" border-radius='8' stroke-width='12' font-size='10'></progress>
+      <progress class='wifiProgress' percent="{{wifiProgress}}" active active-mode="backwards" activeColor="#337DEF" border-radius='9' stroke-width='20' font-size='14'></progress>
     </view>
-  </view>
   <view class="button-area">
     <view class='row1'>
       <template is="myButton" data="{{...btn2}}" />
       <template is="myButton" data="{{...btn1}}" />
       <template is="myButton" data="{{...btn3}}" />
+      <template is="myButton" data="{{...btn5}}" />
       <template is="myButton" data="{{...btn4}}" />
     </view>
-    <image class='picture' bindtap="seePic" src="https://myncut.oss-cn-beijing.aliyuncs.com/%E6%8F%92%E7%94%BB/IMG_0516.JPG"></image>
-    <text class='sign'>《欢迎新同学》  孟露  设计18-1</text>
+    <image class='picture' bindtap="seePic" src="/img/my/schoolGate.svg"></image>
   </view>
-  <view class='bottom-text'>OneTech 2019 All Rights Reserved</view>
 </view>

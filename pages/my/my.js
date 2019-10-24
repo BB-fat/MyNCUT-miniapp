@@ -28,10 +28,21 @@ Page({
       text: "问题反馈",
       isContact:true
     },
+    btn5: {
+      tapFun: "tapBtn3",
+      iconSrc: "/img/my/extend.svg",
+      text: "合作推广",
+      isContact: true
+    },
     btn4: {
       tapFun: "tapBtn4",
       iconSrc: "/img/my/about.svg",
       text: "关于我们",
+    },
+    flowTap:function() {
+      wx.navigateTo({
+        url: '../flow/flow',
+      })
     }
   },
 
@@ -94,12 +105,6 @@ Page({
     wx.navigateTo({
       url: '../myFavor/myFavor',
     })
-  },
-
-  // 浏览插画
-  seePic:function(){
-    wx.previewImage({
-      urls: ["https://myncut.oss-cn-beijing.aliyuncs.com/%E6%8F%92%E7%94%BB/IMG_0516.JPG"],
-    });
-  },
+  }
+ 
 })
