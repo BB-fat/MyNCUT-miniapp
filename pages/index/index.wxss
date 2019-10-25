@@ -1,6 +1,10 @@
 @import "../../templates/authView/authView.wxss";
 @import "../../templates/myButton/myButton.wxss";
 
+page {
+  background-color: #F4F4F4;
+}
+
 .disableView{
   width: 100%;
   height: 100%;
@@ -107,30 +111,29 @@
 }
 
 .cat-box .dialog {
-  width: 260rpx;
   height: 70rpx;
   border-radius: 8px;
-  position: relative;
-  left: 40%;
-  margin-top: 19%;
+  position: fixed;
+  bottom: 30rpx;
+  right: 180rpx;
   background-color: #031E2F;
 }
 
 .cat-box .dialog::after{
   display:block;
   content: '';
-  border-width:8px 6px 8px 6px;
+  border-width:8px 7px 8px 4px;
   border-style:solid;
   border-color:transparent transparent #031E2F;
   position: absolute;
   rotate: 90deg;
   left: 100%;
-  top: 25%;
+  top: 15%;
 }
 
 .cat-box .dialog text {
   color: white;
   font-size: 24rpx;
   line-height: 32rpx;
-  margin-left: 20rpx;
+  margin: 0 20rpx 0 20rpx;
 }

@@ -7,13 +7,15 @@
         <open-data type='userAvatarUrl' class="card-avata"></open-data>
       </view>
       <view class="cardViewMid">
-        <view class='row0'>
+        <view>
           <text class="card-name">{{userInfo.name}}</text>
           <image wx:if='{{userInfo.sex==1}}' src='/img/my/male.png' class="card-male"></image>
           <image wx:else src='/img/my/female.png' class="card-male"></image>
         </view>
+        <view class='row0'>
         <text class="card-userid">{{userInfo.userid}}</text>
         <text class="card-class">{{userInfo.class}}</text>
+        </view>
       </view>
     </view>
   </view>
@@ -32,6 +34,6 @@
       <template is="myButton" data="{{...btn5}}" />
       <template is="myButton" data="{{...btn4}}" />
     </view>
-    <image class='picture' bindtap="seePic" src="/img/my/schoolGate.svg"></image>
   </view>
+  <image class='picture' bindtap="seePic" src="/img/my/schoolGate.svg"></image>
 </view>

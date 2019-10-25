@@ -1,4 +1,1 @@
 @import 'weui.wxss';
-page {
-  background-color: #F4F4F4;
-}

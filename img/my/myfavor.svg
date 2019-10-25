@@ -1,1 +1,47 @@
-<svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48.7 48.28"><defs><style>.cls-1{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#60b5f4;}.cls-4{fill:#031e2f;}</style><clipPath id="clip-path" transform="translate(-0.62 -1)"><rect class="cls-1" x="0.62" y="1" width="48.7" height="48.29"/></clipPath></defs><title>收藏</title><g class="cls-2"><g id="组件"><circle id="椭圆_21" data-name="椭圆 21" class="cls-3" cx="36.24" cy="36.54" r="11.74"/><g id="组_135" data-name="组 135"><g id="组_134" data-name="组 134"><g id="组_133" data-name="组 133"><path id="路径_695" data-name="路径 695" class="cls-4" d="M40,47.29,25,41.22,10,47.29l.44-16.47L.62,18.65,16,14,25,1l9,13,15.34,4.64L39.55,30.82ZM7.93,20.91l6.79,8.45-.31,11.51L25,36.59l10.56,4.28-.31-11.51L42,20.91l-10.7-3.24L25,8.52l-6.34,9.15Z" transform="translate(-0.62 -1)"/></g></g></g></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fafafa;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-4 {
+        fill: #276ded;
+      }
+
+      .cls-5 {
+        fill: #031e2f;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="矩形_272" data-name="矩形 272" class="cls-1" width="40" height="40" transform="translate(0)"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="矩形_271" data-name="矩形 271" width="40" height="39.671"/>
+    </clipPath>
+  </defs>
+  <g id="蒙版组_26" data-name="蒙版组 26" class="cls-2">
+    <g id="myfavor" transform="translate(0 0.164)">
+      <g id="组_38" data-name="组 38" class="cls-3">
+        <g id="组件">
+          <circle id="椭圆_21" class="cls-4" cx="9.61" cy="9.61" r="9.61" transform="translate(20.123 20.37)"/>
+          <g id="组_135">
+            <g id="组_134">
+              <g id="组_133">
+                <path id="路径_695" class="cls-5" d="M32.361,38.029l-12.32-5.01-12.32,5.01.329-13.552L0,14.456l12.649-3.778L20.041,0l7.392,10.678L40,14.456,31.951,24.476ZM6,16.345l5.585,6.982-.246,9.446,8.706-3.532,8.706,3.532L28.5,23.326l5.585-6.9L25.3,13.8,20.123,6.324l-5.339,7.392Z"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

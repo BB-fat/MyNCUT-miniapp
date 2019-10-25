@@ -1,1 +1,53 @@
-<svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48.73 48.79"><defs><style>.cls-1{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#60b5f4;}.cls-4{fill:#031e2f;}</style><clipPath id="clip-path" transform="translate(-1.01 -1)"><rect class="cls-1" x="1.01" y="1" width="48.73" height="48.79"/></clipPath></defs><title>反馈</title><g class="cls-2"><g id="组件"><circle id="椭圆_23" data-name="椭圆 23" class="cls-3" cx="35.48" cy="35.54" r="13.25"/><g id="组_152" data-name="组 152"><g id="组_148" data-name="组 148"><path id="路径_706" data-name="路径 706" class="cls-4" d="M1,49.56V1H49.42V41H15.64ZM5.85,5.83V41.11l8.48-5H44.58V5.83Z" transform="translate(-1.01 -1)"/></g><g id="组_151" data-name="组 151"><g id="组_149" data-name="组 149"><rect id="矩形_1448" data-name="矩形 1448" class="cls-4" x="21.87" y="9.5" width="4.84" height="12.66"/></g><g id="组_150" data-name="组 150"><rect id="矩形_1449" data-name="矩形 1449" class="cls-4" x="21.87" y="25.3" width="4.84" height="4.63"/></g></g></g></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fafafa;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-4 {
+        fill: #276ded;
+      }
+
+      .cls-5 {
+        fill: #031e2f;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="矩形_276" data-name="矩形 276" class="cls-1" width="40" height="40" transform="translate(0)"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="矩形_275" data-name="矩形 275" width="36.288" height="36.363"/>
+    </clipPath>
+  </defs>
+  <g id="蒙版组_28" data-name="蒙版组 28" class="cls-2">
+    <g id="feedback" transform="translate(1.856 2.743)">
+      <g id="组_40" data-name="组 40" class="cls-3" transform="translate(0 0)">
+        <g id="组件">
+          <circle id="椭圆_23" class="cls-4" cx="9.91" cy="9.91" r="9.91" transform="translate(16.542 16.542)"/>
+          <g id="组_152">
+            <g id="组_148">
+              <path id="路径_706" class="cls-5" d="M0,36.214V0H36.065V29.806H10.879ZM3.577,3.577v26.3L9.91,26.154H32.488V3.577Z"/>
+            </g>
+            <g id="组_151" transform="translate(16.319 7.079)">
+              <g id="组_149">
+                <rect id="矩形_1448" class="cls-5" width="3.577" height="9.463"/>
+              </g>
+              <g id="组_150" transform="translate(0 11.773)">
+                <rect id="矩形_1449" class="cls-5" width="3.577" height="3.428"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

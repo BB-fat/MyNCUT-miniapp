@@ -18,7 +18,8 @@ var app = getApp()
 
 Page({
   data: {
-    show:true,
+    show: true,
+    animationData: {},
     authed: true,
     btn_kebiao: {
       icon: "/img/index/kebiao.svg",
@@ -90,9 +91,21 @@ Page({
 
   //彩蛋
   delay:function () {
-    this.setData({
-      show:false
+    var animation = wx.createAnimation({
+      duration: 300,
+      timingFunction: "linear",
+      delay: 0
     })
+    if(this.data.show) {
+      this.setData({
+        show: false,
+        animationData: animation.export()
+      })
+    }else {
+      this.setData({
+        show:true
+      })
+    }
   },
 
   /**
