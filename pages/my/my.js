@@ -12,7 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    contents: "",
+    contents: "onetechteam@163.com",
     showModalStatus: false,
     btn2: {
       tapFun: "tapBtn6",
@@ -125,10 +125,26 @@ Page({
       })
     }.bind(that),200)
   },
-  closeTap:function() {
+  closeTap: function() {
     var that = this;
     that.setData({
       showModalStatus: false
+    })
+  },
+  copyText: function() {
+    console.log(12)
+    wx.setClipboardData({
+      data: this.data.contents,
+      success(res){
+        wx.getClipboardData({
+          success(res) {
+            wx.showToast({
+              title: '复制成功',
+              icon:'none'
+            })
+          }
+        })
+      }
     })
   }
   

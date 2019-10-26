@@ -41,15 +41,16 @@
   <view class='container' animation="{{popWindow}}">
     <image class='cat' src='/img/index/cat.svg'></image>
     <text class='title'>我的北方py（朋友）合作中心</text>
-    <text class='message'>
-如果您有需要~
+    <view class='message'>
+<text>如果您有需要~
 预约方式：
-编辑邮件至：<text class='email' selectable='true'>onetechteam@163.com</text>邮件内容包括：推送的链接、推送预览、 横版海报、推送封面（用于Banner）、联系方式（微信号或手机）
- 稿件规范： 1.内容合规，无不良内容。 
+编辑邮件至：</text><view bindtap='copyText' data-text='contents'><text class='email' selectable='true'>{{contents}}</text></view><text>邮件内容包括：推送的链接、推送预览、 横版海报、推送封面（用于Banner）、联系方式（微信号或手机）
+ 稿件规范：
+  1.内容合规，无不良内容。 
  2.推送内容质量好，视觉效果优良。
   3.欢迎原创推送，拒绝推广转载推送。
-   了解更多请点击联系客服
-    </text>
+   了解更多请点击联系客服</text>
+    </view>
     <view class='btn-row'>
       <button open-type='contact' class='contact' bindtap='closeTap'>
         <text class='con-text'>咨询客服</text>

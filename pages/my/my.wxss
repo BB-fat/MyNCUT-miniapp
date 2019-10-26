@@ -205,7 +205,7 @@ page {
   height: 172rpx;
   position: absolute;
   right: 10%;
-  top: -150rpx;
+  top: -155rpx;
 }
 
 .container .title {
@@ -214,6 +214,7 @@ page {
   font-weight: bold;
   position: relative;
   top: 0;
+  margin-bottom: 20rpx;
 }
 
 .container .message {
