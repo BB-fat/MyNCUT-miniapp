@@ -13,19 +13,19 @@
           <image wx:else src='/img/my/female.png' class="card-male"></image>
         </view>
         <view class='row0'>
-        <text class="card-userid">{{userInfo.userid}}</text>
-        <text class="card-class">{{userInfo.class}}</text>
+          <text class="card-userid">{{userInfo.userid}}</text>
+          <text class="card-class">{{userInfo.class}}</text>
         </view>
       </view>
     </view>
   </view>
   <view class='wifiView' bindtap='flowTap'>
-      <image src='/img/my/wifi.svg'></image>
-      <text class='tips'>校网流量</text>
-      <text wx:if="{{wifiLeft>0}}" class='leftWifi'>剩余{{wifiLeft}}GB</text>
-      <text wx:else class='leftWifi'>已使用超过30G</text>
-      <progress class='wifiProgress' percent="{{wifiProgress}}" active active-mode="backwards" activeColor="#337DEF" border-radius='9' stroke-width='20' font-size='14'></progress>
-    </view>
+    <image src='/img/my/wifi.svg'></image>
+    <text class='tips'>校网流量</text>
+    <text wx:if="{{wifiLeft>0}}" class='leftWifi'>剩余{{wifiLeft}}GB</text>
+    <text wx:else class='leftWifi'>已使用超过30G</text>
+    <progress class='wifiProgress' percent="{{wifiProgress}}" active active-mode="backwards" activeColor="#337DEF" border-radius='9' stroke-width='20' font-size='14'></progress>
+  </view>
   <view class="button-area">
     <view class='row1'>
       <template is="myButton" data="{{...btn2}}" />
@@ -35,5 +35,29 @@
       <template is="myButton" data="{{...btn4}}" />
     </view>
   </view>
-  <image class='picture' bindtap="seePic" src="/img/my/schoolGate.svg"></image>
+  <image class='picture' src="/img/my/schoolGate.svg"></image>
+</view>
+<view class='mask' wx:if="{{showModalStatus}}"></view>
+<view class='wrapper' wx:if="{{showModalStatus}}">
+  <view class='container' animation="{{popWindow}}">
+    <image class='cat' src='/img/index/cat.svg'></image>
+    <text class='title'>我的北方py（朋友）合作中心</text>
+    <text class='message'>
+如果您有需要~
+预约方式：
+编辑邮件至：<text class='email'>onetechteam@163.com</text> 邮件内容包括：推送的链接、推送预览、 横版海报、推送封面（用于Banner）、联系方式（微信号或手机）
+ 稿件规范： 1.内容合规，无不良内容。 
+ 2.推送内容质量好，视觉效果优良。
+  3.欢迎原创推送，拒绝推广转载推送。
+   了解更多请点击联系客服
+    </text>
+    <view class='btn-row'>
+      <button open-type='contact' class='contact' bindtap='closeTap'>
+        <text class='con-text'>咨询客服</text>
+      </button>
+      <button class='close' bindtap='closeTap'>
+        <text class='clo-text'>我知道啦</text>
+      </button>
+    </view>
+  </view>
 </view>

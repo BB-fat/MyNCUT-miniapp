@@ -110,16 +110,15 @@ page {
   right: 14.4rpx;
 }
 
-.cat-box .dialog {
+.cat-box image.dialog {
+  width: 272rpx;
   height: 70rpx;
-  border-radius: 8px;
   position: fixed;
   bottom: 30rpx;
-  right: 180rpx;
-  background-color: #031E2F;
+  right: 160rpx;
 }
 
-.cat-box .dialog::after{
+/**.cat-box .dialog::after{
   display:block;
   content: '';
   border-width:8px 7px 8px 4px;
@@ -129,11 +128,14 @@ page {
   rotate: 90deg;
   left: 100%;
   top: 15%;
-}
+}*/
 
 .cat-box .dialog text {
   color: white;
   font-size: 24rpx;
   line-height: 32rpx;
   margin: 0 20rpx 0 20rpx;
+  position: absolute;
+  top: 0;
+  z-index: 1;
 }

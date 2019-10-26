@@ -44,7 +44,9 @@
   </view>
     
   <view class='cat-box'>
-    <view class='dialog' hidden='{{show}}' animation="{{animationData}}"><text>我的北方可以接推广了哦!</text></view>
+    <image src='/img/index/dialog.svg' class='dialog' hidden='{{show}}' animation="{{animationData}}">
+    <text>我的北方可以接推广了哦!</text>
+    </image>
     <image class='cat' bindtap='delay' src='/img/index/cat.svg'></image>
   </view>
 

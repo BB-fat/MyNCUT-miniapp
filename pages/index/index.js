@@ -91,15 +91,9 @@ Page({
 
   //彩蛋
   delay:function () {
-    var animation = wx.createAnimation({
-      duration: 300,
-      timingFunction: "linear",
-      delay: 0
-    })
     if(this.data.show) {
       this.setData({
-        show: false,
-        animationData: animation.export()
+        show: false
       })
     }else {
       this.setData({

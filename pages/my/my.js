@@ -12,6 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showModalStatus: false,
     btn2: {
       tapFun: "tapBtn6",
       iconSrc: "/img/my/myfavor.svg",
@@ -29,10 +30,9 @@ Page({
       isContact:true
     },
     btn5: {
-      tapFun: "tapBtn3",
+      tapFun: "showModal",
       iconSrc: "/img/my/extend.svg",
       text: "合作推广",
-      isContact: true
     },
     btn4: {
       tapFun: "tapBtn4",
@@ -81,7 +81,7 @@ Page({
       })
     }
   },
-
+ 
   tapBtn1: function() {
     wx.navigateTo({
       url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_graduation/graduate/list',
@@ -100,11 +100,40 @@ Page({
       url: '../aboutus/aboutus',
     })
   },
-
   tapBtn6: function() {
     wx.navigateTo({
       url: '../myFavor/myFavor',
     })
+  },
+  showModal: function () {
+    var that = this
+    var popWindow = wx.createAnimation({
+      duration: 200,
+      TimingFunction: 'ease-in-out'
+    })
+    popWindow.scale(1).opacity(1).step()
+    that.setData({
+      popWindow: popWindow.export(),
+      showModalStatus: true
+    })
+  },
+  closeTap:function() {
+    var that = this;
+    var popWindow = wx.createAnimation({
+      duration: 400,
+      TimingFunction: 'ease-out'
+    })
+    popWindow.scale(0.8).opacity(1).step()
+    popWindow.opacity(0).step()
+    that.setData({
+      popWindow: popWindow.export()
+    })
+    setTimeout(function(){
+      that.setData({
+        showModalStatus: false
+      })
+    },400)
   }
- 
+
+  
 })
