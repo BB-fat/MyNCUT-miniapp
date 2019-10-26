@@ -109,14 +109,21 @@ Page({
   showModal: function () {
     var that = this
     var popWindow = wx.createAnimation({
-      duration: 200,
-      TimingFunction: 'ease-in'
+      duration: 100,
+      TimingFunction: 'ease-in-out'
     })
-    popWindow.opacity(1).step()
+    popWindow.scale(0.85).opacity(1).step()
     that.setData({
+      showModalStatus: true,
       popWindow: popWindow.export(),
-      showModalStatus: true
     })
+    setTimeout(function() {
+      popWindow.duration = 100;
+      popWindow.scale(1).opacity(1).step()
+      that.setData({
+        popWindow:popWindow.export()
+      })
+    }.bind(that),200)
   },
   closeTap:function() {
     var that = this;

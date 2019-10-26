@@ -35,7 +35,6 @@
       <template is="myButton" data="{{...btn4}}" />
     </view>
   </view>
-  <image class='picture' src="/img/my/school.svg"></image>
 </view>
 <view class='mask' wx:if="{{showModalStatus}}"></view>
 <view class='wrapper' wx:if="{{showModalStatus}}">
@@ -61,3 +60,4 @@
     </view>
   </view>
 </view>
+<image class='picture' src="/img/my/school.svg" mode='widthFix'></image>
