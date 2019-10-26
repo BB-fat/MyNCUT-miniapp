@@ -12,6 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    contents: "",
     showModalStatus: false,
     btn2: {
       tapFun: "tapBtn6",
@@ -109,9 +110,9 @@ Page({
     var that = this
     var popWindow = wx.createAnimation({
       duration: 200,
-      TimingFunction: 'ease-in-out'
+      TimingFunction: 'ease-in'
     })
-    popWindow.scale(1).opacity(1).step()
+    popWindow.opacity(1).step()
     that.setData({
       popWindow: popWindow.export(),
       showModalStatus: true
@@ -119,21 +120,9 @@ Page({
   },
   closeTap:function() {
     var that = this;
-    var popWindow = wx.createAnimation({
-      duration: 400,
-      TimingFunction: 'ease-out'
-    })
-    popWindow.scale(0.8).opacity(1).step()
-    popWindow.opacity(0).step()
     that.setData({
-      popWindow: popWindow.export()
+      showModalStatus: false
     })
-    setTimeout(function(){
-      that.setData({
-        showModalStatus: false
-      })
-    },400)
   }
-
   
 })

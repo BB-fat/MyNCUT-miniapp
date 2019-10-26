@@ -35,7 +35,7 @@
       <template is="myButton" data="{{...btn4}}" />
     </view>
   </view>
-  <image class='picture' src="/img/my/schoolGate.svg"></image>
+  <image class='picture' src="/img/my/school.svg"></image>
 </view>
 <view class='mask' wx:if="{{showModalStatus}}"></view>
 <view class='wrapper' wx:if="{{showModalStatus}}">
@@ -45,7 +45,7 @@
     <text class='message'>
 如果您有需要~
 预约方式：
-编辑邮件至：<text class='email'>onetechteam@163.com</text> 邮件内容包括：推送的链接、推送预览、 横版海报、推送封面（用于Banner）、联系方式（微信号或手机）
+编辑邮件至：<text class='email' selectable='true'>onetechteam@163.com</text>邮件内容包括：推送的链接、推送预览、 横版海报、推送封面（用于Banner）、联系方式（微信号或手机）
  稿件规范： 1.内容合规，无不良内容。 
  2.推送内容质量好，视觉效果优良。
   3.欢迎原创推送，拒绝推广转载推送。
