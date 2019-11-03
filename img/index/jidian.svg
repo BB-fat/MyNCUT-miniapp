@@ -1,41 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 94 96" style="enable-background:new 0 0 94 96;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:url(#SVGID_1_);}
-	.st1{fill:url(#SVGID_2_);}
-	.st2{fill:url(#SVGID_3_);}
-	.st3{fill:url(#SVGID_4_);}
-	.st4{fill:url(#SVGID_5_);}
-	.st5{fill:url(#SVGID_6_);}
-	.st6{fill:url(#SVGID_7_);}
-	.st7{fill:url(#SVGID_8_);}
-	.st8{fill:url(#SVGID_9_);}
-	.st9{fill:url(#SVGID_10_);}
-	.st10{fill:url(#SVGID_11_);}
-	.st11{fill:url(#SVGID_12_);}
-	.st12{fill:url(#SVGID_13_);}
-	.st13{fill:url(#SVGID_14_);}
-	.st14{fill:url(#SVGID_15_);}
-	.st15{fill:url(#SVGID_16_);}
-	.st16{fill:url(#SVGID_17_);}
-	.st17{fill:url(#SVGID_18_);}
-</style>
-<g>
-	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="47" y1="375.6359" x2="47" y2="-470.6524">
-		<stop  offset="0.3633" style="stop-color:#2E2EFF"/>
-		<stop  offset="0.4327" style="stop-color:#2C79FF"/>
-	</linearGradient>
-	<path class="st0" d="M82,6H12C5.9,6,1,10.9,1,17v10.3V70c6.2,0,12-0.3,17.5-0.7c-0.6-0.9-0.9-1.9-0.9-3V40.7c0-3,2.5-5.5,5.5-5.5
-		s5.5,2.5,5.5,5.5v25.6c0,0.7-0.1,1.3-0.4,1.9c5.1-0.7,9.8-1.7,14.2-2.8V27.9c0-3,2.5-5.5,5.5-5.5c3,0,5.5,2.5,5.5,5.5v34
-		c5.3-1.9,9.8-4.1,13.8-6.4V35.2c0-3,2.5-5.5,5.5-5.5s5.5,2.5,5.5,5.5v12.6C90.3,37.4,93,27.3,93,27.3V17C93,10.9,88.1,6,82,6z"/>
-	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="69.7584" y1="271.6131" x2="11.1623" y2="-290.0945">
-		<stop  offset="0.3361" style="stop-color:#2E2EFF"/>
-		<stop  offset="0.4131" style="stop-color:#2C79FF"/>
-	</linearGradient>
-	<path class="st1" d="M78.3,47.8v18.4c0,3-2.5,5.5-5.5,5.5s-5.5-2.5-5.5-5.5V55.6c-4,2.3-8.5,4.5-13.8,6.4v4.3c0,3-2.5,5.5-5.5,5.5
-		c-3,0-5.5-2.5-5.5-5.5v-0.9c-4.4,1.1-9,2.1-14.2,2.8c-0.8,2.1-2.8,3.6-5.2,3.6c-1.9,0-3.6-1-4.6-2.5C13,69.7,7.2,70,1,70V79
-		c0,6.1,4.9,11,11,11H82c6.1,0,11-4.9,11-11V27.3C93,27.3,90.3,37.4,78.3,47.8z"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="56" height="70.61" viewBox="0 0 56 70.61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-4, .cls-6 {
+        fill: #276ded;
+      }
+
+      .cls-5 {
+        fill: #8cc7ff;
+      }
+
+      .cls-6 {
+        font-size: 11px;
+        font-family: SegoeUI-Semibold, Segoe UI;
+        font-weight: 600;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="矩形_207" data-name="矩形 207" class="cls-1" width="56" height="70.61" transform="translate(49 459.39)"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8cc7ff"/>
+      <stop offset="1" stop-color="#276ded"/>
+    </linearGradient>
+  </defs>
+  <g id="蒙版组_12" data-name="蒙版组 12" class="cls-2" transform="translate(-49 -459.39)">
+    <g id="图层_2" data-name="图层 2" transform="translate(52 466.378)">
+      <g id="图层_2-2" data-name="图层 2" transform="translate(0 0)">
+        <path id="路径_28" data-name="路径 28" class="cls-3" d="M4.265,0h36.19a4.265,4.265,0,0,1,2.772,1.024L49.507,6.4A4.265,4.265,0,0,1,51,9.635V52.777a4.265,4.265,0,0,1-4.265,4.265H4.265A4.265,4.265,0,0,1,0,52.777V4.265A4.265,4.265,0,0,1,4.265,0Z" transform="translate(0 0)"/>
+        <path id="路径_29" data-name="路径 29" class="cls-4" d="M54.361,7.024l-6.9-5.9A4.683,4.683,0,0,0,44.421,0h-.714V6.829a4.683,4.683,0,0,0,4.683,4.683H56V10.58a4.683,4.683,0,0,0-1.639-3.555Z" transform="translate(-5 0)"/>
+        <rect id="矩形_211" data-name="矩形 211" class="cls-5" width="36.561" height="1.756" rx="0.878" transform="translate(7.22 35.44)"/>
+        <rect id="矩形_212" data-name="矩形 212" class="cls-5" width="36.561" height="1.756" rx="0.878" transform="translate(7.22 39.87)"/>
+        <rect id="矩形_213" data-name="矩形 213" class="cls-5" width="31.732" height="1.756" rx="0.878" transform="translate(9.634 44.299)"/>
+        <text id="GPA" class="cls-6" transform="translate(14.415 28.961)"><tspan x="0" y="0">GPA</tspan></text>
+      </g>
+    </g>
+  </g>
 </svg>

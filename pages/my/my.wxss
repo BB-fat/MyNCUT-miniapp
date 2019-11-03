@@ -1,103 +1,58 @@
 @import "../../templates/myButton/myButton.wxss";
 
-.mainView {
+page {
   width: 100%;
+  height: 100%;
+  background-color: #F4F4F4;
+  position: fixed;
+}
+
+.mainView {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .card {
   margin-top: 30rpx;
   display: flex;
   flex-direction: column;
-  border-radius: 20rpx 20rpx 20rpx 20rpx;
+  border-radius: 8px;
   box-shadow: 0px 0px 20px 0px rgba(218, 222, 226, 0.5);
-  width: 650rpx;
-  height: 400rpx;
+  width: 686rpx;
+  height: 204rpx;
   background-color: #fff;
   color: rgb(0, 0, 0);
 }
 
-.card-nickName {
-  text-align: center;
-}
-
-.card-bgView {
-  position: absolute;
-  z-index: 0;
-}
-
-.bgImg {
-  margin-left: 300rpx;
-  margin-top: 50rpx;
-  width: 334rpx;
-  height: 287rpx;
-  opacity: 0.6;
-}
-
-.card-bottomView {
+.cardView {
   position: absolute;
   z-index: 1;
   width: 650rpx;
   display: flex;
   flex-direction: row;
-  margin-top: 50rpx;
 }
 
-.card-bottomViewLeft {
-  margin-left: 40rpx;
-  margin-top: 50rpx;
+.cardViewLeft {
+  margin-left: 38rpx;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 
-.card-bottomViewMid {
-  margin-left: 80rpx;
-  margin-top: 40rpx;
+.cardViewMid {
+  margin: 60rpx 0 60rpx 80rpx;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
   font-weight: bold;
-}
-
-.button-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-.row1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 75%;
-  margin-top: 50rpx;
-}
-
-.row2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 100rpx;
-}
-
-.card-schoolIcon {
-  margin-top: 20rpx;
-  margin-left: 20rpx;
-  height: 40rpx;
-  width: 200rpx;
-}
-
-.card-nickName {
-  margin-top: 20rpx;
-  font-size: 30rpx;
-  font-weight: 500;
 }
 
 .card-avata {
@@ -107,12 +62,14 @@
   overflow: hidden;
   border: 7rpx solid;
   border-color: #346cd1;
+  margin-top: -10%;
 }
 
 .card-name {
-  margin-top: 15rpx;
-  font-size: 35rpx;
-  font-weight: bold;
+  font-size: 34rpx;
+  line-height: 44rpx;
+  font-weight: normal;
+  margin-right: 20rpx;
 }
 
 .card-male {
@@ -127,67 +84,174 @@
   width: 17rpx;
 }
 
-.card-userid {
-  margin-top: 15rpx;
-  font-size: 25rpx;
-}
-
-.card-class {
-  margin-top: 15rpx;
-  font-size: 25rpx;
-}
-
-.bottom-text {
-  position: absolute;
-  bottom: 20rpx;
-  color: #000;
-  font-size: 20rpx;
+.row0 {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  flex-direction: row;
+  margin-top: 15rpx;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  font-weight: normal;
+}
+
+.card-userid {
+  margin-right: 15rpx;
 }
 
 .wifiView {
-  position: absolute;
+  position: relative;
+  margin-top: 15rpx;
   z-index: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 335rpx;
-  margin-left: 30rpx;
-  width: 580rpx;
+  width: 686rpx;
+  height: 80rpx;
+  background-color: #FFF;
+  border-radius: 8px;
 }
 
 .leftWifi {
   position: absolute;
   z-index: 1;
-  left: 425rpx;
-  font-size: 18rpx;
-  color: rgba(115, 115, 115, 1);
+  left: 190rpx;
+  font-size: 14rpx;
+  color: #FAFAFA;
 }
 
 .wifiView image {
-  width: 36rpx;
-  height: 40rpx;
+  width: 30.46rpx;
+  height: 37.12rpx;
   margin-right: 25rpx;
+  margin-left: -20rpx;
+  padding-left: 10rpx;
+}
+
+.wifiView .tips {
+  font-weight: lighter;
+  margin-right: 20rpx;
+  font-size: 22rpx;
+  line-height: 30rpx;
 }
 
 .wifiProgress {
-  width: 72%;
+  width: 70%;
+}
+
+.button-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:686rpx;
+  margin-top: 50rpx;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  font-weight: lighter;
+}
+
+.row1 template {
+  box-sizing: border-box;
 }
 
 .picture{
-  margin-top: 50rpx;
-  width: 408rpx;
-  height: 288rpx;
-  opacity: 0.6
+  position: fixed;
+  width: 100%;
+  height: 500.72rpx;
+  bottom: 0;
 }
 
-.sign{
-  font-size: 20rpx;
-  margin-top: 30rpx;
-  opacity: 0.6
+.mask {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 2;
+  position: absolute;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  z-index: 3;
+  position: absolute;
+}
+
+.container {
+  width: 686rpx;
+  height: 760rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  opacity: 0.5;
+  border-radius: 8px;
+}
+
+.container .cat {
+  width: 156rpx;
+  height: 172rpx;
+  position: absolute;
+  right: 10%;
+  top: -155rpx;
+}
+
+.container .title {
+  font-size: 40rpx;
+  line-height: 54rpx;
+  font-weight: bold;
+  position: relative;
+  top: 0;
+  margin-bottom: 20rpx;
+}
+
+.container .message {
+  font-size: 34rpx;
+  line-height: 44rpx;
+  font-weight: lighter;
+  margin: 0 20rpx 0 20rpx;
+}
+
+.container .message .email {
+  color: blue;
+}
+
+.btn-row  {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40rpx;
+}
+
+.btn-row button {
+  width: 270rpx;
+  height: 72rpx;
+  border-radius: 35rpx;
+  color: white;
+  margin: 0 20rpx 0 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-row .contact {
+  background-color: #60B5F4;
+  font-size: 36rpx;
+  line-height: 48rpx; 
+}
+
+.btn-row .close {
+  background-color: #276DED;
 }

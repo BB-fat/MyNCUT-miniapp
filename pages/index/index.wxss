@@ -1,6 +1,10 @@
 @import "../../templates/authView/authView.wxss";
 @import "../../templates/myButton/myButton.wxss";
 
+page {
+  background-color: #F4F4F4;
+}
+
 .disableView{
   width: 100%;
   height: 100%;
@@ -10,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #111;
+  background-color: #f4f4f4;
 }
 
 .disableText{
@@ -20,51 +24,62 @@
 
 .picswiper {
   padding: 0rpx 0rpx 0rpx 0rpx;
-  width: 100%;
-  height: 430rpx;
+  height: 340rpx;
   background-color: #ffffff;
 }
 
-.pic_item {
-  padding-top: 10rpx;
-  background-color: #ffffff;
-  height: 430rpx;
+.pic_item { 
+  background-color: #f4f4f4;
+  height: 292rpx;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20rpx;
 }
 
 .swiper_img {
   background-color: #ffffff;
-  width: 640rpx;
-  height: 386rpx;
-  border-radius: 20px;
-  box-shadow: 0px 4px 30px 0px rgb(225, 225, 226);
+  width: 686rpx;
+  height: 292rpx;
+  border-radius: 8px;
+  box-shadow: 0rpx 0rpx 20rpx 0rpx #e4e3e3;
 }
 
 .notice {
-  height: 50rpx;
-  padding: 0rpx 120rpx 0rpx 120rpx;
-  display: flex;
+  width: 686rpx;
+  height: 80rpx;
+  display: inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-color: #FAFAFA;
+  margin: 1% 4% 0 4%;
+}
+
+
+.notice .imgbox {
+  width: 28.98rpx;
+  height: 46.26rpx;
+  padding: 0 4% 0 4%;
+  border-right: dotted #818181 2rpx;
 }
 
 .notice image {
-  width: 26rpx;
-  height: 23rpx;
+  width: 28.98rpx;
+  height: 36.26rpx;
 }
 
 .notice .wordswiper {
-  width: 100%;
-  height: 50rpx;
+  height: 40rpx;
   padding: 0 0 0 30rpx;
 }
 
 .notice .wordswiper text {
-  font-size: 30rpx;
+  font-size: 26rpx;
   color: #000000;
+  line-height: 40rpx;
+  display: block;
+  padding-bottom: 50%;
 }
 
 .banner-hover {
@@ -74,7 +89,53 @@
 }
 
 .button-view{
+  width: 686rpx;
+  padding: 0 4% 0 4%;
   display:flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.radius-shadow {
+  box-shadow: 0rpx 0rpx 20rpx 0rpx #e4e3e3;
+  border-radius: 8px;
+}
+
+.cat-box .cat {
+  position: fixed;
+  width: 155.98rpx;
+  height: 171.02rpx;
+  bottom: 0;
+  right: 14.4rpx;
+}
+
+.cat-box image.dialog {
+  width: 272rpx;
+  height: 70rpx;
+  position: fixed;
+  bottom: 30rpx;
+  right: 160rpx;
+}
+
+/**.cat-box .dialog::after{
+  display:block;
+  content: '';
+  border-width:8px 7px 8px 4px;
+  border-style:solid;
+  border-color:transparent transparent #031E2F;
+  position: absolute;
+  rotate: 90deg;
+  left: 100%;
+  top: 15%;
+}*/
+
+.cat-box .dialog text {
+  color: white;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  margin: 0 20rpx 0 20rpx;
+  position: absolute;
+  top: 0;
+  z-index: 1;
 }

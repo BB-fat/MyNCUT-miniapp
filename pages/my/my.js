@@ -12,6 +12,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    contents: "onetechteam@163.com",
+    showModalStatus: false,
     btn2: {
       tapFun: "tapBtn6",
       iconSrc: "/img/my/myfavor.svg",
@@ -28,10 +30,20 @@ Page({
       text: "问题反馈",
       isContact:true
     },
+    btn5: {
+      tapFun: "showModal",
+      iconSrc: "/img/my/extend.svg",
+      text: "合作推广",
+    },
     btn4: {
       tapFun: "tapBtn4",
       iconSrc: "/img/my/about.svg",
       text: "关于我们",
+    },
+    flowTap:function() {
+      wx.navigateTo({
+        url: '../flow/flow',
+      })
     }
   },
 
@@ -70,7 +82,7 @@ Page({
       })
     }
   },
-
+ 
   tapBtn1: function() {
     wx.navigateTo({
       url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_graduation/graduate/list',
@@ -89,17 +101,51 @@ Page({
       url: '../aboutus/aboutus',
     })
   },
-
   tapBtn6: function() {
     wx.navigateTo({
       url: '../myFavor/myFavor',
     })
   },
-
-  // 浏览插画
-  seePic:function(){
-    wx.previewImage({
-      urls: ["https://myncut.oss-cn-beijing.aliyuncs.com/%E6%8F%92%E7%94%BB/IMG_0516.JPG"],
-    });
+  showModal: function () {
+    var that = this
+    var popWindow = wx.createAnimation({
+      duration: 100,
+      TimingFunction: 'ease-in-out'
+    })
+    popWindow.scale(0.85).opacity(1).step()
+    that.setData({
+      showModalStatus: true,
+      popWindow: popWindow.export(),
+    })
+    setTimeout(function() {
+      popWindow.duration = 100;
+      popWindow.scale(1).opacity(1).step()
+      that.setData({
+        popWindow:popWindow.export()
+      })
+    }.bind(that),200)
   },
+  closeTap: function() {
+    var that = this;
+    that.setData({
+      showModalStatus: false
+    })
+  },
+  copyText: function() {
+    console.log(12)
+    wx.setClipboardData({
+      data: this.data.contents,
+      success(res){
+        wx.getClipboardData({
+          success(res) {
+            wx.showToast({
+              title: '复制成功',
+              icon:'none'
+            })
+          }
+        })
+      }
+    })
+  }
+  
 })

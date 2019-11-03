@@ -1,1 +1,55 @@
-<svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 47.99 49.09"><defs><style>.cls-1{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#60b5f4;}.cls-4{fill:#031e2f;}</style><clipPath id="clip-path" transform="translate(-1.01 -0.38)"><rect class="cls-1" x="1.01" y="0.38" width="47.99" height="49.09"/></clipPath></defs><title>毕业资格</title><g class="cls-2"><g id="组件"><circle id="椭圆_22" data-name="椭圆 22" class="cls-3" cx="35.66" cy="36.4" r="12.33"/><g id="组_144" data-name="组 144"><g id="组_141" data-name="组 141"><g id="组_139" data-name="组 139"><path id="路径_700" data-name="路径 700" class="cls-4" d="M24.83,36,1,18.2,24.79.38,49,17.85ZM8.52,18.19l16.3,12.17L41.41,17.92,24.84,6Z" transform="translate(-1.01 -0.38)"/></g><g id="组_140" data-name="组 140"><path id="路径_701" data-name="路径 701" class="cls-4" d="M25.2,49.47c-8.78,0-14.91-4.71-14.91-11.44V24.48h4.5V38c0,4.77,5.4,6.94,10.41,6.94S35.6,42.8,35.6,38v-14h4.5V38C40.1,44.76,34,49.47,25.2,49.47Z" transform="translate(-1.01 -0.38)"/></g></g><g id="组_143" data-name="组 143"><g id="组_142" data-name="组 142"><rect id="矩形_1447" data-name="矩形 1447" class="cls-4" x="0.66" y="24.56" width="4.5" height="10.72"/></g></g></g></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fafafa;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-4 {
+        fill: #276ded;
+      }
+
+      .cls-5 {
+        fill: #031e2f;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="矩形_274" data-name="矩形 274" class="cls-1" width="40" height="40" transform="translate(0)"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="矩形_273" data-name="矩形 273" width="39.104" height="40"/>
+    </clipPath>
+  </defs>
+  <g id="蒙版组_27" data-name="蒙版组 27" class="cls-2">
+    <g id="graduation" transform="translate(0.448)">
+      <g id="组_39" data-name="组 39" class="cls-3">
+        <g id="组件">
+          <circle id="椭圆_22" class="cls-4" cx="10.02" cy="10.02" r="10.02" transform="translate(19.063 19.633)"/>
+          <g id="组_144">
+            <g id="组_141">
+              <g id="组_139">
+                <path id="路径_700" class="cls-5" d="M19.389,29,0,14.5,19.389,0,39.1,14.257ZM6.11,14.5,19.389,24.44l13.523-10.1L19.389,4.562Z"/>
+              </g>
+              <g id="组_140" transform="translate(7.576 19.226)">
+                <path id="路径_701" class="cls-5" d="M20.332,41.567c-7.169,0-12.138-3.829-12.138-9.287V21.2H11.86v11c0,3.91,4.4,5.621,8.473,5.621S28.8,36.109,28.8,32.2V20.793h3.666V32.2C32.471,37.738,27.5,41.567,20.332,41.567Z" transform="translate(-8.194 -20.793)"/>
+              </g>
+            </g>
+            <g id="组_143" transform="translate(0.57 20.041)">
+              <g id="组_142">
+                <rect id="矩形_1447" class="cls-5" width="3.666" height="8.717"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

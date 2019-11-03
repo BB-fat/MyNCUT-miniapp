@@ -6,7 +6,10 @@
     <text class='item'>谢文正</text>
   </view>
   <text class='title'>工程师团队</text>
-  <text class='item' style='margin-top: 11rpx;'>鞠欣诚</text>
+  <view class='line' style='width:35%'>
+    <text class='item'>鞠欣诚</text>
+    <text class='item'>叶智婷</text>
+  </view>
   <view class='line' style='width:80%'>
     <text class='item'>张世烨</text>
     <text class='item'>庞 宇</text>

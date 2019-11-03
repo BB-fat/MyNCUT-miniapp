@@ -1,1 +1,44 @@
-<svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 92 76"><defs><style>.cls-1{fill:url(#未命名的渐变_6);}.cls-2{fill:url(#未命名的渐变_5);}</style><linearGradient id="未命名的渐变_6" x1="57.3" y1="94.19" x2="32.77" y2="-7.78" gradientUnits="userSpaceOnUse"><stop offset="0.31" stop-color="#2e2eff"/><stop offset="0.61" stop-color="#2c79ff"/></linearGradient><linearGradient id="未命名的渐变_5" x1="46" y1="62.64" x2="46" y2="-29.36" gradientUnits="userSpaceOnUse"><stop offset="0.23" stop-color="#2e2eff"/><stop offset="0.57" stop-color="#2c79ff"/></linearGradient></defs><title>卡片</title><path class="cls-1" d="M0,54V64c0,6.62,4.74,12,10.61,12H81.39C87.25,76,92,70.63,92,64V28.78C85.5,34.75,62.93,50.09,0,54Zm83.16,8a1.88,1.88,0,0,1-1.75,2H70.76A1.87,1.87,0,0,1,69,62V54a1.86,1.86,0,0,1,1.75-2H81.41a1.87,1.87,0,0,1,1.75,2Z"/><path d="M81.39,0H10.61C4.75,0,0,5.37,0,12v6H92V12C92,5.37,87.25,0,81.39,0Z"/><path class="cls-2" d="M81.39,0H10.61C4.75,0,0,5.37,0,12v6H92V12C92,5.37,87.25,0,81.39,0Z"/><path d="M0,54c62.93-3.92,85.5-19.26,92-25.23V28H0Z"/><path class="cls-2" d="M0,54c62.93-3.92,85.5-19.26,92-25.23V28H0Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="56" height="70.61" viewBox="0 0 56 70.61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #276ded;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-5 {
+        fill: #8cc7ff;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="矩形_210" data-name="矩形 210" class="cls-1" width="56" height="70.61" transform="translate(309 459.39)"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8cc7ff"/>
+      <stop offset="1" stop-color="#276ded"/>
+    </linearGradient>
+  </defs>
+  <g id="蒙版组_14" data-name="蒙版组 14" class="cls-2" transform="translate(-309 -459.39)">
+    <g id="图层_2" data-name="图层 2" transform="translate(309 477.046)">
+      <g id="图层_2-2" data-name="图层 2">
+        <path id="路径_32" data-name="路径 32" class="cls-3" d="M28.233,9.879C41.779,13.3,50.151,12.25,56,9.611V4.2A4.2,4.2,0,0,0,51.8,0H4.2A4.2,4.2,0,0,0,0,4.2v7.488A35.276,35.276,0,0,1,4.788,9.844C11.776,7.73,19.444,7.74,28.233,9.879Z"/>
+        <path id="路径_33" data-name="路径 33" class="cls-4" d="M27.937,11.067C15.575,8.061,6.909,9.663,0,13.055V31.1a4.2,4.2,0,0,0,4.2,4.2H51.8A4.2,4.2,0,0,0,56,31.1V10.958C49.975,13.528,41.442,14.474,27.937,11.067Z"/>
+        <rect id="矩形_214" data-name="矩形 214" class="cls-5" width="12.388" height="1.575" rx="0.788" transform="translate(26.95 18.086)"/>
+        <rect id="矩形_215" data-name="矩形 215" class="cls-5" width="8.062" height="1.575" rx="0.788" transform="translate(26.95 22.461)"/>
+        <rect id="矩形_216" data-name="矩形 216" class="cls-5" width="19.075" height="1.575" rx="0.788" transform="translate(26.95 26.836)"/>
+        <rect id="矩形_217" data-name="矩形 217" class="cls-5" width="11.375" height="14.875" rx="1.255" transform="translate(8.05 14.936)"/>
+      </g>
+    </g>
+  </g>
+</svg>
