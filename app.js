@@ -6,8 +6,6 @@ import {
 
 App({
   globalData:{
-  },
-  onLaunch:function(){
-    wx.cloud.init()
   }
+  
 })

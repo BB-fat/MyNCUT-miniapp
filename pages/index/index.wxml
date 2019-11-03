@@ -1,4 +1,4 @@
-<import src="../../templates/authView/authView.wxml" />
+·<import src="../../templates/authView/authView.wxml" />
 <import src="../../templates/myButton/myButton.wxml" />
 
 
