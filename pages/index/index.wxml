@@ -1,12 +1,8 @@
 <import src="../../templates/authView/authView.wxml" />
-<import src="../../templates/myButton/myButton.wxml" />
-
-
 <view wx:if="{{disable}}" class='disableView'>
   <text class='disableText'>你已被禁用</text>
 </view>
-
-<template wx:elif="{{!authed}}" is="authView"></template>
+<!-- <template wx:elif="{{!authed}}" is="authView"></template> -->
 <view wx:else>
   <swiper class="picswiper" autoplay="true" circular="true" interval="4000">
     <block wx:for="{{indexBanner}}">
@@ -17,7 +13,6 @@
       </swiper-item>
     </block>
   </swiper>
-
   <view class="notice radius-shadow">
     <view class='imgbox'>
       <image src="/img/index/notice.svg" class="notice_img" bindlongpress="clearStorage"></image>
@@ -32,21 +27,18 @@
       </swiper>
     </view>
   </view>
-
   <view class="button-view">
-    <template is="indexBtn" data="{{...btn_kebiao}}" />
-    <template is="indexBtn" data="{{...btn_jiaoshi}}" />
-    <template is="indexBtn" data="{{...btn_chengji}}" />
-    <template is="indexBtn" data="{{...btn_jidian}}" />
-    <template is="indexBtn" data="{{...btn_xuefen}}" />
-    <template is="indexBtn" data="{{...btn_gengduo}}" />
+    <index-button icon="/img/index/kebiao.svg" text="课表" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng'}}" />
+    <index-button icon="/img/index/jiaoshi.svg" text="教室" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_room/emroom/index'}}" />
+    <index-button icon="/img/index/chengji.svg" text="成绩" url="{{'.../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_score'}}" />
+    <index-button icon="/img/index/jidian.svg" text="绩点" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/grade/list'}}" />
+    <index-button icon="/img/index/xuefen.svg" text="学分" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate'}}" />
+    <index-button icon="/img/index/SchoolCard.svg" text="一卡通" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/extensions/wap/campuscard.html'}}" />
   </view>
-    
   <view class='cat-box'>
-    <image src='/img/index/dialog.svg' class='dialog' hidden='{{show}}' animation="{{animationData}}">
-    <text>我的北方可以接推广了哦!</text>
+    <image src='/img/index/dialog.svg' class='dialog' hidden='{{showCat}}'>
+      <text>我的北方可以接推广了哦!</text>
     </image>
-    <image class='cat' bindtap='delay' src='/img/index/cat.svg'></image>
+    <image class='cat' bindtap='tapCat' src='/img/index/cat.svg'></image>
   </view>
-
 </view>

@@ -1,0 +1,20 @@
+.view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000000
+}
+
+.hover {
+    opacity: 0.6;
+}
+
+.btn {
+    opacity: 0;
+    height: 226rpx;
+    width: 218rpx;
+    position: absolute;
+    z-index: 2;
+    border-radius: 8px;
+}

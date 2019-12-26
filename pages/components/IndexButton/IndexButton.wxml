@@ -1,0 +1,6 @@
+<view>
+    <navigator class="view" url="{{url}}" hover-class="hover">
+        <image class="icon" src="{{icon}}"></image>
+        <text class="text">{{text}}</text>
+    </navigator>
+</view>

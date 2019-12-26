@@ -1,0 +1,10 @@
+<view>
+    <navigator class="view" hover-class='hover' url="{{url}}">
+        <button wx:if="{{isContact}}" class="btn" open-type="contact"></button>
+        <button wx:else class="btn"></button>
+        <view>
+            <image src='{{icon}}' style="height:72rpx;width:72rpx;"></image>
+        </view>
+        <text class="text">{{text}}</text>
+    </navigator>
+</view>

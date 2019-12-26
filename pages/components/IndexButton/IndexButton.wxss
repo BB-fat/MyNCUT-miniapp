@@ -1,0 +1,28 @@
+.view {
+    height: 220rpx;
+    width: 220rpx;
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0rpx 0rpx 20rpx 0rpx #e4e3e3;
+    border-radius: 20rpx;
+    margin-top: 10rpx;
+}
+
+.icon {
+    width: 101.42rpx;
+    height: 127.92rpx;
+    margin-top: 16rpx;
+}
+
+.text {
+    font-size: 28rpx;
+    line-height: 38rpx;
+}
+
+.hover {
+    opacity: 0.8;
+    transform: scale(0.9, 0.9);
+}
