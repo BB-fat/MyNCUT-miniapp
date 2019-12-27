@@ -23,12 +23,12 @@ Page({
       tapFun: "tapBtn1",
       iconSrc: "/img/my/graduation.svg",
       text: "毕业资格"
-    },    
+    },
     btn3: {
       tapFun: "tapBtn3",
       iconSrc: "/img/my/feedback.svg",
       text: "问题反馈",
-      isContact:true
+      isContact: true
     },
     btn5: {
       tapFun: "showModal",
@@ -40,20 +40,20 @@ Page({
       iconSrc: "/img/my/about.svg",
       text: "关于我们",
     },
-    flowTap:function() {
+    flowTap: function () {
       wx.navigateTo({
         url: '../flow/flow',
       })
     }
   },
 
-  onShow: function() {
+  onShow: function () {
     var that = this
     if (app.globalData.userInfo == null) {
       wx.switchTab({
         url: '../index/index',
       })
-    } 
+    }
     // 首次加载流量条
     else if (this.data.wifiProgress == undefined) {
       this.setData({
@@ -66,8 +66,8 @@ Page({
         },
         success(res) {
           that.setData({
-            wifiProgress: parseInt(parseFloat(res.data) / (30 * 1024) * 100),
-            wifiLeft: (30 - parseFloat(res.data) / 1024).toFixed(2)
+            wifiProgress: parseInt(parseFloat(res.data) / (50 * 1024) * 100),
+            wifiLeft: (50 - parseFloat(res.data) / 1024).toFixed(2)
           })
         }
       })
@@ -82,26 +82,26 @@ Page({
       })
     }
   },
- 
-  tapBtn1: function() {
+
+  tapBtn1: function () {
     wx.navigateTo({
       url: '../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_graduation/graduate/list',
     })
   },
-  tapBtn2: function() {
+  tapBtn2: function () {
     util.windowInfo()
   },
-  tapBtn3: function() {
+  tapBtn3: function () {
     wx.navigateTo({
       url: '../feedback/feedback',
     })
   },
-  tapBtn4: function() {
+  tapBtn4: function () {
     wx.navigateTo({
       url: '../aboutus/aboutus',
     })
   },
-  tapBtn6: function() {
+  tapBtn6: function () {
     wx.navigateTo({
       url: '../myFavor/myFavor',
     })
@@ -117,35 +117,35 @@ Page({
       showModalStatus: true,
       popWindow: popWindow.export(),
     })
-    setTimeout(function() {
+    setTimeout(function () {
       popWindow.duration = 100;
       popWindow.scale(1).opacity(1).step()
       that.setData({
-        popWindow:popWindow.export()
+        popWindow: popWindow.export()
       })
-    }.bind(that),200)
+    }.bind(that), 200)
   },
-  closeTap: function() {
+  closeTap: function () {
     var that = this;
     that.setData({
       showModalStatus: false
     })
   },
-  copyText: function() {
+  copyText: function () {
     console.log(12)
     wx.setClipboardData({
       data: this.data.contents,
-      success(res){
+      success(res) {
         wx.getClipboardData({
           success(res) {
             wx.showToast({
               title: '复制成功',
-              icon:'none'
+              icon: 'none'
             })
           }
         })
       }
     })
   }
-  
+
 })
