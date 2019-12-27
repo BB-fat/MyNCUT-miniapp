@@ -47,9 +47,9 @@ Page({
       url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate"
     },
     btn_gengduo: {
-      icon: "/img/index/SchoolCard.svg",
-      text: "一卡通",
-      url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/extensions/wap/campuscard.html"
+      icon: "/img/index/selectcourse.svg",
+      text: "选课",
+      url: "../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/course/list"
     },
   },
 
@@ -90,14 +90,14 @@ Page({
   },
 
   //彩蛋
-  delay:function () {
-    if(this.data.show) {
+  delay: function () {
+    if (this.data.show) {
       this.setData({
         show: false
       })
-    }else {
+    } else {
       this.setData({
-        show:true
+        show: true
       })
     }
   },
