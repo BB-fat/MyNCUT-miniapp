@@ -16,29 +16,35 @@ Page({
     showModalStatus: false,
   },
 
+  onLoad: function () {
+    let that = this
+    Requests.getWithCache({
+      url: "/v1/user",
+      cacheTime: Requests.day * 10,
+      success(data) {
+        that.setData({
+          userInfo: data
+        })
+      }
+    })
+  },
+
   onShow: function () {
     var that = this
-    // 首次加载流量条
-    if (this.data.wifiProgress == undefined) {
-      this.setData({
-        userInfo: app.globalData.userInfo
-      })
-      Requests.get("/v1/net", null, (data) => {
+    // 让进度条重新动画
+    this.setData({
+      wifiProgress: 0,
+    })
+    Requests.getWithCache({
+      url: "/v1/net",
+      success(data) {
         that.setData({
-          wifiProgress: parseInt(parseFloat(data[7]) / (30 * 1024) * 100),
-          wifiLeft: (30 - parseFloat(data[7]) / 1024).toFixed(2)
+          wifiProgress: parseInt(parseFloat(data[7]) / (50 * 1024) * 100),
+          wifiLeft: (50 - parseFloat(data[7]) / 1024).toFixed(2)
         })
-      })
-    } else {
-      // 让进度条每一次切换到这个页面都能加载动画
-      var wifiProgress = this.data.wifiProgress
-      this.setData({
-        wifiProgress: 0,
-      })
-      this.setData({
-        wifiProgress: wifiProgress
-      })
-    }
+      },
+      cacheTime: Requests.hour * 2
+    })
   },
 
   showModal: function () {

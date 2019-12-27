@@ -1,0 +1,29 @@
+<template name='CwareBlock'>
+    <view class="CwareBlock-mainView">
+        <view class='coursewareBlock'>
+            <image class="file-icon" wx:if="{{data.type=='pdf'}}" src="/img/CwareBlock/pdf.png" />
+            <image class="file-icon" wx:elif="{{data.type=='doc'||data.type=='docx'}}" src="/img/CwareBlock/word.png" />
+            <image class="file-icon" wx:elif="{{data.type=='xlsx'||data.type=='xls'}}" src="/img/CwareBlock/excel.png" />
+            <image class="file-icon" wx:elif="{{data.type=='ppt'||data.type=='pptx'}}" src="/img/CwareBlock/ppt.png" />
+            <image class="file-icon" wx:elif="{{data.type=='zip'||data.type=='rar'||data.type=='7z'}}" src="/img/CwareBlock/zip.png" />
+            <image class="file-icon" wx:else src="/img/CwareBlock/other.png" />
+            <view class="CwareBlock-midView">
+                <scroll-view class="CwareBlock-nameView" scroll-x="{{true}}">
+                    <text class="CwareBlock-name">{{data.file_name}}</text>
+                </scroll-view>
+                <text class="CwareBlock-size">{{data.size}}</text>
+                <text class="CwareBlock-date">{{data.date}}</text>
+            </view>
+        </view>
+        <view class="CwareBlock-tapView" data-index='{{index}}' bindtap='lookFile'></view>
+        <view class="CwareBlock-button">
+            <image wx:if='{{!data.favourite}}' class='CwareBlock-btnImg' bindtap='favourites' data-index='{{index}}' data-filename='{{data.file_name}}' src='/img/CwareBlock/favor_inactive.svg'></image>
+            <image wx:else class='CwareBlock-btnImg' bindtap='unfavourites' data-index='{{index}}' data-filename='{{data.file_name}}' src='/img/CwareBlock/favor_active.svg'></image>
+            <image class='CwareBlock-btnImg' bindtap='downFile' data-index='{{index}}' src='/img/CwareBlock/download.svg'></image>
+            <view class='CwareBlock-shareImgView' hover-class="CwareBlock-hover">
+                <button class='CwareBlock-shareBtn' open-type="share" data-index='{{index}}'></button>
+                <image class='CwareBlock-shareImg' src='/img/CwareBlock/share.svg'></image>
+            </view>
+        </view>
+    </view>
+</template>

@@ -19,16 +19,16 @@ Page({
       lookFile(JSON.parse(options.courseware))
     }
     // 获取Banner和Notice数据
-    Requests.get(
-      "/v1/banner",
-      null,
-      (data) => {
+    Requests.getWithCache({
+      url: "/v1/banner",
+      success(data) {
         that.setData({
           indexBanner: data.indexBanner,
           indexNotice: data.indexNotice
         })
-      }
-    )
+      },
+      cacheTime: Requests.hour * 5
+    })
   },
 
   //彩蛋

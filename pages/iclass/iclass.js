@@ -1,8 +1,9 @@
 // pages/iclass/iclass.js
 const app = getApp()
+
 import {
-  myURL
-} from "../../setting.js"
+  Requests
+} from "../../utils/Requests";
 
 Page({
 
@@ -15,11 +16,7 @@ Page({
 
   onShow: function () {
     var that = this
-    if (app.globalData.userInfo == null) {
-      wx.switchTab({
-        url: '../index/index',
-      })
-    } else if (this.data.courseList == undefined) {
+    if (this.data.courseList == undefined) {
       wx.getStorage({
         key: 'courseList',
         success: function (res) {
@@ -28,40 +25,34 @@ Page({
           })
         },
         fail: function () {
-          wx.request({
-            url: myURL + '/courselist',
-            data: {
-              openid: app.globalData.openid
-            },
-            success: function (res) {
+          Requests.getWithCache({
+            url: "/v1/iclass/course",
+            success(data) {
               that.setData({
-                courseList: res.data
+                courseList: data
               })
               wx.setStorage({
                 key: "courseList",
                 data: that.data.courseList
               })
-            }
+            },
+            cacheTime: Requests.day * 10
           })
         }
       }) //end getstorge
       // 请求作业
-      wx.request({
-        url: myURL + '/homework',
-        data: {
-          openid: app.globalData.openid,
-        },
-        success(res) {
-          that.setData({
-            homeList_all: res.data
-          })
-        },
-      })
+      // wx.request({
+      //   url: myURL + '/homework',
+      //   data: {
+      //     openid: app.globalData.openid,
+      //   },
+      //   success(res) {
+      //     that.setData({
+      //       homeList_all: res.data
+      //     })
+      //   },
+      // })
     }
-  },
-
-  toAuth: function () {
-    goAuth()
   },
 
   getDocument: function (e) { //课件资料
@@ -107,23 +98,23 @@ Page({
 
   onPullDownRefresh: function () {
     let that = this
-    wx.request({
-      url: myURL + '/courselist',
-      data: {
-        openid: app.globalData.openid
-      },
-      success: function (res) {
-        that.setData({
-          courseList: res.data
-        })
-        console.log(that.data.courseList)
-        wx.setStorage({
-          key: "courseList",
-          data: that.data.courseList
-        })
-        wx.stopPullDownRefresh()
-      }
-    })
+    // wx.request({
+    //   url: myURL + '/courselist',
+    //   data: {
+    //     openid: app.globalData.openid
+    //   },
+    //   success: function (res) {
+    //     that.setData({
+    //       courseList: res.data
+    //     })
+    //     console.log(that.data.courseList)
+    //     wx.setStorage({
+    //       key: "courseList",
+    //       data: that.data.courseList
+    //     })
+    //     wx.stopPullDownRefresh()
+    //   }
+    // })
   },
 
   toFavor: function () {

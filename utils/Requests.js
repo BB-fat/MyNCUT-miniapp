@@ -3,6 +3,10 @@ export class Requests {
 
     static token
 
+    static minute = 60000
+    static hour = 3600000
+    static day = 86400000
+
     static refreshToken(success) {
         let that = this
         wx.login({
@@ -34,7 +38,11 @@ export class Requests {
         })
     }
 
-    static get(url, data = null, success) {
+    static get({
+        url,
+        data = null,
+        success,
+    }) {
         let that = this
         wx.request({
             method: "GET",
@@ -48,14 +56,68 @@ export class Requests {
                     success(res.data.data)
                 } else if (res.data.code == 401) {
                     that.refreshToken(() => {
-                        that.get(url, data, success)
+                        that.get({
+                            url: url,
+                            data: data,
+                            success: success
+                        })
                     })
                 }
             }
         })
     }
 
-    static post(url, data = null, success) {
+    static getWithCache({
+        url,
+        data = null,
+        success,
+        cacheTime = this.hour * 5
+    }) {
+        let that = this
+
+        var doGet = function () {
+            that.get({
+                url: url,
+                data: data,
+                success(data) {
+                    wx.setStorage({
+                        key: url,
+                        data: {
+                            data: data,
+                            validTime: (new Date()).getTime() + cacheTime
+                        }
+                    })
+                    success(data)
+                }
+            })
+        }
+
+        wx.getStorage({
+            key: url,
+            success(res) {
+                if (res.data.validTime > (new Date()).getTime()) {
+                    // 缓存有效
+                    success(res.data.data)
+                } else {
+                    // 缓存无效
+                    wx.removeStorage({
+                        key: url
+                    })
+                    doGet()
+                }
+            },
+            // 没有缓存
+            fail() {
+                doGet()
+            }
+        })
+    }
+
+    static post({
+        url,
+        data = null,
+        success
+    }) {
         let that = this
         wx.request({
             method: "POST",

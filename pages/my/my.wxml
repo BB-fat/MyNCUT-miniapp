@@ -21,7 +21,7 @@
     <image src='/img/my/wifi.svg'></image>
     <text class='tips'>校网流量</text>
     <text wx:if="{{wifiLeft>0}}" class='leftWifi'>剩余{{wifiLeft}}GB</text>
-    <text wx:else class='leftWifi'>已使用超过30G</text>
+    <text wx:else class='leftWifi'>已使用超过50G</text>
     <progress class='wifiProgress' percent="{{wifiProgress}}" active active-mode="backwards" activeColor="#337DEF" border-radius='9' stroke-width='20' font-size='14'></progress>
   </view>
   <view class="button-area">
