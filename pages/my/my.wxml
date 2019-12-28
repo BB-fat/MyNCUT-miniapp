@@ -7,11 +7,11 @@
       <view class="cardViewMid">
         <view>
           <text class="card-name">{{userInfo.name}}</text>
-          <image wx:if='{{userInfo.sex==1}}' src='/img/my/male.png' class="card-male"></image>
+          <image wx:if='{{userInfo.sex=="男"}}' src='/img/my/male.png' class="card-male"></image>
           <image wx:else src='/img/my/female.png' class="card-male"></image>
         </view>
         <view class='row0'>
-          <text class="card-userid">{{userInfo.userid}}</text>
+          <text class="card-userid">{{userInfo.sno}}</text>
           <text class="card-class">{{userInfo.class}}</text>
         </view>
       </view>

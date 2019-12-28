@@ -38,32 +38,55 @@ export class Requests {
         })
     }
 
-    static get({
+    static doRequest({
+        method,
         url,
-        data = null,
-        success,
+        header = {},
+        data,
+        success
     }) {
         let that = this
+        header["Token"] = this.token
         wx.request({
-            method: "GET",
+            method: method,
             url: this.baseUrl + url,
-            header: {
-                "Token": this.token
-            },
+            header: header,
             data: data,
             success(res) {
                 if (res.data.code == 200) {
                     success(res.data.data)
                 } else if (res.data.code == 401) {
                     that.refreshToken(() => {
-                        that.get({
+                        that.doRequest({
+                            method: method,
                             url: url,
+                            header: header,
                             data: data,
                             success: success
                         })
                     })
                 }
+            },
+            fail(res) {
+                console.log(res)
+                wx.showToast({
+                    title: '网络异常',
+                    icon: "none"
+                })
             }
+        })
+    }
+
+    static get({
+        url,
+        data = null,
+        success,
+    }) {
+        this.doRequest({
+            method: "GET",
+            url: url,
+            data: data,
+            success: success
         })
     }
 
@@ -74,14 +97,14 @@ export class Requests {
         cacheTime = this.hour * 5
     }) {
         let that = this
-
+        // 执行请求
         var doGet = function () {
             that.get({
                 url: url,
                 data: data,
                 success(data) {
                     wx.setStorage({
-                        key: url,
+                        key: makeKey(),
                         data: {
                             data: data,
                             validTime: (new Date()).getTime() + cacheTime
@@ -91,9 +114,17 @@ export class Requests {
                 }
             })
         }
+        // 构造缓存的key
+        var makeKey = function () {
+            var params = []
+            for (var key in data) {
+                params.push(key + "=" + data[key])
+            }
+            return params.length > 0 ? (url + "?" + params.join("&")) : url
+        }
 
         wx.getStorage({
-            key: url,
+            key: makeKey(),
             success(res) {
                 if (res.data.validTime > (new Date()).getTime()) {
                     // 缓存有效
@@ -101,7 +132,7 @@ export class Requests {
                 } else {
                     // 缓存无效
                     wx.removeStorage({
-                        key: url
+                        key: makeKey()
                     })
                     doGet()
                 }
@@ -118,79 +149,55 @@ export class Requests {
         data = null,
         success
     }) {
-        let that = this
-        wx.request({
+        this.doRequest({
             method: "POST",
-            url: this.baseUrl + url,
+            url: url,
             header: {
-                "Token": this.token,
                 "Content-Type": "application/x-www-form-urlencoded"
             },
             data: data,
-            success(res) {
-                if (res.data.code == 200) {
-                    success(res.data.data)
-                } else if (res.data.code == 401) {
-                    that.refreshToken(() => {
-                        that.post(url, data, success)
-                    })
-                }
-            }
+            success: success
         })
     }
 
-    static put(url, data = null, success) {
-        let that = this
-        wx.request({
+    static put({
+        url,
+        data = null,
+        success
+    }) {
+        this.doRequest({
             method: "PUT",
-            url: this.baseUrl + url,
+            url: url,
             header: {
-                "Token": this.token,
                 "Content-Type": "application/x-www-form-urlencoded"
             },
             data: data,
-            success(res) {
-                if (res.data.code == 200) {
-                    success(res.data.data)
-                } else if (res.data.code == 401) {
-                    that.refreshToken(() => {
-                        that.put(url, data, success)
-                    })
-                }
-            }
+            success: success
         })
     }
 
-    static delete(url, data = null, success) {
-        let that = this
-        wx.request({
+    static delete({
+        url,
+        data = null,
+        success
+    }) {
+        this.doRequest({
             method: "DELETE",
-            url: this.baseUrl + url,
-            header: {
-                "Token": this.token,
-            },
+            url: url,
             data: data,
-            success(res) {
-                if (res.data.code == 200) {
-                    success(res.data.data)
-                } else if (res.data.code == 401) {
-                    that.refreshToken(() => {
-                        that.delete(url, data, success)
-                    })
-                }
-            }
+            success: success
         })
     }
 
-    static download(url, success) {
-        wx.downloadFile({
-            header: {
-                Token: this.token
-            },
-            url: url, //仅为示例，并非真实的资源
-            success(res) {
-                success(res)
-            }
-        })
-    }
+    // static download(url, success) {
+    //     wx.downloadFile({
+    //         header: {
+    //             Token: this.token
+    //         },
+    //         url: url, //仅为示例，并非真实的资源
+    //         success(res) {
+    //             success(res)
+    //         }
+    //     })
+    // }
 }

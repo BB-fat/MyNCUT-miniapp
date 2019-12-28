@@ -18,10 +18,10 @@
           <view class='courseware' hover="true" hover-class="wordhover" bindtap='getDocument' data-index="{{index}}">
             课件资料
           </view>
-          <view wx:if="{{homeList_all[item.course_name]==undefined}}" style="color:#808080" hover-class="wordhover" bindtap='getHomework' data-course_class='{{item.course_class}}' data-course_name='{{item.course_name}}'>
+          <view wx:if="{{homework[item.course_code].length>0}}" style="color:red" style="color:#FF88F7" hover-class="wordhover" bindtap='tapHomework' data-course_class='{{item.course_class}}' data-course_code='{{item.course_code}}'>
             课程作业
           </view>
-          <view wx:else style="color:red" style="color:#FF88F7" hover-class="wordhover" bindtap='getHomework' data-course_class='{{item.course_class}}' data-course_name='{{item.course_name}}'>
+          <view wx:else style="color:#808080" hover-class="wordhover" bindtap='tapHomework' data-course_class='{{item.course_class}}' data-course_code='{{item.course_code}}'>
             课程作业
           </view>
         </view>
