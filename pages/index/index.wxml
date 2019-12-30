@@ -33,7 +33,7 @@
     <index-button icon="/img/index/chengji.svg" text="成绩" url="{{'.../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_score'}}" />
     <index-button icon="/img/index/jidian.svg" text="绩点" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/grade/list'}}" />
     <index-button icon="/img/index/xuefen.svg" text="学分" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate'}}" />
-    <index-button icon="/img/index/SchoolCard.svg" text="一卡通" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/extensions/wap/campuscard.html'}}" />
+    <index-button icon="/img/index/selectcourse.svg" text="选课" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/course/list'}}" />
   </view>
   <view class='cat-box'>
     <image src='/img/index/dialog.svg' class='dialog' hidden='{{showCat}}'>

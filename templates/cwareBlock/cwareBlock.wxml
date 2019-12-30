@@ -9,7 +9,7 @@
       <image class="file-icon" wx:else src="/img/CwareBlock/other.png" />
       <view class="CwareBlock-midView">
         <scroll-view class="CwareBlock-nameView" scroll-x="{{true}}">
-          <text class="CwareBlock-name">{{item.file_name}}</text>
+          <text class="CwareBlock-name">{{item.filename}}</text>
         </scroll-view>
         <text class="CwareBlock-size">{{item.size}}</text>
         <text class="CwareBlock-date">{{item.date}}</text>

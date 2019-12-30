@@ -60,10 +60,13 @@ Page({
     }) //end getstorge
   },
 
-  getDocument: function (e) { //课件资料
+  toCourseware: function (e) { //课件资料
     var that = this
     wx.navigateTo({
-      url: '../document/document?type=all&nowData=' + JSON.stringify(that.data.courseList[e.currentTarget.dataset.index]),
+      url: Requests.makeUrl("../courseware/courseware", {
+        course_code: that.data.courseList[e.currentTarget.dataset.index].course_code,
+        course_name: that.data.courseList[e.currentTarget.dataset.index].course_name
+      }),
     })
   },
 
@@ -112,6 +115,7 @@ Page({
           key: "courseList",
           data: that.data.courseList
         })
+        wx.stopPullDownRefresh()
       },
     })
   },

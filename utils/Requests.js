@@ -7,6 +7,15 @@ export class Requests {
     static hour = 3600000
     static day = 86400000
 
+    // 由对象生成队列参数
+    static makeUrl(url, data) {
+        var params = []
+        for (var key in data) {
+            params.push(key + "=" + data[key])
+        }
+        return params.length > 0 ? (url + "?" + params.join("&")) : url
+    }
+
     static refreshToken(success) {
         let that = this
         wx.login({
@@ -94,7 +103,8 @@ export class Requests {
         url,
         data = null,
         success,
-        cacheTime = this.hour * 5
+        cacheTime = this.hour * 5,
+        forceRefresh = false
     }) {
         let that = this
         // 执行请求
@@ -102,46 +112,39 @@ export class Requests {
             that.get({
                 url: url,
                 data: data,
-                success(data) {
+                success(resData) {
+                    let t = this
                     wx.setStorage({
-                        key: makeKey(),
+                        key: that.makeUrl(url, data),
                         data: {
-                            data: data,
+                            data: resData,
                             validTime: (new Date()).getTime() + cacheTime
                         }
                     })
-                    success(data)
+                    success(resData)
                 }
             })
         }
-        // 构造缓存的key
-        var makeKey = function () {
-            var params = []
-            for (var key in data) {
-                params.push(key + "=" + data[key])
-            }
-            return params.length > 0 ? (url + "?" + params.join("&")) : url
-        }
 
-        wx.getStorage({
-            key: makeKey(),
-            success(res) {
-                if (res.data.validTime > (new Date()).getTime()) {
-                    // 缓存有效
-                    success(res.data.data)
-                } else {
-                    // 缓存无效
-                    wx.removeStorage({
-                        key: makeKey()
-                    })
+        if (forceRefresh) {
+            doGet()
+        } else {
+            wx.getStorage({
+                key: that.makeUrl(url, data),
+                success(res) {
+                    if (res.data.validTime > (new Date()).getTime()) {
+                        // 缓存有效
+                        success(res.data.data)
+                    } else {
+                        doGet()
+                    }
+                },
+                // 没有缓存
+                fail() {
                     doGet()
                 }
-            },
-            // 没有缓存
-            fail() {
-                doGet()
-            }
-        })
+            })
+        }
     }
 
     static post({
