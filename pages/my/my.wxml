@@ -1,5 +1,4 @@
 <import src="../../templates/myButton/myButton.wxml" />
-
 <view class='mainView'>
   <view class="card">
     <view class="cardView">
@@ -20,11 +19,19 @@
     </view>
   </view>
   <view class='wifiView' bindtap='flowTap'>
-    <image src='/img/my/wifi.svg'></image>
-    <text class='tips'>校网流量</text>
-    <text wx:if="{{wifiLeft>0}}" class='leftWifi'>剩余{{wifiLeft}}GB</text>
-    <text wx:else class='leftWifi'>已使用超过30G</text>
-    <progress class='wifiProgress' percent="{{wifiProgress}}" active active-mode="backwards" activeColor="#337DEF" border-radius='9' stroke-width='20' font-size='14'></progress>
+    <view style="  display: flex;flex-direction: row;align-items:center">
+      <image src='/img/my/wifi.svg' style="height:50rpx;width:40rpx"></image>
+      <view style="width:20rpx"></view>
+      <text style="font-size:48rpx;color:#276DED">校园网</text>
+    </view>
+    <view style="  display: flex;flex-direction: column;height: 90rpx;">
+      <text style="font-size:20rpx;color:#60B5F4">已使用流量</text>
+      <view style=" display: flex;flex-direction: row;align-items: flex-end;">
+        <text style="font-size:48rpx;color:#276DED;  line-height: 55rpx;">{{wifiUsage}}</text>
+        <text style="font-size:20rpx;color:#818181">GB</text>
+      </view>
+    </view>
+    <!-- <text class='leftWifi'>已使用{{wifiUsage}}GB</text> -->
   </view>
   <view class="button-area">
     <view class='row1'>
@@ -42,14 +49,20 @@
     <image class='cat' src='/img/index/cat.svg'></image>
     <text class='title'>我的北方py（朋友）合作中心</text>
     <view class='message'>
-<text>如果您有需要~
+      <text>如果您有需要~
 预约方式：
-编辑邮件至：</text><view bindtap='copyText' data-text='contents'><text class='email' selectable='true'>{{contents}}</text></view><text>邮件内容包括：推送的链接、推送预览、 横版海报、推送封面（用于Banner）、联系方式（微信号或手机）
+编辑邮件至：</text>
+      <view bindtap='copyText' data-text='contents'>
+        <text class='email' selectable='true'>{{contents}}</text>
+      </view>
+      <text>
+        邮件内容包括：推送的链接、推送预览、 横版海报、推送封面（用于Banner）、联系方式（微信号或手机）
  稿件规范：
   1.内容合规，无不良内容。 
  2.推送内容质量好，视觉效果优良。
   3.欢迎原创推送，拒绝推广转载推送。
-   了解更多请点击联系客服</text>
+   了解更多请点击联系客服
+      </text>
     </view>
     <view class='btn-row'>
       <button open-type='contact' class='contact' bindtap='closeTap'>
