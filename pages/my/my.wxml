@@ -19,9 +19,19 @@
     </view>
   </view>
   <view class='wifiView' bindtap='flowTap'>
-    <!-- <image src='/img/my/wifi.svg'></image>
-    <text class='tips'>校网流量</text> -->
-    <text class='leftWifi'>已使用{{wifiUsage}}GB</text>
+    <view style="  display: flex;flex-direction: row;align-items:center">
+      <image src='/img/my/wifi.svg' style="height:50rpx;width:40rpx"></image>
+      <view style="width:20rpx"></view>
+      <text style="font-size:48rpx;color:#276DED">校园网</text>
+    </view>
+    <view style="  display: flex;flex-direction: column;height: 90rpx;">
+      <text style="font-size:20rpx;color:#60B5F4">已使用流量</text>
+      <view style=" display: flex;flex-direction: row;align-items: flex-end;">
+        <text style="font-size:48rpx;color:#276DED;  line-height: 55rpx;">{{wifiUsage}}</text>
+        <text style="font-size:20rpx;color:#818181">GB</text>
+      </view>
+    </view>
+    <!-- <text class='leftWifi'>已使用{{wifiUsage}}GB</text> -->
   </view>
   <view class="button-area">
     <view class='row1'>
