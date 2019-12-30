@@ -113,7 +113,6 @@ export class Requests {
                 url: url,
                 data: data,
                 success(resData) {
-                    let t = this
                     wx.setStorage({
                         key: that.makeUrl(url, data),
                         data: {

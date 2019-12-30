@@ -5,7 +5,6 @@ import {
 
 import {
   lookFile,
-  downloadFile,
   onFavor,
   offFavor
 } from "../../utils/document.js"
