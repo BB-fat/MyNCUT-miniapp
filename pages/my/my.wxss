@@ -96,45 +96,19 @@ page {
 }
 
 .wifiView {
-  position: relative;
   margin-top: 15rpx;
-  z-index: 0;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 686rpx;
-  height: 80rpx;
+  width: 566rpx;
+  height: 108rpx;
   background-color: #FFF;
   border-radius: 8px;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
 }
 
-.leftWifi {
-  position: absolute;
-  z-index: 1;
-  left: 190rpx;
-  font-size: 14rpx;
-  color: #FAFAFA;
-}
-
-.wifiView image {
-  width: 30.46rpx;
-  height: 37.12rpx;
-  margin-right: 25rpx;
-  margin-left: -20rpx;
-  padding-left: 10rpx;
-}
-
-.wifiView .tips {
-  font-weight: lighter;
-  margin-right: 20rpx;
-  font-size: 22rpx;
-  line-height: 30rpx;
-}
-
-.wifiProgress {
-  width: 70%;
-}
 
 .button-area {
   display: flex;

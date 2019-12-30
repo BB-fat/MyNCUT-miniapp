@@ -27,20 +27,12 @@ Page({
         })
       }
     })
-  },
-
-  onShow: function () {
-    var that = this
-    // 让进度条重新动画
-    this.setData({
-      wifiProgress: 0,
-    })
+    // 请求校网数据
     Requests.getWithCache({
       url: "/v1/net",
       success(data) {
         that.setData({
-          wifiProgress: parseInt(parseFloat(data[7]) / (50 * 1024) * 100),
-          wifiLeft: (50 - parseFloat(data[7]) / 1024).toFixed(2)
+          wifiUsage: (parseFloat(data[7]) / 1024).toFixed(2)
         })
       },
       cacheTime: Requests.hour * 2
