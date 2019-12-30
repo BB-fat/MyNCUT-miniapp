@@ -55,7 +55,7 @@ Page({
       })
     }
     // 首次加载流量条
-    else if (this.data.wifiProgress == undefined) {
+    else if (this.data.wifiUsage == undefined) {
       this.setData({
         userInfo: app.globalData.userInfo
       })
@@ -66,19 +66,9 @@ Page({
         },
         success(res) {
           that.setData({
-            wifiProgress: parseInt(parseFloat(res.data) / (50 * 1024) * 100),
-            wifiLeft: (50 - parseFloat(res.data) / 1024).toFixed(2)
+            wifiUsage: (parseFloat(res.data) / 1024).toFixed(2)
           })
         }
-      })
-    } else {
-      // 让进度条每一次切换到这个页面都能加载动画
-      var wifiProgress = this.data.wifiProgress
-      this.setData({
-        wifiProgress: 0,
-      })
-      this.setData({
-        wifiProgress: wifiProgress
       })
     }
   },
