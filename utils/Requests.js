@@ -1,6 +1,6 @@
 export class Requests {
-    // static baseUrl = "http://127.0.0.1:8080"
-    static baseUrl = "https://myncutdev.ncut.edu.cn"
+    // static baseUrl = "http://127.0.0.1:8080/v1"
+    static baseUrl = "https://myncutdev.ncut.edu.cn/v1"
 
     static token
 
@@ -25,7 +25,7 @@ export class Requests {
                     //发起网络请求
                     wx.request({
                         method: "POST",
-                        url: that.baseUrl + '/v1/auth',
+                        url: that.baseUrl + '/auth',
                         header: {
                             "Content-Type": "application/x-www-form-urlencoded"
                         },
@@ -75,6 +75,12 @@ export class Requests {
                             success: success
                         })
                     })
+                } else {
+                    console.log(res)
+                    wx.showToast({
+                        title: '网络异常',
+                        icon: "none"
+                    })
                 }
             },
             fail(res) {
@@ -119,6 +125,11 @@ export class Requests {
                         data: {
                             data: resData,
                             validTime: (new Date()).getTime() + cacheTime
+                        },
+                        // 创建失败尝试清空缓存
+                        fail(res) {
+                            console.log(res.data)
+                            wx.clearStorage()
                         }
                     })
                     success(resData)
@@ -187,20 +198,27 @@ export class Requests {
         this.doRequest({
             method: "DELETE",
             url: url,
+            header: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
             data: data,
             success: success
         })
     }
 
-    // static download(url, success) {
-    //     wx.downloadFile({
-    //         header: {
-    //             Token: this.token
-    //         },
-    //         url: url, //仅为示例，并非真实的资源
-    //         success(res) {
-    //             success(res)
-    //         }
-    //     })
-    // }
+    // 返回downloadtask
+    static download({
+        url,
+        success
+    }) {
+        return wx.downloadFile({
+            header: {
+                Token: this.token
+            },
+            url: this.baseUrl + url,
+            success(res) {
+                success(res)
+            }
+        })
+    }
 }

@@ -1,29 +1,27 @@
-<template name='CwareBlock'>
-    <view class="CwareBlock-mainView">
-        <view class='coursewareBlock'>
-            <image class="file-icon" wx:if="{{data.type=='pdf'}}" src="/img/CwareBlock/pdf.png" />
-            <image class="file-icon" wx:elif="{{data.type=='doc'||data.type=='docx'}}" src="/img/CwareBlock/word.png" />
-            <image class="file-icon" wx:elif="{{data.type=='xlsx'||data.type=='xls'}}" src="/img/CwareBlock/excel.png" />
-            <image class="file-icon" wx:elif="{{data.type=='ppt'||data.type=='pptx'}}" src="/img/CwareBlock/ppt.png" />
-            <image class="file-icon" wx:elif="{{data.type=='zip'||data.type=='rar'||data.type=='7z'}}" src="/img/CwareBlock/zip.png" />
-            <image class="file-icon" wx:else src="/img/CwareBlock/other.png" />
-            <view class="CwareBlock-midView">
-                <scroll-view class="CwareBlock-nameView" scroll-x="{{true}}">
-                    <text class="CwareBlock-name">{{data.file_name}}</text>
-                </scroll-view>
-                <text class="CwareBlock-size">{{data.size}}</text>
-                <text class="CwareBlock-date">{{data.date}}</text>
+<view class="main-view" bindtap="tapCard">
+    <image class="icon" wx:if="{{icons[courseware.type]!=undefined}}" src="{{icons[courseware.type]}}" />
+    <image class="icon" wx:else src="{{icons.others}}" />
+    <view class="right">
+        <view class="line">
+            <view wx:if="{{downloading}}" style="display: flex;flex-direction: row;">
+                <text style="font-size=24rpx;color:#60B5F4">加载中...</text>
+                <text style="font-size=24rpx;color:#276DED">{{progress}}</text>
             </view>
+            <text wx:else style="font-size:34rpx;width:90%">{{courseware.filename}}</text>
+            <image wx:if="{{!downloading&&followed}}" class="star" src="/img/CoursewareCard/full-star.png" catchtap="tapStar" />
+            <image wx:if="{{!downloading&&!followed}}" class="star" src="/img/CoursewareCard/empty-star.png" catchtap="tapStar" />
         </view>
-        <view class="CwareBlock-tapView" data-index='{{index}}' bindtap='lookFile'></view>
-        <view class="CwareBlock-button">
-            <image wx:if='{{!data.favourite}}' class='CwareBlock-btnImg' bindtap='favourites' data-index='{{index}}' data-filename='{{data.file_name}}' src='/img/CwareBlock/favor_inactive.svg'></image>
-            <image wx:else class='CwareBlock-btnImg' bindtap='unfavourites' data-index='{{index}}' data-filename='{{data.file_name}}' src='/img/CwareBlock/favor_active.svg'></image>
-            <image class='CwareBlock-btnImg' bindtap='downFile' data-index='{{index}}' src='/img/CwareBlock/download.svg'></image>
-            <view class='CwareBlock-shareImgView' hover-class="CwareBlock-hover">
-                <button class='CwareBlock-shareBtn' open-type="share" data-index='{{index}}'></button>
-                <image class='CwareBlock-shareImg' src='/img/CwareBlock/share.svg'></image>
+        <view class="line">
+            <view wx:if="{{downloading}}" class="progress">
+                <view wx:for="{{[10,20,30,40,50,60,70,80,90,100]}}">
+                    <view wx:if="{{progress>item}}" class="progress-1"></view>
+                    <view wx:elif="{{progress<item&&progress>=item-10}}" class="progress-2"></view>
+                    <view wx:elif="{{progress<item}}" class="progress-3"></view>
+                </view>
             </view>
+            <text wx:else style="font-size:24rpx;color:#818181">{{size}}</text>
+            <image wx:if="{{downloading}}" class="star" src="/img/CoursewareCard/cancel.png" catchtap="abort" />
         </view>
+        <text style="font-size:24rpx">{{courseware.date}}</text>
     </view>
-</template>
+</view>

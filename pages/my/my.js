@@ -19,7 +19,7 @@ Page({
   onLoad: function () {
     let that = this
     Requests.getWithCache({
-      url: "/v1/user",
+      url: "/user",
       cacheTime: Requests.day * 10,
       success(data) {
         that.setData({
@@ -29,7 +29,7 @@ Page({
     })
     // 请求校网数据
     Requests.getWithCache({
-      url: "/v1/net",
+      url: "/net",
       success(data) {
         that.setData({
           wifiUsage: (parseFloat(data[7]) / 1024).toFixed(2)

@@ -1,21 +1,21 @@
 <view class="centerView">
   <view class="mainView">
-    <view style='height:10rpx;'></view>
     <block class='courseList' wx:for='{{courseList}}'>
-      <view class='courseBlock'>
-        <view class='name_top'>
-          <view class='course_name'>{{item.course_name}}</view>
-          <view class='imgView' hover="true" hover-class="imghover">
-            <image class='img_top' src='../../img/iclass/top.svg' data-index="{{index}}" bindtap='toTop'></image>
+      <view style="height:20rpx"></view>
+      <view class='course'>
+        <view class='course-top'>
+          <view style="font-size: 35rpx;font-weight: bold;">{{item.course_name}}</view>
+          <view class='course-top-img' hover="true" hover-class="imghover">
+            <image style="height: 32rpx;width: 38rpx;" src='../../img/iclass/top.svg' data-index="{{index}}" bindtap='toTop'></image>
           </view>
         </view>
-        <view class='column_tc'>
-          <view class='course_teacher'>{{item.teacher_name}}</view>
-          <view class='course_class'>{{item.course_class}}</view>
+        <view>
+          <view class='teacher'>{{item.teacher_name}}</view>
+          <view class='class'>{{item.course_class}}</view>
         </view>
-        <image class='line' src='../../img/iclass/line.jpg'></image>
-        <view class='ware_work'>
-          <view class='courseware' hover="true" hover-class="wordhover" bindtap='toCourseware' data-index="{{index}}">
+        <view class="divider"></view>
+        <view class='course-bottom'>
+          <view style="color: #276DED" hover="true" hover-class="wordhover" bindtap='toCourseware' data-index="{{index}}">
             课件资料
           </view>
           <view wx:if="{{homework[item.course_code].length>0}}" style="color:red" style="color:#FF88F7" hover-class="wordhover" bindtap='tapHomework' data-course_class='{{item.course_class}}' data-course_code='{{item.course_code}}'>

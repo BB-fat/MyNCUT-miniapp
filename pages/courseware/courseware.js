@@ -36,7 +36,7 @@ Page({
       title: options.course_name
     })
     Requests.getWithCache({
-      url: "/v1/iclass/courseware",
+      url: "/iclass/courseware",
       data: {
         course_code: options.course_code
       },
@@ -54,7 +54,7 @@ Page({
   onPullDownRefresh: function () {
     let that = this
     Requests.getWithCache({
-      url: "/v1/iclass/courseware",
+      url: "/iclass/courseware",
       data: {
         course_code: that.data.course_code
       },

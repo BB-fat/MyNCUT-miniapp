@@ -1,97 +1,86 @@
-.centerView{
+.centerView {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.mainView{
+.mainView {
   position: absolute;
   z-index: 1;
 }
 
-.courseBlock {
-  width: 704rpx;
+.course {
+  background-color: #FAFAFA;
+  width: 586rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 auto;
-  margin-bottom: 25rpx;
-  margin-top: 10rpx;
-  border-radius: 12px;
-  box-shadow: 0px 0px 30px 4px rgb(247, 249, 255);
+  border-radius: 8px;
+  padding: 22rpx 50rpx 1rpx 50rpx;
+  box-shadow: 0rpx 6rpx 12rpx rgba(0, 0, 0, 0.2);
 }
 
-.course_name {
-  margin-left: 30rpx;
-  color: rgba(0, 0, 0, 1);
-  font-size: 35rpx;
-  font-weight: bold;
+.divider {
+  margin-top: 30rpx;
+  height: 1px;
+  background-color: #276DED;
+  width: 646rpx;
+  align-self: center;
 }
 
-.name_top{
+.course-top {
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 30rpx;
 }
 
-.imgView{
+.course-top-img {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-  margin-left: auto;
-  margin-right: 40rpx;
-  margin-top: 10rpx;
-}
-.img_top {
-  height: 32rpx;
-  width: 38rpx;
 }
 
-.course_teacher {
-  margin-left: 38rpx; 
+.teacher {
   color: rgba(188, 188, 188, 1);
   font-size: 25rpx;
   font-weight: bold;
 }
 
-.course_class {
-  margin-left: 38rpx;
-  margin-top: 9rpx;
+.class {
   color: rgba(188, 188, 188, 1);
   font-size: 25rpx;
   font-weight: bold;
 }
-.line{
+
+.line {
   margin-top: 30rpx;
   height: 3rpx;
   width: 100%;
 }
-.ware_work {
-  height:75rpx;
+
+.course-bottom {
+  height: 75rpx;
   display: flex;
   flex-direction: row;
-  align-items:center; 
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 35rpx;
   font-size: 35rpx;
-}
-
-.courseware {
-  color: rgba(119, 168, 255, 1);
 }
 
 .wordhover {
   border-radius: 20rpx;
-  transform: scale(0.95,0.95);
-}
-.imghover {
-  border-radius: 20rpx;
-  transform: translate(0px,-3px) ;
+  transform: scale(0.95, 0.95);
 }
 
-.myfavor{
+.imghover {
+  border-radius: 20rpx;
+  transform: translate(0px, -3px);
+}
+
+.myfavor {
   position: fixed;
   z-index: 10;
   width: 180rpx;

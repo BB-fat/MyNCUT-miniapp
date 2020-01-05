@@ -1,11 +1,10 @@
 //app.js
-
 import {
-  myURL
-} from "setting.js"
-
+  Follow
+} from "./utils/Follow"
 App({
-  globalData:{
+  globalData: {},
+  onLaunch: function () {
+    Follow.init()
   }
-  
 })

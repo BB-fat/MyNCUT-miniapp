@@ -20,7 +20,7 @@ Page({
     }
     // 获取Banner和Notice数据
     Requests.getWithCache({
-      url: "/v1/banner",
+      url: "/banner",
       success(data) {
         that.setData({
           indexBanner: data.indexBanner,

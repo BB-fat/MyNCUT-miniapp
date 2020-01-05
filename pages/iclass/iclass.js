@@ -21,7 +21,7 @@ Page({
         course_codes.push(element.course_code)
       });
       Requests.getWithCache({
-        url: "/v1/iclass/homework",
+        url: "/iclass/homework",
         cacheTime: Requests.hour,
         data: {
           course_code: course_codes.join(",")
@@ -44,7 +44,7 @@ Page({
       },
       fail: function () {
         Requests.get({
-          url: "/v1/iclass/course",
+          url: "/iclass/course",
           success(data) {
             that.setData({
               courseList: data
@@ -106,7 +106,7 @@ Page({
   onPullDownRefresh: function () {
     let that = this
     Requests.get({
-      url: "/v1/iclass/course",
+      url: "/iclass/course",
       success(data) {
         that.setData({
           courseList: data
