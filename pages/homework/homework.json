@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "homework": "../components/HomeworkCard/HomeworkCard"
+  }
 }

@@ -1,31 +1,6 @@
-<view style='height:30rpx;'></view>
-<view class='main'>
-  <block class='homeList' wx:for='{{homeList}}'>
-    <view class='homeBlock'>
-      <view class='name_favor'>
-        <view class='home_name'>{{item.assignment_name}}</view>
-        <view class='favorView'>
-          <!-- <image wx:if='{{!item.favourite}}' bindtap='favourites' data-index='{{index}}' class='unfavor_img' src='../../imgs/document/unfavourate.png'></image>
-          <image wx:else class='favor_img' bindtap='unfavourites' data-index='{{index}}' src='../../imgs/document/favourate.png'></image> -->
-          <image class='favor_img'  src='../../imgs/document/white.png'></image>
-        </view>
-      </view>
-      <image class='line' src='../../imgs/document/line.jpg'></image>
-      <view class='doHome'>
-        <!-- <view class='imgView' hover="true" hover-class="imghover">
-          <image class='img' bindtap='lookFile' data-index='{{index}}'  src='../../imgs/document/look.jpg'></image>
-        </view>
-        <view class='imgView' hover="true" hover-class="imghover">
-          <image class='img' bindtap='downFile' data-index='{{index}}' src='../../imgs/document/download.jpg'></image>
-        </view>
-        <view class='imgView' hover="true" hover-class="imghover">
-          <image class='img' src='../../imgs/document/send.jpg'></image>
-        </view> -->
-        <view class='timeView' >
-          <text class='end_time' >截止时间:{{item.end_date}}</text>
-        </view>
-      </view>
-    </view>
+<view class='main-view'>
+  <block wx:for="{{homework}}">
+    <view style="height:30rpx"></view>
+    <homework homework="{{item}}" />
   </block>
-  <view style='height:40rpx'></view>
 </view>

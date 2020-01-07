@@ -1,0 +1,19 @@
+.main-view {
+    height: 130rpx;
+    width: 650rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12rpx 24rpx;
+    background-color: #FAFAFA;
+    border-radius: 8px;
+    box-shadow: 0rpx 6rpx 12rpx rgba(0, 0, 0, 0.2);
+}
+
+.divider {
+    margin-top: 10rpx;
+    height: 1px;
+    background-color: #276DED;
+    width: 646rpx;
+    align-self: center;
+}

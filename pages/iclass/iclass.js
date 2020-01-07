@@ -79,9 +79,8 @@ Page({
         title: '此课程无作业',
       })
     } else {
-      app.globalData.homework = that.data.homework
       wx.navigateTo({
-        url: '../homework/homework?course_name=' + course_name,
+        url: '../homework/homework?course_code=' + course_code,
       })
     }
   },

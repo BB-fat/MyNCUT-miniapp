@@ -18,7 +18,7 @@
           <view style="color: #276DED" hover="true" hover-class="wordhover" bindtap='toCourseware' data-index="{{index}}">
             课件资料
           </view>
-          <view wx:if="{{homework[item.course_code].length>0}}" style="color:red" style="color:#FF88F7" hover-class="wordhover" bindtap='tapHomework' data-course_class='{{item.course_class}}' data-course_code='{{item.course_code}}'>
+          <view wx:if="{{homework[item.course_code].length>0}}" style="color:red" style="color:#60B5F4" hover-class="wordhover" bindtap='tapHomework' data-course_class='{{item.course_class}}' data-course_code='{{item.course_code}}'>
             课程作业
           </view>
           <view wx:else style="color:#808080" hover-class="wordhover" bindtap='tapHomework' data-course_class='{{item.course_class}}' data-course_code='{{item.course_code}}'>

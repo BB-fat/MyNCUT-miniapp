@@ -1,6 +1,6 @@
 export class Requests {
-    // static baseUrl = "http://127.0.0.1:8080/v1"
-    static baseUrl = "https://myncutdev.ncut.edu.cn/v1"
+    static baseUrl = "http://127.0.0.1:8080/v1"
+    // static baseUrl = "https://myncutdev.ncut.edu.cn/v1"
 
     static token
 

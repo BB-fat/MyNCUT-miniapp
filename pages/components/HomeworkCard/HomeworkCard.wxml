@@ -1,0 +1,5 @@
+<view class="main-view">
+    <text style="font-size:34rpx">{{homework.assignment_name}}</text>
+    <view class="divider"></view>
+    <text style="font-size:24rpx;color:#818181;margin-top: 10rpx;">截止时间：{{homework.end_date}}</text>
+</view>
