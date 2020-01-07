@@ -1,5 +1,3 @@
-@import "../../templates/cwareBlock/cwareBlock.wxss";
-
 .inform {
   margin: 0 auto;
   width: 100%;

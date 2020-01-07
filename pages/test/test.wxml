@@ -1,2 +1,3 @@
 <!-- pages/test/test.wxml -->
-<button open-type="getUserInfo" bindgetuserinfo="onTab">获取信息</button>
+<!-- <button open-type="getUserInfo" bindgetuserinfo="onTab">获取信息</button> -->
+<search placeholder="请输入搜索字段" search="{{search}}" />

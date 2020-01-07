@@ -1,10 +1,5 @@
-<view wx:if='{{showLoading}}' class='loading'>
-  <text>loading...</text>
-</view>
-<view wx:else class="main-view">
-  <view class='mySearch'>
-    <input placeholder="请输入关键字" placeholder-class="place-holder" confirm-type='search' value="{{inputValue}}" bindinput='search'></input>
-  </view>
+<search placeholder="搜索课件" search="{{search}}" />
+<view class="main-view">
   <view wx:if='{{searchInfo}}' class='search_inform'>
     <text class='txtInfo'>---无相关内容---</text>
   </view>

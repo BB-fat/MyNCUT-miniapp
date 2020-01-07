@@ -8,13 +8,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
-  },
-
-  onTab: function (e) {
-    Requests.get("/v1/user", null, (data) => {
-      console.log(data)
-    })
+    search: function (e) {
+      wx.showToast({
+        title: e,
+        icon: 'success',
+        duration: 10000
+      })
+    }
   },
 
   /**

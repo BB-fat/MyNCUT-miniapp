@@ -2,6 +2,7 @@
   "enablePullDownRefresh": true,
   "backgroundTextStyle": "dark",
   "usingComponents": {
-    "courseware": "../components/CoursewareCard/CoursewareCard"
+    "courseware": "../components/CoursewareCard/CoursewareCard",
+    "search": "../components/SearchInput/SearchInput"
   }
 }

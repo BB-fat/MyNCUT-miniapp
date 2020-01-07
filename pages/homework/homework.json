@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "课程作业",
   "usingComponents": {
     "homework": "../components/HomeworkCard/HomeworkCard"
   }
