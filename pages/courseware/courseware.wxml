@@ -1,7 +1,7 @@
 <search placeholder="搜索课件" search="{{search}}" />
 <view class="main-view">
-  <view wx:if='{{searchInfo}}' class='search_inform'>
-    <text class='txtInfo'>---无相关内容---</text>
+  <view wx:if='{{coursewareList.length==0}}' class='notfound'>
+    <text style="  color: rgb(163, 159, 159);font-size: 32rpx;">---无相关内容---</text>
   </view>
   <view wx:else>
     <view style='height:20rpx;'></view>

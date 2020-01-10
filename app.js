@@ -2,6 +2,7 @@
 import {
   Follow
 } from "./utils/Follow"
+
 App({
   globalData: {},
   onLaunch: function () {

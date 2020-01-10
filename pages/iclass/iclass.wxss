@@ -54,12 +54,6 @@
   font-weight: bold;
 }
 
-.line {
-  margin-top: 30rpx;
-  height: 3rpx;
-  width: 100%;
-}
-
 .course-bottom {
   height: 75rpx;
   display: flex;

@@ -1,5 +1,0 @@
-{
-  "usingComponents": {
-    "search": "../components/SearchInput/SearchInput"
-  }
-}

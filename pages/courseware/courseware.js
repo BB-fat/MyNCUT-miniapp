@@ -36,7 +36,8 @@ Page({
       title: options.course_name
     })
     wx.showLoading({
-      title: "加载中"
+      title: "加载中",
+      mask: true
     })
     Requests.getWithCache({
       url: "/iclass/courseware",

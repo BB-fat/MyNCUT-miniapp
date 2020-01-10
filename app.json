@@ -2,19 +2,17 @@
   "debug": false,
   "pages": [
     "pages/index/index",
-    "pages/test/test",
-    "pages/myFavor/myFavor",
+    "pages/auth/auth",
     "pages/iclass/iclass",
     "pages/courseware/courseware",
     "pages/my/my",
     "pages/webview/webview",
     "pages/aboutus/aboutus",
-    "pages/homework/homework",
-    "pages/singleFavor/singleFavor"
+    "pages/homework/homework"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarBackgroundColor": "#FAFAFA",
     "navigationBarTitleText": "我的北方",
     "navigationBarTextStyle": "black"
   },

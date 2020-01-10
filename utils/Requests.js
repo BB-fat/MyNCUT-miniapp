@@ -1,6 +1,6 @@
 export class Requests {
-    static baseUrl = "http://127.0.0.1:8080/v1"
-    // static baseUrl = "https://myncutdev.ncut.edu.cn/v1"
+    // static baseUrl = "http://127.0.0.1:8080/v1"
+    static baseUrl = "https://myncutdev.ncut.edu.cn/v1"
 
     static token
 
@@ -37,7 +37,16 @@ export class Requests {
                                 that.token = res2.data.data.Token
                                 success()
                             } else if (res2.data.code == 401) {
-                                // TODO 跳转到云校认证
+                                wx.navigateTo({
+                                    url: "/pages/auth/auth?mode=yunschool"
+                                })
+                            } else if (res2.data.code == 402) {
+                                that.token = res2.data.data.Token
+                                var pages = getCurrentPages()
+                                if (pages[pages.length - 1].route != "pages/auth/auth")
+                                    wx.navigateTo({
+                                        url: "/pages/auth/auth?mode=wechat"
+                                    })
                             }
                         }
                     })
@@ -53,7 +62,7 @@ export class Requests {
         url,
         header = {},
         data,
-        success
+        success = null
     }) {
         let that = this
         header["Token"] = this.token
@@ -64,7 +73,8 @@ export class Requests {
             data: data,
             success(res) {
                 if (res.data.code == 200) {
-                    success(res.data.data)
+                    if (success != null)
+                        success(res.data.data)
                 } else if (res.data.code == 401) {
                     that.refreshToken(() => {
                         that.doRequest({

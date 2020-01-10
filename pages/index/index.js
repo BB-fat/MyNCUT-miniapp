@@ -3,8 +3,6 @@ import {
   Requests
 } from "../../utils/Requests";
 
-var app = getApp()
-
 Page({
   data: {
     showCat: true,

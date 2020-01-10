@@ -1,0 +1,5 @@
+<view wx:if="{{show==0}}">即将进行企业号授权，此过可能持续20秒，请耐心等待</view>
+<web-view wx:elif="{{show==1}}" src="{{url}}" />
+<view wx:else>
+    <button open-type="getUserInfo" bindgetuserinfo="tapButton">立即授权</button>
+</view>

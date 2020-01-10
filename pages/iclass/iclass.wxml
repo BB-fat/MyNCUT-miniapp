@@ -30,4 +30,4 @@
     <view style='height:50rpx'></view>
   </view>
 </view>
-<image class="myfavor" bindtap="toFavor" src="/img/iclass/myfavor.svg" />
+<!-- <image class="myfavor" bindtap="toFavor" src="/img/iclass/myfavor.svg" /> -->

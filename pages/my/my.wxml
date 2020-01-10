@@ -33,7 +33,7 @@
   </view>
   <view class="button-area">
     <view class='row1'>
-      <my-button text="我的收藏" icon="/img/my/myfavor.svg" isContact="{{false}}" url="../myFavor/myFavor"></my-button>
+      <my-button text="我的收藏" icon="/img/my/myfavor.svg" isContact="{{false}}" url=""></my-button>
       <my-button text="毕业资格" icon="/img/my/graduation.svg" isContact="{{false}}" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_graduation/graduate/list'}}"></my-button>
       <my-button text="问题反馈" icon="/img/my/feedback.svg" isContact="{{true}}"></my-button>
       <my-button text="合作推广" icon="/img/my/extend.svg" isContact="{{true}}"></my-button>
