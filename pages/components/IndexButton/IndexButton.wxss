@@ -6,9 +6,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0rpx 0rpx 20rpx 0rpx #e4e3e3;
     border-radius: 20rpx;
     margin-top: 10rpx;
+    box-shadow: 0rpx 6rpx 12rpx rgba(0, 0, 0, 0.1);
 }
 
 .icon {

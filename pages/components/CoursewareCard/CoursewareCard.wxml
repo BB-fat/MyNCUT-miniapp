@@ -5,7 +5,7 @@
         <view class="line">
             <view wx:if="{{downloading}}" style="display: flex;flex-direction: row;">
                 <text style="font-size=24rpx;color:#60B5F4">加载中...</text>
-                <text style="font-size=24rpx;color:#276DED">{{progress}}</text>
+                <text style="font-size=24rpx;color:#276DED">{{progress}}%</text>
             </view>
             <text wx:else style="font-size:34rpx;width:90%">{{courseware.filename}}</text>
             <image wx:if="{{!downloading&&followed}}" class="star" src="/img/CoursewareCard/full-star.png" catchtap="tapStar" />

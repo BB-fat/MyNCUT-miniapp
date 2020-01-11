@@ -2,7 +2,7 @@
   <view class="mainView">
     <block class='courseList' wx:for='{{courseList}}'>
       <view style="height:20rpx"></view>
-      <view class='course'>
+      <view class='course shadow'>
         <view class='course-top'>
           <view style="font-size: 35rpx;font-weight: bold;">{{item.course_name}}</view>
           <view class='course-top-img' hover="true" hover-class="imghover">

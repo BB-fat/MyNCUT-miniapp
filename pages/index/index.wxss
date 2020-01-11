@@ -1,22 +1,3 @@
-@import "../../templates/authView/authView.wxss";
-
-.disableView {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f4f4f4;
-}
-
-.disableText {
-  font-size: 50rpx;
-  color: #fff
-}
-
 .picswiper {
   padding: 0rpx 0rpx 0rpx 0rpx;
   height: 340rpx;

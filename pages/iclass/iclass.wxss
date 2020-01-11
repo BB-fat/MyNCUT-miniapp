@@ -18,13 +18,12 @@
   justify-content: space-between;
   border-radius: 8px;
   padding: 22rpx 50rpx 1rpx 50rpx;
-  box-shadow: 0rpx 6rpx 12rpx rgba(0, 0, 0, 0.2);
 }
 
 .divider {
   margin-top: 30rpx;
   height: 1px;
-  background-color: #276DED;
+  background-color: rgba(39, 109, 237, 0.25);
   width: 646rpx;
   align-self: center;
 }

@@ -1,0 +1,34 @@
+page {
+    background-color: #fff;
+}
+
+.tips {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 65rpx;
+}
+
+.auth-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.button {
+    margin-top: 50rpx;
+    border-radius: 100rpx;
+    background-color: #276DED;
+    color: #fff;
+    width: 400rpx;
+    height: 72rpx;
+    font-size: 35rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,23 +1,18 @@
 <view class='mainView'>
-  <view class="card">
-    <view class="cardView">
-      <view class="cardViewLeft">
-        <open-data type='userAvatarUrl' class="card-avata"></open-data>
+  <view class="card shadow">
+    <open-data type='userAvatarUrl' class="card-avata"></open-data>
+    <view class="cardViewMid">
+      <view>
+        <text class="card-name">{{userInfo.name}}</text>
+        <image wx:if='{{userInfo.sex=="男"}}' src='/img/my/male.png' class="card-male"></image>
+        <image wx:else src='/img/my/female.png' class="card-male"></image>
       </view>
-      <view class="cardViewMid">
-        <view>
-          <text class="card-name">{{userInfo.name}}</text>
-          <image wx:if='{{userInfo.sex=="男"}}' src='/img/my/male.png' class="card-male"></image>
-          <image wx:else src='/img/my/female.png' class="card-male"></image>
-        </view>
-        <view class='row0'>
-          <text class="card-userid">{{userInfo.sno}}</text>
-          <text class="card-class">{{userInfo.class}}</text>
-        </view>
-      </view>
+      <text>{{userInfo.sno}}</text>
     </view>
+    <view style="width:50rpx"></view>
+    <!-- <text style="  align-self: flex-end;">{{userInfo.class}}</text> -->
   </view>
-  <view class='wifiView'>
+  <view class='wifiView shadow'>
     <view style="  display: flex;flex-direction: row;align-items:center">
       <image src='/img/my/wifi.svg' style="height:50rpx;width:40rpx"></image>
       <view style="width:20rpx"></view>

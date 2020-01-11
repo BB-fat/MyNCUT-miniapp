@@ -3,8 +3,6 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  position: absolute;
-  z-index: 1;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -12,38 +10,21 @@
 .card {
   margin-top: 30rpx;
   display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-  box-shadow: 0px 0px 20px 0px rgba(218, 222, 226, 0.5);
-  width: 686rpx;
-  height: 204rpx;
-  background-color: #fff;
-  color: rgb(0, 0, 0);
-}
-
-.cardView {
-  position: absolute;
-  z-index: 1;
-  width: 650rpx;
-  display: flex;
-  flex-direction: row;
-}
-
-.cardViewLeft {
-  margin-left: 38rpx;
-  display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  width: 621rpx;
+  height: 118rpx;
+  background-color: #FAFAFA;
+  padding: 46rpx 46rpx;
 }
 
 .cardViewMid {
-  margin: 60rpx 0 60rpx 80rpx;
   display: flex;
-  flex-wrap: wrap;
+  height: 100%;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
-  font-weight: bold;
 }
 
 .card-avata {
@@ -53,7 +34,6 @@
   overflow: hidden;
   border: 7rpx solid;
   border-color: #346cd1;
-  margin-top: -10%;
 }
 
 .card-name {
@@ -75,28 +55,15 @@
   width: 17rpx;
 }
 
-.row0 {
-  display: flex;
-  flex-direction: row;
-  margin-top: 15rpx;
-  font-size: 24rpx;
-  line-height: 32rpx;
-  font-weight: normal;
-}
-
-.card-userid {
-  margin-right: 15rpx;
-}
-
 .wifiView {
   margin-top: 15rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 566rpx;
+  width: 593rpx;
   height: 108rpx;
-  background-color: #FFF;
+  background-color: #FAFAFA;
   border-radius: 8px;
   padding-left: 60rpx;
   padding-right: 60rpx;

@@ -33,7 +33,9 @@ Component({
             "mp4": "/img/CoursewareCard/video.png",
             "rmvb": "/img/CoursewareCard/video.png",
             "avi": "/img/CoursewareCard/video.png",
-            "others": "/img/CoursewareCard/others.png"
+            "others": "/img/CoursewareCard/others.png",
+            "ppt": "/img/CoursewareCard/ppt.png",
+            "pptx": "/img/CoursewareCard/ppt.png"
         },
         openType: ["doc", "docx", "xls", "xlsx", "ppt", "pptx", "pdf"]
     },

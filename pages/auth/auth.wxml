@@ -1,5 +1,34 @@
-<view wx:if="{{show==0}}">即将进行企业号授权，此过可能持续20秒，请耐心等待</view>
+<view wx:if="{{show==0}}" class="tips">
+    <text style="font-weight: bold;font-size:40rpx;align-self: flex-start;">即将验证您的身份</text>
+    <view style="height:30rpx"></view>
+    <view style="display: inline;">
+        <text>我们将会在此之后验证您的本校学生身份请确保您已绑定</text>
+        <text style="color:#276DED">北方工业大学企业号</text>
+    </view>
+    <image src="/img/auth/5151578646001_.pic_hd.jpg" mode='widthFix' />
+    <view style="display: inline;font-size:24rpx">
+        <text>验证可能会遇到一段</text>
+        <text style="color:#60B5F4">白屏</text>
+        <text>，请不要</text>
+        <text style="color:#60B5F4">退出</text>
+        <text>小程序</text>
+    </view>
+</view>
 <web-view wx:elif="{{show==1}}" src="{{url}}" />
-<view wx:else>
-    <button open-type="getUserInfo" bindgetuserinfo="tapButton">立即授权</button>
+<view wx:else class='auth-view'>
+    <view style="height:100rpx"></view>
+    <view style="display:inline">
+        Hello,
+        <open-data type="userNickName"></open-data>
+    </view>
+    <view style="display:inline;font-size: 50rpx;">
+        <text>欢迎来到</text>
+        <text style="color:#276DED">我的北方</text>
+    </view>
+    <image src='https://myncut.oss-cn-beijing.aliyuncs.com/%E6%8F%92%E7%94%BB/131567665716_.pic_hd.jpg' mode='widthFix' style="width:100%"></image>
+    <view style="display:inline">
+        <text>请您授权我们使用您的</text>
+        <text style="color: #60B5F4">微信头像以及昵称</text>
+    </view>
+    <button class="button" open-type="getUserInfo" bindgetuserinfo="tapButton">立即授权</button>
 </view>

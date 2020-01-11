@@ -13,7 +13,7 @@
 .divider {
     margin-top: 10rpx;
     height: 1px;
-    background-color: #276DED;
+    background-color: rgba(39, 109, 237, 0.25);
     width: 646rpx;
     align-self: center;
 }
