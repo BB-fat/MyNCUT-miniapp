@@ -2,7 +2,7 @@
   <swiper class="picswiper" autoplay="true" circular="true" interval="4000">
     <block wx:for="{{indexBanner}}">
       <swiper-item class='pic_item radius-shadow'>
-        <navigator hover-class="banner-hover" url="{{'../webview/webview?mode=normal&url='+item.msgurl}}">
+        <navigator hover-class="banner-hover" url="{{'../webview/webview?url='+item.msgurl}}">
           <image src='{{item.imgurl}}' class="swiper_img" mode='scaleToFill' data-index='{{index}}' bindtap='swipclick'></image>
         </navigator>
       </swiper-item>
@@ -23,12 +23,12 @@
     </view>
   </view>
   <view class="button-view">
-    <index-button icon="/img/index/kebiao.svg" text="课表" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng'}}" />
-    <index-button icon="/img/index/jiaoshi.svg" text="教室" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_room/emroom/index'}}" />
-    <index-button icon="/img/index/chengji.svg" text="成绩" url="{{'.../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_score'}}" />
-    <index-button icon="/img/index/jidian.svg" text="绩点" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/grade/list'}}" />
-    <index-button icon="/img/index/xuefen.svg" text="学分" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_exam/default/graduate'}}" />
-    <index-button icon="/img/index/selectcourse.svg" text="选课" url="{{'../webview/webview?mode=normal&url=https://app.ncut.edu.cn/w_kecheng/course/list'}}" />
+    <index-button icon="/img/index/kebiao.svg" text="课表" url="{{'../webview/webview?url=https://app.ncut.edu.cn/w_kecheng'}}" />
+    <index-button icon="/img/index/jiaoshi.svg" text="教室" url="{{'../webview/webview?url=https://app.ncut.edu.cn/w_room/emroom/index'}}" />
+    <index-button icon="/img/index/chengji.svg" text="成绩" url="{{'../webview/webview?url=https://app.ncut.edu.cn/w_score'}}" />
+    <index-button icon="/img/index/jidian.svg" text="绩点" url="{{'../webview/webview?url=https://app.ncut.edu.cn/w_kecheng/grade/list'}}" />
+    <index-button icon="/img/index/xuefen.svg" text="学分" url="{{'../webview/webview?url=https://app.ncut.edu.cn/w_exam/default/graduate'}}" />
+    <index-button icon="/img/index/selectcourse.svg" text="选课" url="{{'../webview/webview?url=https://app.ncut.edu.cn/w_kecheng/course/list'}}" />
   </view>
   <view class='cat-box'>
     <image src='/img/index/dialog.svg' class='dialog' hidden='{{showCat}}'>
