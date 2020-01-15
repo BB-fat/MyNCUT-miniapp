@@ -2,6 +2,8 @@
   "debug": false,
   "pages": [
     "pages/index/index",
+    "pages/idel-index/idel-index",
+    "pages/idel-create/idel-create",
     "pages/auth/auth",
     "pages/iclass/iclass",
     "pages/courseware/courseware",
@@ -32,6 +34,12 @@
         "iconPath": "img/tabbar/iclass.png",
         "pagePath": "pages/iclass/iclass",
         "text": "多模式"
+      },
+      {
+        "selectedIconPath": "img/tabbar/idel.png",
+        "iconPath": "img/tabbar/idel.png",
+        "pagePath": "pages/idel-index/idel-index",
+        "text": "闲置屋"
       },
       {
         "selectedIconPath": "img/tabbar/my_active.png",

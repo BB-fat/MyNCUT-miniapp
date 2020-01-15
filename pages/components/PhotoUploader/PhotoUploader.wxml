@@ -1,0 +1,8 @@
+<view class="main-view">
+	<view class="photo-view" wx:for="{{photos}}">
+		<image src="{{item}}" class="img" bindtap="preview" bindlongpress="delete" data-url="{{item}}"></image>
+	</view>
+	<view wx:if="{{photos.length<max}}" class="photo-view" bindtap="onUpload">
+		<image class="img" src="/img/PhotoUploader/button.png"></image>
+	</view>
+</view>

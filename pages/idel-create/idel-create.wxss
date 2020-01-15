@@ -1,0 +1,29 @@
+/* pages/idel-create/idel-create.wxss */
+.input-view{
+  width: 100%;
+  height: 250rpx;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  padding-top: 30rpx;
+}
+
+.input{
+  width: 90%;
+  height: 85%;
+}
+
+.input-count{
+  align-self: flex-end;
+  margin-right: 5%;
+}
+.botton-view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.divider{
+  width: 90%;
+  height: 1px;
+  background-color: #276DED;
+}

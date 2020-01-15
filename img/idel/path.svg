@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7.06" height="12.356" viewBox="0 0 7.06 12.356">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="crop" width="7.06" height="12.356" fill="#276ded" stroke="#707070" stroke-linejoin="bevel" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="路径_111" data-name="路径 111" d="M6.017,12.371l-6-6a1.031,1.031,0,0,1,0-.353l6-6a.938.938,0,0,1,.353,0l.706.706a.915.915,0,0,1,0,.353L2.133,6.017a.317.317,0,0,0,0,.353l4.942,4.942a.9.9,0,0,1,0,.353l-.706.706A.941.941,0,0,1,6.017,12.371Z" fill="#276ded" stroke="#707070" stroke-linejoin="bevel" stroke-width="1" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect id="矩形_320" data-name="矩形 320" width="264.768" height="470.937" fill="#276ded" stroke="#707070" stroke-linejoin="bevel" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Path" transform="translate(7.06 12.356) rotate(180)" clip-path="url(#clip-path)">
+    <g id="组_61" data-name="组 61" transform="translate(0 0)">
+      <g id="组_60" data-name="组 60" clip-path="url(#clip-path-2)">
+        <g id="组_59" data-name="组 59" transform="translate(-7.398 -23.637)">
+          <g id="组_58" data-name="组 58" clip-path="url(#clip-path-3)">
+            <rect id="矩形_319" data-name="矩形 319" width="10.622" height="15.917" transform="translate(5.633 21.872)" fill="#276ded" stroke="#707070" stroke-linejoin="bevel" stroke-width="1"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

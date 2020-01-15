@@ -1,0 +1,3 @@
+<!-- pages/idel-index/idel-index.wxml -->
+<text>pages/idel-index/idel-index.wxml</text>
+<navigator url="../idel-create/idel-create">创建</navigator>

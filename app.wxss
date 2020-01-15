@@ -5,3 +5,11 @@ page {
 .shadow {
     box-shadow: 0rpx 6rpx 12rpx rgba(0, 0, 0, 0.1);
 }
+
+.fillet-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100rpx;
+}
