@@ -1,0 +1,23 @@
+<!--pages/idel-detail/idel-detail.wxml-->
+<view class="main-view">
+	<view class="top-view">
+		<image class="avatar" src="{{owner.avatarUrl}}"></image>
+		<view class="top-text-view">
+			<text style="font-size:36rpx">{{owner.nickName}}</text>
+			<text style="font-size:24rpx;color:#818181">发布于{{good.time}}</text>
+		</view>
+	</view>
+	<view class="divider"></view>
+	<view class="content">
+		<text style="font-size:34rpx;font-weight: bold;">{{good.title}}</text>
+		<text style="font-size:30rpx">{{good.describe}}</text>
+		<view wx:for="{{good.photos}}">
+			<image class="photo" src="{{item}}" data-url="{{item}}" mode="aspectFit" bindtap="tapImg"></image>
+		</view>
+	</view>
+</view>
+
+<view class="bottom-view">
+	<text style="font-size:44rpx;color:#276DED;margin-left: 50rpx;">¥{{good.price}}</text>
+	<view class="fillet-button contact-button" bindtap="contact">联系卖家</view>
+</view>

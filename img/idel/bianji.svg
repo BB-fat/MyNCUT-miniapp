@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="81" height="32" viewBox="0 0 81 32">
+  <g id="组_84" data-name="组 84" transform="translate(-178 -281)">
+    <g id="矩形_343" data-name="矩形 343" transform="translate(178 281)" fill="#fafafa" stroke="#276ded" stroke-width="1">
+      <rect width="81" height="32" rx="16" stroke="none"/>
+      <rect x="0.5" y="0.5" width="80" height="31" rx="15.5" fill="none"/>
+    </g>
+    <g id="组_80" data-name="组 80" transform="translate(-20 33)">
+      <path id="Icon_material-edit" data-name="Icon material-edit" d="M4.5,13.623v2.4H6.9l7.082-7.082-2.4-2.4ZM15.84,7.085a.638.638,0,0,0,0-.9l-1.5-1.5a.638.638,0,0,0-.9,0L12.267,5.855l2.4,2.4L15.84,7.085Z" transform="translate(205.5 253.98)" fill="#276ded"/>
+      <circle id="椭圆_18" data-name="椭圆 18" cx="12" cy="12" r="12" transform="translate(204 252)" fill="none"/>
+    </g>
+    <text id="编辑" transform="translate(216 302)" fill="#276ded" font-size="14" font-family="PingFangSC-Regular, PingFang SC"><tspan x="0" y="0">编辑</tspan></text>
+  </g>
+</svg>

@@ -27,44 +27,11 @@
     </view>
   </view>
   <view class="button-area">
-    <view class='row1'>
       <my-button text="我的收藏" icon="/img/my/myfavor.svg" isContact="{{false}}" url=""></my-button>
       <my-button text="毕业资格" icon="/img/my/graduation.svg" isContact="{{false}}" url="{{'../webview/webview?url=https://app.ncut.edu.cn/w_graduation/graduate/list'}}"></my-button>
       <my-button text="问题反馈" icon="/img/my/feedback.svg" isContact="{{true}}"></my-button>
-      <my-button text="合作推广" icon="/img/my/extend.svg" isContact="{{true}}"></my-button>
+      <my-button text="合作推广" icon="/img/my/extend.svg" isContact="{{true}}" ></my-button>
       <my-button text="关于我们" icon="/img/my/about.svg" isContact="{{false}}" url="../aboutus/aboutus"></my-button>
-    </view>
-  </view>
-</view>
-<view class='mask' wx:if="{{showModalStatus}}"></view>
-<view class='wrapper' wx:if="{{showModalStatus}}">
-  <view class='container' animation="{{popWindow}}">
-    <image class='cat' src='/img/index/cat.svg'></image>
-    <text class='title'>我的北方py（朋友）合作中心</text>
-    <view class='message'>
-      <text>如果您有需要~
-预约方式：
-编辑邮件至：</text>
-      <view bindtap='copyText' data-text='contents'>
-        <text class='email' selectable='true'>{{contents}}</text>
-      </view>
-      <text>
-        邮件内容包括：推送的链接、推送预览、 横版海报、推送封面（用于Banner）、联系方式（微信号或手机）
- 稿件规范：
-  1.内容合规，无不良内容。 
- 2.推送内容质量好，视觉效果优良。
-  3.欢迎原创推送，拒绝推广转载推送。
-   了解更多请点击联系客服
-      </text>
-    </view>
-    <view class='btn-row'>
-      <button open-type='contact' class='contact' bindtap='closeTap'>
-        <text class='con-text'>咨询客服</text>
-      </button>
-      <button class='close' bindtap='closeTap'>
-        <text class='clo-text'>我知道啦</text>
-      </button>
-    </view>
   </view>
 </view>
 <image class='picture' src="/img/my/school.svg" mode='widthFix'></image>

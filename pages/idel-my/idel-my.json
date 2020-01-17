@@ -1,6 +1,5 @@
 {
-  "enablePullDownRefresh": true,
-  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "我的闲置",
   "usingComponents": {
     "search-input":"../components/SearchInput/SearchInput",
     "good-card":"../components/GoodCard/GoodCard"

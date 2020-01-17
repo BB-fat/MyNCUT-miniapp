@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="81" height="32" viewBox="0 0 81 32">
+  <g id="组_83" data-name="组 83" transform="translate(-264 -281)">
+    <g id="矩形_344" data-name="矩形 344" transform="translate(264 281)" fill="#fafafa" stroke="#ffb600" stroke-width="1">
+      <rect width="81" height="32" rx="16" stroke="none"/>
+      <rect x="0.5" y="0.5" width="80" height="31" rx="15.5" fill="none"/>
+    </g>
+    <g id="组_79" data-name="组 79" transform="translate(20 33)">
+      <circle id="椭圆_19" data-name="椭圆 19" cx="12" cy="12" r="12" transform="translate(248 252)" fill="none"/>
+      <path id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" d="M17.47,16.289l3.572-3.573a.837.837,0,1,0-1.184-1.184L16.286,15.1l-3.572-3.573a.837.837,0,1,0-1.184,1.184L15.1,16.289l-3.572,3.573a.837.837,0,0,0,1.184,1.184l3.572-3.573,3.572,3.573a.837.837,0,1,0,1.184-1.184Z" transform="translate(243.715 247.902)" fill="#ffb600"/>
+    </g>
+    <text id="下架" transform="translate(300 302)" fill="#ffb600" font-size="14" font-family="PingFangSC-Regular, PingFang SC"><tspan x="0" y="0">下架</tspan></text>
+  </g>
+</svg>

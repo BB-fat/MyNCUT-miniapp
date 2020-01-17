@@ -7,6 +7,8 @@ Component({
       icon:String,
       placeholder:String,
       type:String,
+      maxlength:Number,
+      value:String,
       onInput:{
         type:Function,
         value:(e)=>{

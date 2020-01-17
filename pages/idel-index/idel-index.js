@@ -1,4 +1,7 @@
 // pages/idel-index/idel-index.js
+import {
+  Requests
+} from "../../utils/Requests"
 Page({
 
   /**
@@ -8,59 +11,54 @@ Page({
 
   },
 
+  search: function (e) {
+    let that = this
+    Requests.get({
+      url: "/idle",
+      data: {
+        title: e,
+        state: 1
+      },
+      success(data) {
+        that.setData({
+          goods: data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+    let that=this
+    this.setData({
+      search: this.search
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+    wx.startPullDownRefresh({})
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    let that=this
+    Requests.get({
+      url:"/idle",
+      data:{
+        state:1
+      },
+      success(data){
+        wx.stopPullDownRefresh({})
+        that.setData({
+          goods: data
+        })
+      }
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

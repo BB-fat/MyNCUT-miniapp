@@ -63,6 +63,28 @@ Page({
       inputTitle: that.inputTitle,
       inputContact: that.inputContact
     })
+    if (options.mode == "edit") {
+      Requests.get({
+        url: "/idle",
+        data: {
+          _id: options._id
+        },
+        success(data) {
+          console.log(data)
+          that.setData({
+            describe: data[0].describe,
+            photos:data[0].photos,
+            price:data[0].price,
+            title:data[0].title,
+            contact:data[0].contact,
+            _id:options._id
+          })
+        }
+      })
+    }
+    that.setData({
+      mode: options.mode
+    })
   },
 
   submit: function () {
@@ -97,14 +119,15 @@ Page({
       })
       return
     }
-    Requests.post({
+    if(this.data.mode=="create"){
+          Requests.post({
       url: "/idle",
       data: {
         title: this.data.title,
         price: this.data.price,
         contact: this.data.contact,
         photos: this.data.photos,
-        describe: this.data.describe
+        describe: this.data.describe,
       },
       success(data) {
         wx.showToast({
@@ -115,5 +138,26 @@ Page({
         }, 1000)
       }
     })
+    }else if(this.data.mode=="edit"){
+      Requests.put({
+        url: "/idle/"+this.data._id,
+        data: {
+          state:1,
+          title: this.data.title,
+          price: this.data.price,
+          contact: this.data.contact,
+          photos: this.data.photos,
+          describe: this.data.describe
+        },
+        success(data) {
+          wx.showToast({
+            title: '修改成功',
+          })
+          setTimeout(() => {
+            wx.navigateBack({})
+          }, 1000)
+        }
+      })
+    }
   }
 })

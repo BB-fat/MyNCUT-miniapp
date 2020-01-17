@@ -1,9 +1,11 @@
 {
   "debug": false,
   "pages": [
-    "pages/index/index",
     "pages/idel-index/idel-index",
+    "pages/index/index",
+    "pages/idel-detail/idel-detail",
     "pages/idel-create/idel-create",
+    "pages/idel-my/idel-my",
     "pages/auth/auth",
     "pages/iclass/iclass",
     "pages/courseware/courseware",

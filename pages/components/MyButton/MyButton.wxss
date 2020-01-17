@@ -18,3 +18,7 @@
     z-index: 2;
     border-radius: 8px;
 }
+
+.text{
+    font-size: 24rpx;
+}
