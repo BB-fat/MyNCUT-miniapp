@@ -7,5 +7,6 @@ App({
   globalData: {},
   onLaunch: function () {
     Follow.init()
+    wx.cloud.init()
   }
 })

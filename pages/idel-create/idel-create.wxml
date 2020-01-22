@@ -1,0 +1,17 @@
+<!--pages/idel-create/idel-create.wxml-->
+<view class="input-view">
+	<textarea class="input" value="{{describe}}" placeholder="闲置描述，新旧程度，入手渠道，转手原因..." maxlength="200" focus="{{true}}" bindinput="input"></textarea>
+	<text class="input-count">{{describe.length}}/200</text>
+</view>
+<photo-uploader photos="{{photos}}" max="4" onUpload="{{upload}}" onDelete="{{delete}}" />
+<view class="botton-view">
+	<view class="divider"></view>
+	<line-input value="{{price}}" icon="/img/idel/money.svg" placeholder="价格" onInput="{{inputPrice}}" type="number" />
+	<view class="divider"></view>
+	<line-input value="{{title}}" icon="/img/idel/pricetag.svg" placeholder="标题" onInput="{{inputTitle}}" maxlength="9"/>
+	<view class="divider"></view>
+	<line-input value="{{contact}}" icon="/img/idel/pricetag.svg" placeholder="联系方式" onInput="{{inputContact}}" />
+	<view class="divider"></view>
+	<view style="height:230rpx"></view>
+	<view class="fillet-button" style="background-color:#276DED;width:400rpx;height:70rpx;color:white" bindtap="submit">{{mode=="create"?"发布":"更新"}}</view>
+</view>

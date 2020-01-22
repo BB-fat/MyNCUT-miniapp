@@ -1,0 +1,23 @@
+
+.line-input-view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 750rpx;
+  justify-content: space-between;
+  height: 90rpx;
+}
+
+.icon{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.icon-path{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.line-input{
+  width: 70%;
+}

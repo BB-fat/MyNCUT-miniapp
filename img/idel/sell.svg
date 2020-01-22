@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="81" height="32" viewBox="0 0 81 32">
+  <g id="组_82" data-name="组 82" transform="translate(-118 -278.137)">
+    <g id="矩形_342" data-name="矩形 342" transform="translate(118 278.137)" fill="#fafafa" stroke="#276ded" stroke-width="1">
+      <rect width="81" height="32" rx="16" stroke="none"/>
+      <rect x="0.5" y="0.5" width="80" height="31" rx="15.5" fill="none"/>
+    </g>
+    <g id="组_81" data-name="组 81" transform="translate(124 282.137)">
+      <circle id="椭圆_20" data-name="椭圆 20" cx="12" cy="12" r="12" fill="none"/>
+      <path id="Icon_feather-check" data-name="Icon feather-check" d="M18,9,9.75,17.25,6,13.5" transform="translate(-0.454 -1)" fill="none" stroke="#276ded" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+    <text id="已出" transform="translate(156 299.137)" fill="#276ded" font-size="14" font-family="PingFangSC-Regular, PingFang SC"><tspan x="0" y="0">已出</tspan></text>
+  </g>
+</svg>

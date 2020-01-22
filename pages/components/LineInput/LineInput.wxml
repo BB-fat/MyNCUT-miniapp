@@ -1,0 +1,7 @@
+<view class="line-input-view">
+  <view style="width:30rpx"></view>
+  <image class="icon" src="{{icon}}"></image>
+  <input class="line-input" value="{{value}}" bindinput="onInput" placeholder="{{placeholder}}" type="{{type}}" maxlength="{{maxlength}}"></input>
+  <image class="icon-path" src="/img/idel/path.svg"></image>
+  <view style="width:30rpx"></view>
+</view>

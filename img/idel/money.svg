@@ -1,0 +1,7 @@
+<svg id="组件_13_1" data-name="组件 13 – 1" xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22">
+  <g id="椭圆_17" data-name="椭圆 17" transform="translate(0 1)" fill="none" stroke="#276ded" stroke-width="1">
+    <circle cx="10" cy="10" r="10" stroke="none"/>
+    <circle cx="10" cy="10" r="9.5" fill="none"/>
+  </g>
+  <text id="_" data-name="￥" transform="translate(10 17)" fill="#276ded" font-size="16" font-family="PingFangSC-Regular, PingFang SC"><tspan x="-8" y="0">￥</tspan></text>
+</svg>

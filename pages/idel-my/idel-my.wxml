@@ -1,0 +1,7 @@
+<!--pages/idel-my/idel-my.wxml-->
+<view class="main-view">
+  <view wx:for="{{goods}}">
+    	<view style="height:30rpx"></view>
+	<good-card good="{{item}}" type="own"/>
+  </view>
+</view>

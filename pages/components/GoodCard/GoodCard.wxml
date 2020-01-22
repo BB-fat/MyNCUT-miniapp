@@ -1,0 +1,38 @@
+<view wx:if="{{type=='sell'}}" class="sell-view" bindtap="tapCard">
+	<image class="photo" src="{{good.photos[0]}}" mode="aspectFill"></image>
+	<view class="content">
+		<view style="  display: flex;flex-direction: column;">
+			<text class="title">{{good.title}}</text>
+			<view style="display:inline">
+				<text class="price" style="font-size:24rpx">¥</text>
+				<text class="price">{{good.price}}</text>
+			</view>
+		</view>
+		<image src="{{owner.avatarUrl}}" class="avatar"></image>
+	</view>
+</view>
+
+
+<view wx:elif="{{type=='own'}}" class="own-view" style="height: {{good.state!=2?360:240}}rpx;">
+	<view class="state-view">
+		<text class="state-text" wx:if="{{good.state==0}}">未上架</text>
+		<text wx:if="{{good.state==1}}" style="color:#60B5F4">等待收留中...</text>
+		<text wx:if="{{good.state==2}}">已成交</text>
+	</view>
+	<view class="divider"></view>
+	<view class="own-content-view">
+		<image class="own-photo" src="{{good.photos[0]}}"></image>
+		<view class="own-content">
+			<text class="title">{{good.title}}</text>
+			<text class="time">发布于：{{time}}</text>
+		</view>
+		<text class="price">¥{{good.price}}</text>
+	</view>
+	<view wx:if="{{good.state!=2}}" class="button-view">
+		<image class="button" src="/img/idel/sell.svg" bindtap="sell"></image>
+		<view style="width:20rpx"></view>
+		<image class="button" src="/img/idel/bianji.svg" bindtap="edit"></image>
+		<view style="width:20rpx"></view>
+		<image class="button" src="/img/idel/xiajia.svg" bindtap="off"></image>
+	</view>
+</view>

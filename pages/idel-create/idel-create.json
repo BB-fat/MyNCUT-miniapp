@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "发布闲置",
+  "usingComponents": {
+    "photo-uploader":"../components/PhotoUploader/PhotoUploader",
+    "line-input":"../components/LineInput/LineInput"
+  }
+}

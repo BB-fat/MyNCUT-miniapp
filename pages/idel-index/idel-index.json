@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "search-input":"../components/SearchInput/SearchInput",
+    "good-card":"../components/GoodCard/GoodCard"
+  }
+}
