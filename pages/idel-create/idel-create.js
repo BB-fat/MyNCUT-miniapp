@@ -70,7 +70,6 @@ Page({
           _id: options._id
         },
         success(data) {
-          console.log(data)
           that.setData({
             describe: data[0].describe,
             photos:data[0].photos,

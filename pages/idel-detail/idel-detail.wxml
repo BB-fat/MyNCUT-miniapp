@@ -12,7 +12,7 @@
 		<text style="font-size:34rpx;font-weight: bold;">{{good.title}}</text>
 		<text style="font-size:30rpx">{{good.describe}}</text>
 		<view wx:for="{{good.photos}}">
-			<image class="photo" src="{{item}}" data-url="{{item}}" mode="aspectFit" bindtap="tapImg"></image>
+			<image class="photo" src="{{item}}" data-url="{{item}}" mode="widthFix" bindtap="tapImg"></image>
 		</view>
 	</view>
 </view>

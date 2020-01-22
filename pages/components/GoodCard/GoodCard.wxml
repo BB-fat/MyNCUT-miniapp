@@ -1,8 +1,13 @@
 <view wx:if="{{type=='sell'}}" class="sell-view" bindtap="tapCard">
 	<image class="photo" src="{{good.photos[0]}}" mode="aspectFill"></image>
 	<view class="content">
-		<text class="title">{{good.title}}</text>
-		<text class="price">¥{{good.price}}</text>
+		<view style="  display: flex;flex-direction: column;">
+			<text class="title">{{good.title}}</text>
+			<view style="display:inline">
+				<text class="price" style="font-size:24rpx">¥</text>
+				<text class="price">{{good.price}}</text>
+			</view>
+		</view>
 		<image src="{{owner.avatarUrl}}" class="avatar"></image>
 	</view>
 </view>
@@ -15,7 +20,7 @@
 		<text wx:if="{{good.state==2}}">已成交</text>
 	</view>
 	<view class="divider"></view>
-<view class="own-content-view">
+	<view class="own-content-view">
 		<image class="own-photo" src="{{good.photos[0]}}"></image>
 		<view class="own-content">
 			<text class="title">{{good.title}}</text>

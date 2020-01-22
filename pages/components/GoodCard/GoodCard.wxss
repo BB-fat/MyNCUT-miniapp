@@ -17,20 +17,22 @@
 }
 
 .title{
-  font-size: 42rpx;
+  font-size: 32rpx;
   margin-top: 16rpx;
 }
 
 .price{
- font-size:42rpx;
+ font-size:32rpx;
  color:#276DED;
  margin-top: 30rpx;
 }
 
 .content{
   width: 380rpx;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin-right: 30rpx;
 }
 
@@ -40,8 +42,8 @@
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid;
+  margin-bottom: 30rpx;
   border-color: #346cd1;
-  margin-top: 10rpx;
 }
 
 .own-view{
@@ -74,10 +76,11 @@
 }
 
 .own-content-view{
+  margin-top: 30rpx;
   display: flex;
   flex-direction: row;
   height: 170rpx;
-  align-items: center;
+  align-items: flex-start;
   width: 90%;
   justify-content: space-between;
 }
@@ -104,8 +107,9 @@
   justify-content: flex-end;
   width: 90%;
   height: 100rpx;
-  align-items: center;
+  align-items: flex-start;
 }
+
 
 .button{
   width: 160rpx;

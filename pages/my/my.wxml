@@ -34,4 +34,5 @@
       <my-button text="关于我们" icon="/img/my/about.svg" isContact="{{false}}" url="../aboutus/aboutus"></my-button>
   </view>
 </view>
-<image class='picture' src="/img/my/school.svg" mode='widthFix'></image>
+<!-- <image class='picture' src="/img/my/school.svg" mode='widthFix'></image> -->
+<image class='picture' src="cloud://incut-dev-hzz83.696e-incut-dev-hzz83-1259007797/IMG/WechatIMG2.jpeg" mode='widthFix'></image>
