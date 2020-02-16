@@ -1,0 +1,48 @@
+.main-view {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+}
+
+.hover{
+  background-color: #b8b8b89f;
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20rpx;
+}
+
+.avatar {
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #346cd1;
+}
+
+.nickName {
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.replay{
+  color: #707070;
+}
+
+.content{
+  margin-left: 100rpx;
+  width: 620rpx;
+}
+
+.time{
+  margin-left: 100rpx;
+  color: #707070;
+  font-size: 18rpx;
+}

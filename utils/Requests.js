@@ -1,7 +1,12 @@
 export class Requests {
     // static baseUrl = "http://127.0.0.1:8080/v1"
     // static baseUrl = "https://myncutdev.ncut.edu.cn/v1"
-    static baseUrl = "https://myncut.ncut.edu.cn/v1"
+    // static baseUrl = "https://myncut.ncut.edu.cn/v1"
+    // static baseUrl = "http://10.211.55.3:8080/v1"
+    static baseUrl = "http://192.168.0.101/v1"
+
+    // 请求日志
+    static console = true
 
     static token
 
@@ -67,12 +72,18 @@ export class Requests {
     }) {
         let that = this
         header["Token"] = this.token
+        if (this.console)
+            console.log("开始请求:", method, this.baseUrl + url)
         wx.request({
             method: method,
             url: this.baseUrl + url,
             header: header,
             data: data,
             success(res) {
+                if (that.console) {
+                    console.log("响应:", method, that.baseUrl + url)
+                    console.log(res.data)
+                }
                 if (res.data.code == 200) {
                     if (success != null)
                         success(res.data.data)

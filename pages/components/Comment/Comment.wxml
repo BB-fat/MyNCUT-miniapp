@@ -1,0 +1,9 @@
+<view class="main-view" bindtap="tapComment" hover-class="hover">
+		<view class="line">
+			<image class="avatar" src="{{comment.from.avatarUrl}}"></image>
+			<text class="nickName">{{comment.from.nickName}}</text>
+			<text wx:if="{{comment.to!=null}}" class="replay">回复@{{comment.to.nickName}}</text>
+		</view>
+		<view class="content">{{comment.content}}</view>
+		<view class="time">{{comment.create_time}}</view>
+</view>

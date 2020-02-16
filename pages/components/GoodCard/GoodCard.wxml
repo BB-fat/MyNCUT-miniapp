@@ -1,14 +1,14 @@
 <view wx:if="{{type=='sell'}}" class="sell-view" bindtap="tapCard">
 	<image class="photo" src="{{good.photos[0]}}" mode="aspectFill"></image>
 	<view class="content">
-		<view style="  display: flex;flex-direction: column;">
+		<view style="display: flex;flex-direction: column;">
 			<text class="title">{{good.title}}</text>
 			<view style="display:inline">
 				<text class="price" style="font-size:24rpx">¥</text>
 				<text class="price">{{good.price}}</text>
 			</view>
 		</view>
-		<image src="{{owner.avatarUrl}}" class="avatar"></image>
+		<image src="{{owner.avatarUrl}}" lazy-load="{{true}}" class="avatar"></image>
 	</view>
 </view>
 

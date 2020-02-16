@@ -1,0 +1,7 @@
+<view class="input-view">
+	<textarea class="input" value="{{content}}" placeholder="{{placeholder}}" maxlength="50" focus="{{true}}" bindinput="input"></textarea>
+	<text class="input-count">{{content.length}}/50</text>
+</view>
+<view class="button-view">
+	<view class="fillet-button button" bindtap="submit">确定</view>
+</view>

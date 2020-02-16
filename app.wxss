@@ -13,3 +13,11 @@ page {
     justify-content: center;
     border-radius: 100rpx;
 }
+
+.float-button{
+    width: 180rpx;
+    height: 180rpx;
+    position: fixed;
+    z-index: 10;
+    right: 10rpx;
+}
