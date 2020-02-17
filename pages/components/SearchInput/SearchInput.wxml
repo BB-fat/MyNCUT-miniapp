@@ -1,9 +1,10 @@
 <view class="main-view">
-    <view class="border">
-        <view style="width:15rpx"></view>
-        <image src="/img/SearchInput/search.svg" class="pic" />
-        <view style="width:15rpx"></view>
-        <input class="input" placeholder="{{placeholder}}" bindinput="input" bindconfirm="tapSearch" />
-        <view class="text" bindtap="tapSearch">搜索</view>
-    </view>
+	<view class="border">
+		<view style="width:15rpx"></view>
+		<image src="/img/SearchInput/search.svg" class="pic" />
+		<view style="width:15rpx"></view>
+		<input class="input" value="{{inputValue}}" placeholder="{{placeholder}}" bindinput="input" confirm-type="search" bindconfirm="tapSearch" />
+		<image wx:if="{{inputValue.length!=0}}" class="cancel" src="/img/SearchInput/Cancel.svg" bindtap="tapCancel"></image>
+		<view class="text" bindtap="tapSearch">搜索</view>
+	</view>
 </view>

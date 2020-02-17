@@ -4,9 +4,9 @@
 	<view style="height:30rpx"></view>
 	<good-card good="{{item}}" type="sell"/>
 </view>
-<navigator class="navigator" style="  bottom: 30rpx;" url="../idel-create/idel-create?mode=create"hover-class="none">
-  <image class="icon-add" src="/img/idel/add.svg"></image>
+<navigator url="../idel-create/idel-create?mode=create"hover-class="none">
+<image class="float-button" src="/img/idel/fabu.svg" style="bottom:40rpx"></image>
 </navigator>
-<navigator class="navigator" style="  bottom: 200rpx;" url="../idel-my/idel-my"hover-class="none">
-  <image class="icon-add" src="/img/idel/thing.svg"></image>
+<navigator url="../idel-my/idel-my" hover-class="none">
+  <image class="float-button" src="/img/idel/wode.svg" style="bottom:200rpx"></image>
 </navigator>

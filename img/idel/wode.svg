@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96" height="96" viewBox="0 0 96 96">
+  <defs>
+    <filter id="椭圆_21" x="0" y="0" width="96" height="96" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="组_103" data-name="组 103" transform="translate(-281 -530)">
+    <g transform="matrix(1, 0, 0, 1, 281, 530)" filter="url(#椭圆_21)">
+      <circle id="椭圆_21-2" data-name="椭圆 21" cx="30" cy="30" r="30" transform="translate(18 12)" fill="#fafafa"/>
+    </g>
+    <text id="我的闲置" transform="translate(329 592)" fill="#276ded" font-size="7" font-family="PingFangSCSemibold-, PingFang SC"><tspan x="-14" y="0">我的闲置</tspan></text>
+    <g id="图层_2" data-name="图层 2" transform="translate(318.185 554.052)">
+      <g id="图层_4" data-name="图层 4" transform="translate(0 0)">
+        <ellipse id="椭圆_22" data-name="椭圆 22" cx="3.5" cy="4" rx="3.5" ry="4" transform="translate(11.815 15.948)" fill="#8cc7ff"/>
+        <path id="路径_154" data-name="路径 154" d="M6.031,1.8H.9A.9.9,0,1,1,.9,0H6.031a.9.9,0,0,1,0,1.8Z" transform="translate(0 0)" fill="#276ded"/>
+        <path id="路径_155" data-name="路径 155" d="M.9,26.948a.9.9,0,0,1-.9-.9V.9A.9.9,0,1,1,1.8.9V26.05a.9.9,0,0,1-.9.9Z" transform="translate(0 0)" fill="#276ded"/>
+        <path id="路径_156" data-name="路径 156" d="M20.917,99.8H.9A.9.9,0,1,1,.9,98H20.917a.9.9,0,0,1,0,1.8Z" transform="translate(0 -72.848)" fill="#276ded"/>
+        <path id="路径_157" data-name="路径 157" d="M64.031,1.8H58.9a.9.9,0,1,1,0-1.8h5.133a.9.9,0,1,1,0,1.8Z" transform="translate(-43.114 0)" fill="#276ded"/>
+        <path id="路径_158" data-name="路径 158" d="M78.9,26.948a.9.9,0,0,1-.9-.9V.9a.9.9,0,0,1,1.8,0V26.05a.9.9,0,0,1-.9.9Z" transform="translate(-57.981 0)" fill="#276ded"/>
+        <path id="路径_159" data-name="路径 159" d="M35.518,1.8H30.9a.9.9,0,0,1,0-1.8h4.62a.9.9,0,1,1,0,1.8Z" transform="translate(-22.3 0)" fill="#8cc7ff"/>
+        <path id="路径_160" data-name="路径 160" d="M28.859,29.527H15.513a.513.513,0,0,1,0-1.027H28.859a.513.513,0,0,1,0,1.027Z" transform="translate(-11.15 -21.185)" fill="#276ded"/>
+        <path id="路径_161" data-name="路径 161" d="M28.859,79.527H15.513a.513.513,0,0,1,0-1.027H28.859a.513.513,0,0,1,0,1.027Z" transform="translate(-11.15 -58.353)" fill="#276ded"/>
+        <path id="路径_162" data-name="路径 162" d="M28.859,62.857H15.513a.513.513,0,1,1,0-1.027H28.859a.513.513,0,0,1,0,1.027Z" transform="translate(-11.15 -45.961)" fill="#276ded"/>
+        <path id="路径_163" data-name="路径 163" d="M28.859,46.2H15.513a.513.513,0,1,1,0-1.027H28.859a.513.513,0,0,1,0,1.027Z" transform="translate(-11.15 -33.577)" fill="#276ded"/>
+      </g>
+    </g>
+  </g>
+</svg>

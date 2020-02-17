@@ -17,21 +17,39 @@ Component({
   data: {
 
   },
-
-  attached: function () {
-    let that = this
-    Requests.getWithCache({
-      url: "/user/" + this.data.good.owner,
-      success(data) {
-        that.setData({
-          owner: data
-        })
-      }
-    })
-    this.setData({
-      time: this.data.good.time.split(".")[0]
-    })
+  lifetimes:{
+    attached: function () {
+      let that = this
+      Requests.getWithCache({
+        url: "/user/" + this.data.good.owner,
+        success(data) {
+          that.setData({
+            owner: data
+          })
+        }
+      })
+      this.setData({
+        time: this.data.good.time.split(".")[0]
+      })
+    },
   },
+
+  // 数据监听器
+  // 为了在good发生变化的时候同时改变owner
+  observers:{
+    "good":function(){
+      let that = this
+      Requests.getWithCache({
+        url: "/user/" + this.data.good.owner,
+        success(data) {
+          that.setData({
+            owner: data
+          })
+        }
+      })
+    }
+  },
+
   /**
    * 组件的方法列表
    */

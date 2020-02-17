@@ -20,7 +20,7 @@ Component({
      * 组件的初始数据
      */
     data: {
-
+        inputValue:""
     },
 
     /**
@@ -34,6 +34,13 @@ Component({
         },
         tapSearch: function () {
             this.data.search(this.data.inputValue)
+        },
+        tapCancel:function(){
+            console.log(111)
+            this.setData({
+                inputValue: ""
+            })
+            this.data.search("")
         }
     }
 })

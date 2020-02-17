@@ -66,3 +66,13 @@
   background-color: #276DED;
   color: #fff;
 }
+
+.divider2{
+  width: 750rpx;
+  background-color: #818181;
+  height: 1px;
+}
+
+.comment{
+  color:#276DED ;
+}

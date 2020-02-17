@@ -5,6 +5,7 @@
     "pages/idel-index/idel-index",
     "pages/idel-detail/idel-detail",
     "pages/idel-create/idel-create",
+    "pages/idel-comment/idel-comment",
     "pages/idel-my/idel-my",
     "pages/auth/auth",
     "pages/iclass/iclass",
