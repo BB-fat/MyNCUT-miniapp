@@ -14,13 +14,30 @@ Page({
 
   },
 
+  onDelete:function(){
+    let that = this
+    // 请求评论数据
+    Requests.get({
+      url: "/idel-comment/" + that.data._id,
+      success(data) {
+        for (var i = 0; i < data.length; i++) {
+          data[i].create_time = data[i].create_time.split(".")[0]
+        }
+        that.setData({
+          comments: data
+        })
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.setData({
       _id: options._id,
-      contentHeight:app.globalData.systemInfo.windowHeight
+      contentHeight:app.globalData.systemInfo.windowHeight,
+      onDelete:this.onDelete
     })
     let that = this
     //请求商品信息
@@ -47,19 +64,7 @@ Page({
   },
 
   onShow: function () {
-    let that = this
-    // 请求评论数据
-    Requests.get({
-      url: "/idel-comment/" + that.data._id,
-      success(data) {
-        for (var i = 0; i < data.length; i++) {
-          data[i].create_time = data[i].create_time.split(".")[0]
-        }
-        that.setData({
-          comments: data
-        })
-      }
-    })
+    this.onDelete()
   },
 
   tapImg: function (e) {
