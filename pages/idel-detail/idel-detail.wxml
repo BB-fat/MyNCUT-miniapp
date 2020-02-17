@@ -18,7 +18,7 @@
 		</view>
 		<view wx:for="{{comments}}">
 			<view class="divider2"></view>
-			<comment comment="{{item}}" />
+			<comment comment="{{item}}" onDelete="{{onDelete}}"/>
 		</view>
 	</view>
 </scroll-view>
