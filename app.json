@@ -13,7 +13,8 @@
     "pages/my/my",
     "pages/webview/webview",
     "pages/aboutus/aboutus",
-    "pages/homework/homework"
+    "pages/homework/homework",
+    "pages/school-life-2020/school-life-2020"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -37,12 +38,6 @@
         "iconPath": "img/tabbar/iclass.png",
         "pagePath": "pages/iclass/iclass",
         "text": "多模式"
-      },
-      {
-        "selectedIconPath": "img/tabbar/second-hand_active@2x.png",
-        "iconPath": "img/tabbar/second-hand_inactive@2x.png",
-        "pagePath": "pages/idel-index/idel-index",
-        "text": "闲置屋Beta"
       },
       {
         "selectedIconPath": "img/tabbar/my_active.png",
