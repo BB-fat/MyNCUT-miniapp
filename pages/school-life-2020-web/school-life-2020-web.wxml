@@ -1,0 +1,2 @@
+<!--pages/school-life-2020-web/school-life-2020-web.wxml-->
+<web-view src="{{url}}"></web-view>

@@ -1,7 +1,4 @@
 <!--pages/school-life-2020/school-life-2020.wxml-->
-<view wx:if="{{showAuth}}">
+<view>
 	<button open-type="getUserInfo" bindgetuserinfo="tapGetUserInfo">立即认证</button>
-</view>
-<view wx:else>
-	内容
 </view>

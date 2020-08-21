@@ -14,7 +14,8 @@
     "pages/webview/webview",
     "pages/aboutus/aboutus",
     "pages/homework/homework",
-    "pages/school-life-2020/school-life-2020"
+    "pages/school-life-2020/school-life-2020",
+    "pages/school-life-2020-web/school-life-2020-web"
   ],
   "window": {
     "backgroundTextStyle": "light",

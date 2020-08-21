@@ -1,11 +1,15 @@
 // pages/school-life-2020/school-life-2020.js
+import {
+  Requests
+} from "../../utils/Requests";
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    showAuth: true
+
   },
 
   /**
@@ -19,27 +23,33 @@ Page({
     不允许不让过！！！
     */
 
-    let that = this;
     wx.getUserInfo({
       success: function (res) {
         var userInfo = res.userInfo;
         console.log(userInfo);
-        that.setData({
-          showAuth: false,
-        });
         // 向服务器提交用户最新的数据
+        Requests.put({
+          url: "/user",
+          data: {
+            nickName: userInfo.nickName,
+            avatarUrl: userInfo.avatarUrl,
+          },
+          success(data) {
+            wx.navigateTo({
+              url: '../school-life-2020-web/school-life-2020-web?token=' + Requests.token,
+            })
+          }
+        });
       },
       fail: function (res) {
         console.log("getUserInfo fail");
-        that.setData({
-          showAuth: true,
-        });
       }
     })
   },
 
   // 获取用户信息回调
   tapGetUserInfo: function (e) {
+    let that = this;
     if (e.detail.userInfo === undefined) {
       console.log("user refused getUserInfo");
       // 未同意
@@ -52,7 +62,18 @@ Page({
       // 然后将页面切换成H5
       console.log("user agreed getUserInfo");
       console.log(e.detail.userInfo);
-
+      Requests.put({
+        url: "/user",
+        data: {
+          nickName: e.detail.userInfo.nickName,
+          avatarUrl: e.detail.userInfo.avatarUrl,
+        },
+        success(data) {
+          wx.navigateTo({
+            url: '../school-life-2020-web/school-life-2020-web?token=' + Requests.token,
+          })
+        }
+      });
     }
   },
 

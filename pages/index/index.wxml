@@ -10,13 +10,13 @@
 		</swiper-item>
 
 		<!-- 常规banner -->
-		<block wx:for="{{indexBanner}}">
+		<!-- <block wx:for="{{indexBanner}}">
 			<swiper-item class='pic_item radius-shadow'>
 				<navigator hover-class="banner-hover" url="{{'../webview/webview?url='+item.msgurl}}">
 					<image src='{{item.imgurl}}' class="swiper_img" mode='scaleToFill' data-index='{{index}}' bindtap='swipclick'></image>
 				</navigator>
 			</swiper-item>
-		</block>
+		</block> -->
 	</swiper>
 	<view class="notice radius-shadow">
 		<view class='imgbox'>
