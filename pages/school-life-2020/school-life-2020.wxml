@@ -1,4 +1,8 @@
 <!--pages/school-life-2020/school-life-2020.wxml-->
 <view>
-	<button open-type="getUserInfo" bindgetuserinfo="tapGetUserInfo">立即认证</button>
+	<image class="bg" src="../../img/school-life/bg.jpeg"></image>
+	<view class="btn-view">
+		<view class="title">点滴校园2020</view>
+		<button class="btn" open-type="getUserInfo" bindgetuserinfo="tapGetUserInfo">点击进入</button>
+	</view>
 </view>
