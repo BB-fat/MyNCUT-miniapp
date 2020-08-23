@@ -16,11 +16,6 @@
   z-index: 1;
 }
 
-.title {
-  margin-top: 80rpx;
-  font-size: 30px;
-}
-
 .btn {
-  margin-top: 500rpx;
+  margin-top: 700rpx;
 }

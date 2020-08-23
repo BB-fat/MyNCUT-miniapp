@@ -5,7 +5,7 @@
 		<swiper-item class='pic_item radius-shadow'>
 			<navigator hover-class="banner-hover" url="{{'../school-life-2020/school-life-2020'}}">
 				<!-- TODO 填写海报数据 -->
-				<image src='' class="swiper_img" mode='scaleToFill'></image>
+				<image src='../../img/school-life/banner.png' class="swiper_img" mode='scaleToFill'></image>
 			</navigator>
 		</swiper-item>
 
